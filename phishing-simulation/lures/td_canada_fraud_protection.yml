@@ -1,0 +1,63 @@
+name: td_canada_fraud_protection
+description: "TD Canada Trust — fraud protection / unauthorized transaction alert"
+category: banking
+urgency: critical
+target_role: any
+subject: "🚨 Fraud Protection Alert — Transaction declined on your TD Canada Trust account"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>TD Canada Trust's <strong>Fraud Protection Service</strong> has detected
+  suspicious activity on your account and has taken the following actions:</p>
+  <p><strong style="color:#d0021b;">Your debit card has been temporarily blocked.</strong>
+  Your online banking access may be limited until you verify your identity.</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#d0021b;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Verify Your Identity Now →</a></p>
+  <div style="background:#fff5f5;border:1px solid #fecaca;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#991b1b;">
+    <strong>Detected Activity:</strong><br>
+    • Purchase of ${{amount}} at {{merchant_name}} in {{transaction_location}}<br>
+    • Attempted ATM withdrawal of ${{atm_amount}} at {{atm_location}}<br>
+    • Changed contact email to {{email_changed_to}}<br>
+    • Changed mailing address to {{address_changed_to}}<br>
+    • Device: {{device_info}} from IP {{device_ip}}
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} TD Bank Group. All rights reserved.<br>
+  TD Canada Trust — protecting your money 24/7.<br>
+  Reference: TD-CT-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  TD Canada Trust Fraud Protection has detected suspicious activity:
+
+  Your debit card has been temporarily blocked. Online banking may be limited.
+
+  Detected Activity:
+  - Purchase of ${{amount}} at {{merchant_name}} in {{transaction_location}}
+  - ATM withdrawal attempt of ${{atm_amount}} at {{atm_location}}
+  - Contact email changed to {{email_changed_to}}
+  - Address changed to {{address_changed_to}}
+  - Device: {{device_info}} from IP {{device_ip}}
+
+  Verify your identity now: {{phishing_url}}
+
+  © {{year}} TD Bank Group
+  Reference: TD-CT-{{campaign_id}}
+
+required_vars:
+  - target_name
+optional_vars:
+  - phishing_url
+  - amount
+  - merchant_name
+  - transaction_location
+  - atm_amount
+  - atm_location
+  - email_changed_to
+  - address_changed_to
+  - device_info
+  - device_ip
+  - year
+tracking_param: ref

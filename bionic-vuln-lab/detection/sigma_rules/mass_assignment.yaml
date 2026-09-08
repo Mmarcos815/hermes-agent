@@ -1,0 +1,44 @@
+title: Mass Assignment Vulnerability Detection
+id: d0e1f2a3-b4c5-6789-defa-890123456789
+status: experimental
+description: >
+  Detects mass assignment attacks where attackers inject unexpected fields
+  into request payloads to modify sensitive object properties such as
+  is_admin, role, password, or account balances that the application
+  does not intend to expose for user modification.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/vulnerabilities/Mass_Assignment_Vulnerability
+  - https://portswigger.net/web-security/api-testing/server-side-parameter-pollution
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_fields:
+    - 'is_admin'
+    - 'isAdmin'
+    - 'role'
+    - 'is_superuser'
+    - 'isSuperuser'
+    - 'account_balance'
+    - 'accountBalance'
+    - 'password'
+    - 'credit_limit'
+    - 'creditLimit'
+    - 'verified'
+    - 'is_verified'
+    - 'permissions'
+    - 'group'
+  selection_request:
+    cs-body|contains: selection_fields
+  condition: selection_request
+falsepositives:
+  - Legitimate admin interfaces updating user profiles
+  - API endpoints designed to accept role assignments
+  - User profile updates with verified status
+level: high
+tags:
+  - attack.privilege_escalation
+  - attack.t1068
+  - vulnerability.mass_assignment

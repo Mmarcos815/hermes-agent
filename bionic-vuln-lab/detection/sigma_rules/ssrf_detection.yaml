@@ -1,0 +1,43 @@
+title: Server-Side Request Forgery (SSRF) Detection
+id: d4e5f6a7-b8c9-0123-defa-234567890123
+status: experimental
+description: >
+  Detects SSRF attempts where an attacker forces the server to make requests
+  to internal network resources, cloud metadata endpoints, or private IP
+  ranges. Matches internal IPs, metadata URLs, and URL-encoded bypass attempts.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/attacks/Server_Side_Request_Forgery
+  - https://portswigger.net/web-security/ssrf
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_metadata:
+    - '169.254.169.254'
+    - 'metadata.google.internal'
+    - '100.100.100.200'
+    - 'metadata.azure.internal'
+  selection_internal:
+    - '10\.'
+    - '172\.(1[6-9]|2[0-9]|3[01])\.'
+    - '192\.168\.'
+    - '127\.0\.0\.1'
+    - 'localhost'
+    - '0\.0\.0\.0'
+  selection_request:
+    cs-uri-query|contains: selection_metadata
+    cs-uri-query|contains: selection_internal
+    cs-body|contains: selection_metadata
+    cs-body|contains: selection_internal
+  condition: selection_request
+falsepositives:
+  - Internal health check endpoints
+  - Legitimate API calls to internal microservices
+  - Monitoring tools querying internal metrics
+level: high
+tags:
+  - attack.exfiltration
+  - attack.t1059
+  - vulnerability.ssrf

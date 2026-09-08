@@ -1,0 +1,30 @@
+{
+  "misp": {
+    "enabled": false,
+    "url": "https://misp.example.com",
+    "api_key": "",
+    "verify_ssl": true,
+    "days_back": 7
+  },
+  "otx": {
+    "enabled": false,
+    "api_key": "",
+    "limit": 20,
+    "modified_since_days": 7
+  },
+  "abuse_ch": {
+    "enabled": true,
+    "urlhaus_limit": 100,
+    "malwarebazaar_limit": 100
+  },
+  "infrastructure": {
+    "domains": [],
+    "ips": [],
+    "file_hashes": []
+  },
+  "alerting": {
+    "console": true,
+    "file": true,
+    "min_severity": "medium"
+  }
+}

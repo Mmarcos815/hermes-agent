@@ -1,0 +1,8 @@
+alert tcp any any -> any any (msg:"XXE - XML External Entity Declaration"; flow:established,to_server; content:"<!ENTITY"; nocase; pcre:"/<!ENTITY\s+(\w+)\s+SYSTEM\s+[\"']/[i"; classtype:web-application-attack; sid:4000001; rev:1;)
+alert tcp any any -> any any (msg:"XXE - External Entity Reference in XML"; flow:established,to_server; pcre:"/<!ENTITY\s+\S+\s+PUBLIC\s/i"; classtype:web-application-attack; sid:4000002; rev:1;)
+alert tcp any any -> any any (msg:"XXE - SYSTEM Identifier in Request Body"; flow:established,to_server; content:"SYSTEM"; nocase; pcre:"/SYSTEM\s+[\"'](file|http|ftp|expect|php|data):\/\//i"; classtype:web-application-attack; sid:4000003; rev:1;)
+alert tcp any any -> any any (msg:"XXE - File Protocol in XML Entity"; flow:established,to_server; pcre:"/<!ENTITY\s+\S+\s+SYSTEM\s+[\"']file:\/\//i"; classtype:web-application-attack; sid:4000004; rev:1;)
+alert tcp any any -> any any (msg:"XXE - Parameter Entity Declaration"; flow:established,to_server; pcre:"/<!ENTITY\s+%\s+\S+\s+SYSTEM/i"; classtype:web-application-attack; sid:4000005; rev:1;)
+alert tcp any any -> any any (msg:"XXE - DOCTYPE with External Reference"; flow:established,to_server; content:"<!DOCTYPE"; nocase; pcre:"/<!DOCTYPE\s+\S+\s+\[.*<!ENTITY/i"; classtype:web-application-attack; sid:4000006; rev:1;)
+alert tcp any any -> any any (msg:"XXE - Base64 Encoded XXE Payload"; flow:established,to_server; pcre:"/PCFET0NUWVB|PCFFOVRZUE|PCVFTEVNRU5U|PCVOVElUWQ/"; classtype:web-application-attack; sid:4000007; rev:1;)
+alert tcp any any -> any any (msg:"XXE - XML with External DTD Reference"; flow:established,to_server; pcre:"/<!DOCTYPE\s+\S+\s+SYSTEM\s+[\"']https?:\/\//i"; classtype:web-application-attack; sid:4000008; rev:1;)

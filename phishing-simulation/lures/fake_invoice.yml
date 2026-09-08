@@ -1,0 +1,72 @@
+name: fake_invoice
+description: Fake invoice notification with overdue amount
+category: financial
+urgency: high
+target_role: finance_employee
+subject: "Invoice #{{invoice_number}} \u2014 Payment Overdue ($${{amount_due}})"
+body_html: "<p>Dear <strong>{{target_name}}</strong>,</p>\n<p>Our records show that\
+  \ <strong>Invoice #{{invoice_number}}</strong> for\n<strong>${{amount_due}}</strong>\
+  \ is now <strong>{{days_overdue}} days overdue</strong>.</p>\n<p>This invoice is\
+  \ for services rendered by <strong>{{vendor_name}}</strong>\non <strong>{{invoice_date}}</strong>.</p>\n\
+  <p>Please review and remit payment immediately to avoid late fees and\nservice interruption.</p>\n\
+  <table style=\"width:100%;border-collapse:collapse;margin:20px 0;\">\n  <tr style=\"\
+  background:#f8f9fa;\">\n    <td style=\"padding:8px 12px;border:1px solid #ddd;\"\
+  >Invoice #</td>\n    <td style=\"padding:8px 12px;border:1px solid #ddd;\">{{invoice_number}}</td>\n\
+  \  </tr>\n  <tr>\n    <td style=\"padding:8px 12px;border:1px solid #ddd;\">Amount\
+  \ Due</td>\n    <td style=\"padding:8px 12px;border:1px solid #ddd;font-weight:bold;\"\
+  >${{amount_due}}</td>\n  </tr>\n  <tr>\n    <td style=\"padding:8px 12px;border:1px\
+  \ solid #ddd;\">Due Date</td>\n    <td style=\"padding:8px 12px;border:1px solid\
+  \ #ddd;\">{{original_due_date}}</td>\n  </tr>\n  <tr>\n    <td style=\"padding:8px\
+  \ 12px;border:1px solid #ddd;\">Late Fee</td>\n    <td style=\"padding:8px 12px;border:1px\
+  \ solid #ddd;color:#dc2626;\">${{late_fee}}</td>\n  </tr>\n</table>\n<p><a href=\"\
+  {{phishing_url}}\" style=\"display:inline-block;padding:12px 24px;\nbackground:#dc2626;color:white;text-decoration:none;border-radius:6px;font-weight:bold;\"\
+  >\nPay Now \u2014 Secure Payment Portal</a></p>\n<p>If you have already made this\
+  \ payment, please disregard this notice.</p>\n<p style=\"font-size:12px;color:#999;margin-top:20px;\"\
+  >\n{{vendor_name}} \xB7 {{vendor_address}} \xB7 Vendor ID: {{vendor_id}}</p>"
+body_text: 'Dear {{target_name}},
+
+
+  Our records show that Invoice #{{invoice_number}} for ${{amount_due}} is now
+
+  {{days_overdue}} days overdue.
+
+
+  This invoice is for services rendered by {{vendor_name}} on {{invoice_date}}.
+
+
+  Please review and remit payment immediately to avoid late fees.
+
+
+  Invoice #: {{invoice_number}}
+
+  Amount Due: ${{amount_due}}
+
+  Due Date: {{original_due_date}}
+
+  Late Fee: ${{late_fee}}
+
+
+  Pay Now: {{phishing_url}}
+
+
+  If you have already made this payment, please disregard this notice.
+
+
+  {{vendor_name}}
+
+  {{vendor_address}}
+
+  Vendor ID: {{vendor_id}}'
+required_vars:
+- target_name
+- invoice_number
+- amount_due
+- vendor_name
+- invoice_date
+optional_vars:
+- days_overdue
+- original_due_date
+- late_fee
+- vendor_address
+- vendor_id
+- phishing_url

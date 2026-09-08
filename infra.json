@@ -1,0 +1,5 @@
+{
+  "domains": ["example.com", "test.local"],
+  "ips": ["42.224.64.204", "192.0.2.1"],
+  "file_hashes": ["d41d8cd98f00b204e9800998ecf8427e"]
+}

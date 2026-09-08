@@ -1,0 +1,354 @@
+Warning: This is a nightly build of Foundry. It is recommended to use the latest stable version. To mute this warning set `FOUNDRY_DISABLE_NIGHTLY_WARNING` in your environment. 
+
+
+
+                             _   _
+                            (_) | |
+      __ _   _ __   __   __  _  | |
+     / _` | | '_ \  \ \ / / | | | |
+    | (_| | | | | |  \ V /  | | | |
+     \__,_| |_| |_|   \_/   |_| |_|
+
+    1.6.0-nightly (5e88010a83 2026-04-28T06:53:18.002381900Z)
+    https://github.com/foundry-rs/foundry
+
+Available Accounts
+==================
+
+(0) 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 (10000.000000000000000000 ETH)
+(1) 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 (10000.000000000000000000 ETH)
+(2) 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC (10000.000000000000000000 ETH)
+(3) 0x90F79bf6EB2c4f870365E785982E1f101E93b906 (10000.000000000000000000 ETH)
+(4) 0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65 (10000.000000000000000000 ETH)
+(5) 0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc (10000.000000000000000000 ETH)
+(6) 0x976EA74026E726554dB657fA54763abd0C3a0aa9 (10000.000000000000000000 ETH)
+(7) 0x14dC79964da2C08b23698B3D3cc7Ca32193d9955 (10000.000000000000000000 ETH)
+(8) 0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f (10000.000000000000000000 ETH)
+(9) 0xa0Ee7A142d267C1f36714E4a8F75612F20a79720 (10000.000000000000000000 ETH)
+
+Private Keys
+==================
+
+(0) 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+(1) 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
+(2) 0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a
+(3) 0x7c852118294e51e653712a81e05800f419141751be58f605c371e15141b007a6
+(4) 0x47e179ec197488593b187f80a00eb0da91f1b9d0b13f8733639f19c30a34926a
+(5) 0x8b3a350cf5c34c9194ca85829a2df0ec3153be0318b5e2d3348e872092edffba
+(6) 0x92db14e403b83dfe3df233f83dfa3a0d7096f21ca9b0d6d6b8d88b2b4ec1564e
+(7) 0x4bbbf85ce3377467afe5d46f804f221813b2bb87f24d81f60f1fcdbf7cbf4356
+(8) 0xdbda1821b80551c9d65939329250298aa3472ba22feea921c0cf5d620ea67b97
+(9) 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+
+Wallet
+==================
+Mnemonic:          test test test test test test test test test test test junk
+Derivation path:   m/44'/60'/0'/0/
+
+
+Chain ID
+==================
+
+31337
+
+Base Fee
+==================
+
+0
+
+Gas Limit
+==================
+
+30000000
+
+Genesis Timestamp
+==================
+
+1788280233
+
+Genesis Number
+==================
+
+0
+
+Listening on 127.0.0.1:8545
+eth_blockNumber
+eth_chainId
+anvil_nodeInfo
+eth_getTransactionCount
+eth_getCode
+eth_gasPrice
+eth_chainId
+eth_chainId
+eth_getBlockByNumber
+eth_chainId
+eth_getBlockByNumber
+eth_getCode
+eth_getTransactionCount
+eth_getAccountInfo
+eth_getAccount
+eth_getBalance
+eth_getCode
+eth_getBalance
+eth_getTransactionCount
+eth_getCode
+eth_getCode
+eth_getBalance
+eth_getTransactionCount
+eth_getBalance
+eth_getCode
+eth_getTransactionCount
+eth_getCode
+eth_getTransactionCount
+eth_getBalance
+eth_getTransactionCount
+eth_getBalance
+eth_getCode
+eth_getBalance
+eth_getCode
+eth_getTransactionCount
+eth_getTransactionCount
+eth_getBalance
+eth_getCode
+eth_chainId
+eth_chainId
+eth_getBlockByNumber
+eth_chainId
+eth_gasPrice
+eth_chainId
+eth_chainId
+eth_feeHistory
+eth_getBlockByNumber
+eth_feeHistory
+eth_getBlockByNumber
+eth_sendRawTransaction
+eth_sendRawTransaction
+
+    Transaction: 0xe7f75007860c9b295c3252f1933c11f5bb72136afbd9f61e6707ec4e41795fea
+    Contract created: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+    Gas used: 754329
+
+    Block Number: 1
+    Block Hash: 0xe8686adaee2b47db3ed7fbbe2f6e9212060b63e5fd68a890a22ed1378d224d8e
+    Block Time: "Tue, 1 Sep 2026 16:30:44 +0000"
+
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+
+    Transaction: 0xa34ac35638ee729005397d9e56015f4bc61147a5caa3be31ebdd7b59d10bc358
+    Contract created: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+    Gas used: 481383
+
+    Block Number: 2
+    Block Hash: 0xa94c404aa794ea9bf53e56813fa8cc66d1561489eedc3a8856b1eafffe15b400
+    Block Time: "Tue, 1 Sep 2026 16:30:44 +0000"
+
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_chainId
+anvil_nodeInfo
+eth_chainId
+eth_getTransactionCount
+eth_call
+eth_chainId
+anvil_nodeInfo
+eth_chainId
+eth_getTransactionCount
+eth_call
+eth_chainId
+anvil_nodeInfo
+eth_chainId
+eth_getTransactionCount
+eth_call
+eth_chainId
+anvil_nodeInfo
+eth_chainId
+eth_getTransactionCount
+eth_call
+debug_traceTransaction
+eth_chainId
+anvil_nodeInfo
+eth_getTransactionCount
+eth_getCode
+eth_getBlockByNumber
+eth_gasPrice
+eth_chainId
+eth_chainId
+eth_chainId
+eth_getBlockByNumber
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getCode
+eth_getTransactionCount
+eth_getAccountInfo
+eth_getAccount
+eth_getBalance
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_chainId
+eth_chainId
+anvil_nodeInfo
+eth_getTransactionCount
+eth_getCode
+eth_gasPrice
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_getBlockByNumber
+eth_chainId
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getBalance
+eth_getTransactionCount
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_chainId
+eth_chainId
+anvil_nodeInfo
+eth_getTransactionCount
+eth_getCode
+eth_gasPrice
+eth_getBlockByNumber
+eth_chainId
+eth_chainId
+eth_getBlockByNumber
+eth_chainId
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getBalance
+eth_getCode
+eth_getTransactionCount
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_getAccountInfo
+eth_getAccount
+eth_getCode
+eth_chainId
+eth_chainId
+eth_getBlockByNumber
+eth_chainId
+eth_gasPrice
+eth_chainId
+eth_chainId
+eth_feeHistory
+eth_getBlockByNumber
+eth_feeHistory
+eth_getBlockByNumber
+eth_sendRawTransaction
+eth_sendRawTransaction
+
+    Transaction: 0xad3ca3d3a5bf3acd3637dc60fad5f40f6be6b1f3f09af71319cbea9f20eebbfd
+    Contract created: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+    Gas used: 754329
+
+    Block Number: 3
+    Block Hash: 0x918beb7aa3d408f445ce5a26814e016b847ea57c1d26c1ff33b38441ebad2e8a
+    Block Time: "Wed, 2 Sep 2026 23:08:57 +0000"
+
+
+    Transaction: 0x01c4ed73ba7ace9e2b790f758c24d769775fc547c4c74e5be8efa1fecb5bf201
+    Contract created: 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
+    Gas used: 540860
+
+    Block Number: 4
+    Block Hash: 0xaac1bf8494cee3d0b51efedbd7bacbd2173edf8f793eb8a1eaaa72ac99acc2a8
+    Block Time: "Wed, 2 Sep 2026 23:08:57 +0000"
+
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_getTransactionReceipt
+eth_blockNumber
+eth_chainId
+eth_getTransactionCount
+eth_sendTransaction
+eth_accounts
+
+    Transaction: 0xdaf908e4695ad53f22b7eea1a7f0316e6854fe4b6b99b62be474946b7d2c5cd1
+    Gas used: 21540
+
+    Block Number: 5
+    Block Hash: 0x6197dea01fed46c2a4d091102d467a0bddefcd6531f58dc8be5dd7ef5f95d691
+    Block Time: "Wed, 2 Sep 2026 23:24:36 +0000"
+
+eth_getTransactionCount
+eth_sendTransaction
+eth_accounts
+
+    Transaction: 0x0268e5f6a468790364377aaf7970c63dd62fc0ec032b21c023a13f1fd018dbba
+    Gas used: 21660
+
+    Block Number: 6
+    Block Hash: 0x946c0455c137ea1a70b26a0153891966b541478f7c3e46a74365ce44d0915295
+    Block Time: "Wed, 2 Sep 2026 23:24:40 +0000"
+
+eth_getTransactionCount
+eth_sendTransaction
+eth_accounts
+
+    Transaction: 0x3b3bbaacc652c87e5449002c6f5b9a652dad2755ff485cd2988bd0a4c53156b7
+    Gas used: 21660
+
+    Block Number: 7
+    Block Hash: 0x57af149ac12db28e9a631a5bb74e70d92cfd58828a5310ab7d5151e5cc6c85a1
+    Block Time: "Wed, 2 Sep 2026 23:24:44 +0000"
+
+eth_getTransactionReceipt
+eth_call
+eth_call
+eth_blockNumber
+eth_getBlockByNumber
+eth_getBlockByNumber
+eth_getTransactionReceipt
+eth_getBlockByNumber
+eth_getCode
+eth_call
+eth_call
+eth_getCode
+eth_blockNumber
+eth_call
+eth_call
+eth_chainId
+eth_accounts
+eth_getBlockByNumber
+eth_getCode
+eth_getTransactionCount
+eth_getTransactionCount
+eth_getTransactionCount
+eth_getTransactionCount
+eth_getTransactionCount
+eth_getTransactionCount
+eth_call
+eth_call

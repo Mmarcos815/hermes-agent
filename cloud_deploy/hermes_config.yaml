@@ -1,0 +1,53 @@
+# Hermes Cloud Deploy Configuration
+# Priority order: free first, then cheapest. Auto-fallback on failure.
+# Place API keys in .env (never commit secrets to this file).
+
+cloud_deploy:
+  fallback:
+    enabled: true
+    retry_attempts: 3
+    retry_delay_seconds: 5
+    cascade: true  # try next provider on failure
+
+  providers:
+    # === Priority 1: FREE ===
+    colab:
+      base_url: "http://localhost:8080/v1"  # Colab tunnel / ngrok
+      api_key: "${COLAB_API_KEY}"
+      model_name: "meta-llama/Llama-3.1-8B-Instruct"
+      cost_per_hour: 0.0
+      priority: 1
+      gpu: "T4"
+      max_concurrent: 1
+      notes: "Free tier; session-limited to 12h. Use ngrok or colab-tunnel for ingress."
+
+    # === Priority 2: CHEAP (spot/preemptible) ===
+    runpod:
+      base_url: "https://api.runpod.io/v2"
+      api_key: "${RUNPOD_API_KEY}"
+      model_name: "meta-llama/Llama-3.1-70B-Instruct"
+      cost_per_hour: 0.49  # RTX 4090 spot
+      priority: 2
+      gpu: "RTX 4090"
+      max_concurrent: 4
+      notes: "Serverless or spot pods. Cheapest paid GPU with good throughput."
+
+    # === Priority 3: MID-TIER ===
+    modal:
+      base_url: "https://api.modal.com/v1"
+      api_key: "${MODAL_API_KEY}"
+      model_name: "meta-llama/Llama-3.1-405B-Instruct"
+      cost_per_hour: 2.50  # A100-80G
+      priority: 3
+      gpu: "A100-80G"
+      max_concurrent: 8
+      notes: "Production-grade. Use for large models or high-throughput workloads."
+
+  # Default provider when none specified
+  default_provider: "colab"
+
+  # Health check settings
+  health_check:
+    interval_seconds: 30
+    timeout_seconds: 10
+    unhealthy_threshold: 3  # consecutive failures before marking unhealthy

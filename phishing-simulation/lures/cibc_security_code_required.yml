@@ -1,0 +1,61 @@
+name: cibc_security_code_required
+description: "CIBC — security code / identity verification required"
+category: banking
+urgency: critical
+target_role: any
+subject: "🔐 CIBC Security — Identity verification code required for your account"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>CIBC requires you to <strong>verify your identity</strong> before accessing
+  your account online. A security code has been generated for your account.</p>
+  <p>Please enter the following security code to continue:</p>
+  <div style="background:#e8f0fe;border:2px solid #003b71;border-radius:8px;
+       padding:20px;margin:16px 0;text-align:center;">
+    <span style="font-size:36px;font-weight:800;color:#003b71;letter-spacing:4px;">
+      {{security_code}}
+    </span>
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#003b71;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Enter Security Code & Continue →</a></p>
+  <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#991b1b;">
+    <strong>Your CIBC Account:</strong><br>
+    Account: ****{{account_last4}}<br>
+    Last login: {{last_login}} from {{last_login_location}}<br>
+    Security code expires: {{code_expiry}}<br>
+    If you did not request this code, contact CIBC immediately.
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Canadian Imperial Bank of Commerce.<br>
+  CIBC will never ask for your security codes via email.<br>
+  Reference: CIBC-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  CIBC requires identity verification before you can access online banking.
+
+  Security Code: {{security_code}}
+  Your Account: ****{{account_last4}}
+  Last Login: {{last_login}} from {{last_login_location}}
+  Code Expires: {{code_expiry}}
+
+  Enter code and continue: {{phishing_url}}
+
+  If you did not request this code, contact CIBC immediately.
+
+  © {{year}} CIBC
+  Reference: CIBC-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - security_code
+  - code_expiry
+optional_vars:
+  - phishing_url
+  - account_last4
+  - last_login
+  - last_login_location
+  - year
+tracking_param: ref

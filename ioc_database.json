@@ -1,0 +1,1032 @@
+{
+  "url:http://42.224.64.204:53853/i": {
+    "value": "http://42.224.64.204:53853/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913668",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-08 00:36:19",
+    "severity": "high"
+  },
+  "url:http://61.52.179.224:50718/i": {
+    "value": "http://61.52.179.224:50718/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913667",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 23:59:19",
+    "severity": "high"
+  },
+  "url:http://123.12.27.20:60566/i": {
+    "value": "http://123.12.27.20:60566/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913666",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 23:39:21",
+    "severity": "high"
+  },
+  "url:http://61.52.179.224:50718/bin.sh": {
+    "value": "http://61.52.179.224:50718/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913665",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 23:35:12",
+    "severity": "high"
+  },
+  "url:http://59.96.136.164:52219/i": {
+    "value": "http://59.96.136.164:52219/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913664",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 23:33:25",
+    "severity": "high"
+  },
+  "url:http://210.208.111.234:49349/i": {
+    "value": "http://210.208.111.234:49349/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913663",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,arm,elf,Mozi",
+    "date_added": "2026-09-07 23:23:20",
+    "severity": "high"
+  },
+  "url:http://123.7.237.204:50496/i": {
+    "value": "http://123.7.237.204:50496/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913662",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 23:11:20",
+    "severity": "high"
+  },
+  "url:http://123.7.237.204:50496/bin.sh": {
+    "value": "http://123.7.237.204:50496/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913661",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 22:58:18",
+    "severity": "high"
+  },
+  "url:http://182.119.160.167:51257/i": {
+    "value": "http://182.119.160.167:51257/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913660",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 22:29:17",
+    "severity": "high"
+  },
+  "url:http://115.57.251.81:37477/i": {
+    "value": "http://115.57.251.81:37477/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913659",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 22:14:24",
+    "severity": "high"
+  },
+  "url:http://125.44.215.218:54441/bin.sh": {
+    "value": "http://125.44.215.218:54441/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913658",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 22:13:24",
+    "severity": "high"
+  },
+  "url:http://42.85.187.243:40832/i": {
+    "value": "http://42.85.187.243:40832/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913657",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 22:13:15",
+    "severity": "high"
+  },
+  "url:http://105.184.248.13:58983/i": {
+    "value": "http://105.184.248.13:58983/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913656",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,arm,elf,Mozi",
+    "date_added": "2026-09-07 22:12:25",
+    "severity": "high"
+  },
+  "url:http://115.57.251.81:37477/bin.sh": {
+    "value": "http://115.57.251.81:37477/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913655",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 22:06:25",
+    "severity": "high"
+  },
+  "url:http://42.85.187.243:40832/bin.sh": {
+    "value": "http://42.85.187.243:40832/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913654",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 21:47:24",
+    "severity": "high"
+  },
+  "url:http://105.184.248.13:58983/bin.sh": {
+    "value": "http://105.184.248.13:58983/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913653",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,arm,elf,Mozi",
+    "date_added": "2026-09-07 21:45:25",
+    "severity": "high"
+  },
+  "url:http://123.11.9.52:42487/i": {
+    "value": "http://123.11.9.52:42487/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913651",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 21:04:27",
+    "severity": "high"
+  },
+  "url:http://123.11.9.52:42487/bin.sh": {
+    "value": "http://123.11.9.52:42487/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913652",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-07 21:04:27",
+    "severity": "high"
+  },
+  "url:http://87.120.196.16:889/agustin51": {
+    "value": "http://87.120.196.16:889/agustin51",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913650",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "elf,iot,mirai",
+    "date_added": "2026-09-07 19:07:20",
+    "severity": "high"
+  },
+  "url:http://91.92.242.236/files-129312398/files/file_d428ecd0038c581e.exe": {
+    "value": "http://91.92.242.236/files-129312398/files/file_d428ecd0038c581e.exe",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913649",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "c2-monitor-auto,dropped-by-amadey",
+    "date_added": "2026-09-07 19:07:08",
+    "severity": "high"
+  },
+  "url:http://45.61.150.229:8080/pear.exe": {
+    "value": "http://45.61.150.229:8080/pear.exe",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913648",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "45-61-150-229-8080,exe,ua-wget",
+    "date_added": "2026-09-07 19:05:08",
+    "severity": "high"
+  },
+  "url:http://45.61.150.229:8080/dlr.vbs": {
+    "value": "http://45.61.150.229:8080/dlr.vbs",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913646",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "45-61-150-229-8080,ua-wget,vbs",
+    "date_added": "2026-09-07 19:05:07",
+    "severity": "high"
+  },
+  "url:http://45.61.150.229:8080/dl.hta": {
+    "value": "http://45.61.150.229:8080/dl.hta",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913647",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "45-61-150-229-8080,hta,ua-wget",
+    "date_added": "2026-09-07 19:05:07",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.ppc": {
+    "value": "http://iloveboats.st:8081/titan.ppc",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913644",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:53:19",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.mips": {
+    "value": "http://quietsurfwi.help:8081/titan.mips",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913645",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:53:19",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.mipsel": {
+    "value": "http://quietsurfwi.help:8081/titan.mipsel",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913643",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:53:17",
+    "severity": "high"
+  },
+  "url:http://94.154.43.192:8081/titan.arm4tl": {
+    "value": "http://94.154.43.192:8081/titan.arm4tl",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913630",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.sh4": {
+    "value": "http://94.154.43.192:8081/titan.sh4",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913631",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.arm6": {
+    "value": "http://94.154.43.192:8081/titan.arm6",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913632",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.ppc440": {
+    "value": "http://94.154.43.192:8081/titan.ppc440",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913633",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.m68k": {
+    "value": "http://94.154.43.192:8081/titan.m68k",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913634",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.ppc": {
+    "value": "http://94.154.43.192:8081/titan.ppc",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913635",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.x32": {
+    "value": "http://94.154.43.192:8081/titan.x32",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913636",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.x64-test": {
+    "value": "http://94.154.43.192:8081/titan.x64-test",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913637",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.mips": {
+    "value": "http://94.154.43.192:8081/titan.mips",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913638",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.mipsel": {
+    "value": "http://94.154.43.192:8081/titan.mipsel",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913639",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.arm7": {
+    "value": "http://94.154.43.192:8081/titan.arm7",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913640",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.arm4l": {
+    "value": "http://94.154.43.192:8081/titan.arm4l",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913641",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.arm5": {
+    "value": "http://94.154.43.192:8081/titan.arm5",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913642",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,elf,ua-wget",
+    "date_added": "2026-09-07 18:53:16",
+    "severity": "medium"
+  },
+  "url:http://192.159.99.221/bin/screenconnect.clientsetup.exe": {
+    "value": "http://192.159.99.221/bin/screenconnect.clientsetup.exe",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913629",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "192-159-99-221,connectwise,exe,ua-wget",
+    "date_added": "2026-09-07 18:53:08",
+    "severity": "medium"
+  },
+  "url:http://192.159.99.221/bin/support.client.exe": {
+    "value": "http://192.159.99.221/bin/support.client.exe",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913628",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "192-159-99-221,connectwise,exe,ua-wget",
+    "date_added": "2026-09-07 18:53:07",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.x86": {
+    "value": "http://94.154.43.192:8081/titan.x86",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913627",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,ua-wget",
+    "date_added": "2026-09-07 18:53:05",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.x86_32": {
+    "value": "http://94.154.43.192:8081/titan.x86_32",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913624",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,ua-wget",
+    "date_added": "2026-09-07 18:53:04",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.x64": {
+    "value": "http://94.154.43.192:8081/titan.x64",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913625",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,ua-wget",
+    "date_added": "2026-09-07 18:53:04",
+    "severity": "medium"
+  },
+  "url:http://94.154.43.192:8081/titan.x86_64": {
+    "value": "http://94.154.43.192:8081/titan.x86_64",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913626",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "94-154-43-192-8081,ua-wget",
+    "date_added": "2026-09-07 18:53:04",
+    "severity": "medium"
+  },
+  "url:http://www.iloveboats.st:8081/titan.ppc440": {
+    "value": "http://www.iloveboats.st:8081/titan.ppc440",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913623",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,ua-wget,www-iloveboats-st-8081",
+    "date_added": "2026-09-07 18:37:59",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.ppc440": {
+    "value": "http://quietsurfwi.help:8081/titan.ppc440",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913621",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:57",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.ppc440": {
+    "value": "http://94.154.43.95:8081/titan.ppc440",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913622",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:57",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/bash.sh": {
+    "value": "http://iloveboats.st:8081/bash.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913620",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "botnetdomain,iloveboats-st-8081,sh,ua-wget",
+    "date_added": "2026-09-07 18:37:53",
+    "severity": "medium"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.arm7": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.arm7",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913619",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:52",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.m68k": {
+    "value": "http://iloveboats.st:8081/titan.m68k",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913617",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:51",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.i586": {
+    "value": "http://94.154.43.95:8081/titan.i586",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913618",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:51",
+    "severity": "high"
+  },
+  "url:http://www.iloveboats.st:8081/titan.sh4": {
+    "value": "http://www.iloveboats.st:8081/titan.sh4",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913616",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,ua-wget,www-iloveboats-st-8081",
+    "date_added": "2026-09-07 18:37:49",
+    "severity": "high"
+  },
+  "url:http://www.iloveboats.st:8081/titan.arm4l": {
+    "value": "http://www.iloveboats.st:8081/titan.arm4l",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913609",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,ua-wget,www-iloveboats-st-8081",
+    "date_added": "2026-09-07 18:37:48",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.x32": {
+    "value": "http://quietsurfwi.help:8081/titan.x32",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913610",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:48",
+    "severity": "medium"
+  },
+  "url:http://iloveboats.st:8081/titan.x64-test": {
+    "value": "http://iloveboats.st:8081/titan.x64-test",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913611",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:48",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.ppc440": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.ppc440",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913612",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:48",
+    "severity": "high"
+  },
+  "url:http://www.iloveboats.st:8081/titan.x64-test": {
+    "value": "http://www.iloveboats.st:8081/titan.x64-test",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913613",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,ua-wget,www-iloveboats-st-8081",
+    "date_added": "2026-09-07 18:37:48",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.m68k": {
+    "value": "http://94.154.43.95:8081/titan.m68k",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913614",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:48",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.arm5": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.arm5",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913615",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:48",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.x64-test": {
+    "value": "http://quietsurfwi.help:8081/titan.x64-test",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913607",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:46",
+    "severity": "high"
+  },
+  "url:http://www.iloveboats.st:8081/titan.mips": {
+    "value": "http://www.iloveboats.st:8081/titan.mips",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913608",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,ua-wget,www-iloveboats-st-8081",
+    "date_added": "2026-09-07 18:37:46",
+    "severity": "high"
+  },
+  "url:http://www.iloveboats.st:8081/bash.sh": {
+    "value": "http://www.iloveboats.st:8081/bash.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913605",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "botnetdomain,sh,ua-wget,www-iloveboats-st-8081",
+    "date_added": "2026-09-07 18:37:43",
+    "severity": "medium"
+  },
+  "url:http://www.iloveboats.st:8081/titan.mipsel": {
+    "value": "http://www.iloveboats.st:8081/titan.mipsel",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913606",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,ua-wget,www-iloveboats-st-8081",
+    "date_added": "2026-09-07 18:37:43",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.arm4tl": {
+    "value": "http://quietsurfwi.help:8081/titan.arm4tl",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913600",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:41",
+    "severity": "medium"
+  },
+  "url:http://aura.tcplegit.space/l": {
+    "value": "http://aura.tcplegit.space/l",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913601",
+    "info": "Threat: malware_download; Status: offline",
+    "tags": "aura-tcplegit-space,botnetdomain,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:41",
+    "severity": "medium"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.m68k": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.m68k",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913602",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:41",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.arm6": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.arm6",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913603",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:41",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.arm6": {
+    "value": "http://quietsurfwi.help:8081/titan.arm6",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913604",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:41",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.mipsel": {
+    "value": "http://94.154.43.95:8081/titan.mipsel",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913599",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:37",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.x64": {
+    "value": "http://94.154.43.95:8081/titan.x64",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913597",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:35",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.x64-test": {
+    "value": "http://94.154.43.95:8081/titan.x64-test",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913598",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:35",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.arm6": {
+    "value": "http://iloveboats.st:8081/titan.arm6",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913570",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.arm4l": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.arm4l",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913571",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.x64-test": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.x64-test",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913572",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.x32": {
+    "value": "http://94.154.43.95:8081/titan.x32",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913573",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.ppc": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.ppc",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913574",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.arm5": {
+    "value": "http://quietsurfwi.help:8081/titan.arm5",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913575",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.ppc440": {
+    "value": "http://iloveboats.st:8081/titan.ppc440",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913576",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.i486": {
+    "value": "http://94.154.43.95:8081/titan.i486",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913577",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.sh4": {
+    "value": "http://iloveboats.st:8081/titan.sh4",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913578",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.x32": {
+    "value": "http://iloveboats.st:8081/titan.x32",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913579",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.x32": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.x32",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913580",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.mipsel": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.mipsel",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913581",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.mipsel": {
+    "value": "http://iloveboats.st:8081/titan.mipsel",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913582",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.sh4": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.sh4",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913583",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.arm4l": {
+    "value": "http://iloveboats.st:8081/titan.arm4l",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913584",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.mips": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.mips",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913585",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://mail.quietsurfwi.help:8081/titan.arm4tl": {
+    "value": "http://mail.quietsurfwi.help:8081/titan.arm4tl",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913586",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mail-quietsurfwi-help-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://iloveboats.st:8081/titan.mips": {
+    "value": "http://iloveboats.st:8081/titan.mips",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913587",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,iloveboats-st-8081,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.arm6": {
+    "value": "http://94.154.43.95:8081/titan.arm6",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913588",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.sh4": {
+    "value": "http://quietsurfwi.help:8081/titan.sh4",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913589",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.mips": {
+    "value": "http://94.154.43.95:8081/titan.mips",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913590",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.arm4l": {
+    "value": "http://94.154.43.95:8081/titan.arm4l",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913591",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.arm5": {
+    "value": "http://94.154.43.95:8081/titan.arm5",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913592",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.arm7": {
+    "value": "http://94.154.43.95:8081/titan.arm7",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913593",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.ppc": {
+    "value": "http://94.154.43.95:8081/titan.ppc",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913594",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.arm4tl": {
+    "value": "http://94.154.43.95:8081/titan.arm4tl",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913595",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://94.154.43.95:8081/titan.sh4": {
+    "value": "http://94.154.43.95:8081/titan.sh4",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913596",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "94-154-43-95-8081,elf,mirai,ua-wget",
+    "date_added": "2026-09-07 18:37:34",
+    "severity": "high"
+  },
+  "url:http://quietsurfwi.help:8081/titan.m68k": {
+    "value": "http://quietsurfwi.help:8081/titan.m68k",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913568",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "botnetdomain,elf,mirai,quietsurfwi-help-8081,ua-wget",
+    "date_added": "2026-09-07 18:37:33",
+    "severity": "high"
+  },
+  "url:http://222.137.235.158:37181/bin.sh": {
+    "value": "http://222.137.235.158:37181/bin.sh",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913671",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-08 00:43:21",
+    "severity": "high"
+  },
+  "url:http://196.206.103.13:53377/i": {
+    "value": "http://196.206.103.13:53377/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913670",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-08 00:41:23",
+    "severity": "high"
+  },
+  "url:http://123.12.225.110:40931/i": {
+    "value": "http://123.12.225.110:40931/i",
+    "type": "url",
+    "source": "urlhaus",
+    "source_id": "3913669",
+    "info": "Threat: malware_download; Status: online",
+    "tags": "32-bit,elf,mips,Mozi",
+    "date_added": "2026-09-08 00:41:22",
+    "severity": "high"
+  }
+}

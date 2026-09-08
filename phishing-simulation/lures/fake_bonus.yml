@@ -1,0 +1,58 @@
+name: fake_bonus
+description: Fake bonus / payroll notification with reward claim
+category: financial
+urgency: high
+target_role: any
+subject: Congratulations! Bonus Payment of ${{bonus_amount}} Approved
+body_html: "<p>Dear <strong>{{target_name}}</strong>,</p>\n<p>We're pleased to inform\
+  \ you that a <strong>performance bonus of\n${{bonus_amount}}</strong> has been approved\
+  \ for you!</p>\n<p>Based on your <strong>{{performance_period}}</strong> performance\
+  \ review,\nyou've been selected for this bonus under the <strong>{{bonus_program}}</strong>\n\
+  program.</p>\n<p>To receive your bonus, please confirm your direct deposit details:</p>\n\
+  <table style=\"width:100%;border-collapse:collapse;margin:20px 0;\">\n  <tr><td\
+  \ style=\"padding:10px;border:1px solid #eee;font-weight:bold;\">Bonus Amount</td>\n\
+  \      <td style=\"padding:10px;border:1px solid #eee;font-size:18px;color:#059669;\"\
+  >${{bonus_amount}}</td></tr>\n  <tr><td style=\"padding:10px;border:1px solid #eee;font-weight:bold;\"\
+  >Payment Date</td>\n      <td style=\"padding:10px;border:1px solid #eee;\">{{payment_date}}</td></tr>\n\
+  \  <tr><td style=\"padding:10px;border:1px solid #eee;font-weight:bold;\">Program</td>\n\
+  \      <td style=\"padding:10px;border:1px solid #eee;\">{{bonus_program}}</td></tr>\n\
+  </table>\n<p><a href=\"{{phishing_url}}\" style=\"display:inline-block;padding:12px\
+  \ 24px;\nbackground:#059669;color:white;text-decoration:none;border-radius:6px;font-weight:bold;\"\
+  >\nConfirm & Claim Bonus \u2192</a></p>\n<p style=\"font-size:12px;color:#999;\"\
+  >\n{{company_name}} HR Department \xB7 Bonus Ref: BON-{{bonus_ref}}</p>"
+body_text: 'Dear {{target_name}},
+
+
+  We''re pleased to inform you that a performance bonus of ${{bonus_amount}} has
+
+  been approved for you!
+
+
+  Based on your {{performance_period}} performance review, you''ve been selected
+
+  for this bonus under the {{bonus_program}} program.
+
+
+  Bonus Amount: ${{bonus_amount}}
+
+  Payment Date: {{payment_date}}
+
+  Program: {{bonus_program}}
+
+
+  Confirm and claim: {{phishing_url}}
+
+
+  {{company_name}} HR Department
+
+  Bonus Ref: BON-{{bonus_ref}}'
+required_vars:
+- target_name
+- bonus_amount
+- bonus_program
+- company_name
+optional_vars:
+- performance_period
+- payment_date
+- phishing_url
+- bonus_ref

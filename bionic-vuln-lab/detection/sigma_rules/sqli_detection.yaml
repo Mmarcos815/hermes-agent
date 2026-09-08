@@ -1,0 +1,41 @@
+title: SQL Injection Pattern Detection
+id: b2c3d4e5-f6a7-8901-bcde-f12345678901
+status: experimental
+description: >
+  Detects SQL injection attempts in HTTP requests by matching common SQLi
+  patterns including UNION SELECT, OR-based tautologies, comment injection,
+  and stacked queries in URI parameters and POST bodies.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/attacks/SQL_Injection
+  - https://portswigger.net/web-security/sql-injection
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_keywords:
+    - 'union\s+select'
+    - 'or\s+1=1'
+    - "';--"
+    - '1\s*or\s*1'
+    - 'sleep\s*\('
+    - 'benchmark\s*\('
+    - 'information_schema'
+    - 'into\s+outfile'
+    - 'load_file\s*\('
+    - 'extractvalue\s*\('
+    - 'updatexml\s*\('
+  selection_request:
+    cs-uri-query|contains: selection_keywords
+    cs-body|contains: selection_keywords
+  condition: selection_request
+falsepositives:
+  - Legitimate search queries containing SQL-like keywords
+  - Application debug logs with SQL statements
+  - Security scanning tools used by authorized penetration testers
+level: critical
+tags:
+  - attack.initial_access
+  - attack.t1190
+  - vulnerability.sqli

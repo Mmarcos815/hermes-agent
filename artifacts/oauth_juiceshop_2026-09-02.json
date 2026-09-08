@@ -1,0 +1,28 @@
+{
+  "vuln_class": "OWASP API #2 (Broken Auth) / OAuth",
+  "target": "OWASP Juice Shop",
+  "endpoint": "http://localhost:5016",
+  "findings_count": 4,
+  "findings": [
+    {
+      "vuln": "User enumeration via login error",
+      "email_tested": "admin@juice-sh.op",
+      "response": "Invalid email or password."
+    },
+    {
+      "vuln": "User enumeration via login error",
+      "email_tested": "nonexistent@bionic.test",
+      "response": "Invalid email or password."
+    },
+    {
+      "vuln": "Admin endpoint accessible: /rest/admin/application-version",
+      "status": 200,
+      "body_preview": "{\"version\":\"20.2.0\"}"
+    },
+    {
+      "vuln": "Admin endpoint accessible: /rest/continue-code",
+      "status": 200,
+      "body_preview": "{\"continueCode\":\"YjWMVeP3kgjaY2WX69ERDNmpn78GlOS23dVqO5xovBrbyZK1Jzw4LMlQbrNw\"}"
+    }
+  ]
+}

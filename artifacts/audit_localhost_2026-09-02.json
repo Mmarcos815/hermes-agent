@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "audit_timestamp": "2026-09-02T17:30:42Z",
+    "target_host": "127.0.0.1",
+    "target_url": "http://localhost:11434",
+    "contract_target": "C:\\Users\\mobil\\orca\\projects\\my 1st\\bionic-sovereign\\src\\SovereignBionicCurrency.sol",
+    "auditor": "Bionic Red Team Engine"
+  },
+  "findings": [
+    {
+      "severity": "MEDIUM",
+      "title": "Missing Critical HTTP Security Headers (6 detected)",
+      "detail": "Missing: Strict-Transport-Security, Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy",
+      "remediation": "Configure HSTS, CSP, X-Frame-Options, and X-Content-Type-Options headers."
+    }
+  ],
+  "summary": {
+    "total_findings": 1,
+    "critical_count": 0,
+    "high_count": 0,
+    "medium_count": 1,
+    "low_info_count": 0,
+    "scan_duration_sec": 1.05,
+    "overall_status": "SECURITY_POSTURE_EVALUATED"
+  },
+  "network_recon": {
+    "target": "127.0.0.1",
+    "resolved_ip": "127.0.0.1",
+    "scanned_ports_count": 7,
+    "open_ports_count": 0,
+    "open_ports": [],
+    "timestamp": "2026-09-02T17:30:43Z"
+  },
+  "http_audit": {
+    "url": "http://localhost:11434",
+    "status_code": 200,
+    "response_time_ms": 38.28,
+    "server": "Undisclosed",
+    "security_headers": {
+      "Strict-Transport-Security": "MISSING",
+      "Content-Security-Policy": "MISSING",
+      "X-Frame-Options": "MISSING",
+      "X-Content-Type-Options": "MISSING",
+      "Referrer-Policy": "MISSING",
+      "Permissions-Policy": "MISSING"
+    },
+    "missing_security_headers_count": 6,
+    "raw_headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Date": "Wed, 02 Sep 2026 17:30:43 GMT",
+      "Content-Length": "17",
+      "Connection": "close"
+    },
+    "body_preview": "Ollama is running"
+  },
+  "endpoint_probe": {
+    "base_url": "http://localhost:11434",
+    "tested_paths": 4,
+    "discovered_endpoints": []
+  },
+  "contract_audit": {
+    "target_file": "C:\\Users\\mobil\\orca\\projects\\my 1st\\bionic-sovereign\\src\\SovereignBionicCurrency.sol",
+    "total_findings": 0,
+    "findings": [],
+    "audit_verdict": "CLEAN"
+  }
+}

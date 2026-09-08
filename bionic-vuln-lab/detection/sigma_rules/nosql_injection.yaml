@@ -1,0 +1,42 @@
+title: NoSQL Injection Detection
+id: f6a7b8c9-d0e1-2345-fabc-456789012345
+status: experimental
+description: >
+  Detects NoSQL injection attempts targeting MongoDB, CouchDB, and other
+  NoSQL databases. Matches operator injection patterns such as $ne, $gt,
+  $regex, $where, and JSON-based query manipulation in request parameters.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/attacks/NoSQL_injection
+  - https://portswigger.net/web-security/nosql-injection
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_operators:
+    - '\$ne'
+    - '\$gt'
+    - '\$lt'
+    - '\$gte'
+    - '\$lte'
+    - '\$regex'
+    - '\$where'
+    - '\$exists'
+    - '\$or'
+    - '\$and'
+    - '\$nin'
+    - '\$not'
+  selection_request:
+    cs-uri-query|contains: selection_operators
+    cs-body|contains: selection_operators
+  condition: selection_request
+falsepositives:
+  - Legitimate API queries using NoSQL operators
+  - Application frameworks that pass operators in requests
+  - Developer debugging with query operators
+level: high
+tags:
+  - attack.initial_access
+  - attack.t1190
+  - vulnerability.nosql_injection

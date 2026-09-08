@@ -1,0 +1,50 @@
+{"prompt": "Write an executive summary for a penetration test that found critical SQL injection in the customer portal.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Draft an executive summary for a web app security assessment identifying XSS vulnerabilities in authentication flows.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Create an executive summary for a network segmentation review revealing flat network topology risks.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Write an executive summary for a cloud security audit exposing misconfigured S3 buckets with PII.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Draft an executive summary for a red team exercise that compromised domain admin via phishing.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Write an executive summary for a code review identifying hardcoded credentials in production repos.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Create an executive summary for an API security assessment finding broken object-level authorization.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Draft an executive summary for a mobile app assessment with insecure data storage and weak crypto.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Executive Summary"}}
+{"prompt": "Write a technical finding report for a stored XSS vulnerability in the user profile name field.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Draft a technical finding for a time-based blind SQL injection in the search API endpoint.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Write a technical finding for insecure deserialization in a Java backend service.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Create a technical finding for a server-side request forgery vulnerability in the webhook handler.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Draft a technical finding for a path traversal flaw in the file download function.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Write a technical finding for weak password policy enforcement allowing 4-character passwords.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Create a technical finding for missing CSRF tokens on account settings update endpoint.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Draft a technical finding for information disclosure via verbose error messages exposing stack traces.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Write a technical finding for unencrypted HTTP traffic transmitting session tokens in cleartext.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Create a technical finding for privilege escalation via IDOR on the admin user listing API.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Draft a technical finding for JWT tokens missing signature verification on the server side.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Write a technical finding for excessive data exposure returning full user objects in API responses.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Create a technical finding for missing rate limiting on the password reset endpoint enabling brute force.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Draft a technical finding for LDAP injection in the corporate directory login form.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Write a technical finding for XML external entity injection in the document upload parser.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Technical Findings"}}
+{"prompt": "Create a proof of concept report demonstrating remote code execution via log4shell on internal server.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Draft a PoC report for session hijacking via XSS stealing admin cookies on the dashboard.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Write a PoC report showing credential harvesting via a cloned Office 365 login page.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Create a PoC report for DNS exfiltration bypassing network egress filters.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Draft a PoC report for pass-the-hash attack moving laterally across Windows workstations.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Write a PoC report for exploiting a race condition in the coupon redemption API.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Create a PoC report for a supply chain attack vector via a compromised npm dependency.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Draft a PoC report for bypassing MFA via session fixation on the SSO provider.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Proof of Concept"}}
+{"prompt": "Write remediation guidance for SQL injection vulnerabilities found in legacy PHP application.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Draft remediation steps for cross-site scripting issues in a React single-page application.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Create remediation plan for hardening Kubernetes cluster RBAC and network policies.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Write remediation guidance for misconfigured AWS IAM roles with excessive permissions.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Draft remediation for weak TLS configurations on production web servers.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Create remediation plan for implementing Content Security Policy headers across all apps.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Write remediation for missing WAF rules allowing injection attacks against the API gateway.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Draft remediation steps for securing Docker container runtime and image supply chain.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Create remediation plan for enforcing MFA across all administrative interfaces and VPN access.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Write remediation guidance for rotating all exposed API keys and implementing secrets management.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Draft remediation for patching critical CVEs on end-of-life operating systems.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Create remediation plan for implementing proper logging and SIEM alerting for auth failures.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Remediation"}}
+{"prompt": "Write a risk assessment report summarizing overall security posture for the e-commerce platform.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Risk Assessment"}}
+{"prompt": "Draft a risk matrix report mapping likelihood versus impact for identified vulnerabilities.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Risk Assessment"}}
+{"prompt": "Create a threat model report for a new microservices architecture deployment.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Risk Assessment"}}
+{"prompt": "Write an incident response report for a ransomware attack that encrypted file shares.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Incident Response"}}
+{"prompt": "Draft an incident response report for a data breach exposing customer payment card data.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Incident Response"}}
+{"prompt": "Create a vulnerability management report tracking remediation SLAs and patching metrics.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Vulnerability Management"}}
+{"prompt": "Write a compliance gap report mapping current controls to PCI DSS requirements.", "completion": "", "metadata": {"domain": "Reporting", "subcategory": "Compliance"}}

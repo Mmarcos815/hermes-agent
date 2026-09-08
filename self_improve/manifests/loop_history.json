@@ -1,0 +1,88 @@
+{
+  "loop_runs": [
+    {
+      "iteration": 1,
+      "timestamp": "2026-09-05T21:17:23.773599+00:00",
+      "test_cases": 8,
+      "mean_score": 0.6688,
+      "min_score": 0.3375,
+      "max_score": 1.3875,
+      "weaknesses": {
+        "overall_average": 0.6688,
+        "false_negatives": 4,
+        "format_failures": 0,
+        "systematic_issues": []
+      },
+      "new_examples": 19,
+      "train_manifest": {
+        "status": "data_prepared",
+        "examples_added": 19,
+        "data_hash": "0be139ce33634894",
+        "training_file": "C:\\Users\\mobil\\orca\\projects\\my 1st\\grpo_train_ready.jsonl",
+        "iteration_file": "C:\\Users\\mobil\\orca\\projects\\my 1st\\self_improve\\data\\iteration_1788643043.jsonl",
+        "total_training_samples": 982,
+        "timestamp": "2026-09-05T21:17:23.828568+00:00",
+        "next_step": "Run the GRPO training pipeline with the updated training set: python grpo_train.py --stage grpo"
+      }
+    },
+    {
+      "iteration": 2,
+      "timestamp": "2026-09-05T21:17:23.828568+00:00",
+      "test_cases": 8,
+      "mean_score": 0.8563,
+      "min_score": 0.1875,
+      "max_score": 1.4375,
+      "weaknesses": {
+        "overall_average": 0.8563,
+        "false_negatives": 1,
+        "format_failures": 1,
+        "systematic_issues": []
+      },
+      "new_examples": 10,
+      "train_manifest": {
+        "status": "data_prepared",
+        "examples_added": 10,
+        "data_hash": "558d432b7a1c67fb",
+        "training_file": "C:\\Users\\mobil\\orca\\projects\\my 1st\\grpo_train_ready.jsonl",
+        "iteration_file": "C:\\Users\\mobil\\orca\\projects\\my 1st\\self_improve\\data\\iteration_1788643043.jsonl",
+        "total_training_samples": 992,
+        "timestamp": "2026-09-05T21:17:23.844930+00:00",
+        "next_step": "Run the GRPO training pipeline with the updated training set: python grpo_train.py --stage grpo"
+      }
+    },
+    {
+      "iteration": 3,
+      "timestamp": "2026-09-05T21:17:23.844930+00:00",
+      "test_cases": 8,
+      "mean_score": 0.9313,
+      "min_score": 0.3375,
+      "max_score": 1.4375,
+      "weaknesses": {
+        "overall_average": 0.9313,
+        "false_negatives": 3,
+        "format_failures": 0,
+        "systematic_issues": [
+          {
+            "type": "domain_underperformance",
+            "domain": "cryptography",
+            "average_score": 0.5375,
+            "threshold": 0.55
+          }
+        ]
+      },
+      "new_examples": 9,
+      "train_manifest": {
+        "status": "data_prepared",
+        "examples_added": 9,
+        "data_hash": "9b8795fc67171d14",
+        "training_file": "C:\\Users\\mobil\\orca\\projects\\my 1st\\grpo_train_ready.jsonl",
+        "iteration_file": "C:\\Users\\mobil\\orca\\projects\\my 1st\\self_improve\\data\\iteration_1788643043.jsonl",
+        "total_training_samples": 1001,
+        "timestamp": "2026-09-05T21:17:23.869734+00:00",
+        "next_step": "Run the GRPO training pipeline with the updated training set: python grpo_train.py --stage grpo"
+      }
+    }
+  ],
+  "total_iterations": 3,
+  "model": "bionic-daughter-qwen3-4b"
+}

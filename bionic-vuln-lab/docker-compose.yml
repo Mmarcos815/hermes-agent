@@ -1,0 +1,32 @@
+services:
+  vuln-lab:
+    build: .
+    container_name: bionic-vuln-lab
+    ports:
+      - "5017:5017"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - vuln-net
+    # No persistent state — mock DB in memory only
+
+  # Optional: nginx reverse proxy with rate limiting
+  nginx:
+    image: nginx:alpine
+    container_name: vuln-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - vuln-lab
+    restart: unless-stopped
+    networks:
+      - vuln-net
+    profiles:
+      - proxy   # only started with: docker compose --profile proxy up
+
+networks:
+  vuln-net:
+    driver: bridge

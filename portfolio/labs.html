@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bionic Daughter — Labs</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="skills.html">Skills</a>
+    <a href="tools.html">MCP Tools</a>
+    <a href="labs.html" class="active">Labs</a>
+    <a href="stats.html">Stats</a>
+  </nav>
+
+  <main>
+    <section style="text-align: center; padding: 40px 0;">
+      <div class="section-title">Practice Environments</div>
+      <h1>4 Lab Environments</h1>
+      <p class="subtitle">Isolated sandboxes for hands-on experimentation and skill development</p>
+    </section>
+
+    <div class="card-grid">
+      <div class="card lab-card animate-in">
+        <div class="icon">🔴</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3>Red Team Lab</h3>
+          <span class="tag tag-red">Active</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px;">Full offensive security environment with vulnerable targets, CTF challenges, and exploitation practice ranges.</p>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+          <strong>Features:</strong> Kali tools, custom exploits, vulnerable VMs, CTF scoring
+        </div>
+        <div style="margin-top: 12px;">
+          <span class="tag tag-red">Pentesting</span>
+          <span class="tag tag-red">Web Exploit</span>
+          <span class="tag tag-red">Reverse Eng</span>
+          <span class="tag tag-red">Forensics</span>
+          <span class="tag tag-red">Crypto</span>
+        </div>
+        <div style="margin-top: 12px; display: flex; gap: 8px; font-size: 12px;">
+          <span style="color: var(--green);">● 12 Machines</span>
+          <span style="color: var(--yellow);">● 47 Challenges</span>
+          <span style="color: var(--accent);">● 3 CTFs</span>
+        </div>
+      </div>
+
+      <div class="card lab-card animate-in">
+        <div class="icon">⛓️</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3>Smart Contract Lab</h3>
+          <span class="tag tag-green">Active</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px;">Ethereum development and security testing environment with Foundry framework for Solidity contracts.</p>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+          <strong>Features:</strong> Foundry tests, fuzzing, invariant testing, gas optimization
+        </div>
+        <div style="margin-top: 12px;">
+          <span class="tag tag-green">Solidity</span>
+          <span class="tag tag-green">Foundry</span>
+          <span class="tag tag-green">Fuzzing</span>
+          <span class="tag tag-green">Invariants</span>
+        </div>
+        <div style="margin-top: 12px; display: flex; gap: 8px; font-size: 12px;">
+          <span style="color: var(--green);">● Local Chain</span>
+          <span style="color: var(--yellow);">● 8 Contracts</span>
+          <span style="color: var(--accent);">● Test Suite</span>
+        </div>
+      </div>
+
+      <div class="card lab-card animate-in">
+        <div class="icon">📊</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3>Data Science Lab</h3>
+          <span class="tag tag-cyan">Active</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px;">Jupyter-powered analytics environment with GPU access for model training and data visualization.</p>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+          <strong>Features:</strong> Jupyter kernels, GPU training, W&B tracking, HF models
+        </div>
+        <div style="margin-top: 12px;">
+          <span class="tag tag-cyan">Jupyter</span>
+          <span class="tag tag-cyan">PyTorch</span>
+          <span class="tag tag-cyan">Pandas</span>
+          <span class="tag tag-cyan">Visualization</span>
+        </div>
+        <div style="margin-top: 12px; display: flex; gap: 8px; font-size: 12px;">
+          <span style="color: var(--green);">● GPU Ready</span>
+          <span style="color: var(--yellow);">● 5 Notebooks</span>
+          <span style="color: var(--accent);">● Live Kernel</span>
+        </div>
+      </div>
+
+      <div class="card lab-card animate-in">
+        <div class="icon">🎮</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3>Emulation Lab</h3>
+          <span class="tag tag-yellow">Optional</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px;">Headless game emulation with RAM reading capabilities for AI-assisted gameplay experiments.</p>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+          <strong>Features:</strong> Emulator control, memory mapping, save states, screen capture
+        </div>
+        <div style="margin-top: 12px;">
+          <span class="tag tag-yellow">Emulator</span>
+          <span class="tag tag-yellow">RAM Read</span>
+          <span class="tag tag-yellow">AI Player</span>
+        </div>
+        <div style="margin-top: 12px; display: flex; gap: 8px; font-size: 12px;">
+          <span style="color: var(--green);">● Headless</span>
+          <span style="color: var(--yellow);">● Memory Mapped</span>
+          <span style="color: var(--accent);">● Scriptable</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 48px;">Lab Architecture</h2>
+    <div class="card">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; padding: 16px;">
+        <div>
+          <h3 style="color: var(--accent);">🔒 Isolation</h3>
+          <p style="color: var(--text-muted); font-size: 14px;">Each lab runs in its own sandboxed environment with no cross-contamination. Network policies enforce strict boundaries.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--accent);">⚡ Instant Spin-up</h3>
+          <p style="color: var(--text-muted); font-size: 14px;">Docker-based containers launch in seconds. Pre-built images with all dependencies ready to go.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--accent);">📈 Progress Tracking</h3>
+          <p style="color: var(--text-muted); font-size: 14px;">Every action is logged and scored. CTF challenges auto-grade with leaderboard integration.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--accent);">🔄 Resettable</h3>
+          <p style="color: var(--text-muted); font-size: 14px;">One-click environment reset. Break something? No problem — rebuild from snapshot instantly.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 32px;">Lab Comparison</h2>
+    <div class="card">
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px; text-align: left;">Lab</th>
+            <th style="padding: 12px; text-align: center;">Status</th>
+            <th style="padding: 12px; text-align: center;">Targets</th>
+            <th style="padding: 12px; text-align: center;">Difficulty</th>
+            <th style="padding: 12px; text-align: left;">Focus Areas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px;">Red Team Lab</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-green">Live</span></td>
+            <td style="padding: 12px; text-align: center;">12</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-red">Expert</span></td>
+            <td style="padding: 12px;">Offensive Security, Exploitation</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px;">Smart Contract Lab</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-green">Live</span></td>
+            <td style="padding: 12px; text-align: center;">8</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-yellow">Advanced</span></td>
+            <td style="padding: 12px;">Blockchain Security, DeFi</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px;">Data Science Lab</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-green">Live</span></td>
+            <td style="padding: 12px; text-align: center;">5</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-cyan">Intermediate</span></td>
+            <td style="padding: 12px;">ML Training, Analytics</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px;">Emulation Lab</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-yellow">Standby</span></td>
+            <td style="padding: 12px; text-align: center;">3</td>
+            <td style="padding: 12px; text-align: center;"><span class="tag tag-green">Beginner</span></td>
+            <td style="padding: 12px;">AI Gaming, Memory Hacking</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    Bionic Daughter Portfolio &mdash; 4 Isolated Lab Environments
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

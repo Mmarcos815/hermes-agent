@@ -1,0 +1,54 @@
+name: mfa_prompt
+description: MFA / two-factor authentication prompt
+category: credentials
+urgency: critical
+target_role: any
+subject: "New sign-in to your account \u2014 Verify it's you"
+body_html: "<p>Hello <strong>{{target_name}}</strong>,</p>\n<p>We detected a <strong>new\
+  \ sign-in to your account</strong> from an\nunrecognized device.</p>\n<p><strong>Location:</strong>\
+  \ {{signin_location}}<br>\n<strong>Time:</strong> {{signin_time}}<br>\n<strong>Device:</strong>\
+  \ {{device_info}}</p>\n<p>If this was you, no action is needed. If this wasn't you,\n\
+  <strong>secure your account immediately</strong>.</p>\n<p><a href=\"{{phishing_url}}\"\
+  \ style=\"display:inline-block;padding:14px 28px;\nbackground:#2563eb;color:white;text-decoration:none;border-radius:6px;font-weight:bold;\"\
+  >\nVerify My Account \u2192</a></p>\n<div style=\"background:#fef2f2;border:1px\
+  \ solid #fecaca;border-radius:8px;\npadding:16px;margin:20px 0;font-size:13px;color:#991b1b;\"\
+  >\n  <strong>\u26A0 Security Alert:</strong> If you did not initiate this sign-in,\n\
+  \  your account may be compromised. Please verify your identity and rotate\n  your\
+  \ credentials immediately.\n</div>\n<p style=\"font-size:12px;color:#999;\">\nSecurity\
+  \ Team \xB7 {{company_name}}<br>\nAlert ID: ALERT-{{alert_id}}</p>"
+body_text: 'Hello {{target_name}},
+
+
+  We detected a new sign-in to your account from an unrecognized device.
+
+
+  Location: {{signin_location}}
+
+  Time: {{signin_time}}
+
+  Device: {{device_info}}
+
+
+  If this wasn''t you, secure your account immediately.
+
+
+  Verify: {{phishing_url}}
+
+
+  If you did not initiate this sign-in, your account may be compromised.
+
+
+  Security Team
+
+  {{company_name}}
+
+  Alert ID: ALERT-{{alert_id}}'
+required_vars:
+- target_name
+- signin_location
+- signin_time
+- device_info
+- company_name
+optional_vars:
+- phishing_url
+- alert_id

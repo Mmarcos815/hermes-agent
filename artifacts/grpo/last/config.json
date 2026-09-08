@@ -1,0 +1,24 @@
+{
+  "stage": "grpo",
+  "policy_model": "artifacts/dpo/last",
+  "reference_model": "artifacts/sft/last",
+  "group_size": 6,
+  "beta_kl": 0.01,
+  "max_steps": 200,
+  "rewards": [
+    "format",
+    "accuracy",
+    "reasoning_depth",
+    "density",
+    "tool_use_quality",
+    "self_correction"
+  ],
+  "reward_weights": {
+    "format": 1.0,
+    "accuracy": 2.0,
+    "reasoning_depth": 1.0,
+    "density": 0.5,
+    "tool_use_quality": 0.5,
+    "self_correction": 1.0
+  }
+}

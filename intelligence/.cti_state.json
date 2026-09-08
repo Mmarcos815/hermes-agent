@@ -1,0 +1,8 @@
+{
+  "seen_cves": [],
+  "last_poll": "2026-09-05T10:14:38.700870+00:00",
+  "seen_iocs": [
+    "domain:malware-c2.example",
+    "hash:e99a18c428cb38d5f260853678922e03"
+  ]
+}

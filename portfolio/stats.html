@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bionic Daughter — Stats</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="skills.html">Skills</a>
+    <a href="tools.html">MCP Tools</a>
+    <a href="labs.html">Labs</a>
+    <a href="stats.html" class="active">Stats</a>
+  </nav>
+
+  <main>
+    <section style="text-align: center; padding: 40px 0;">
+      <div class="section-title">Live Metrics</div>
+      <h1>Performance Dashboard</h1>
+      <p class="subtitle">Real-time statistics from the Bionic Daughter ecosystem</p>
+    </section>
+
+    <div class="stats-grid">
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="2847">0</div>
+        <div class="label">Lines of Code</div>
+      </div>
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="156">0</div>
+        <div class="label">Commits</div>
+      </div>
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="42">0</div>
+        <div class="label">Files</div>
+      </div>
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="89">0</div>
+        <div class="label">Tests Passing</div>
+      </div>
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="20">0</div>
+        <div class="label">Skills</div>
+      </div>
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="8">0</div>
+        <div class="label">MCP Servers</div>
+      </div>
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="140">0</div>
+        <div class="label">Total Tools</div>
+      </div>
+      <div class="card stat-card animate-in">
+        <div class="number counter" data-target="4">0</div>
+        <div class="label">Labs</div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 48px;">Skill Proficiency</h2>
+    <div class="chart-container">
+      <h3 style="margin-bottom: 16px;">Domain Breakdown</h3>
+      <div class="chart-row" id="skills-chart"></div>
+      <div class="chart-labels" id="skills-labels"></div>
+    </div>
+
+    <h2 style="margin-top: 32px;">Weekly Activity</h2>
+    <div class="chart-container">
+      <h3 style="margin-bottom: 16px;">Commits This Week</h3>
+      <div class="chart-row" id="activity-chart"></div>
+      <div class="chart-labels" id="activity-labels"></div>
+    </div>
+
+    <h2 style="margin-top: 32px;">Tool Usage by Server</h2>
+    <div class="chart-container">
+      <h3 style="margin-bottom: 16px;">Distribution of 140 Tools</h3>
+      <div class="chart-row" id="server-chart"></div>
+      <div class="chart-labels" id="server-labels"></div>
+    </div>
+
+    <h2 style="margin-top: 32px;">Recent Activity</h2>
+    <div class="card">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+          <div style="width: 40px; height: 40px; border-radius: 20px; background: rgba(16, 185, 129, 0.2); display: flex; align-items: center; justify-content: center; font-size: 18px;">✓</div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Completed SQLi Web3 Mastery challenge</div>
+            <div style="font-size: 12px; color: var(--text-muted);">2 hours ago</div>
+          </div>
+          <span class="tag tag-green">Success</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+          <div style="width: 40px; height: 40px; border-radius: 20px; background: rgba(139, 92, 246, 0.2); display: flex; align-items: center; justify-content: center; font-size: 18px;">⚡</div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Deployed new orchestration workflow</div>
+            <div style="font-size: 12px; color: var(--text-muted);">5 hours ago</div>
+          </div>
+          <span class="tag tag-purple">Deploy</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+          <div style="width: 40px; height: 40px; border-radius: 20px; background: rgba(6, 182, 212, 0.2); display: flex; align-items: center; justify-content: center; font-size: 18px;">📊</div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Trained image segmentation model (SAM)</div>
+            <div style="font-size: 12px; color: var(--text-muted);">1 day ago</div>
+          </div>
+          <span class="tag tag-cyan">ML</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+          <div style="width: 40px; height: 40px; border-radius: 20px; background: rgba(245, 158, 11, 0.2); display: flex; align-items: center; justify-content: center; font-size: 18px;">🔍</div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">OSINT research report generated</div>
+            <div style="font-size: 12px; color: var(--text-muted);">2 days ago</div>
+          </div>
+          <span class="tag tag-yellow">Research</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 40px; height: 40px; border-radius: 20px; background: rgba(236, 72, 153, 0.2); display: flex; align-items: center; justify-content: center; font-size: 18px;">🎨</div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Created ASCII video art project</div>
+            <div style="font-size: 12px; color: var(--text-muted);">3 days ago</div>
+          </div>
+          <span class="tag tag-pink">Creative</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Bionic Daughter Portfolio &mdash; Updated Live
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Skills Chart
+      const skillsData = [
+        { label: 'Pentest', value: 85 },
+        { label: 'Web', value: 92 },
+        { label: 'Forensics', value: 78 },
+        { label: 'Crypto', value: 65 },
+        { label: 'OSINT', value: 88 },
+        { label: 'Reverse', value: 72 },
+        { label: 'Network', value: 90 },
+        { label: 'Social', value: 82 }
+      ];
+      const skillsChart = document.getElementById('skills-chart');
+      const skillsLabels = document.getElementById('skills-labels');
+      const maxSkills = Math.max(...skillsData.map(d => d.value));
+      skillsData.forEach(d => {
+        const bar = document.createElement('div');
+        bar.className = 'chart-bar';
+        bar.style.height = (d.value / maxSkills * 100) + '%';
+        bar.innerHTML = `<span class="tooltip">${d.label}: ${d.value}%</span>`;
+        skillsChart.appendChild(bar);
+        const label = document.createElement('span');
+        label.textContent = d.label;
+        skillsLabels.appendChild(label);
+      });
+
+      // Activity Chart
+      const activityData = [
+        { label: 'Mon', value: 12 },
+        { label: 'Tue', value: 19 },
+        { label: 'Wed', value: 8 },
+        { label: 'Thu', value: 15 },
+        { label: 'Fri', value: 22 },
+        { label: 'Sat', value: 7 },
+        { label: 'Sun', value: 14 }
+      ];
+      const activityChart = document.getElementById('activity-chart');
+      const activityLabels = document.getElementById('activity-labels');
+      const maxActivity = Math.max(...activityData.map(d => d.value));
+      activityData.forEach(d => {
+        const bar = document.createElement('div');
+        bar.className = 'chart-bar';
+        bar.style.height = (d.value / maxActivity * 100) + '%';
+        bar.innerHTML = `<span class="tooltip">${d.value} commits</span>`;
+        activityChart.appendChild(bar);
+        const label = document.createElement('span');
+        label.textContent = d.label;
+        activityLabels.appendChild(label);
+      });
+
+      // Server Chart
+      const serverData = [
+        { label: 'Agent', value: 52 },
+        { label: 'Hex', value: 25 },
+        { label: 'Orca', value: 20 },
+        { label: 'Files', value: 12 },
+        { label: 'TD', value: 10 },
+        { label: 'Poke', value: 8 },
+        { label: 'Hue', value: 7 },
+        { label: 'MCP', value: 6 }
+      ];
+      const serverChart = document.getElementById('server-chart');
+      const serverLabels = document.getElementById('server-labels');
+      const maxServer = Math.max(...serverData.map(d => d.value));
+      serverData.forEach(d => {
+        const bar = document.createElement('div');
+        bar.className = 'chart-bar';
+        bar.style.height = (d.value / maxServer * 100) + '%';
+        bar.innerHTML = `<span class="tooltip">${d.label}: ${d.value}</span>`;
+        serverChart.appendChild(bar);
+        const label = document.createElement('span');
+        label.textContent = d.label;
+        serverLabels.appendChild(label);
+      });
+    });
+  </script>
+</body>
+</html>

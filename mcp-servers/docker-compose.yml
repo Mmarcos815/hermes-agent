@@ -1,0 +1,19 @@
+# docker-compose.yml for Unified MCP Server
+version: "3.8"
+
+services:
+  unified-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - UNIFIED_MCP_API_KEY=${UNIFIED_MCP_API_KEY:-change-me-in-production}
+      - UNIFIED_MCP_RATE_LIMIT=60
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

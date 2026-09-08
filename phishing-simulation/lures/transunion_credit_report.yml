@@ -1,0 +1,81 @@
+name: transunion_credit_report
+description: "TransUnion — credit report / score change notification"
+category: banking
+urgency: high
+target_role: any
+subject: "📋 TransUnion Credit Report Updated — Your score is now {{credit_score}}"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>Your <strong>TransUnion credit report</strong> has been updated.
+  Your new credit score is <strong>{{credit_score}}</strong>.</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#006633;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Your Credit Report →</a></p>
+  <div style="background:#e8f5e9;border:1px solid #a5d6a7;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#2e7d32;">
+    <strong>Credit Summary:</strong><br>
+    Score: {{credit_score}} ({{score_grade}})<br>
+    Previous: {{previous_score}}<br>
+    Status: {{score_trend}}<br>
+    Tradelines: {{tradeline_count}}<br>
+    Hard Inquiries: {{hard_inquiry_count}}<br>
+    Soft Inquiries: {{soft_inquiry_count}}<br>
+    Delinquencies: {{delinquency_count}}<br>
+    Collections: {{collection_count}}
+  </div>
+  <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#991b1b;">
+    <strong>Alert — Recent Credit Activity:</strong><br>
+    • Hard inquiry from {{inquiry_creditor}} on {{inquiry_date}}<br>
+    • New account opened at {{new_account_lender}} on {{new_account_date}}<br>
+    • Balance increase of ${{balance_increase}} on {{balance_card}}<br>
+    • Address changed to {{address_changed}} on {{address_change_date}}
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} TransUnion LLC.<br>
+  You may be entitled to a free credit report.<br>
+  Reference: TU-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Your TransUnion credit report has been updated. Your new score is {{credit_score}}.
+
+  Score: {{credit_score}} ({{score_grade}})
+  Previous: {{previous_score}}
+  Tradelines: {{tradeline_count}}
+  Hard Inquiries: {{hard_inquiry_count}}
+
+  View your credit report: {{phishing_url}}
+
+  Recent Activity:
+  - Hard inquiry from {{inquiry_creditor}} on {{inquiry_date}}
+  - New account at {{new_account_lender}} on {{new_account_date}}
+  - Balance increase of ${{balance_increase}} on {{balance_card}}
+
+  © {{year}} TransUnion LLC
+  Reference: TU-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - credit_score
+  - score_grade
+optional_vars:
+  - phishing_url
+  - previous_score
+  - score_trend
+  - tradeline_count
+  - hard_inquiry_count
+  - soft_inquiry_count
+  - delinquency_count
+  - collection_count
+  - inquiry_creditor
+  - inquiry_date
+  - new_account_lender
+  - new_account_date
+  - balance_increase
+  - balance_card
+  - address_changed
+  - address_change_date
+  - year
+tracking_param: ref

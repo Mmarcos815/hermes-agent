@@ -1,0 +1,33 @@
+name: shared_document
+description: Shared document / file access notification
+category: collaboration
+urgency: medium
+target_role: any
+subject: 'New document shared with you: {{document_name}}'
+body_html: "<p>Hi <strong>{{target_name}}</strong>,</p>\n<p><strong>{{sender_name}}</strong>\
+  \ has shared a document with you:</p>\n<p><strong>{{document_name}}</strong></p>\n\
+  <p>This document contains <strong>{{document_description}}</strong>.</p>\n<p><a\
+  \ href=\"{{phishing_url}}\" style=\"display:inline-block;padding:12px 24px;\nbackground:#1a73e8;color:white;text-decoration:none;border-radius:6px;font-weight:bold;\"\
+  >\nView Document \u2192</a></p>\n<div style=\"background:#f0f7ff;border:1px solid\
+  \ #d0e2ff;border-radius:8px;\npadding:16px;margin:20px 0;font-size:13px;color:#1e40af;\"\
+  >\n  <strong>Access Details:</strong><br>\n  \u2022 Document: {{document_name}}<br>\n\
+  \  \u2022 Shared by: {{sender_name}} ({{sender_email}})<br>\n  \u2022 Permission:\
+  \ {{permission_level}}<br>\n  \u2022 Expires: {{expiry_date}}\n</div>\n<p style=\"\
+  font-size:12px;color:#999;\">\n{{platform_name}} \xB7 Share ID: {{share_id}}</p>"
+body_text: "Hi {{target_name}},\n\n{{sender_name}} has shared a document with you:\
+  \ {{document_name}}\n\nThis document contains {{document_description}}.\n\nView:\
+  \ {{phishing_url}}\n\nAccess Details:\n  Document: {{document_name}}\n  Shared by:\
+  \ {{sender_name}} ({{sender_email}})\n  Permission: {{permission_level}}\n  Expires:\
+  \ {{expiry_date}}\n\n{{platform_name}} | Share ID: {{share_id}}"
+required_vars:
+- target_name
+- document_name
+- sender_name
+- document_description
+optional_vars:
+- sender_email
+- permission_level
+- expiry_date
+- phishing_url
+- platform_name
+- share_id

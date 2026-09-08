@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-09-02T17:39:15Z",
+  "checks": {
+    "iso8583_build_parse": {
+      "ok": false,
+      "err": "'>' not supported between instances of 'str' and 'int'"
+    },
+    "three_ds_dir_server": {
+      "ok": true,
+      "methods": [
+        "acs",
+        "route_areq"
+      ]
+    },
+    "web3_fuzzer": {
+      "ok": true,
+      "runs": 200,
+      "violations": 0
+    },
+    "emv_vault": {
+      "ok": true,
+      "methods": [
+        "detokenize",
+        "vault"
+      ]
+    },
+    "iso20022_engine": {
+      "ok": true,
+      "methods": [
+        "accounts",
+        "generate_pacs008",
+        "parse_pacs008",
+        "process_and_generate_pacs002"
+      ]
+    },
+    "audit_pipeline_orchestrator": {
+      "ok": true,
+      "class": "BionicAuditPipeline",
+      "methods": [
+        "contract_path",
+        "export_report",
+        "report",
+        "run_full_audit"
+      ]
+    },
+    "command_center": {
+      "ok": true,
+      "modules_loaded": 10
+    },
+    "bionic_unified_mcp": {
+      "ok": true,
+      "has_app": true
+    }
+  },
+  "summary": "7/8 end-to-end checks passed"
+}

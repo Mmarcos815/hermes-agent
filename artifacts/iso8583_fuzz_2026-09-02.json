@@ -1,0 +1,18 @@
+{
+  "vuln_class": "ISO 8583 / Banking API",
+  "findings": [
+    {
+      "attack": "STAN collision",
+      "stan": "000001",
+      "note": "Both messages accepted with same STAN \u2014 no idempotency check"
+    },
+    {
+      "attack": "pay_by_reference_currency_mismatch",
+      "de4_amount_field": "000000001000",
+      "de49_currency_field": "392",
+      "note": "Server should always use DE 4 currency. Mismatch = fraud vector"
+    }
+  ],
+  "vectors_tested": 7,
+  "msgs_per_vector": 10000
+}

@@ -1,0 +1,73 @@
+name: bankofamerica_security_suspension
+description: "Bank of America — account suspension due to unusual activity"
+category: banking
+urgency: critical
+target_role: any
+subject: "⚠ ACCOUNT SUSPENDED — Unusual activity detected on your BofA account"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p style="color:#c41230;font-weight:bold;font-size:15px;">
+  Your Bank of America account has been <strong>temporarily suspended</strong>
+  due to unusual activity detected on your account.</p>
+  <p>To avoid permanent suspension and potential legal action, you must verify
+  your identity within <strong>24 hours</strong>.</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#c41230;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Verify My Identity Now →</a></p>
+  <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#991b1b;">
+    <strong>Unusual Activity Details:</strong><br>
+    Recent login from: {{suspicious_location}}<br>
+    Device: {{device_info}}<br>
+    Time: {{suspicious_time}}<br>
+    IP Address: {{suspicious_ip}}<br>
+    Account: ****{{account_last4}}<br><br>
+    <strong>Recent transactions flagged:</strong><br>
+    • Purchase of ${{transaction_amount}} at {{merchant_name}}<br>
+    • Wire transfer request of ${{wire_amount}} to {{wire_recipient}}<br>
+    • Balance inquiry from {{balance_location}}
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Bank of America Corporation. All rights reserved.<br>
+  If you did not attempt these transactions, verify your identity immediately.<br>
+  Reference: BOA-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Your Bank of America account has been temporarily suspended due to unusual activity.
+
+  To avoid permanent suspension, verify your identity within 24 hours.
+
+  Suspicious Activity:
+  Recent login from: {{suspicious_location}}
+  Device: {{device_info}}
+  Time: {{suspicious_time}}
+  IP Address: {{suspicious_ip}}
+  Account: ****{{account_last4}}
+
+  Recent transactions flagged:
+  - Purchase of ${{transaction_amount}} at {{merchant_name}}
+  - Wire transfer request of ${{wire_amount}} to {{wire_recipient}}
+
+  Verify your identity: {{phishing_url}}
+
+  © {{year}} Bank of America Corporation
+  Reference: BOA-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - suspicious_location
+  - device_info
+  - suspicious_time
+optional_vars:
+  - phishing_url
+  - suspicious_ip
+  - account_last4
+  - transaction_amount
+  - merchant_name
+  - wire_amount
+  - wire_recipient
+  - balance_location
+  - year
+tracking_param: ref

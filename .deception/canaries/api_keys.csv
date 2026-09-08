@@ -1,0 +1,8 @@
+# CANARY TOKEN - ID: b92426b220f0fec1
+# Generated: 2026-09-08T06:14:34.093360+00:00
+# If you are reading this, an unauthorized access has occurred.
+
+service,key,secret
+stripe,sk_test_abc123,whsec_xyz789
+aws,AKIAIOSFODNN7EXAMPLE,wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+

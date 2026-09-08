@@ -1,0 +1,59 @@
+name: wellsfargo_fraud_alert
+description: "Wells Fargo — fraud alert / unauthorized transaction notification"
+category: banking
+urgency: critical
+target_role: any
+subject: "🚨 Fraud Alert — Unauthorized transaction of ${{amount}} on your Wells Fargo card"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>We detected a <strong>potentially fraudulent transaction</strong> on your
+  Wells Fargo account and have temporarily blocked your card for protection.</p>
+  <p><strong>Transaction Details:</strong><br>
+  Amount: <strong>${{amount}}</strong><br>
+  Merchant: {{merchant_name}}<br>
+  Location: {{transaction_location}}<br>
+  Date: {{transaction_date}}<br>
+  Card: ****{{card_last4}}</p>
+  <div style="background:#fff5f5;border:1px solid #fecaca;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#991b1b;">
+    <strong>Your card has been blocked.</strong> To reactivate your card and dispute
+    this transaction, you must verify your identity. Until you verify, your card
+    cannot be used for purchases, ATM withdrawals, or bill payments.
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#004b87;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Verify Identity & Reactivate Card →</a></p>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Wells Fargo & Company.<br>
+  Reference: WF-{{campaign_id}} | Wells Fargo Fraud Protection
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  We detected a potentially fraudulent transaction on your Wells Fargo account.
+
+  Transaction Details:
+  Amount: ${{amount}}
+  Merchant: {{merchant_name}}
+  Location: {{transaction_location}}
+  Date: {{transaction_date}}
+  Card: ****{{card_last4}}
+
+  Your card has been blocked. To reactivate it, you must verify your identity.
+
+  Verify Identity & Reactivate: {{phishing_url}}
+
+  © {{year}} Wells Fargo & Company
+  Reference: WF-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - amount
+  - merchant_name
+  - transaction_location
+  - transaction_date
+optional_vars:
+  - phishing_url
+  - card_last4
+  - year
+tracking_param: ref

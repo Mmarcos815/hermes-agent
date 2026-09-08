@@ -1,0 +1,63 @@
+name: citi_large_purchase_alert
+description: "Citi — large purchase / high-value transaction notification"
+category: banking
+urgency: high
+target_role: any
+subject: "📊 Purchase Alert — ${{amount}} purchase on your Citi card"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>This is an automated notification from Citi regarding activity on your
+  account ending in <strong>{{card_last4}}</strong>.</p>
+  <p><strong>Purchase Alert:</strong><br>
+  Amount: <strong>${{amount}}</strong><br>
+  Merchant: {{merchant_name}}<br>
+  Category: {{merchant_category}}<br>
+  Date: {{transaction_date}}<br>
+  Location: {{transaction_location}}</p>
+  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#795548;">
+    <strong>Was this you?</strong><br>
+    If you made this purchase, no action is needed. If you did NOT make this
+    purchase, your card may be compromised — dispute the charge and get a new card
+    immediately.
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#003b71;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Manage Transaction →</a></p>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Citigroup Inc.<br>
+  This is an automated purchase alert. Reply STOP to opt out.<br>
+  Reference: CITI-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Citi Purchase Alert for account ending in {{card_last4}}:
+
+  Amount: ${{amount}}
+  Merchant: {{merchant_name}}
+  Category: {{merchant_category}}
+  Date: {{transaction_date}}
+  Location: {{transaction_location}}
+
+  Was this you?
+  If yes: No action needed.
+  If no: Your card may be compromised. Dispute now.
+
+  Manage Transaction: {{phishing_url}}
+
+  © {{year}} Citigroup Inc.
+  Reference: CITI-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - amount
+  - merchant_name
+  - merchant_category
+  - transaction_date
+optional_vars:
+  - phishing_url
+  - card_last4
+  - transaction_location
+  - year
+tracking_param: ref

@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "title": "Real Penetration Test",
+    "date": "2026-09-08",
+    "version": "1.0",
+    "client": "Bionic Security"
+  },
+  "findings": [
+    {
+      "id": "FIND-001",
+      "title": "SQL Injection in Authentication",
+      "description": "Parameterized query missing in login endpoint",
+      "severity": "Critical",
+      "cvss_score": 9.8,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": "https://app.example.com/login",
+      "evidence": "sqlmap identified injection point in username parameter",
+      "remediation": "Use parameterized queries, implement WAF rules",
+      "references": []
+    },
+    {
+      "id": "FIND-002",
+      "title": "Stored XSS in User Profile",
+      "description": "User input rendered without encoding",
+      "severity": "High",
+      "cvss_score": 7.5,
+      "cvss_vector": "N/A",
+      "affected": "https://app.example.com/profile",
+      "evidence": "Payload <script>alert(1)</script> executed on profile view",
+      "remediation": "Output encoding, CSP headers",
+      "references": []
+    },
+    {
+      "id": "FIND-003",
+      "title": "Outdated Apache Server",
+      "description": "Apache 2.4.49 with known CVEs",
+      "severity": "Medium",
+      "cvss_score": 5.3,
+      "cvss_vector": "N/A",
+      "affected": "web server",
+      "evidence": "Server header reveals Apache/2.4.49",
+      "remediation": "Upgrade to latest Apache version",
+      "references": []
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "by_severity": {
+      "Critical": 1,
+      "High": 1,
+      "Medium": 1
+    }
+  }
+}

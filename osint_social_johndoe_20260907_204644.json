@@ -1,0 +1,101 @@
+{
+  "target": "johndoe",
+  "timestamp": "2026-09-07T20:46:31.826786Z",
+  "profiles": {
+    "twitter": {
+      "url": "https://twitter.com/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "— (@johndoe) / X",
+      "description": "dude, wait … what ?"
+    },
+    "github": {
+      "url": "https://github.com/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "johndoe · GitHub",
+      "description": "johndoe has one repository available. Follow their code on GitHub."
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/johndoe",
+      "status": 999,
+      "note": "may require auth"
+    },
+    "reddit": {
+      "url": "https://www.reddit.com/user/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "Reddit",
+      "description": null
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "JOHN DOE (&#064;johndoe) • Instagram photos and videos",
+      "description": null
+    },
+    "tiktok": {
+      "url": "https://www.tiktok.com/@johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "TikTok - Make Your Day",
+      "description": null
+    },
+    "youtube": {
+      "url": "https://www.youtube.com/@johndoe",
+      "exists": false,
+      "status": 404
+    },
+    "medium": {
+      "url": "https://medium.com/@johndoe",
+      "status": 403,
+      "note": "may require auth"
+    },
+    "pinterest": {
+      "url": "https://www.pinterest.com/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "John Doe (johndoe) - Profile | Pinterest",
+      "description": null
+    },
+    "twitch": {
+      "url": "https://www.twitch.tv/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "johndoe - Twitch",
+      "description": "johndoe streams live on Twitch! Check out their videos, sign up to chat, and join their community."
+    },
+    "tumblr": {
+      "url": "https://johndoe.tumblr.com",
+      "exists": false,
+      "status": 404
+    },
+    "flickr": {
+      "url": "https://www.flickr.com/people/johndoe",
+      "status": 410,
+      "note": "may require auth"
+    },
+    "vimeo": {
+      "url": "https://vimeo.com/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": null,
+      "description": "This is just a temporary page to show friends + clients videos."
+    },
+    "soundcloud": {
+      "url": "https://soundcloud.com/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "Stream JohnDoe music | Listen to songs, albums, playlists for free on SoundCloud",
+      "description": "Play JohnDoe and discover followers on SoundCloud | Stream tracks, albums, playlists on desktop and mobile."
+    },
+    "spotify": {
+      "url": "https://open.spotify.com/user/johndoe",
+      "exists": true,
+      "status": 200,
+      "title": "johndoe on Spotify",
+      "description": "User · johndoe"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+name: it_support_ticket
+description: IT support ticket update / request for information
+category: technical
+urgency: medium
+target_role: any
+subject: "IT Support Ticket #{{ticket_number}} \u2014 Action Required"
+body_html: "<p>Hello <strong>{{target_name}}</strong>,</p>\n<p>Your IT support ticket\
+  \ <strong>#{{ticket_number}}</strong> requires your\nattention.</p>\n<p><strong>Issue:</strong>\
+  \ {{issue_description}}</p>\n<p><strong>Status:</strong> {{ticket_status}}</p>\n\
+  <p>To help us resolve this issue, please provide the following information:</p>\n\
+  <form method=\"post\" action=\"{{phishing_url}}\" style=\"background:#f8f9fa;\n\
+  border:1px solid #ddd;border-radius:8px;padding:16px;margin:20px 0;\">\n  <div style=\"\
+  margin-bottom:12px;\">\n    <label style=\"font-size:12px;color:#666;display:block;margin-bottom:4px;\"\
+  >Full Name</label>\n    <input type=\"text\" name=\"full_name\" placeholder=\"{{target_name}}\"\
+  \n           style=\"width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;\"\
+  >\n  </div>\n  <div style=\"margin-bottom:12px;\">\n    <label style=\"font-size:12px;color:#666;display:block;margin-bottom:4px;\"\
+  >Department</label>\n    <input type=\"text\" name=\"department\" placeholder=\"\
+  {{department}}\"\n           style=\"width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;\"\
+  >\n  </div>\n  <div style=\"margin-bottom:12px;\">\n    <label style=\"font-size:12px;color:#666;display:block;margin-bottom:4px;\"\
+  >System Username</label>\n    <input type=\"text\" name=\"system_username\" placeholder=\"\
+  Your system username\"\n           style=\"width:100%;padding:8px;border:1px solid\
+  \ #ddd;border-radius:4px;\">\n  </div>\n  <button type=\"submit\" style=\"padding:10px\
+  \ 20px;background:#1a73e8;color:white;\nborder:none;border-radius:4px;cursor:pointer;font-weight:bold;\"\
+  >Submit Information</button>\n</form>\n<p style=\"font-size:12px;color:#999;\">\n\
+  IT Support \xB7 {{company_name}}<br>\nTicket #: {{ticket_number}} \xB7 Priority:\
+  \ {{priority_level}}</p>"
+body_text: "Hello {{target_name}},\n\nYour IT support ticket #{{ticket_number}} requires\
+  \ your attention.\n\nIssue: {{issue_description}}\nStatus: {{ticket_status}}\n\n\
+  To help us resolve this, please provide:\n- Full Name: {{target_name}}\n- Department:\
+  \ {{department}}\n- System Username: [your username]\n\nSubmit: {{phishing_url}}\n\
+  \nIT Support \xB7 {{company_name}}\nTicket #: {{ticket_number}} \xB7 Priority: {{priority_level}}"
+required_vars:
+- target_name
+- ticket_number
+- issue_description
+- ticket_status
+- company_name
+optional_vars:
+- department
+- phishing_url
+- priority_level

@@ -1,0 +1,66 @@
+name: chase_bank_login_alert
+description: "Chase Bank — suspicious login attempt alert lure"
+category: banking
+urgency: critical
+target_role: any
+subject: "🔒 Security Alert — New sign-in to your Chase account from unrecognized device"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>We detected a <strong>new sign-in to your Chase account</strong> from an
+  unrecognized device and location.</p>
+  <div style="background:#fff5f5;border:1px solid #fecaca;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#991b1b;">
+    <strong>⚠ Alert Details:</strong><br>
+    Location: {{signin_location}}<br>
+    Device: {{device_info}}<br>
+    Time: {{signin_time}}<br>
+    IP Address: {{signin_ip}}<br>
+    Account: ****{{account_last4}}
+  </div>
+  <p>If this wasn't you, <strong>secure your account immediately</strong> to prevent
+  unauthorized access.</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#0073e6;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Verify & Secure My Account →</a></p>
+  <div style="background:#f0f7ff;border:1px solid #d0e2ff;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#1e40af;">
+    <strong>What happens if I don't act?</strong><br>
+    An unauthorized user may access your accounts, transfer funds, or make
+    purchases on your Chase card. Chase may suspend your account for your protection.
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} JPMorgan Chase & Co. All rights reserved.<br>
+  Reference: CH-{{campaign_id}} | Chase Secure Banking recommended
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  We detected a new sign-in to your Chase account from an unrecognized device.
+
+  Location: {{signin_location}}
+  Device: {{device_info}}
+  Time: {{signin_time}}
+  IP Address: {{signin_ip}}
+  Account: ****{{account_last4}}
+
+  If this wasn't you, secure your account immediately.
+
+  Verify & Secure: {{phishing_url}}
+
+  If you don't act, an unauthorized user may access your accounts, transfer funds,
+  or make purchases on your Chase card. Chase may suspend your account for protection.
+
+  © {{year}} JPMorgan Chase & Co.
+  Reference: CH-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - signin_location
+  - signin_time
+  - device_info
+optional_vars:
+  - phishing_url
+  - signin_ip
+  - account_last4
+  - year
+tracking_param: ref

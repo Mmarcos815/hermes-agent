@@ -1,0 +1,59 @@
+name: hsbc_card_expiry_replacement
+description: "HSBC — card expiry / replacement notification"
+category: banking
+urgency: high
+target_role: any
+subject: "📬 Your HSBC card expires soon — Replacement card ready for delivery"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>Your HSBC card ending in <strong>{{card_last4}}</strong> is due to expire
+  on <strong>{{expiry_date}}</strong>.</p>
+  <p>A replacement card has been issued and is ready for delivery. To activate
+  your new card and manage your delivery preferences, please confirm your details:</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#cc0000;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Confirm Delivery Details →</a></p>
+  <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#991b1b;">
+    <strong>Old card details:</strong><br>
+    Card: ****{{card_last4}}<br>
+    Expiry: {{expiry_date}}<br>
+    Account: ****{{account_last4}}<br><br>
+    <strong>New card will have:</strong><br>
+    • New expiry date: {{new_expiry_date}}<br>
+    • New CVV code<br>
+    • Same card number (unless you request a change)<br>
+    • Free expedited delivery available
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} HSBC Holdings plc.<br>
+  If you did not request a replacement, contact HSBC immediately.<br>
+  Reference: HSBC-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Your HSBC card ending in {{card_last4}} expires on {{expiry_date}}.
+
+  A replacement card is ready for delivery. Confirm your details to activate.
+
+  Old card: ****{{card_last4}}
+  Expiry: {{expiry_date}}
+  Account: ****{{account_last4}}
+  New expiry: {{new_expiry_date}}
+
+  Confirm delivery: {{phishing_url}}
+
+  © {{year}} HSBC Holdings plc
+  Reference: HSBC-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - card_last4
+  - expiry_date
+optional_vars:
+  - phishing_url
+  - account_last4
+  - new_expiry_date
+  - year
+tracking_param: ref

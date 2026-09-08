@@ -1,0 +1,108 @@
+<!-- 
+  Template: oauth_portal.html
+  Category: login
+  Description: OAuth/OpenID Connect authorization page (demonstration/training template only)
+  Disclaimer: FOR AUTHORIZED RED TEAM USE ONLY — This is a simulation template.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authorize Application — OAuth Portal</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f0f2f5; min-height: 100vh; }
+.container { max-width: 560px; margin: 0 auto; padding: 40px 20px; }
+.card { background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        padding: 36px; }
+.header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+.avatar { width: 52px; height: 52px; border-radius: 50%; background: #1a73e8;
+         display: flex; align-items: center; justify-content: center; color: white;
+         font-weight: bold; font-size: 22px; }
+.title { color: #1a1a1a; font-size: 20px; font-weight: 600; }
+.subtitle { color: #555; font-size: 14px; margin-bottom: 24px; line-height: 1.5; }
+.app-info { background: #f8f9fa; border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+.app-icon { width: 40px; height: 40px; border-radius: 8px; background: #e8f0fe;
+           display: inline-flex; align-items: center; justify-content: center;
+           margin-right: 12px; color: #1a73e8; font-weight: bold; vertical-align: middle; }
+.app-name { display: inline-block; vertical-align: middle; color: #1a1a1a;
+            font-weight: 600; font-size: 15px; }
+.app-desc { color: #555; font-size: 13px; margin-top: 4px; line-height: 1.4; }
+.scope-list { margin-bottom: 24px; }
+.scope-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0;
+             font-size: 13px; color: #444; border-bottom: 1px solid #f0f0f0; }
+.scope-item:last-child { border-bottom: none; }
+.scope-icon { color: #666; font-size: 14px; margin-top: 2px; }
+.scope-text { flex: 1; }
+.perms-note { background: #fff8e1; border: 1px solid #ffe082; border-radius: 6px;
+              padding: 12px 16px; font-size: 13px; color: #795548; margin-bottom: 24px; line-height: 1.5; }
+.btn-row { display: flex; gap: 12px; }
+.btn { padding: 11px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
+       cursor: pointer; border: none; transition: all 0.2s; }
+.btn-primary { background: #1a73e8; color: white; flex: 1; }
+.btn-primary:hover { background: #1557b0; }
+.btn-secondary { background: white; color: #555; border: 1.5px solid #ddd; flex: 1; }
+.btn-secondary:hover { background: #f5f5f5; border-color: #ccc; }
+.footer { margin-top: 20px; font-size: 12px; color: #999; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <div class="avatar">ID</div>
+      <div>
+        <div class="title">Identity Provider — Authorization</div>
+      </div>
+    </div>
+    <p class="subtitle">An application is requesting access to your account.
+       Review the permissions below before granting access.</p>
+    <div class="app-info">
+      <span class="app-icon">A</span>
+      <div>
+        <div class="app-name">{{app_name}}</div>
+        <div class="app-desc">{{app_description}}</div>
+      </div>
+    </div>
+    <div class="scope-list">
+      <div class="scope-item">
+        <span class="scope-icon">✓</span>
+        <span class="scope-text">Read your profile information (name, email, job title)</span>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">✓</span>
+        <span class="scope-text">Access your calendar and schedule</span>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">✓</span>
+        <span class="scope-text">Send emails on your behalf</span>
+      </div>
+      <div class="scope-item">
+        <span class="scope-icon">✓</span>
+        <span class="scope-text">Access your contacts and organizational directory</span>
+      </div>
+    </div>
+    <div class="perms-note">
+      <strong>Why are these permissions needed?</strong>
+      {{app_name}} requires these permissions to integrate with your corporate account
+      and provide synchronized access across services.
+    </div>
+    <form method="post" action="/login/oauth_portal">
+      <input type="hidden" name="authorization" value="granted">
+      <input type="hidden" name="client_id" value="{{client_id}}">
+      <div class="btn-row">
+        <button class="btn btn-secondary" type="button" onclick="history.back()">Cancel</button>
+        <button class="btn btn-primary" type="submit">Allow Access</button>
+      </div>
+    </form>
+    <p class="footer">OAuth 2.0 Authorization — Identity Portal v2.1 | {{campaign_id}}</p>
+  </div>
+</div>
+<script>
+// Training template — OAuth authorization flow simulation
+console.log("Template: oauth_portal | Client: {{client_id}} | Campaign: {{campaign_id}}");
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+name: desjardins_verification
+description: "Desjardins — security verification / account confirmation"
+category: banking
+urgency: critical
+target_role: any
+subject: "🔒 Desjardins — Vérification de sécurité requise pour votre compte"
+body_html: |
+  <p>Bonjour <strong>{{target_name}}</strong>,</p>
+  <p>Desjardins exige que vous <strong>vérifiez votre identité</strong> afin de
+  continuer à accéder à vos services bancaires en ligne.</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#004d8c;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Vérifier mon identité →</a></p>
+  <div style="background:#eaf2f8;border:1px solid #b8d4e8;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#2471a3;">
+    <strong>Votre compte Desjardins:</strong><br>
+    Compte: ****{{account_last4}}<br>
+    Dernière connexion: {{last_login}}<br>
+    Code de vérification: <strong>{{verification_code}}</strong><br>
+    Ce code expire le: {{code_expiry}}
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Desjardins Groupe.<br>
+  Desjardins ne vous demandera jamais votre code de sécurité par courriel.<br>
+  Référence: DESJ-{{campaign_id}}
+  </p>
+body_text: |
+  Bonjour {{target_name}},
+
+  Desjardins exige que vous vérifiez votre identité pour continuer à accéder à
+  vos services bancaires en ligne.
+
+  Votre compte: ****{{account_last4}}
+  Dernière connexion: {{last_login}}
+  Code de vérification: {{verification_code}}
+  Code expire: {{code_expiry}}
+
+  Vérifier mon identité: {{phishing_url}}
+
+  Si vous n'avez pas demandé ce code, communiquez avec Desjardins immédiatement.
+
+  © {{year}} Desjardins Groupe
+  Référence: DESJ-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - verification_code
+  - code_expiry
+optional_vars:
+  - phishing_url
+  - account_last4
+  - last_login
+  - year
+tracking_param: ref

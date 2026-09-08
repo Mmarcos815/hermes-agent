@@ -1,0 +1,216 @@
+{
+  "vuln_class": "OWASP API #1 BOLA",
+  "target": "OWASP Juice Shop",
+  "endpoint": "http://localhost:5016",
+  "findings_count": 26,
+  "findings": [
+    {
+      "path": "/api/Users/1",
+      "id": 1,
+      "status": 200,
+      "size": 301,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":1,\"username\":\"\",\"email\":\"admin@juice-sh.op\",\"role\":\"admin\",\"deluxeT",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/2",
+      "id": 2,
+      "status": 200,
+      "size": 297,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":2,\"username\":\"\",\"email\":\"jim@juice-sh.op\",\"role\":\"customer\",\"deluxe",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/3",
+      "id": 3,
+      "status": 200,
+      "size": 300,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":3,\"username\":\"\",\"email\":\"bender@juice-sh.op\",\"role\":\"customer\",\"del",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/4",
+      "id": 4,
+      "status": 200,
+      "size": 320,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":4,\"username\":\"bkimminich\",\"email\":\"bjoern.kimminich@gmail.com\",\"rol",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/5",
+      "id": 5,
+      "status": 200,
+      "size": 360,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":5,\"username\":\"\",\"email\":\"ciso@juice-sh.op\",\"role\":\"deluxe\",\"deluxeT",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/6",
+      "id": 6,
+      "status": 200,
+      "size": 303,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":6,\"username\":\"\",\"email\":\"support@juice-sh.op\",\"role\":\"admin\",\"delux",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/7",
+      "id": 7,
+      "status": 200,
+      "size": 299,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":7,\"username\":\"\",\"email\":\"morty@juice-sh.op\",\"role\":\"customer\",\"delu",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/8",
+      "id": 8,
+      "status": 200,
+      "size": 307,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":8,\"username\":\"\",\"email\":\"mc.safesearch@juice-sh.op\",\"role\":\"custome",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/9",
+      "id": 9,
+      "status": 200,
+      "size": 302,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":9,\"username\":\"\",\"email\":\"J12934@juice-sh.op\",\"role\":\"admin\",\"deluxe",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/10",
+      "id": 10,
+      "status": 200,
+      "size": 315,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":10,\"username\":\"wurstbrot\",\"email\":\"wurstbrot@juice-sh.op\",\"role\":\"a",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/11",
+      "id": 11,
+      "status": 200,
+      "size": 298,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":11,\"username\":\"\",\"email\":\"amy@juice-sh.op\",\"role\":\"customer\",\"delux",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/12",
+      "id": 12,
+      "status": 200,
+      "size": 293,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":12,\"username\":\"\",\"email\":\"bjoern@juice-sh.op\",\"role\":\"admin\",\"delux",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/13",
+      "id": 13,
+      "status": 200,
+      "size": 356,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":13,\"username\":\"\",\"email\":\"bjoern@owasp.org\",\"role\":\"deluxe\",\"deluxe",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/15",
+      "id": 15,
+      "status": 200,
+      "size": 318,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":15,\"username\":\"\",\"email\":\"accountant@juice-sh.op\",\"role\":\"accountin",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/16",
+      "id": 16,
+      "status": 200,
+      "size": 301,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":16,\"username\":\"\",\"email\":\"uvogin@juice-sh.op\",\"role\":\"customer\",\"de",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/17",
+      "id": 17,
+      "status": 200,
+      "size": 287,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":17,\"username\":\"\",\"email\":\"demo\",\"role\":\"customer\",\"deluxeToken\":\"\",",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/18",
+      "id": 18,
+      "status": 200,
+      "size": 305,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":18,\"username\":\"j0hNny\",\"email\":\"john@juice-sh.op\",\"role\":\"customer\"",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/Users/19",
+      "id": 19,
+      "status": 200,
+      "size": 305,
+      "preview": "{\"status\":\"success\",\"data\":{\"id\":19,\"username\":\"E=ma\u00b2\",\"email\":\"emma@juice-sh.op\",\"role\":\"customer\"",
+      "description": "BOLA: can read any user's data by ID"
+    },
+    {
+      "path": "/api/BasketItems/1",
+      "id": 1,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":1,\"BasketId\":1,\"id\":1,\"quantity\":2,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    },
+    {
+      "path": "/api/BasketItems/2",
+      "id": 2,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":2,\"BasketId\":1,\"id\":2,\"quantity\":3,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    },
+    {
+      "path": "/api/BasketItems/3",
+      "id": 3,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":3,\"BasketId\":1,\"id\":3,\"quantity\":1,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    },
+    {
+      "path": "/api/BasketItems/4",
+      "id": 4,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":4,\"BasketId\":2,\"id\":4,\"quantity\":2,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    },
+    {
+      "path": "/api/BasketItems/5",
+      "id": 5,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":4,\"BasketId\":3,\"id\":5,\"quantity\":1,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    },
+    {
+      "path": "/api/BasketItems/6",
+      "id": 6,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":4,\"BasketId\":4,\"id\":6,\"quantity\":2,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    },
+    {
+      "path": "/api/BasketItems/7",
+      "id": 7,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":3,\"BasketId\":5,\"id\":7,\"quantity\":5,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    },
+    {
+      "path": "/api/BasketItems/8",
+      "id": 8,
+      "status": 200,
+      "size": 154,
+      "preview": "{\"status\":\"success\",\"data\":{\"ProductId\":4,\"BasketId\":5,\"id\":8,\"quantity\":2,\"createdAt\":\"2026-09-03T0",
+      "description": "BOLA: can read any user's basket items"
+    }
+  ]
+}

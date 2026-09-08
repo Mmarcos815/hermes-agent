@@ -1,0 +1,100 @@
+{"prompt": "Explain how a padding oracle attack works on CBC-mode AES.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "What is a padding oracle in CBC decryption and why is it dangerous?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "How does the Vaudenay attack exploit CBC padding to decrypt ciphertext?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "Describe how to perform a padding oracle attack step by step.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "What is the Lucky13 attack and how does it relate to padding oracles?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "How do modern TLS implementations mitigate padding oracle attacks?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "What is POODLE and how does it exploit SSL 3.0 padding?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "Explain the difference between a padding oracle and a decryption oracle.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "How can an attacker distinguish valid from invalid padding in CBC mode?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "What countermeasures prevent padding oracle attacks in AES-CBC?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "What is a hash length extension attack and which algorithms are vulnerable?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "Explain how to forge a valid MAC using hash length extension on MD5.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "How does the Merkle-Damgard construction enable length extension attacks?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "Why are SHA-1 and SHA-256 vulnerable to length extension but SHA-3 is not?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "Show how an attacker extends a SHA-256 hash without knowing the secret key.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "What is HMAC and why does it resist hash length extension attacks?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "Describe a real-world exploit of hash length extension in API authentication.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "How can length extension attacks be used to forge JWT tokens?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "What is the sponge construction and why does it prevent length extension?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "Explain how to detect if a system is vulnerable to hash length extension.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "What is the Elliptic Curve Discrete Logarithm Problem (ECDLP)?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "Explain Pollard's rho algorithm for solving the ECDLP.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "What is the baby-step giant-step algorithm for ECDLP?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "How does the MOV attack reduce ECDLP to a finite field DLP?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "What are anomalous curves and why are they insecure for ECC?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "Explain the Smart attack on anomalous elliptic curves.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "What is the Pohlig-Hellman attack on ECDLP and when does it apply?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "How do weak curve parameters make ECDLP easier to solve?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "What is the Pollard's lambda algorithm for ECDLP?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "Explain how the Weil pairing can be used to attack certain elliptic curves.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "What is Wiener's attack on RSA and when does it apply?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain the Bleichenbacher padding oracle attack on RSA-PKCS#1 v1.5.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is Hastad's broadcast attack on RSA with small public exponents?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain the Franklin-Reiter related-message attack on RSA.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is Coppersmith's attack on RSA and how does it find small roots?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain how the ROCA attack exploits weak RSA key generation in Infineon chips.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is a chosen ciphertext attack on RSA and how does OAEP prevent it?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain how Fermat's factorization attacks RSA with close prime factors.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the Boneh-Durfee attack on RSA with small private exponents?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain how factoring RSA moduli from shared primes works using GCD.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the BEAST attack on TLS and how does it exploit CBC mode?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the CRIME attack and how it compresses TLS session data.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the BREACH attack and how does it exploits HTTP compression?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the Logjam attack on TLS Diffie-Hellman key exchange.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the FREAK attack and why does export-grade crypto enable it?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the DROWN attack using SSLv2 to break TLS connections.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the Sweet32 attack and how does it exploit 64-bit block ciphers?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the Triple Handshake attack on TLS session resumption.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the RC4 NOMORE attack on WPA-TKIP and TLS?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the Invalid Curve Point attack on ECDH key exchange.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is a timing side-channel attack on cryptographic implementations?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain how timing attacks can leak RSA private keys during decryption.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "What is a cache-timing attack on AES and how does it work?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain the Spectre vulnerability as a side-channel for crypto keys.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "What is nonce reuse in AES-GCM and why is it catastrophic?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain how nonce reuse in ECDSA allows private key recovery.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "What is the PS3 ECDSA nonce reuse attack that recovered Sony's private key?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain how weak random number generators break cryptographic systems.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "What is the Debian OpenSSL weak key bug of 2008 and its impact?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain how power analysis attacks extract crypto keys from hardware.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "What is the DiffieMan-in-the-middle attack on Diffie-Hellman key exchange?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain how key confusion attacks switch between RSA signatures and encryption.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the EFAIL attack on PGP and S/MIME email encryption?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the WEP IV reuse attack on wireless networks.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the KRACK attack on WPA2 handshake protocol?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain how the ROBOT attack exploits RSA in TLS servers.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the CurveBall attack on Windows ECC certificate validation?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the Zerologon attack on Netlogon protocol and AES-CFB8.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the Raccoon attack on TLS Diffie-Hellman key exchange?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain how Bleichenbacher's million message attack works on RSA.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the LUCKY13 attack on TLS CBC-mode timing?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Padding Oracle Attack"}}
+{"prompt": "Explain how the Manger attack exploits RSA-OAEP timing side channels.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the Boneh-Venkatesan attack on RSA with low private exponent?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain how Hastad's attack recovers plaintext from e RSA ciphertexts.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the Coppersmith-Howgrave-Graham attack on related messages?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain how the ROCA attack factors RSA keys from TPM chips.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the key reuse attack on AES-GCM when IVs collide?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain how the Fluhrer-Mantin-Shamir attack breaks RC4 in WEP.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the Bar Mitzvah attack on SSLv3 export-grade RC4?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain how the Cloudbleed bug leaked crypto keys via buffer overrun.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "What is the Heartbleed vulnerability and how did it leak TLS keys?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain the BERserk attack on Mozilla NSS RSA signature verification.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the DUAL_EC_DRBG backdoor and the NIST SP800-90A controversy?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain how the NSA backdoor in Dual EC DRBG works mathematically.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "What is the curve-specific invalid point attack on Weierstrass curves?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "Explain how the twist attack on Montgomery curves leaks private keys.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "ECDLP"}}
+{"prompt": "What is the GCD attack on RSA moduli from multiple certificates?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain how batch GCD finds shared factors across millions of RSA keys.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the Jager fingerprinting attack on TLS 1.3?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain the 0-extension attack on PKCS#1 v1.5 signature padding.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the RSA signature forgery using a public key as an oracle?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "Explain how the return of Bleichenbacher's oracle (ROBOT) works.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "RSA Attacks"}}
+{"prompt": "What is the SWEET32 birthday attack on 3DES in TLS?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain how the 64-bit block size of 3DES leads to birthday bound collisions.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the SLOTH attack on MD5 collision resistance in TLS?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "Explain how the MD5 collision attack forged a rogue CA certificate.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Protocol Attacks"}}
+{"prompt": "What is the SHA-1 chosen-prefix collision attack (SHAttered)?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "Explain how chosen-prefix SHA-1 collisions forge PDF documents.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Hash Length Extension"}}
+{"prompt": "What is the ECDSA bias attack using biased nonces?", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}
+{"prompt": "Explain the Minerva attack on ECDSA with biased nonces in hardware wallets.", "completion": "", "metadata": {"domain": "Cryptography", "subcategory": "Implementation Flaws"}}

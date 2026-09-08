@@ -1,0 +1,32 @@
+{
+  "stage": "sft",
+  "timestamp_start": "2026-09-01T17:39:24.978439+00:00",
+  "timestamp_end": "2026-09-01T17:39:25.584490+00:00",
+  "status": "completed",
+  "config_hash": "d0bb61117e987830",
+  "dataset_hash": "86ca0a3b0686497c",
+  "base_model_hash": "f23eb0eca6b68216",
+  "hyperparameters": {
+    "max_steps": 50,
+    "learning_rate": 0.0002,
+    "lr_scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "effective_batch_size": 32,
+    "lora_r": 64,
+    "lora_alpha": 128,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "max_seq_length": 2048,
+    "packing": true,
+    "save_dir": "artifacts/sft"
+  },
+  "eval_result": null,
+  "notes": "SFT stage complete. Stub artifacts written \u2014 real run writes LoRA weights via TRL."
+}

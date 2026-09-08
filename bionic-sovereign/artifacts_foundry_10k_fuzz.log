@@ -1,0 +1,14 @@
+No files changed, compilation skipped
+
+Ran 8 tests for test/SovereignBionicTest.t.sol:SovereignBionicTest
+[PASS] test_BuyIncreasesReserveAndMints() (gas: 44682)
+[PASS] test_Fuzz_BuySellRoundTripConservesK(uint128) (runs: 10000, μ: 85891, ~: 85891)
+[PASS] test_GaslessSettlementViaPermit() (gas: 119255)
+[PASS] test_GenesisMintToOneBillion() (gas: 13789)
+[PASS] test_PermitRejectsBadSignature() (gas: 20883)
+[PASS] test_PermitRejectsExpired() (gas: 20009)
+[PASS] test_SovereignMintOnlyAuthority() (gas: 51513)
+[PASS] test_SpotPriceScalesWithReserve() (gas: 43242)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 535.16ms (540.76ms CPU time)
+
+Ran 1 test suite in 536.10ms (535.16ms CPU time): 8 tests passed, 0 failed, 0 skipped (8 total tests)

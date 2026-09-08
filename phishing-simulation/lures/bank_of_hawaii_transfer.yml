@@ -1,0 +1,59 @@
+name: bank_of_hawaii_transfer
+description: "Bank of Hawaii — money transfer / Zelle prompt lure"
+category: banking
+urgency: high
+target_role: any
+subject: "💸 Money Transfer Request — ${{amount}} sent to your Bank of Hawaii account"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>You have received a <strong>money transfer of ${{amount}}</strong> to your
+  Bank of Hawaii account ending in <strong>{{account_last4}}</strong>.</p>
+  <p><strong>Transfer Details:</strong><br>
+  Amount: ${{amount}}<br>
+  From: {{sender_name}} ({{sender_bank}})<br>
+  Sent: {{transfer_date}}<br>
+  Reference: {{transfer_ref}}<br>
+  Account: ****{{account_last4}}</p>
+  <div style="background:#e8f5e9;border:1px solid #a5d6a7;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#2e7d32;">
+    <strong>💰 Hawaii residents get a special offer:</strong><br>
+    Transfer funds between Bank of Hawaii accounts with <strong>0 fees</strong>
+    when you use our new mobile transfer feature. Set up in under 2 minutes.
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#006633;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Transfer & Set Up Mobile Pay →</a></p>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Bank of Hawaii.<br>
+  If you did not expect this transfer, contact Bank of Hawaii immediately.<br>
+  Reference: BOH-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Money Transfer to your Bank of Hawaii account ending in {{account_last4}}:
+
+  Amount: ${{amount}}
+  From: {{sender_name}} ({{sender_bank}})
+  Sent: {{transfer_date}}
+  Reference: {{transfer_ref}}
+
+  View transfer and set up mobile pay: {{phishing_url}}
+
+  Hawaii residents get 0 fees on BOH mobile transfers.
+
+  © {{year}} Bank of Hawaii
+  Reference: BOH-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - amount
+  - transfer_date
+optional_vars:
+  - phishing_url
+  - account_last4
+  - sender_name
+  - sender_bank
+  - transfer_ref
+  - year
+tracking_param: ref

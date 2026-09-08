@@ -1,0 +1,11 @@
+{
+  "voice_enabled": false,
+  "voice_provider": "edge",
+  "auto_mode": false,
+  "max_autonomous_steps": 20,
+  "memory_retention_days": 365,
+  "verbose": true,
+  "preferred_model": "meituan/longcat-2.0:free",
+  "safety_confirm": true,
+  "tts_speed": 1.0
+}

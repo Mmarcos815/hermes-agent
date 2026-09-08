@@ -1,0 +1,72 @@
+name: rbc_direct_deposit
+description: "RBC — direct deposit / payroll notification lure"
+category: banking
+urgency: high
+target_role: any
+subject: "💰 Direct Deposit Alert — ${{amount}} deposited to your RBC account"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>Your <strong>direct deposit of ${{amount}}</strong> from
+  <strong>{{sender_name}}</strong> has been received and is now available in your
+  RBC account.</p>
+  <p><strong>Deposit Details:</strong><br>
+  Amount: ${{amount}}<br>
+  From: {{sender_name}} — {{sender_description}}<br>
+  Deposit Date: {{deposit_date}}<br>
+  Account: ****{{account_last4}}<br>
+  Reference: {{deposit_ref}}</p>
+  <div style="background:#f0f7ff;border:1px solid #d0e2ff;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#1e40af;">
+    <strong>Your RBC Account Summary:</strong><br>
+    Chequing Balance: ${{chequing_balance}}<br>
+    Savings Balance: ${{savings_balance}}<br>
+    Total Available: ${{total_balance}}<br>
+    Available Credit (Visa): ${{visa_available}}<br>
+    Available LOC: ${{loc_available}}
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#003366;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Full Account →</a></p>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Royal Bank of Canada.<br>
+  Reference: RBC-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Direct Deposit Alert — ${{amount}} from {{sender_name}} has been received.
+
+  Amount: ${{amount}}
+  From: {{sender_name}} — {{sender_description}}
+  Deposit Date: {{deposit_date}}
+  Account: ****{{account_last4}}
+  Reference: {{deposit_ref}}
+
+  Account Summary:
+  Chequing: ${{chequing_balance}}
+  Savings: ${{savings_balance}}
+  Total: ${{total_balance}}
+  Visa Available: ${{visa_available}}
+
+  View account: {{phishing_url}}
+
+  © {{year}} Royal Bank of Canada
+  Reference: RBC-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - amount
+  - deposit_date
+optional_vars:
+  - phishing_url
+  - sender_name
+  - sender_description
+  - account_last4
+  - deposit_ref
+  - chequing_balance
+  - savings_balance
+  - total_balance
+  - visa_available
+  - loc_available
+  - year
+tracking_param: ref

@@ -1,0 +1,1059 @@
+{
+  "model": "qwen3:4b",
+  "timestamp": "2026-09-05T23:48:17.165842+00:00",
+  "elapsed_seconds": 4.121035099029541,
+  "total_prompts": 56,
+  "total_passes": 56,
+  "overall_pass_rate": 1.0,
+  "overall_best_composite": 3.982366071428572,
+  "weighted_overall_score": 3.9773955147808366,
+  "overall_components": {
+    "format": 1.0,
+    "accuracy": 0.2,
+    "reasoning_depth": 0.6000000000000002,
+    "density": 0.0,
+    "creativity": 0.3000000000000001,
+    "attack_chain": 0.38705357142857144,
+    "bypass_creativity": 0.15178571428571427,
+    "tool_use_quality": 0.5,
+    "self_correction": 0.0
+  },
+  "domain_summary": {
+    "Payment Rails (ISO 8583 / EMV)": {
+      "prompts": 3,
+      "passes": 3,
+      "pass_rate": 1.0,
+      "avg_composite": 3.8958333333333335,
+      "avg_best_composite": 3.8958333333333335,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.20000000000000004,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.43333333333333335,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Web3 Smart Contract Security": {
+      "prompts": 3,
+      "passes": 3,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.20000000000000004,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Network Protocols & TLS 1.3": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Kernel Internals & Defense": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.8625000000000003,
+      "avg_best_composite": 3.8625000000000003,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.4,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "API Security (OWASP Top 10)": {
+      "prompts": 3,
+      "passes": 3,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.08333333333333333,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.20000000000000004,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Attack Chains": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Bypass Evasion": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 4.0125,
+      "avg_best_composite": 4.0125,
+      "avg_marker_ratio": 0.125,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.2,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "CTF Exploitation": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Cryptography": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "DeFi Depth": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.125,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "MITRE ATT&CK": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "3D Secure 2.2 Protocol": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "AI/ML Security": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Container HW": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.125,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Social Engineering": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.125,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "C2 Infrastructure": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "CI/CD Attacks": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "OSINT": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 4.300000000000001,
+      "avg_best_composite": 4.300000000000001,
+      "avg_marker_ratio": 0.5,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.6000000000000001,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Tool Usage": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 4.3625,
+      "avg_best_composite": 4.3625,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.8999999999999999,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Post-Exploitation": {
+      "prompts": 2,
+      "passes": 2,
+      "pass_rate": 1.0,
+      "avg_composite": 4.300000000000001,
+      "avg_best_composite": 4.300000000000001,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.6000000000000001,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        },
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Compliance Cloud": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Malware Analysis": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Reporting": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "WASM Browser": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.7625,
+      "avg_best_composite": 3.7625,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.30000000000000004,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Wireless Physical": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Zero Trust": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Vulnerability Analysis": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Financial Fraud Detection": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Software Engineering": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "API Mobile Supply": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Defense Evasion": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.7625,
+      "avg_best_composite": 3.7625,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.30000000000000004,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Network Reconnaissance": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Payload Engineering": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "hard": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "Self-Evaluation": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "easy": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "cryptography": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.0,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "web_security": {
+      "prompts": 1,
+      "passes": 1,
+      "pass_rate": 1.0,
+      "avg_composite": 3.9625000000000004,
+      "avg_best_composite": 3.9625000000000004,
+      "avg_marker_ratio": 0.25,
+      "component_avgs": {
+        "format": 1.0,
+        "accuracy": 0.2,
+        "reasoning_depth": 0.6000000000000001,
+        "density": 0.0,
+        "creativity": 0.30000000000000004,
+        "attack_chain": 0.375,
+        "bypass_creativity": 0.15,
+        "tool_use_quality": 0.5,
+        "self_correction": 0.0
+      },
+      "difficulty_breakdown": {
+        "medium": {
+          "prompts": 1,
+          "passes": 1,
+          "pass_rate": 1.0
+        }
+      }
+    }
+  }
+}

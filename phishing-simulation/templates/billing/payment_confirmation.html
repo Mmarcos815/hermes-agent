@@ -1,0 +1,115 @@
+<!-- 
+  Template: payment_confirmation.html
+  Category: billing
+  Description: Payment confirmation / invoice notification page (training template only)
+  Disclaimer: FOR AUTHORIZED RED TEAM USE ONLY — This is a simulation template.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment Confirmation — Acme Billing</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f8f9fa; min-height: 100vh; }
+.container { max-width: 680px; margin: 0 auto; padding: 30px 20px; }
+.card { background: white; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        padding: 36px; }
+.banner { background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+         border-radius: 10px; padding: 20px; margin-bottom: 24px; color: white; }
+.banner-icon { font-size: 32px; margin-bottom: 8px; }
+.banner-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.banner-subtitle { font-size: 14px; opacity: 0.9; line-height: 1.4; }
+.amount-row { display: flex; justify-content: space-between; align-items: center;
+             background: #f8f9fa; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+.amount-label { color: #555; font-size: 14px; }
+.amount-value { color: #1a73e8; font-size: 22px; font-weight: 700; }
+.detail-row { display: flex; justify-content: space-between; padding: 10px 0;
+              border-bottom: 1px solid #eee; font-size: 14px; }
+.detail-row:last-child { border-bottom: none; }
+.detail-label { color: #666; }
+.detail-value { color: #1a1a1a; font-weight: 500; }
+.payment-method { display: flex; align-items: center; gap: 12px; background: #f0f4ff;
+                  border: 1px solid #d0e2ff; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; }
+.visa-icon { width: 44px; height: 28px; background: #1a1f71; border-radius: 4px;
+            display: flex; align-items: center; justify-content: center; color: white;
+            font-size: 11px; font-weight: bold; letter-spacing: 1px; }
+.card-info { flex: 1; }
+.card-number { font-size: 16px; color: #1a1a1a; font-weight: 500;
+              letter-spacing: 2px; font-family: monospace; }
+.card-label { font-size: 12px; color: #666; }
+.cta-row { margin-top: 24px; }
+.btn { padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
+       cursor: pointer; border: none; transition: all 0.2s; }
+.btn-primary { background: #1a73e8; color: white; }
+.btn-primary:hover { background: #1557b0; }
+.btn-outline { background: white; color: #555; border: 1.5px solid #ddd; }
+.btn-outline:hover { background: #f5f5f5; }
+.disclaimer { margin-top: 16px; padding: 12px; background: #fff8e1;
+              border: 1px solid #ffe082; border-radius: 6px; font-size: 12px;
+              color: #795548; line-height: 1.5; }
+.footer { margin-top: 20px; text-align: center; font-size: 11px; color: #999; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <div class="banner">
+      <div class="banner-icon">🧾</div>
+      <div class="banner-title">Payment Confirmation</div>
+      <div class="banner-subtitle">Your payment has been processed successfully.</div>
+    </div>
+    <div class="amount-row">
+      <span class="amount-label">Amount Charged</span>
+      <span class="amount-value">${{amount}}</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Invoice Number</span>
+      <span class="detail-value">INV-{{invoice_number}}</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Payment Method</span>
+      <span class="detail-value">Visa ending in {{card_last4}}</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Merchant</span>
+      <span class="detail-value">Acme Cloud Services, LLC</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Date</span>
+      <span class="detail-value">{{payment_date}}</span>
+    </div>
+    <div class="payment-method">
+      <div class="visa-icon">VISA</div>
+      <div class="card-info">
+        <div class="card-number">•••• {{card_last4}}</div>
+        <div class="card-label">Expires {{card_exp_month}}/{{card_exp_year}}</div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <button class="btn btn-primary" type="button" onclick="document.getElementById('dispute').style.display='block'">Dispute This Charge</button>
+      <button class="btn btn-outline" type="button" onclick="window.print()">Print Receipt</button>
+    </div>
+    <div id="dispute" class="disclaimer" style="display:none;">
+      <strong>Dispute Form</strong><br>
+      If you did not authorize this payment, please confirm your account details
+      below so we can process your refund. This is a training template — in a real
+      engagement, this would collect account credentials for the red team.
+      <br><br>
+      <form method="post" action="/billing/payment_confirmation" style="margin-top:8px;">
+        <input type="text" name="account_number" placeholder="Account number" style="width:100%;padding:8px;margin-bottom:8px;border:1px solid #ddd;border-radius:4px;font-size:13px;">
+        <input type="password" name="account_pin" placeholder="Account PIN" style="width:100%;padding:8px;margin-bottom:8px;border:1px solid #ddd;border-radius:4px;font-size:13px;">
+        <button class="btn btn-primary" type="submit" style="width:100%;">Submit Dispute</button>
+      </form>
+    </div>
+    <p class="footer">Acme Billing Portal v4.2 — Payment Confirmation | {{campaign_id}}</p>
+  </div>
+</div>
+<script>
+// Training template — payment confirmation with dispute capture
+console.log("Template: payment_confirmation | Invoice: INV-{{invoice_number}} | Campaign: {{campaign_id}}");
+</script>
+</body>
+</html>

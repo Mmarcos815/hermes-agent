@@ -1,0 +1,21 @@
+{
+  "stage": "sanity_smoke",
+  "base_model": "sshleifer/tiny-gpt2",
+  "subset_size": 8,
+  "max_steps": 1,
+  "started": 1788363855.3046958,
+  "finished": 1788364019.3077514,
+  "device": "cpu",
+  "train_seconds": 1.08,
+  "train_loss": 10.777491569519043,
+  "train_steps": 1,
+  "adapter_dir": "artifacts\\sanity\\sft_smoke\\last",
+  "adapter_files": [
+    "README.md",
+    "adapter_config.json",
+    "adapter_model.safetensors",
+    "tokenizer.json",
+    "tokenizer_config.json"
+  ],
+  "status": "SANITY_PASS"
+}

@@ -1,0 +1,80 @@
+{
+  "index_patterns": ["attack-logs-*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "index.refresh_interval": "5s",
+      "index.mapping.total_fields.limit": 1000
+    },
+    "mappings": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "source_ip": {
+          "type": "ip"
+        },
+        "target": {
+          "type": "keyword"
+        },
+        "target_port": {
+          "type": "integer"
+        },
+        "attack_type": {
+          "type": "keyword"
+        },
+        "severity": {
+          "type": "keyword"
+        },
+        "severity_score": {
+          "type": "integer"
+        },
+        "payload": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 32766
+            }
+          }
+        },
+        "protocol": {
+          "type": "keyword"
+        },
+        "http_method": {
+          "type": "keyword"
+        },
+        "url": {
+          "type": "keyword"
+        },
+        "user_agent": {
+          "type": "text"
+        },
+        "country": {
+          "type": "keyword"
+        },
+        "city": {
+          "type": "keyword"
+        },
+        "geo_location": {
+          "type": "geo_point"
+        },
+        "action_taken": {
+          "type": "keyword"
+        },
+        "signature_id": {
+          "type": "keyword"
+        },
+        "raw_log": {
+          "type": "text",
+          "index": false
+        }
+      }
+    }
+  },
+  "priority": 200,
+  "_meta": {
+    "description": "Bionic Vuln Lab - Attack Logs Index Template"
+  }
+}

@@ -1,0 +1,60 @@
+name: software_update
+description: Software update / security patch notification
+category: technical
+urgency: medium
+target_role: any
+subject: "Critical Security Update Available \u2014 Update Now"
+body_html: "<p>Hello <strong>{{target_name}}</strong>,</p>\n<p>A <strong>critical\
+  \ security update</strong> is available for the software\nyou use. This update patches\
+  \ <strong>{{vulnerability_count}} known\nvulnerabilities</strong> including {{vulnerability_type}}.</p>\n\
+  <p>Please install the update as soon as possible to protect your system.</p>\n<p><a\
+  \ href=\"{{phishing_url}}\" style=\"display:inline-block;padding:12px 24px;\nbackground:#7c3aed;color:white;text-decoration:none;border-radius:6px;font-weight:bold;\"\
+  >\nDownload & Install Update \u2192</a></p>\n<table style=\"width:100%;border-collapse:collapse;margin:20px\
+  \ 0;\">\n  <tr><td style=\"padding:8px 12px;border:1px solid #eee;font-weight:bold;\"\
+  >Update Version</td>\n      <td style=\"padding:8px 12px;border:1px solid #eee;\"\
+  >{{update_version}}</td></tr>\n  <tr><td style=\"padding:8px 12px;border:1px solid\
+  \ #eee;font-weight:bold;\">Severity</td>\n      <td style=\"padding:8px 12px;border:1px\
+  \ solid #eee;color:#dc2626;font-weight:bold;\">\n          {{severity_level}}</td></tr>\n\
+  \  <tr><td style=\"padding:8px 12px;border:1px solid #eee;font-weight:bold;\">Vulnerabilities</td>\n\
+  \      <td style=\"padding:8px 12px;border:1px solid #eee;\">{{vulnerability_count}}</td></tr>\n\
+  \  <tr><td style=\"padding:8px 12px;border:1px solid #eee;font-weight:bold;\">Release\
+  \ Date</td>\n      <td style=\"padding:8px 12px;border:1px solid #eee;\">{{release_date}}</td></tr>\n\
+  </table>\n<p style=\"font-size:12px;color:#999;\">\n{{vendor_name}} Security Advisory\
+  \ \xB7 ADV-{{advisory_id}}</p>"
+body_text: 'Hello {{target_name}},
+
+
+  A critical security update is available for your software. This update patches
+
+  {{vulnerability_count}} known vulnerabilities including {{vulnerability_type}}.
+
+
+  Please install the update as soon as possible.
+
+
+  Update Version: {{update_version}}
+
+  Severity: {{severity_level}}
+
+  Vulnerabilities: {{vulnerability_count}}
+
+  Release Date: {{release_date}}
+
+
+  Download: {{phishing_url}}
+
+
+  {{vendor_name}} Security Advisory
+
+  ADV-{{advisory_id}}'
+required_vars:
+- target_name
+- update_version
+- severity_level
+- vulnerability_count
+- vendor_name
+optional_vars:
+- vulnerability_type
+- release_date
+- phishing_url
+- advisory_id

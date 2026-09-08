@@ -1,0 +1,230 @@
+{
+  "generated": "2026-09-02T10:50:44.164733Z",
+  "corpus": "C:\\Users\\mobil\\orca\\projects\\my 1st\\bounty_targets",
+  "files_scanned": 25,
+  "total_findings": 24,
+  "by_severity": {
+    "CRITICAL": 3,
+    "HIGH": 10,
+    "MEDIUM": 9,
+    "LOW": 2
+  },
+  "findings": [
+    {
+      "rule": "DELEGATE-006",
+      "severity": "CRITICAL",
+      "name": "Unprotected delegatecall",
+      "file": "unprotected_function\\WalletLibrary_source_code\\WalletLibrary.sol",
+      "line": 430,
+      "desc": "delegatecall executes foreign code in storage context; must be tightly access-controlled.",
+      "snippet": "sg.data.length > 0)       _walletLibrary.delegatecall(msg.data);   }    // Gets an owner by 0-"
+    },
+    {
+      "rule": "DELEGATE-006",
+      "severity": "CRITICAL",
+      "name": "Unprotected delegatecall",
+      "file": "unprotected_function\\WalletLibrary_source_code\\WalletLibrary.sol",
+      "line": 441,
+      "desc": "delegatecall executes foreign code in storage context; must be tightly access-controlled.",
+      "snippet": "turns (bool) {     return _walletLibrary.delegatecall(msg.data);   }    function isOwner(addre"
+    },
+    {
+      "rule": "DELEGATE-006",
+      "severity": "CRITICAL",
+      "name": "Unprotected delegatecall",
+      "file": "unprotected_function\\WalletLibrary_source_code\\WalletLibrary.sol",
+      "line": 445,
+      "desc": "delegatecall executes foreign code in storage context; must be tightly access-controlled.",
+      "snippet": "turns (bool) {     return _walletLibrary.delegatecall(msg.data);   }    // FIELDS   address co"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "honeypots\\PrivateBank\\PrivateBank.sol",
+      "line": 32,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "{                          if(msg.sender.call.value(_am)())             {                 balance"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "reentrancy\\DAO_source_code\\DAO.sol",
+      "line": 199,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "           throw;         if (_recipient.call.value(_amount)()) {             PayOut(_recipient, _am"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "reentrancy\\DAO_source_code\\DAO.sol",
+      "line": 302,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "0) / divisor();             extraBalance.call.value(msg.value - token)();             balances[_toke"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "reentrancy\\DAO_source_code\\DAO.sol",
+      "line": 323,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "xecute refund             if (msg.sender.call.value(weiGiven[msg.sender])()) {                 Refun"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "reentrancy\\DAO_source_code\\DAO.sol",
+      "line": 911,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "salCheck) {             if (!p.recipient.call.value(p.amount)(_transactionData))                 thr"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "reentrancy\\Reentrancy.sol",
+      "line": 17,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "lback function         if( ! (msg.sender.call.value(userBalance[msg.sender])() ) ){             thro"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "reentrancy\\Reentrancy.sol",
+      "line": 28,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "g.sender] = 0;         if( ! (msg.sender.call.value(amount)() ) ){             throw;         }     "
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "reentrancy\\ReentrancyExploit.sol",
+      "line": 15,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "hers         require(vulnerable_contract.call.value(msg.value)(bytes4(sha3(\"addToBalance()\"))));    "
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "unprotected_function\\WalletLibrary_source_code\\WalletLibrary.sol",
+      "line": 239,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": " _data);       } else {         if (!_to.call.value(_value)(_data))           throw;       }       S"
+    },
+    {
+      "rule": "RACE-COND-001",
+      "severity": "HIGH",
+      "name": "Race condition / call to the unknown",
+      "file": "unprotected_function\\WalletLibrary_source_code\\WalletLibrary.sol",
+      "line": 273,
+      "desc": "External call with value forwarding before state finalization enables reentrancy.",
+      "snippet": "      } else {         if (!m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data))           thro"
+    },
+    {
+      "rule": "FORCED-ETH-003",
+      "severity": "MEDIUM",
+      "name": "Strict balance equality",
+      "file": "forced_ether_reception\\coin.sol",
+      "line": 180,
+      "desc": "Exact balance equality can be broken by selfdestruct force-feeding.",
+      "snippet": "grate_and_destroy() onlyOwner { \tassert(this.balance == totalSupply);                 // consis"
+    },
+    {
+      "rule": "TIMESTAMP-005",
+      "severity": "MEDIUM",
+      "name": "Block timestamp as randomness",
+      "file": "reentrancy\\DAO_source_code\\DAO.sol",
+      "line": 771,
+      "desc": "Miners can bias timestamp-derived values.",
+      "snippet": "          throw;         }          if (now + _debatingPeriod < now) // prevents over"
+    },
+    {
+      "rule": "TIMESTAMP-005",
+      "severity": "MEDIUM",
+      "name": "Block timestamp as randomness",
+      "file": "reentrancy\\DAO_source_code\\DAO.sol",
+      "line": 784,
+      "desc": "Miners can bias timestamp-derived values.",
+      "snippet": "actionData);         p.votingDeadline = now + _debatingPeriod;         p.open = true;"
+    },
+    {
+      "rule": "TIMESTAMP-005",
+      "severity": "MEDIUM",
+      "name": "Block timestamp as randomness",
+      "file": "reentrancy\\DAO_source_code\\DAO.sol",
+      "line": 1192,
+      "desc": "Miners can bias timestamp-derived values.",
+      "snippet": "daoCreator.createDAO(_newCurator, 0, 0, now + splitExecutionPeriod);     }      funct"
+    },
+    {
+      "rule": "TIMESTAMP-005",
+      "severity": "MEDIUM",
+      "name": "Block timestamp as randomness",
+      "file": "reentrancy\\SpankChain_source_code\\SpankChain_Payment.sol",
+      "line": 408,
+      "desc": "Miners can bias timestamp-derived values.",
+      "snippet": "        Channels[_lcID].LCopenTimeout = now + _confirmTime;         Channels[_lcID].i"
+    },
+    {
+      "rule": "TIMESTAMP-005",
+      "severity": "MEDIUM",
+      "name": "Block timestamp as randomness",
+      "file": "reentrancy\\SpankChain_source_code\\SpankChain_Payment.sol",
+      "line": 589,
+      "desc": "Miners can bias timestamp-derived values.",
+      "snippet": "true;         channel.updateLCtimeout = now + channel.confirmTime;          // make s"
+    },
+    {
+      "rule": "TIMESTAMP-005",
+      "severity": "MEDIUM",
+      "name": "Block timestamp as randomness",
+      "file": "reentrancy\\SpankChain_source_code\\SpankChain_Payment.sol",
+      "line": 645,
+      "desc": "Miners can bias timestamp-derived values.",
+      "snippet": "irtualChannels[_vcID].updateVCtimeout = now + Channels[_lcID].confirmTime;         vi"
+    },
+    {
+      "rule": "TIMESTAMP-005",
+      "severity": "MEDIUM",
+      "name": "Block timestamp as randomness",
+      "file": "reentrancy\\SpankChain_source_code\\SpankChain_Payment.sol",
+      "line": 712,
+      "desc": "Miners can bias timestamp-derived values.",
+      "snippet": "irtualChannels[_vcID].updateVCtimeout = now + Channels[_lcID].confirmTime;          e"
+    },
+    {
+      "rule": "DOS-GAS-002",
+      "severity": "MEDIUM",
+      "name": "Unbounded loop over dynamic array (gas griefing DoS)",
+      "file": "unprotected_function\\WalletLibrary_source_code\\WalletLibrary.sol",
+      "line": 112,
+      "desc": "Loop over dynamic array length can exceed block gas limit and brick the function.",
+      "snippet": "m_ownerIndex[uint(msg.sender)] = 1;     for (uint i = 0; i < _owners.length; ++i)     {       m_owne"
+    },
+    {
+      "rule": "SELFDESTRUCT-007",
+      "severity": "LOW",
+      "name": "Self-destruct present",
+      "file": "honeypots\\Lottery\\Lottery.sol",
+      "line": 77,
+      "desc": "Can force-feed ether and permanently alter accounting invariants.",
+      "snippet": "re(msg.sender==owner);                  selfdestruct(msg.sender);     }          function for"
+    },
+    {
+      "rule": "SELFDESTRUCT-007",
+      "severity": "LOW",
+      "name": "Self-destruct present",
+      "file": "variable shadowing\\inherited_state.sol",
+      "line": 5,
+      "desc": "Can force-feed ether and permanently alter accounting invariants.",
+      "snippet": "{     require(owner == msg.sender);     selfdestruct(owner);   } } contract C is Suicidal {  "
+    }
+  ]
+}

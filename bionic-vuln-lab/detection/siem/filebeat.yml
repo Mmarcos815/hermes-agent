@@ -1,0 +1,99 @@
+# Bionic Vuln Lab - Filebeat Configuration
+# Ships attack logs to Logstash for processing
+
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/bionic-vuln-lab/attacks/*.json
+      - /var/log/bionic-vuln-lab/attacks/*.log
+    json.keys_under_root: true
+    json.add_error_key: true
+    json.message_key: log
+    fields:
+      log_source: bionic-vuln-lab
+      log_category: attack-detection
+    fields_under_root: true
+    multiline:
+      pattern: '^\{'
+      negate: true
+      match: after
+    scan_frequency: 10s
+    close_inactive: 5m
+    clean_inactive: 24h
+    ignore_older: 168h
+
+  # Syslog input for network-based attacks
+  - type: udp
+    enabled: false
+    host: "0.0.0.0:514"
+    fields:
+      log_source: syslog
+      log_category: network-attack
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+# Logstash output
+output.logstash:
+  hosts: ["localhost:5044"]
+  loadbalance: true
+  compression_level: 3
+  worker: 2
+  pipelining: 5
+  ttl: 30s
+  timeout: 30s
+  max_retries: 3
+  bulk_max_size: 2048
+
+# Elasticsearch template setup (optional - if sending directly)
+setup.template:
+  name: "attack-logs-template"
+  pattern: "attack-logs-*"
+  enabled: false
+  overwrite: false
+
+# Kibana dashboard setup
+setup.kibana:
+  host: "localhost:5601"
+  username: "${KIBANA_USER:elastic}"
+  password: "${KIBANA_PASSWORD:changeme}"
+
+# Processors for enrichment
+processors:
+  - add_host_metadata:
+      netinfo.enabled: true
+      cache.ttl: 5m
+  - add_cloud_metadata: ~
+  - add_fields:
+      target: ''
+      fields:
+        lab_name: bionic-vuln-lab
+        detection_engine: elk-siem
+
+# Logging configuration
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat
+  keepfiles: 7
+  permissions: 0644
+
+# Monitoring
+monitoring:
+  enabled: true
+  elasticsearch:
+    hosts: ["http://localhost:9200"]
+    username: "${ES_USER:elastic}"
+    password: "${ES_PASSWORD:changeme}"
+
+# Queue configuration
+queue.mem:
+  events: 4096
+  flush.min_events: 512
+  flush.timeout: 5s
+
+# Security settings
+ssl.enabled: false

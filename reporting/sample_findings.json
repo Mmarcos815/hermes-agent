@@ -1,0 +1,49 @@
+[
+  {
+    "title": "SQL Injection in Login Form",
+    "severity": "critical",
+    "description": "The login form is vulnerable to SQL injection attacks, allowing unauthorized database access.",
+    "evidence": "Payload ' OR 1=1-- bypassed authentication on /login endpoint.",
+    "remediation": "Use parameterized queries and input validation. Implement prepared statements.",
+    "cvss": 9.8,
+    "affected": "/api/login, /api/auth",
+    "date": "2026-09-01"
+  },
+  {
+    "title": "Cross-Site Scripting (XSS) in Comments",
+    "severity": "high",
+    "description": "Stored XSS vulnerability in the comments section allows injection of malicious scripts.",
+    "evidence": "Injected <script>alert('XSS')</script> was stored and executed.",
+    "remediation": "Sanitize user input and implement Content Security Policy headers.",
+    "cvss": 7.5,
+    "affected": "/comments",
+    "date": "2026-09-02"
+  },
+  {
+    "title": "Weak Password Policy",
+    "severity": "medium",
+    "description": "The application does not enforce minimum password complexity requirements.",
+    "evidence": "Passwords like '123' and 'password' were accepted.",
+    "remediation": "Enforce minimum 12-character passwords with complexity requirements.",
+    "affected": "/api/register",
+    "date": "2026-09-03"
+  },
+  {
+    "title": "Missing Security Headers",
+    "severity": "low",
+    "description": "Several security headers are missing from HTTP responses.",
+    "evidence": "X-Frame-Options, X-Content-Type-Options, and Strict-Transport-Security headers absent.",
+    "remediation": "Add recommended security headers to all responses.",
+    "affected": "All endpoints",
+    "date": "2026-09-04"
+  },
+  {
+    "title": "Server Version Disclosure",
+    "severity": "info",
+    "description": "The server reveals its version information in HTTP headers.",
+    "evidence": "Server header reveals: nginx/1.24.0",
+    "remediation": "Configure server to suppress version disclosure.",
+    "affected": "All endpoints",
+    "date": "2026-09-05"
+  }
+]

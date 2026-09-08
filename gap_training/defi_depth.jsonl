@@ -1,0 +1,100 @@
+{"prompt": "Explain how a flash loan attack works in DeFi and walk through a step-by-step example of exploiting a price oracle discrepancy.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "What is a flash loan and how can an attacker use it to drain liquidity pools without collateral?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "Describe the mechanics of a flash loan attack on a lending protocol like Aave, including repayment conditions.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "How do flash loan attacks exploit atomic transactions in Ethereum? Provide a concrete attack scenario.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "What are the common vulnerabilities that enable flash loan attacks on DeFi protocols?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "Walk through the bZx flash loan attack: what went wrong and how was the exploit executed?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "How can flash loans be used to manipulate governance votes in DeFi protocols?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "Explain how flash loan attacks differ from traditional loan exploits in traditional finance.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "What defensive measures can DeFi protocols implement to prevent flash loan attacks?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "How does a flash loan-enabled arbitrage attack work across multiple DEXs in a single transaction?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "Describe how an attacker uses flash loans to exploit collateral ratio bugs in lending protocols.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "What is a flash swap and how does it relate to flash loan attack vectors on Uniswap?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "How can flash loans be combined with reentrancy attacks to maximize extraction from DeFi protocols?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "Explain the Pancake Bunny flash loan attack: how price manipulation led to massive losses.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "What role do flash loans play in DeFi liquidation cascades? Describe an attack scenario.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "How do flash loan attacks on yield aggregators like Yearn Finance typically unfold?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "Describe how an attacker can use a flash loan to temporarily control a protocol's governance and pass malicious proposals.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "What is the difference between a flash loan attack and a price oracle manipulation attack?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "How do flash loan attacks exploit the composability of DeFi protocols (money legos)?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "Explain how Cream Finance was exploited via flash loan attacks and what lessons were learned.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Flash Loan Attacks"}}
+{"prompt": "What is a price oracle in DeFi and why is it a critical attack surface for protocols?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "Explain how an attacker can manipulate a spot price oracle on Uniswap to exploit lending protocols.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "Describe the Mango Markets oracle manipulation attack: how did the attacker profit?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "What is a TWAP (Time-Weighted Average Price) oracle and how does it defend against manipulation?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "How does Chainlink's decentralized oracle network prevent single-point price manipulation?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "Explain how flash loans amplify oracle manipulation attacks on DeFi lending platforms.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "What is the difference between a push oracle and a pull oracle in DeFi?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "How can an attacker manipulate a low-liquidity DEX pair to corrupt oracle price feeds?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "Describe the Venus Protocol oracle attack: how was the price feed exploited?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "What are the risks of using spot price oracles versus TWAP oracles in lending protocols?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "How does an oracle manipulation attack on a synthetic asset protocol work?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "Explain how Band Protocol and Chainlink differ in their oracle security models.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "What is oracle frontrunning and how does it affect DeFi protocol security?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "How can a single block oracle manipulation be executed using flash loans?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "Describe how the Harvest Finance flash loan attack exploited oracle price discrepancies.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "What is a decentralized oracle network and why is centralization a vulnerability?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "How do lending protocols like Compound handle oracle failures or manipulation attempts?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "Explain the concept of oracle manipulation resistance in DeFi protocol design.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "How can an attacker use a flash loan to manipulate a Chainlink price feed?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "What are the economic incentives that make oracle manipulation profitable in DeFi?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Oracle Manipulation"}}
+{"prompt": "What is a governance attack in DeFi and how can token concentration enable it?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "Explain how a malicious governance proposal can drain a DeFi protocol's treasury.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "Describe the Beanstalk Farms governance attack: how was the flash loan used to pass a malicious proposal?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is a governance token and how can its distribution affect protocol security?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is a governance proposal threshold and how does it prevent spam attacks?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "How can flash loans be used to temporarily acquire voting power for governance attacks?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is a timelock in DeFi governance and how does it protect against attacks?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "Explain how a whale can execute a governance attack without using flash loans.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is quadratic voting and how does it mitigate governance attacks in DeFi DAOs?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "Describe how a governance attack on a DeFi protocol can change collateral parameters to enable theft.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is a multisig wallet and how does it relate to governance security in DeFi?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "How can a governance attack exploit low voter turnout in a DeFi DAO?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "Explain the difference between on-chain and off-chain governance in DeFi security.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is a governance mining attack and how does it work in DeFi protocols?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "How can a malicious governance proposal bypass security checks in DeFi protocols?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "Describe how the Curve Finance DAO governance structure prevents attacks.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is vote delegation and how can it be exploited in governance attacks?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "How does a governance attack on a lending protocol's risk parameters enable asset theft?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What are the warning signs of an impending governance attack on a DeFi protocol?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "Explain how a governance attack can be combined with flash loans for maximum impact.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Governance Attacks"}}
+{"prompt": "What is a blockchain bridge and why is it a major attack vector in DeFi?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "Describe the Ronin Bridge hack: how were validator keys compromised?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "How does a bridge exploit typically work: minting fake assets on the destination chain?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "Explain the Wormhole Bridge hack: what vulnerability allowed the $320M exploit?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "What is a liquidity bridge versus a canonical bridge and which is more secure?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "How can an attacker exploit a bridge's signature verification to mint unlimited tokens?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "Describe the Nomad Bridge exploit: how did a routine upgrade lead to mass theft?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "What are the security differences between trusted and trustless bridges?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "How does a bridge exploit on a cross-chain DLP (Decentralized Liquidity Protocol) work?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "What is a validator set compromise in bridge security and how can it be prevented?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "Explain how the Harmony Horizon Bridge was exploited via compromised private keys.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "How can a bridge's message passing protocol be exploited to replay transactions?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "What is a light client bridge and how does it improve security over multisig bridges?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "Describe how a bridge exploit can be combined with flash loans for cross-chain attacks.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "What are the economic security considerations when designing a cross-chain bridge?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Bridge Exploits"}}
+{"prompt": "What is MEV (Maximal Extractable Value) in DeFi and how does it affect users?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "Explain how searchers extract MEV through arbitrage on decentralized exchanges.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "What is a backrunning attack in MEV and how does it differ from frontrunning?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "Describe how MEV-Boost changed the Ethereum MEV landscape after the Merge.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "What is a sandwich attack and how does it extract value from DEX trades?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "How do MEV searchers use flashbots to avoid the public mempool?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "Explain how liquidation MEV works in lending protocols like Aave and Compound.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "What is a time-bandit attack in MEV and how does it threaten blockchain consensus?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "How can DeFi protocols design MEV-resistant AMM mechanisms?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "Describe the role of block builders in the post-Merge MEV supply chain.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "What is an atomic arbitrage and how does it differ from cross-chain MEV?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "How does private transaction routing (e.g., Flashbots Protect) reduce MEV exposure?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "Explain how JIT (Just-In-Time) liquidity on Uniswap V3 relates to MEV extraction.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "What is a cyclic arbitrage and how do MEV bots exploit it across DEXs?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "How can intent-based architectures (e.g., CoW Swap) mitigate MEV in DeFi trading?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "MEV Extraction"}}
+{"prompt": "Explain step-by-step how a sandwich attack is executed on Uniswap V2.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "How does slippage tolerance affect vulnerability to sandwich attacks?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "What is a V3 concentrated liquidity sandwich attack and how does it differ from V2?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "How can DEX aggregators like 1inch help protect users from sandwich attacks?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "Describe the economic mechanics that make sandwich attacks profitable for MEV searchers.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "What is a backrun-sandwich hybrid attack and how does it work?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "How do private mempools and RPC endpoints prevent sandwich attacks on Ethereum?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "Explain how a sandwich attack on a large stablecoin swap can be executed.", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "What are the ethical and legal implications of MEV sandwich attacks in DeFi?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}
+{"prompt": "How can limit orders and batch auctions (CoW Protocol) eliminate sandwich attack vectors?", "completion": "", "metadata": {"domain": "DeFi Depth", "subcategory": "Sandwich Attacks"}}

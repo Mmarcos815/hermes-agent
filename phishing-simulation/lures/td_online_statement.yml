@@ -1,0 +1,61 @@
+name: td_online_statement
+description: "TD Bank — online statement / e-statement notification"
+category: banking
+urgency: medium
+target_role: any
+subject: "📄 Your TD Bank statement is ready — View online for free"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>Your <strong>TD Bank statement</strong> for the period
+  <strong>{{statement_period}}</strong> is now available online.</p>
+  <p>Viewing your statement online is <strong>free</strong> and helps protect the
+  environment by reducing paper waste. You can also download a PDF copy for your
+  records.</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#d0021b;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Your Statement →</a></p>
+  <div style="background:#f0f7ff;border:1px solid #d0e2ff;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#1e40af;">
+    <strong>Account Summary:</strong><br>
+    Account: ****{{account_last4}}<br>
+    Statement period: {{statement_period}}<br>
+    Opening balance: ${{opening_balance}}<br>
+    Closing balance: ${{closing_balance}}<br>
+    Total deposits: ${{total_deposits}}<br>
+    Total withdrawals: ${{total_withdrawals}}<br>
+    Total transactions: {{total_transactions}}
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} TD Bank, N.A.<br>
+  To ensure you receive your statements, verify your email address and preferences.<br>
+  Reference: TD-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Your TD Bank statement for {{statement_period}} is now available.
+
+  View online: {{phishing_url}}
+
+  Account: ****{{account_last4}}
+  Period: {{statement_period}}
+  Opening balance: ${{opening_balance}}
+  Closing balance: ${{closing_balance}}
+  Total transactions: {{total_transactions}}
+
+  © {{year}} TD Bank, N.A.
+  Reference: TD-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - statement_period
+optional_vars:
+  - phishing_url
+  - account_last4
+  - opening_balance
+  - closing_balance
+  - total_deposits
+  - total_withdrawals
+  - total_transactions
+  - year
+tracking_param: ref

@@ -1,0 +1,150 @@
+{"prompt": "Describe the steps of a TCP SYN flood attack and how to detect it on a network.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker performs ARP spoofing on a local area network.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Outline the process of a DNS cache poisoning attack from reconnaissance to exploitation.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Walk through a man-in-the-middle attack on an unencrypted HTTP connection.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe how a VLAN hopping attack works in a misconfigured switched network.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain the steps to perform a DHCP starvation attack and set up a rogue DHCP server.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Detail a BGP hijacking attack scenario from an autonomous system perspective.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Outline how an attacker exploits a misconfigured SNMP community string to enumerate a network.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe a port scanning and service enumeration chain leading to exploitation.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker uses ICMP tunneling to exfiltrate data past network controls.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Walk through a network-based attack using LLMNR/NBT-NS poisoning to capture credentials.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe how an attacker performs a MAC flooding attack on a network switch.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Outline the steps of a denial-of-service attack amplification using NTP monlist.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how a STP manipulation attack allows an attacker to intercept network traffic.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe an attack chain exploiting IPv6 router advertisements on a dual-stack network.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe how an attacker exploits weak WEP encryption to recover the network key.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker performs a KRACK attack against WPA2 wireless networks.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Outline the steps to exploit a rogue access point for credential harvesting.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe how an attacker uses DNS tunneling to establish a C2 channel.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Walk through an attack chain involving SSH brute force leading to lateral movement.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker exploits a misconfigured VPN gateway for network access.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe a network sniffing attack on a shared Ethernet segment using promiscuous mode.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Outline how an attacker exploits STP to become the root bridge and intercept traffic.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain the process of an STP-based man-in-the-middle attack.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe an attack chain using credential stuffing against network device admin panels.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Walk through how an attacker performs network reconnaissance using passive DNS analysis.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker exploits default credentials on network infrastructure devices.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe a network attack exploiting IP source routing to bypass access controls.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Outline how an attacker uses a rogue wireless evil twin to harvest credentials.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how TCP session hijacking works against unencrypted protocols.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe an attack chain exploiting UPnP vulnerabilities on network gateways.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Walk through how an attacker uses SMB relay to authenticate to remote systems.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker performs a NetBIOS name service spoofing attack.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe a network attack chain using compromised IoT devices as pivot points.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Outline how an attacker exploits misconfigured Wi-Fi enterprise authentication.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker uses ICMP redirect messages to redirect traffic.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe an attack exploiting predictable TCP initial sequence numbers.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Walk through how an attacker chains port scanning with vulnerability exploitation.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how network protocol fuzzing can lead to remote code execution.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Explain how an attacker exploits TCP fast open to bypass connection tracking.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Network Attacks"}}
+{"prompt": "Describe a SQL injection attack chain from discovery to database extraction.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain how an attacker performs a stored XSS attack to steal session cookies.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline the steps of a CSRF attack that forces a state-changing request.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Walk through an SSRF attack that accesses cloud metadata services from a web app.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker performs a directory traversal attack to read system files.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain an attack chain using file inclusion vulnerabilities to achieve RCE.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline how an attacker exploits insecure deserialization in a web application.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe a reflected XSS attack using a crafted URL payload.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain how an attacker performs parameter tampering to bypass access controls.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Walk through an XXE injection attack that reads local files from the server.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker uses HTTP header injection to perform response splitting.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain a web attack chain exploiting CORS misconfigurations for data theft.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline how an attacker performs a mass assignment attack on a REST API.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe an attack chain using OAuth flow manipulation to hijack user accounts.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain how an attacker exploits JWT token weaknesses to escalate privileges.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Walk through an SSTI attack that leads to server-side code execution.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker performs a DOM-based XSS attack via client-side code.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain an IDOR attack chain that accesses other users data through predictable IDs.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline how an attacker exploits HTTP request smuggling to poison web caches.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe a web attack using path normalization bypasses to access admin endpoints.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain how an attacker performs a clickjacking attack to trigger unintended actions.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Walk through an open redirect attack chain used for phishing campaigns.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker uses web cache deception to extract user information.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain an attack chain exploiting race conditions in web application logic.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline how an attacker bypasses WAF rules using encoding and obfuscation techniques.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe a web attack chain using GraphQL introspection to map the data schema.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain how an attacker exploits a subdomain takeover vulnerability.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Walk through a supply chain web attack via compromised JavaScript dependencies.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker performs HTTP verb tampering to bypass authentication.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain a web attack exploiting polyglot files to bypass upload restrictions.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline an attack chain using JSONP endpoints for data exfiltration.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker exploits insecure direct object references in APIs.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain a web-based attack using Unicode normalization to bypass security filters.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Walk through an attack exploiting server-side includes for code execution.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker uses web sockets for data exfiltration past firewalls.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain an attack chain using MIME-type confusion to execute malicious scripts.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline how an attacker exploits cached credentials in browser autofill data.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker uses webRTC to leak internal IP addresses.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain an attack chain exploiting HTTP/2 rapid reset for denial of service.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Outline how an attacker exploits JSON Web Key Set confusion for token forgery.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe a web attack using prototype pollution to achieve remote code execution.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain how an attacker exploits HTTP/2 request smuggling for session hijacking.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Walk through a web attack chain using cache key confusion for data exposure.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker exploits SameSite cookie bypass for CSRF attacks.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Explain an attack chain using web assembly for evasion of security controls.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Web Attacks"}}
+{"prompt": "Describe how an attacker exploits overly permissive IAM roles in AWS.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain an attack chain using compromised cloud credentials to pivot across services.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Outline how an attacker accesses exposed cloud storage buckets for data theft.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Walk through a cloud metadata service attack to escalate privileges on a VM.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe how an attacker exploits misconfigured Azure Managed Identities.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain an attack chain using cloud function event injection for execution.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Outline how an attacker abuses cloud key management services for decryption.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe a container escape attack from a compromised pod to the host node.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain how an attacker exploits serverless function vulnerabilities for lateral movement.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Walk through a cloud supply chain attack via compromised container images.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe how an attacker uses compromised service accounts for cloud persistence.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain an attack chain exploiting cloud logging misconfigurations to cover tracks.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Outline how an attacker exploits Terraform state files for credential access.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe a cloud attack using cross-account AssumeRole to access another tenant.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain how an attacker exploits GCP service account key mismanagement.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Walk through an attack chain using cloud CI/CD pipelines for supply chain compromise.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe how an attacker exploits misconfigured cloud CDN for origin access.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain an attack chain using cloud snapshot manipulation to access sensitive data.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Outline how an attacker abuses cloud auto-scaling for cryptomining operations.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe a cloud attack exploiting workload identity federation misconfiguration.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain how an attacker uses cloud event triggers for data exfiltration.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Walk through a cloud attack chain using orphaned resources for persistence.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe how an attacker exploits cloud API gateway misconfigurations.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain an attack chain using cloud secrets manager enumeration for privilege escalation.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Outline how an attacker exploits cloud network security group misconfigurations.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe a cloud attack using cross-region replication for data theft.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain how an attacker exploits serverless environment variables for credential theft.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Walk through a cloud attack chain using compromised backup systems for ransom.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe how an attacker exploits cloud resource policy misconfigurations.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain an attack chain using cloud infrastructure-as-code for backdoor insertion.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Outline how an attacker exploits cloud monitoring blind spots for stealth operations.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe a cloud attack using identity provider misconfiguration for SSO bypass.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Explain how an attacker exploits cloud marketplace images containing malware.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Walk through a cloud attack chain using service mesh vulnerabilities for lateral movement.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe how an attacker exploits cloud control plane misconfigurations for takeover.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Cloud Attacks"}}
+{"prompt": "Describe a software supply chain attack using compromised dependency packages.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain how an attacker performs a typosquatting attack on package registries.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Outline a supply chain attack through compromised build systems and CI/CD.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Walk through an attack chain exploiting code signing certificate theft.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe how an attacker injects malware into open source library updates.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain a supply chain attack using compromised Docker base images.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Outline how an attacker exploits update mechanisms for software distribution.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe a supply chain attack through compromised firmware updates.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain how an attacker exploits package maintainer account compromise.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Walk through a supply chain attack using malicious npm dependencies.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe how an attacker exploits version pinning bypass in package managers.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain a supply chain attack through compromised IDE extensions.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Outline how an attacker exploits build cache poisoning for code injection.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe a supply chain attack using compromised CI/CD runner agents.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain how an attacker exploits repository mirroring to distribute malware.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Walk through a supply chain attack through compromised testing frameworks.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe how an attacker exploits transitive dependency confusion attacks.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain a supply chain attack using compromised binary artifact repositories.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Outline how an attacker exploits package registry API vulnerabilities.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe a supply chain attack through compromised version control hooks.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain how an attacker exploits dependency resolution algorithm weaknesses.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Walk through a supply chain attack using compromised plugin marketplaces.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe how an attacker exploits software bill of materials gaps.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain a supply chain attack through compromised documentation sites.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Outline how an attacker exploits container registry misconfigurations.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe a supply chain attack using compromised package release automation.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain how an attacker exploits lock file manipulation for dependency confusion.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Walk through a supply chain attack through compromised development tools.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Describe how an attacker exploits GitHub Actions workflow injection.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}
+{"prompt": "Explain a supply chain attack using compromised library maintainer credentials.", "completion": "", "metadata": {"domain": "Attack Chains", "subcategory": "Supply Chain Attacks"}}

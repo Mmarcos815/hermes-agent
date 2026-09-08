@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Bionic Daughter - Security Dashboard</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--brd:#30363d;--txt:#c9d1d9;--acc:#58a6ff;--grn:#3fb950;--red:#f85149;--pur:#bc8cff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--txt);padding:2rem;line-height:1.6}
+h1{color:var(--acc);font-size:1.7rem;margin-bottom:.3rem}
+h2{color:var(--pur);font-size:1.2rem;margin:1.5rem 0 .5rem;border-bottom:1px solid var(--brd);padding-bottom:.3rem}
+.ts{color:#8b949e;font-size:.85rem;margin-bottom:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:1.5rem}
+.card{background:var(--card);border:1px solid var(--brd);border-radius:8px;padding:1rem;text-align:center}
+.card h3{color:var(--txt);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.val{font-size:1.8rem;font-weight:700;color:var(--acc);margin-top:.3rem}
+.card.ok .val{color:var(--grn)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden;margin:1rem 0}
+th,td{padding:.5rem .8rem;text-align:left;border-bottom:1px solid var(--brd);font-size:.88rem}
+th{background:#21262d}
+tr:hover{background:#1c2128}
+.ok{color:var(--grn);font-weight:600}
+.pos{color:var(--grn)}.neg{color:var(--red)}
+.chart{background:var(--card);border:1px solid var(--brd);border-radius:8px;padding:1rem;margin:1rem 0}
+.cfg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.cfg .card h4{color:var(--acc);margin-bottom:.3rem}
+.foot{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--brd);color:#8b949e;font-size:.78rem;text-align:center}
+</style></head><body>
+<h1>Bionic Daughter — Security Metrics Dashboard</h1>
+<p class="timestamp">Generated: 2026-09-07 20:44:53 | Artifacts: artifacts</p>
+
+<div class="grid">
+  <div class="card"><h3>Total Findings</h3><div class="val">33</div></div>
+  <div class="card"><h3>Scans Run</h3><div class="val">7</div></div>
+  <div class="card"><h3>Eval Reports</h3><div class="val">5</div></div>
+  <div class="card"><h3>Train Stages</h3><div class="val">4</div></div>
+  <div class="card ok"><h3>Bounty Submitted</h3><div class="val">28</div></div>
+  <div class="card ok"><h3>Est. Value</h3><div class="val">$13,600</div></div>
+</div>
+
+<h2>Training Progress</h2>
+<div class="cfg"><div class="card"><h4>GRPO</h4><p>Status: <span class="ok">?</span></p><p>Steps: ?</p></div><div class="card"><h4>DPO</h4><p>Status: <span class="ok">?</span></p><p>Steps: ?</p></div><div class="card"><h4>SFT</h4><p>Status: <span class="ok">?</span></p><p>Steps: ?</p></div><div class="card"><h4>REJECTION_SFT</h4><p>Status: <span class="ok">?</span></p><p>Steps: ?</p></div></div>
+
+<h2>Reward Curve Progression</h2>
+<div class="chart"><canvas id="rc" height="90"></canvas></div>
+
+<h2>Model Comparison (Base vs Trained)</h2>
+<table><thead><tr><th>Variant</th><th>Score</th><th>Pass Rate</th><th>Delta</th></tr></thead>
+<tbody>
+<tr><td><strong>Baseline</strong></td><td>3.982</td><td>100.0%</td><td>—</td></tr>
+<tr><td>post_grpo_step_200</td><td>3.758</td><td>16.7%</td><td>-0.224</td></tr></tbody></table>
+
+<h2>Domain Performance (Baseline)</h2>
+<table><thead><tr><th>Domain</th><th>Prompts</th><th>Pass Rate</th><th>Avg Composite</th></tr></thead>
+<tbody><tr><td>Payment Rails (ISO 8583 / EMV)</td><td>3</td><td>100.0%</td><td>3.896</td></tr><tr><td>Web3 Smart Contract Security</td><td>3</td><td>100.0%</td><td>3.963</td></tr><tr><td>Network Protocols &amp; TLS 1.3</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>Kernel Internals &amp; Defense</td><td>2</td><td>100.0%</td><td>3.863</td></tr><tr><td>API Security (OWASP Top 10)</td><td>3</td><td>100.0%</td><td>3.963</td></tr><tr><td>Attack Chains</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>Bypass Evasion</td><td>2</td><td>100.0%</td><td>4.013</td></tr><tr><td>CTF Exploitation</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>Cryptography</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>DeFi Depth</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>MITRE ATT&amp;CK</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>3D Secure 2.2 Protocol</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>AI/ML Security</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>Container HW</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>Social Engineering</td><td>2</td><td>100.0%</td><td>3.963</td></tr><tr><td>C2 Infrastructure</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>CI/CD Attacks</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>OSINT</td><td>1</td><td>100.0%</td><td>4.300</td></tr><tr><td>Tool Usage</td><td>2</td><td>100.0%</td><td>4.362</td></tr><tr><td>Post-Exploitation</td><td>2</td><td>100.0%</td><td>4.300</td></tr><tr><td>Compliance Cloud</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Malware Analysis</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Reporting</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>WASM Browser</td><td>1</td><td>100.0%</td><td>3.763</td></tr><tr><td>Wireless Physical</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Zero Trust</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Vulnerability Analysis</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Financial Fraud Detection</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Software Engineering</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>API Mobile Supply</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Defense Evasion</td><td>1</td><td>100.0%</td><td>3.763</td></tr><tr><td>Network Reconnaissance</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Payload Engineering</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>Self-Evaluation</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>cryptography</td><td>1</td><td>100.0%</td><td>3.963</td></tr><tr><td>web_security</td><td>1</td><td>100.0%</td><td>3.963</td></tr></tbody></table>
+
+<h2>Vulnerability Scans</h2>
+<table><thead><tr><th>Date</th><th>Class</th><th>Findings</th><th>Target</th></tr></thead>
+<tbody><tr><td>2026-09-02</td><td>?</td><td>1</td><td>-</td></tr><tr><td>2026-09-02</td><td>OWASP API #1 BOLA</td><td>26</td><td>OWASP Juice Shop</td></tr><tr><td>2026-09-02</td><td>?</td><td>0</td><td>-</td></tr><tr><td>2026-09-02</td><td>OWASP API #4 / GraphQL</td><td>0</td><td>-</td></tr><tr><td>2026-09-02</td><td>ISO 8583 / Banking API</td><td>2</td><td>-</td></tr><tr><td>2026-09-02</td><td>OWASP API #2 (Broken Auth) / OAuth</td><td>4</td><td>OWASP Juice Shop</td></tr><tr><td>2026-09-02</td><td>OWASP API #7 SSRF</td><td>0</td><td>-</td></tr></tbody></table>
+
+<h2>Findings by Class</h2>
+<div class="chart"><canvas id="sc" height="70"></canvas></div>
+
+<div class="foot">Bionic Daughter Project — security_metrics_dashboard.py</div>
+
+<script>
+function lineChart(id,labels,scores){
+  const c=document.getElementById(id).getContext('2d'),W=c.canvas.parentElement.clientWidth-30,H=180;
+  c.canvas.width=W;c.canvas.height=H;const p=35,xS=labels.length>1?(W-p*2)/(labels.length-1):0;
+  const mn=Math.min(...scores,0),mx=Math.max(...scores,1),rng=mx-mn||1;
+  c.strokeStyle='#30363d';c.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=p+(H-p*2)*i/4;c.beginPath();c.moveTo(p,y);c.lineTo(W-p,y);c.stroke();
+    c.fillStyle='#8b949e';c.font='10px sans-serif';c.fillText((mx-rng*i/4).toFixed(2),2,y+3)}
+  c.strokeStyle='#58a6ff';c.lineWidth=2;c.beginPath();
+  scores.forEach((s,i)=>{const x=p+i*xS,y=p+(H-p*2)*(1-(s-mn)/rng);i?c.lineTo(x,y):c.moveTo(x,y)});c.stroke();
+  c.fillStyle='#58a6ff';scores.forEach((s,i)=>{const x=p+i*xS,y=p+(H-p*2)*(1-(s-mn)/rng);
+    c.beginPath();c.arc(x,y,3,0,6.28);c.fill()});
+  c.fillStyle='#8b949e';c.font='9px sans-serif';labels.forEach((l,i)=>{
+    const x=p+i*xS;c.save();c.translate(x,H-4);c.rotate(-0.4);c.fillText(l.substring(0,12),0,0);c.restore()})
+}
+function barChart(id,labels,counts){
+  const c=document.getElementById(id).getContext('2d'),W=c.canvas.parentElement.clientWidth-30,H=140;
+  c.canvas.width=W;c.canvas.height=H;const p=35,mx=Math.max(...counts,1);
+  const bw=labels.length>0?(W-p*2)/labels.length*.7:0,gp=labels.length>0?(W-p*2)/labels.length*.3:0;
+  const clr=['#f85149','#d29922','#58a6ff','#bc8cff','#3fb950','#db61a2'];
+  counts.forEach((n,i)=>{const x=p+i*(bw+gp),h=(H-p*2)*(n/mx),y=H-p-h;
+    c.fillStyle=clr[i%clr.length];c.fillRect(x,y,bw,h);
+    c.fillStyle='#c9d1d9';c.font='10px sans-serif';c.fillText(n,x+bw/2-3,y-4)});
+  c.fillStyle='#8b949e';c.font='9px sans-serif';labels.forEach((l,i)=>{
+    const x=p+i*(bw+gp)+bw/2;c.save();c.translate(x,H-4);c.rotate(-0.4);c.fillText(l.substring(0,18),0,0);c.restore()})
+}
+lineChart('rc',["baseline_report", "post_grpo_step_200", "pre_grpo_baseline", "report_qwen3_4b_20260905_194757", "report_qwen3_4b_20260905_194817"],[3.9824, 3.7583, 3.7583, 3.9824, 3.9824]);
+barChart('sc',["Unknown", "OWASP API #1 BOLA", "OWASP API #4 / GraphQL", "ISO 8583 / Banking API", "OWASP API #2 (Broken Auth) / OAuth", "OWASP API #7 SSRF"],[1, 26, 0, 2, 4, 0]);
+</script></body></html>

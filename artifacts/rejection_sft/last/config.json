@@ -1,0 +1,8 @@
+{
+  "stage": "rejection_sft",
+  "grpo_base": "artifacts/dpo/last",
+  "generations_per_prompt": 6,
+  "keep_top_k": 2,
+  "keep_bottom_k": 2,
+  "sft_steps": 30
+}

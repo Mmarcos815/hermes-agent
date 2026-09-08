@@ -1,0 +1,171 @@
+{
+  "timestamp": "2026-08-28T08:45:03Z",
+  "overall_capability_score": 100.0,
+  "total_artifacts_verified": 23,
+  "total_codebase_loc": 3524,
+  "domain_breakdown": {
+    "payment_rails": {
+      "files_expected": 4,
+      "files_present": 4,
+      "total_lines": 743,
+      "files": [
+        {
+          "file": "iso8583_engine.py",
+          "exists": true,
+          "lines": 224
+        },
+        {
+          "file": "emv_tokenization_engine.py",
+          "exists": true,
+          "lines": 172
+        },
+        {
+          "file": "three_ds_simulator.py",
+          "exists": true,
+          "lines": 201
+        },
+        {
+          "file": "unified_payment_gateway.py",
+          "exists": true,
+          "lines": 146
+        }
+      ],
+      "coverage_pct": 100.0
+    },
+    "web3_security": {
+      "files_expected": 5,
+      "files_present": 5,
+      "total_lines": 588,
+      "files": [
+        {
+          "file": "web3_defi_lab.py",
+          "exists": true,
+          "lines": 137
+        },
+        {
+          "file": "web3_contract_fuzzer.py",
+          "exists": true,
+          "lines": 136
+        },
+        {
+          "file": "solidity_audit_scanner.py",
+          "exists": true,
+          "lines": 97
+        },
+        {
+          "file": "web3_bounty_recon.py",
+          "exists": true,
+          "lines": 95
+        },
+        {
+          "file": "contracts/TestnetFlashLoanArbitrage.sol",
+          "exists": true,
+          "lines": 123
+        }
+      ],
+      "coverage_pct": 100.0
+    },
+    "api_redteam": {
+      "files_expected": 4,
+      "files_present": 4,
+      "total_lines": 605,
+      "files": [
+        {
+          "file": "api_defense_lab.py",
+          "exists": true,
+          "lines": 133
+        },
+        {
+          "file": "local_security_lab.py",
+          "exists": true,
+          "lines": 186
+        },
+        {
+          "file": "hexstrike_live_server.py",
+          "exists": true,
+          "lines": 176
+        },
+        {
+          "file": "bionic_audit_pipeline.py",
+          "exists": true,
+          "lines": 110
+        }
+      ],
+      "coverage_pct": 100.0
+    },
+    "document_ocr": {
+      "files_expected": 3,
+      "files_present": 3,
+      "total_lines": 291,
+      "files": [
+        {
+          "file": "financial_table_extractor.py",
+          "exists": true,
+          "lines": 96
+        },
+        {
+          "file": "statement_extractor_cli.py",
+          "exists": true,
+          "lines": 78
+        },
+        {
+          "file": "aade_ocr_engine.py",
+          "exists": true,
+          "lines": 117
+        }
+      ],
+      "coverage_pct": 100.0
+    },
+    "native_binary": {
+      "files_expected": 3,
+      "files_present": 3,
+      "total_lines": 377,
+      "files": [
+        {
+          "file": "rust_tools/src/main.rs",
+          "exists": true,
+          "lines": 211
+        },
+        {
+          "file": "rust_tools/target/release/bionic_packet_engine.exe",
+          "exists": true,
+          "lines": 0
+        },
+        {
+          "file": "tls13_engine.py",
+          "exists": true,
+          "lines": 166
+        }
+      ],
+      "coverage_pct": 100.0
+    },
+    "model_training": {
+      "files_expected": 4,
+      "files_present": 4,
+      "total_lines": 920,
+      "files": [
+        {
+          "file": "grpo_dataset_generator.py",
+          "exists": true,
+          "lines": 88
+        },
+        {
+          "file": "grpo_dataset_factory.py",
+          "exists": true,
+          "lines": 182
+        },
+        {
+          "file": "train_hf_7b_model.py",
+          "exists": true,
+          "lines": 141
+        },
+        {
+          "file": "knowledge/grpo_security_reasoning_dataset.jsonl",
+          "exists": true,
+          "lines": 509
+        }
+      ],
+      "coverage_pct": 100.0
+    }
+  }
+}

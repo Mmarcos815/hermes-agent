@@ -1,0 +1,34 @@
+title: JWT Algorithm None or Missing Signature Anomaly
+id: c3d4e5f6-a7b8-9012-cdef-123456789012
+status: experimental
+description: >
+  Detects JWT tokens with algorithm set to 'none' or tokens missing the
+  signature portion, indicating potential authentication bypass attempts.
+  Attackers exploit these weaknesses to forge tokens without knowing the
+  server's secret key.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/vulnerabilities/JSON_Web_Token_(JWT)_for_Java_Broken_Cryptography_Vulnerability
+  - https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_alg_none:
+    cs-uri-query|re: 'eyJhbGciOiJub25l'
+    cs-body|re: 'eyJhbGciOiJub25l'
+    cs-cookie|re: 'eyJhbGciOiJub25l'
+  selection_missing_sig:
+    cs-uri-query|re: '^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.$'
+    cs-body|re: '^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.$'
+  condition: selection_alg_none or selection_missing_sig
+falsepositives:
+  - Development environments with JWT debugging enabled
+  - Legacy systems using unsigned tokens for non-sensitive operations
+  - Test suites generating mock JWT tokens
+level: critical
+tags:
+  - attack.credential_access
+  - attack.t1550
+  - vulnerability.jwt

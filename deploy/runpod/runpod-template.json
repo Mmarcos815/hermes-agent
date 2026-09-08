@@ -1,0 +1,12 @@
+{
+  "image": "runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04",
+  "gpu_ids": "AMPERE_A6000|A100|H100",
+  "cloud_type": "secure",
+  "docker_args": "--model-id=meta-llama/Llama-3.2-3B-Instruct",
+  "env": {
+    "MODEL_NAME": "my-finetuned-model",
+    "VLLM_PORT": "8000"
+  },
+  "ports": "8000/tcp",
+  "volume_mounts": "/workspace:/workspace"
+}

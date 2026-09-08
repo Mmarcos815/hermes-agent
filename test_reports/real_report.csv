@@ -1,0 +1,4 @@
+ID,Title,Severity,CVSS Score,Vector,Affected
+FIND-001,SQL Injection in Authentication,Critical,9.8,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,https://app.example.com/login
+FIND-002,Stored XSS in User Profile,High,7.5,N/A,https://app.example.com/profile
+FIND-003,Outdated Apache Server,Medium,5.3,N/A,web server

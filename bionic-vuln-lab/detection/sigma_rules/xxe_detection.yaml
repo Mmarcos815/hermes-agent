@@ -1,0 +1,39 @@
+title: XML External Entity (XXE) Injection Detection
+id: a7b8c9d0-e1f2-3456-abcd-567890123456
+status: experimental
+description: >
+  Detects XXE injection attempts by identifying DOCTYPE declarations, ENTITY
+  definitions, and external entity references in XML request bodies. Attackers
+  exploit XXE to read internal files, perform SSRF, or cause DoS via billion laughs.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing
+  - https://portswigger.net/web-security/xxe
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_doctype:
+    - '<!DOCTYPE'
+    - '<!ENTITY'
+  selection_external:
+    - "SYSTEM '"
+    - 'SYSTEM "'
+    - "PUBLIC '"
+    - 'PUBLIC "'
+    - 'file:///'
+    - 'expect://'
+  selection_request:
+    cs-body|contains: selection_doctype
+    cs-body|contains: selection_external
+  condition: selection_request
+falsepositives:
+  - Legitimate XML processing with internal DTDs
+  - SOAP web services with valid entity declarations
+  - Document management systems handling XML files
+level: critical
+tags:
+  - attack.exfiltration
+  - attack.t1221
+  - vulnerability.xxe

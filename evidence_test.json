@@ -1,0 +1,29 @@
+{
+  "collection_id": "1d251b97-27e",
+  "evidence_dir": "C:\\Users\\mobil\\orca\\projects\\my 1st\\test_evidence",
+  "generated_at": "2026-09-08T00:46:18.826998+00:00",
+  "count": 2,
+  "total_size_bytes": 31,
+  "items": [
+    {
+      "evidence_id": "85c7b860",
+      "control_id": "PCI-1.1",
+      "evidence_type": "text",
+      "source_path": "firewall_rules.txt",
+      "sha256": "0a27520365e7178f3890d3f756010d1fcc4f0f45ddab6f34b9e5463032748229",
+      "size_bytes": 15,
+      "collected_at": "2026-09-08T00:46:18.825114+00:00",
+      "description": "Auto-collected text evidence"
+    },
+    {
+      "evidence_id": "60da90a4",
+      "control_id": "PCI-2.1",
+      "evidence_type": "text",
+      "source_path": "password_policy.txt",
+      "sha256": "65fb54621238ac8f3f64800729fc66ae9bd766816111d91155434233b2a40a32",
+      "size_bytes": 16,
+      "collected_at": "2026-09-08T00:46:18.826348+00:00",
+      "description": "Auto-collected text evidence"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+name: america_first_alert
+description: "America First Credit Union — account alert / low balance notification"
+category: banking
+urgency: medium
+target_role: any
+subject: "📊 Balance Alert — Your AFCU account balance is ${{balance}}"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>This is an automated balance notification from <strong>America First Credit
+  Union</strong> for your account ending in <strong>{{account_last4}}</strong>.</p>
+  <p><strong>Current Balance:</strong> ${{balance}}<br>
+  <strong>Available Balance:</strong> ${{available_balance}}<br>
+  <strong>Pending Transactions:</strong> {{pending_count}}</p>
+  <div style="background:#eaf2f8;border:1px solid #b8d4e8;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#2471a3;">
+    <strong>Recent Activity:</strong><br>
+    • Deposit of ${{recent_deposit}} from {{recent_deposit_source}}<br>
+    • Withdrawal of ${{recent_withdrawal}} at {{recent_withdrawal_location}}<br>
+    • Transfer of ${{recent_transfer}} to {{recent_transfer_dest}}
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#003b71;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Full Account Details →</a></p>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} America First Credit Union.<br>
+  To stop receiving alerts, update your notification preferences.<br>
+  Reference: AFCU-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  AFCU Balance Alert for account ending in {{account_last4}}:
+
+  Current Balance: ${{balance}}
+  Available Balance: ${{available_balance}}
+  Pending Transactions: {{pending_count}}
+
+  Recent Activity:
+  - Deposit of ${{recent_deposit}} from {{recent_deposit_source}}
+  - Withdrawal of ${{recent_withdrawal}} at {{recent_withdrawal_location}}
+  - Transfer of ${{recent_transfer}} to {{recent_transfer_dest}}
+
+  View account: {{phishing_url}}
+
+  © {{year}} America First Credit Union
+  Reference: AFCU-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - balance
+optional_vars:
+  - phishing_url
+  - account_last4
+  - available_balance
+  - pending_count
+  - recent_deposit
+  - recent_deposit_source
+  - recent_withdrawal
+  - recent_withdrawal_location
+  - recent_transfer
+  - recent_transfer_dest
+  - year
+tracking_param: ref

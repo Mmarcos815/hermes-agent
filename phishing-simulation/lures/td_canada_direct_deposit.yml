@@ -1,0 +1,71 @@
+name: td_canada_td_canada_trust_direct_deposit
+description: "TD Canada Trust — payroll direct deposit notification"
+category: banking
+urgency: high
+target_role: any
+subject: "💵 Your pay has been deposited — ${{amount}} from {{employer_name}}"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>Your <strong>payroll deposit of ${{amount}}</strong> from
+  <strong>{{employer_name}}</strong> has been deposited into your TD Canada Trust
+  account.</p>
+  <p><strong>Deposit Details:</strong><br>
+  Amount: ${{amount}}<br>
+  Employer: {{employer_name}}<br>
+  Deposit Date: {{deposit_date}}<br>
+  Account: ****{{account_last4}}<br>
+  Pay Period: {{pay_period}}</p>
+  <div style="background:#f0f7ff;border:1px solid #d0e2ff;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#1e40af;">
+    <strong>Your TD Canada Trust Account:</strong><br>
+    Chequing Balance: ${{chequing_balance}}<br>
+    Savings Balance: ${{savings_balance}}<br>
+    Available LOC: ${{loc_available}}<br>
+    Visa Available: ${{visa_available}}<br>
+    Daily CDIC Insurance Limit: ${{cdic_limit}}
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#d0021b;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Account Details →</a></p>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} TD Bank Group.<br>
+  TD Canada Trust — Banking for Canadians.<br>
+  Reference: TD-CT-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Your pay of ${{amount}} from {{employer_name}} has been deposited.
+
+  Amount: ${{amount}}
+  Employer: {{employer_name}}
+  Deposit Date: {{deposit_date}}
+  Account: ****{{account_last4}}
+  Pay Period: {{pay_period}}
+
+  Account Summary:
+  Chequing: ${{chequing_balance}}
+  Savings: ${{savings_balance}}
+  LOC Available: ${{loc_available}}
+
+  View account: {{phishing_url}}
+
+  © {{year}} TD Bank Group
+  Reference: TD-CT-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - amount
+  - deposit_date
+  - employer_name
+optional_vars:
+  - phishing_url
+  - account_last4
+  - pay_period
+  - chequing_balance
+  - savings_balance
+  - loc_available
+  - visa_available
+  - cdic_limit
+  - year
+tracking_param: ref

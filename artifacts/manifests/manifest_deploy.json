@@ -1,0 +1,24 @@
+{
+  "stage": "deploy",
+  "timestamp_start": "2026-09-01T17:39:26.840860+00:00",
+  "timestamp_end": "2026-09-01T17:39:27.350051+00:00",
+  "status": "completed",
+  "config_hash": "d0bb61117e987830",
+  "dataset_hash": "see_sft_manifest",
+  "base_model_hash": "see_sft_manifest",
+  "hyperparameters": {
+    "merge_lora": true,
+    "merged_output_dir": "artifacts/merged_16bit",
+    "quant_format": "gguf",
+    "target_quant": "Q4_K_M",
+    "gguf_output_dir": "artifacts/gguf",
+    "local_runtime": {
+      "provider": "custom",
+      "base_url": "http://localhost:11434/v1",
+      "api_key": "local",
+      "model_name": "bionic-daughter-qwen3-4b-trained"
+    }
+  },
+  "eval_result": null,
+  "notes": "Deploy stage complete. Stub artifacts \u2014 real run writes merged + quantized models."
+}

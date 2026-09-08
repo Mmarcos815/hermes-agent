@@ -1,0 +1,67 @@
+name: usbank_digital_wallet_setup
+description: "U.S. Bank — digital wallet setup / mobile payment prompt"
+category: banking
+urgency: high
+target_role: any
+subject: "📱 Action Required — Set up digital wallet with U.S. Bank"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>U.S. Bank is offering <strong>free digital wallet setup</strong> for all
+  online banking customers. Set up Apple Pay, Google Pay, or Samsung Pay with
+  your U.S. Bank card in under 2 minutes.</p>
+  <div style="background:#eaf2f8;border:1px solid #b8d4e8;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#1a5276;">
+    <strong>Benefits of digital wallet:</strong><br>
+    • Pay securely with your phone — no card numbers shared<br>
+    • Earn {{rewards_bonus}} bonus rewards points on first digital wallet purchase<br>
+    • Faster checkout at millions of stores<br>
+    • Enhanced security with tokenization
+  </div>
+  <p>To set up your digital wallet, we need to verify your U.S. Bank account:</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#003366;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Set Up Digital Wallet →</a></p>
+  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#795548;">
+    <strong>Your account details:</strong><br>
+    Account: ****{{account_last4}}<br>
+    Card: ****{{card_last4}}<br>
+    Offer expires: {{offer_expiry}}
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} U.S. Bank. All rights reserved.<br>
+  This offer is available to eligible U.S. Bank online banking customers.<br>
+  Reference: USB-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  U.S. Bank is offering free digital wallet setup for all online banking customers.
+
+  Set up Apple Pay, Google Pay, or Samsung Pay with your U.S. Bank card.
+
+  Benefits:
+  - Pay securely with your phone
+  - Earn {{rewards_bonus}} bonus rewards points
+  - Faster checkout at millions of stores
+  - Enhanced security with tokenization
+
+  Set up digital wallet: {{phishing_url}}
+
+  Your account: ****{{account_last4}}
+  Card: ****{{card_last4}}
+  Offer expires: {{offer_expiry}}
+
+  © {{year}} U.S. Bank
+  Reference: USB-{{campaign_id}}
+
+required_vars:
+  - target_name
+optional_vars:
+  - phishing_url
+  - account_last4
+  - card_last4
+  - rewards_bonus
+  - offer_expiry
+  - year
+tracking_param: ref

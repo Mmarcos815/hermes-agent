@@ -1,0 +1,51 @@
+======================================================================
+  NETWORK TOKEN VAULT DETOKENIZATION ATTACK CHAIN REPORT
+======================================================================
+  Generated: 2026-09-05 00:32:51
+  Classification: SIMULATION / EDUCATIONAL
+  Attack Status: SUCCESS
+======================================================================
+
+  Step 1: POS Terminal Token Capture
+  ──────────────────────────────────────────────────
+    capture_method: NETWORK_SNIFF
+    token: 48001122****5566
+    cryptogram: 4B73A862803893C5
+    merchant_id: MERCH001
+    terminal_id: TERM0001
+    channel: CONTACTLESS
+
+  Step 2: Vault Detokenization
+  ──────────────────────────────────────────────────
+    result: SUCCESS
+    fpan: 411111******1111
+    token_type: DEVICE_TOKEN_APPLE_PAY
+    exploit_method: LEGITIMATE
+    binding_bypassed: False
+
+  Step 3: Expiry Window Bypass Check
+  ──────────────────────────────────────────────────
+    token_expiry: 2705
+    bypass_possible: True
+    days_remaining: 267
+
+  Step 4: FPAN Replay at Vulnerable Merchant
+  ──────────────────────────────────────────────────
+    approved: True
+    response_code: 00
+    auth_code: AUTH01
+    amount: $150.00
+    merchant_id: MERCH002
+    pan_used: 411111******1111
+    binding_check: BYPASSED
+
+======================================================================
+  ATTACK CHAIN SUMMARY
+======================================================================
+  Steps Executed: 4
+  Attack Success: True
+  Risk Level: CRITICAL
+  Recommendation: Implement token-to-PAN binding validation
+                  Enforce cryptogram-to-token integrity
+                  Add channel-specific domain controls
+======================================================================

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "7f6c3ad2",
+    "timestamp": "2026-09-08T06:14:34.128579+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for admin_panel: admin",
+    "severity": "low"
+  },
+  {
+    "id": "fec48c9b",
+    "timestamp": "2026-09-08T06:14:34.130843+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for api: admin",
+    "severity": "low"
+  },
+  {
+    "id": "023592fb",
+    "timestamp": "2026-09-08T06:14:34.134960+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for ssh: root",
+    "severity": "low"
+  },
+  {
+    "id": "c73630a6",
+    "timestamp": "2026-09-08T06:14:34.148416+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for admin_panel: svc_account",
+    "severity": "low"
+  },
+  {
+    "id": "040b0367",
+    "timestamp": "2026-09-08T06:14:34.159527+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for redis: svc_account",
+    "severity": "low"
+  },
+  {
+    "id": "4a00a585",
+    "timestamp": "2026-09-08T06:14:34.173794+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for postgres: root",
+    "severity": "low"
+  },
+  {
+    "id": "dd62fab2",
+    "timestamp": "2026-09-08T06:14:34.189911+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for admin_panel: svc_account",
+    "severity": "low"
+  },
+  {
+    "id": "ede76de1",
+    "timestamp": "2026-09-08T06:14:34.201569+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for api: admin",
+    "severity": "low"
+  },
+  {
+    "id": "6d781657",
+    "timestamp": "2026-09-08T06:14:34.214890+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for ssh: root",
+    "severity": "low"
+  },
+  {
+    "id": "a865e7ce",
+    "timestamp": "2026-09-08T06:14:34.227242+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for admin_panel: deploy",
+    "severity": "low"
+  },
+  {
+    "id": "26f907ec",
+    "timestamp": "2026-09-08T06:14:34.241882+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for mysql: backup",
+    "severity": "low"
+  },
+  {
+    "id": "ad189fd7",
+    "timestamp": "2026-09-08T06:14:34.243133+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for mysql: deploy",
+    "severity": "low"
+  },
+  {
+    "id": "ac03dde3",
+    "timestamp": "2026-09-08T06:14:34.244351+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for ssh: backup",
+    "severity": "low"
+  },
+  {
+    "id": "74af59e5",
+    "timestamp": "2026-09-08T06:14:34.250862+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for api: root",
+    "severity": "low"
+  },
+  {
+    "id": "77fc932b",
+    "timestamp": "2026-09-08T06:14:34.251894+00:00",
+    "category": "decoy_credential",
+    "source": "honey_credential",
+    "detail": "Deployed honey credential for admin_panel: svc_account",
+    "severity": "low"
+  }
+]

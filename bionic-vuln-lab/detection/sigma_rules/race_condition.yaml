@@ -1,0 +1,34 @@
+title: Race Condition - Rapid Concurrent Requests
+id: c9d0e1f2-a3b4-5678-cdef-789012345678
+status: experimental
+description: >
+  Detects potential race condition exploitation by identifying rapid concurrent
+  requests to the same endpoint from a single IP. Attackers exploit race
+  conditions in payment processing, voucher redemption, or resource allocation
+  to gain unauthorized benefits.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/vulnerabilities/Race_Condition
+  - https://portswigger.net/web-security/race-conditions
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection:
+    cs-method:
+      - POST
+      - PUT
+      - PATCH
+  condition: selection | count() by src_ip, cs-uri-stem > 20
+  timeframe: 10s
+falsepositives:
+  - Legitimate high-traffic API clients
+  - Automated batch processing scripts
+  - Load testing by authorized teams
+  - Browser prefetching behavior
+level: medium
+tags:
+  - attack.impact
+  - attack.t1499
+  - vulnerability.race_condition

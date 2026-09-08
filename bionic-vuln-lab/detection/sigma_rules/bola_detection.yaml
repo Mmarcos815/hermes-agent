@@ -1,0 +1,29 @@
+title: BOLA - Multiple User ID Requests from Same IP
+id: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+status: experimental
+description: >
+  Detects potential Broken Object Level Authorization (BOLA) attacks where
+  a single IP address makes requests for multiple different user IDs in a
+  short time window, indicating enumeration or unauthorized access attempts.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection:
+    cs-method: GET
+    cs-uri-query|contains: 'user_id'
+  condition: selection | count() by src_ip > 10
+  timeframe: 5m
+falsepositives:
+  - Legitimate administrative dashboards querying multiple user profiles
+  - Load balancers or proxies with shared IPs serving multiple users
+  - API gateways performing batch user lookups
+level: high
+tags:
+  - attack.authorization
+  - attack.t1552
+  - vulnerability.bola

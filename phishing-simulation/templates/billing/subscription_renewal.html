@@ -1,0 +1,138 @@
+<!-- 
+  Template: subscription_renewal.html
+  Category: billing
+  Description: Subscription renewal / paid notification page (training template only)
+  Disclaimer: FOR AUTHORIZED RED TEAM USE ONLY — This is a simulation template.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscription Renewal Confirmed — Acme Premium</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f0f7ff; min-height: 100vh; }
+.container { max-width: 600px; margin: 0 auto; padding: 24px; }
+.success-banner { background: #059669; color: white; padding: 36px; border-radius: 12px;
+                  text-align: center; margin-bottom: 20px; }
+.check-icon { width: 64px; height: 64px; margin: 0 auto 12px; background: rgba(255,255,255,0.2);
+              border-radius: 50%; display: flex; align-items: center; justify-content: center;
+              font-size: 32px; }
+.success-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.success-sub { font-size: 14px; opacity: 0.9; line-height: 1.5; }
+.card { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        padding: 28px; }
+.period-badge { display: inline-block; background: #dbeafe; color: #1e40af;
+                padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+                margin-bottom: 16px; }
+.plan-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.plan-icon { width: 48px; height: 48px; background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 22px; font-weight: bold; }
+.plan-name { font-size: 18px; font-weight: 700; color: #1a1a1a; }
+.plan-desc { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+.renewal-detail { background: #f8f9fa; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+.detail-row { display: flex; justify-content: space-between; padding: 8px 0;
+              border-bottom: 1px solid #eee; font-size: 14px; }
+.detail-row:last-child { border-bottom: none; }
+.detail-label { color: #666; }
+.detail-value { color: #1a1a1a; font-weight: 500; }
+.amount-row { display: flex; justify-content: space-between; align-items: center;
+              background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px;
+              padding: 16px 20px; margin-bottom: 20px; }
+.amount-label { color: #065f46; font-size: 14px; font-weight: 600; }
+.amount-value { color: #059669; font-size: 24px; font-weight: 800; }
+.charges-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+.charge-row { display: flex; justify-content: space-between; padding: 6px 0;
+              font-size: 13px; }
+.charge-label { color: #666; }
+.charge-value { color: #1a1a1a; font-weight: 500; text-align: right; }
+.cta-row { display: flex; gap: 12px; margin-bottom: 16px; }
+.btn { padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+       cursor: pointer; border: none; transition: all 0.2s; text-decoration: none; display: inline-block; text-align: center; }
+.btn-primary { background: #6366f1; color: white; }
+.btn-primary:hover { background: #4f46e5; }
+.btn-outline { background: white; color: #555; border: 1.5px solid #ddd; }
+.btn-outline:hover { background: #f5f5f5; }
+.manage-link { text-align: center; font-size: 13px; color: #6366f1; margin-top: 16px; }
+.manage-link a { color: #6366f1; text-decoration: none; font-weight: 500; }
+.footer { margin-top: 16px; text-align: center; font-size: 11px; color: #999; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="success-banner">
+    <div class="check-icon">✓</div>
+    <div class="success-title">Payment Successful</div>
+    <div class="success-sub">Your Acme Premium subscription has been renewed.</div>
+  </div>
+  <div class="card">
+    <span class="period-badge">Renewal — Billing Period {{billing_period}}</span>
+    <div class="plan-header">
+      <div class="plan-icon">P</div>
+      <div>
+        <div class="plan-name">Acme Premium Plus</div>
+        <div class="plan-desc">Enterprise cloud suite with advanced analytics and priority support.</div>
+      </div>
+    </div>
+    <div class="renewal-detail">
+      <div class="detail-row">
+        <span class="detail-label">Renewal Date</span>
+        <span class="detail-value">{{renewal_date}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Payment Method</span>
+        <span class="detail-value">Visa ending in {{card_last4}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Next Renewal</span>
+        <span class="detail-value">{{next_renewal_date}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Transaction ID</span>
+        <span class="detail-value" style="font-family:monospace;">{{transaction_id}}</span>
+      </div>
+    </div>
+    <div class="amount-row">
+      <span class="amount-label">Renewal Amount</span>
+      <span class="amount-value">${{renewal_amount}}</span>
+    </div>
+    <div class="charges-box">
+      <div class="charge-row">
+        <span class="charge-label">Base subscription (annual)</span>
+        <span class="charge-value">${{base_amount}}</span>
+      </div>
+      <div class="charge-row">
+        <span class="charge-label">Advanced analytics add-on</span>
+        <span class="charge-value">${{addon_amount}}</span>
+      </div>
+      <div class="charge-row">
+        <span class="charge-label">Priority support tier</span>
+        <span class="charge-value">${{support_amount}}</span>
+      </div>
+      <div class="charge-row" style="border-top:1px solid #ddd;padding-top:8px;margin-top:8px;">
+        <span class="charge-label" style="font-weight:600;">Total charged</span>
+        <span class="charge-value" style="font-weight:700;font-size:15px;">${{renewal_amount}}</span>
+      </div>
+    </div>
+    <div class="cta-row">
+      <button class="btn btn-primary" type="button" onclick="document.getElementById('receipt').style.display='block'">View Receipt</button>
+      <button class="btn btn-outline" type="button" onclick="window.print()">Print</button>
+    </div>
+    <div id="receipt" style="display:none;background:#f8f9fa;border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:16px;font-size:13px;">
+      <strong style="color:#1a1a1a;">Receipt — Acme Premium Plus Annual Renewal</strong><br>
+      Transaction: {{transaction_id}} | Date: {{renewal_date}}<br>
+      Card: Visa ending {{card_last4}} | Amount: ${{renewal_amount}}<br>
+      <em style="color:#666;">This receipt was generated for your records. Acme Cloud Services, LLC.</em>
+    </div>
+    <p class="manage-link">Manage subscription: <a href="/billing/subscription_renewal">Account Settings</a></p>
+    <p class="footer">Acme Premium · Renewal Confirmed · {{campaign_id}}</p>
+  </div>
+</div>
+<script>
+console.log("Template: subscription_renewal | Transaction: {{transaction_id}} | Campaign: {{campaign_id}}");
+</script>
+</body>
+</html>

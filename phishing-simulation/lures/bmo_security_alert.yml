@@ -1,0 +1,62 @@
+name: bmo_security_alert
+description: "BMO — suspicious login / unauthorized access alert"
+category: banking
+urgency: critical
+target_role: any
+subject: "🔒 BMO Security Alert — New sign-in from unrecognized device"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>BMO detected a <strong>new sign-in to your account</strong> from an
+  unrecognized location.</p>
+  <p><strong>Alert Details:</strong><br>
+  Location: {{signin_location}}<br>
+  Device: {{device_info}}<br>
+  Time: {{signin_time}}<br>
+  IP: {{signin_ip}}<br>
+  Account: ****{{account_last4}}</p>
+  <p>If this was you, no action is needed. If not, <strong>secure your account
+  immediately</strong>.</p>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#003b71;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">Verify & Secure My Account →</a></p>
+  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#795548;">
+    <strong>Why this matters:</strong><br>
+    An unauthorized user may transfer funds, make purchases, or access your
+    BMO investments. BMO may suspend your account for protection.
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Bank of Montreal.<br>
+  Reference: BMO-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  BMO detected a new sign-in from an unrecognized location.
+
+  Location: {{signin_location}}
+  Device: {{device_info}}
+  Time: {{signin_time}}
+  IP: {{signin_ip}}
+  Account: ****{{account_last4}}
+
+  If this wasn't you, secure your account immediately.
+
+  Verify & Secure: {{phishing_url}}
+
+  An unauthorized user may transfer funds or access your BMO investments.
+
+  © {{year}} Bank of Montreal
+  Reference: BMO-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - signin_location
+  - signin_time
+  - device_info
+optional_vars:
+  - phishing_url
+  - signin_ip
+  - account_last4
+  - year
+tracking_param: ref

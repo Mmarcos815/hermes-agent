@@ -1,0 +1,74 @@
+name: capitalone_payment_confirmation
+description: "Capital One — payment confirmation / statement notification"
+category: banking
+urgency: high
+target_role: any
+subject: "✅ Payment Received — ${{amount}} payment processed on your Capital One account"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>We're confirming that your <strong>payment of ${{amount}}</strong> has been
+  received and processed.</p>
+  <p><strong>Payment Details:</strong><br>
+  Amount: ${{amount}}<br>
+  Payment Method: {{payment_method}}<br>
+  Account: ****{{account_last4}}<br>
+  Processed: {{payment_date}}<br>
+  Reference: {{payment_ref}}</p>
+  <div style="background:#f0f7ff;border:1px solid #d0e2ff;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#1e40af;">
+    <strong>Your current balance:</strong> ${{current_balance}}<br>
+    <strong>Available credit:</strong> ${{available_credit}}<br>
+    <strong>Next payment due:</strong> {{next_due_date}} — ${{min_payment}} minimum
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#e62c4f;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Full Statement →</a></p>
+  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#795548;">
+    <strong>Earn rewards faster:</strong> Link your Capital One card to a digital
+    wallet and earn {{rewards_bonus}} bonus miles on your next purchase. Set up in
+    under 2 minutes — no additional fees.
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Capital One, N.A.<br>
+  If you did not make this payment, contact Capital One immediately.<br>
+  Reference: CAP-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Payment Confirmation:
+  Amount: ${{amount}}
+  Payment Method: {{payment_method}}
+  Account: ****{{account_last4}}
+  Processed: {{payment_date}}
+  Reference: {{payment_ref}}
+
+  Current balance: ${{current_balance}}
+  Available credit: ${{available_credit}}
+  Next payment due: {{next_due_date}} — ${{min_payment}} minimum
+
+  View full statement: {{phishing_url}}
+
+  Earn rewards: Link your card to a digital wallet and earn {{rewards_bonus}} bonus
+  miles on your next purchase.
+
+  © {{year}} Capital One, N.A.
+  Reference: CAP-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - amount
+  - payment_date
+optional_vars:
+  - phishing_url
+  - payment_method
+  - account_last4
+  - payment_ref
+  - current_balance
+  - available_credit
+  - next_due_date
+  - min_payment
+  - rewards_bonus
+  - year
+tracking_param: ref

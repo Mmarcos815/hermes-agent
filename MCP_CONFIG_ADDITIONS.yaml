@@ -1,0 +1,47 @@
+# Bionic Daughter — MCP Server Additions (manual merge for config.yaml)
+# Date: 2026-09-02
+# Operator: Daughter
+# Apply these to C:\Users\mobil\.hermes\config.yaml under `mcp_servers:`
+
+# === JETBRAINS IDE MCP PROXY (NEW — wired 2026-09-02) ===
+# Proxies MCP requests to a running JetBrains IDE that has the
+# "MCP Server" plugin enabled and is listening on its configured port
+# (default 63342 for the JetBrains MCP Server plugin).
+#
+# Requires:
+#   1. JetBrains IDE open with the MCP Server plugin installed
+#      (Settings -> Plugins -> search "MCP Server" -> install)
+#   2. The plugin's port open and reachable (default 63342)
+#   3. JETBRAINS_IDE_PORT env var if not 63342
+#
+# If the IDE is closed or plugin disabled, this server fails stdio
+# connect and Hermes falls back to other tools silently.
+
+  jetbrains_mcp:
+    command: npx
+    args:
+      - -y
+      - '@jetbrains/mcp-proxy'
+    env:
+      JETBRAINS_IDE_PORT: "63342"
+    timeout: 60
+    connect_timeout: 10
+
+# === HACKERONE MCP (TOKEN-GATED — requires HACKERONE_API_TOKEN) ===
+# Server is registered in config.yaml at lines 137-142 already (verified
+# 2026-09-02). The server starts cleanly with no token; functionality
+# (program discovery, scope lookup, report submission) requires a valid
+# HackerOne API token in .env:
+#
+#   HACKERONE_API_TOKEN=<your-api-token-from-hackerone.com/account/api>
+#
+# To get a token:
+#   1. Login to HackerOne (https://hackerone.com)
+#   2. Account -> API Tokens -> Create Token
+#   3. Scope: read (program/scope/reports) and/or write (submit reports)
+#   4. Add to ~/.hermes/.env (NEVER commit to git)
+#
+# With token: full program discovery, scope lookup, report submission.
+# Without token: server boots but every tool call returns auth error.
+
+# === END OF ADDITIONS ===

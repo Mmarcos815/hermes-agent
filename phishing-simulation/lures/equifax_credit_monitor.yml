@@ -1,0 +1,71 @@
+name: equifax_credit_monitor
+description: "Equifax — credit monitoring / credit score alert lure"
+category: banking
+urgency: high
+target_role: any
+subject: "📊 Your Equifax credit score has changed — New score: {{credit_score}}"
+body_html: |
+  <p>Hello <strong>{{target_name}}</strong>,</p>
+  <p>Your <strong>Equifax credit score</strong> has been updated. Your new score
+  is <strong>{{credit_score}}</strong> — {{score_change_direction}} by
+  {{score_change_points}} points since your last review.</p>
+  <div style="background:#f0f7ff;border:1px solid #d0e2ff;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#1e40af;">
+    <strong>Your Credit Profile:</strong><br>
+    Credit Score: {{credit_score}} ({{score_grade}})<br>
+    Previous Score: {{previous_score}}<br>
+    Change: {{score_change_direction}} {{score_change_points}} points<br>
+    Credit Utilization: {{utilization_pct}}%<br>
+    Accounts: {{account_count}}<br>
+    Inquiries (last 12 months): {{inquiry_count}}<br>
+    Payment History: {{payment_history_grade}}
+  </div>
+  <p><a href="{{phishing_url}}" style="display:inline-block;padding:14px 28px;
+      background:#003b71;color:white;text-decoration:none;border-radius:6px;
+      font-weight:bold;font-size:14px;">View Full Credit Report →</a></p>
+  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;
+       padding:14px;margin:16px 0;font-size:13px;color:#795548;">
+    <strong>Identity Protection Alert:</strong><br>
+    We detected a recent hard inquiry on your credit file that you may not have
+    authorized. Review your credit report to check for signs of identity theft.
+    You are entitled to a free credit report under federal law.
+  </div>
+  <p style="font-size:12px;color:#999;">
+  © {{year}} Equifax Inc.<br>
+  Reference: EQ-{{campaign_id}}
+  </p>
+body_text: |
+  Hello {{target_name}},
+
+  Your Equifax credit score has been updated to {{credit_score}}.
+
+  Credit Score: {{credit_score}} ({{score_grade}})
+  Previous: {{previous_score}}
+  Change: {{score_change_direction}} {{score_change_points}} points
+  Utilization: {{utilization_pct}}%
+  Accounts: {{account_count}}
+  Inquiries: {{inquiry_count}}
+
+  View your full credit report: {{phishing_url}}
+
+  Identity Protection: We detected a recent hard inquiry you may not have authorized.
+
+  © {{year}} Equifax Inc.
+  Reference: EQ-{{campaign_id}}
+
+required_vars:
+  - target_name
+  - credit_score
+  - score_grade
+  - score_change_direction
+  - score_change_points
+optional_vars:
+  - phishing_url
+  - previous_score
+  - utilization_pct
+  - account_count
+  - inquiry_count
+  - payment_history_grade
+  - expiring_points
+  - year
+tracking_param: ref

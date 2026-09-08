@@ -1,0 +1,100 @@
+{"prompt": "What is spear phishing and how does it differ from standard phishing?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Spear Phishing"}}
+{"prompt": "Describe a whaling attack targeting a C-suite executive. What makes it effective?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Whaling"}}
+{"prompt": "Explain clone phishing: how does an attacker duplicate a legitimate email?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Clone Phishing"}}
+{"prompt": "What is vishing and what psychological principles make voice phishing effective?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Vishing"}}
+{"prompt": "How can you identify a phishing email? List 5 technical indicators.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Detection"}}
+{"prompt": "What is smishing and what are common pretexts used in SMS phishing?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Smishing"}}
+{"prompt": "Describe business email compromise (BEC) and its typical attack flow.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - BEC"}}
+{"prompt": "What role does typosquatting play in phishing campaigns?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Infrastructure"}}
+{"prompt": "How do attackers use urgency and fear in phishing subject lines?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Psychological Triggers"}}
+{"prompt": "What is pharming and how does it complement phishing attacks?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Pharming"}}
+{"prompt": "Explain pretexting: how does an attacker construct a believable scenario?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Fundamentals"}}
+{"prompt": "Describe an IT support impersonation pretext. What details make it convincing?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Impersonation"}}
+{"prompt": "How does authority exploitation work in social engineering? Give an example.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Authority"}}
+{"prompt": "What is urgency creation in social engineering? Provide three techniques.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Urgency"}}
+{"prompt": "Explain how an attacker might impersonate a vendor to gain access to systems.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Vendor Impersonation"}}
+{"prompt": "How do social engineers exploit trust during onboarding of new employees?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Trust Exploitation"}}
+{"prompt": "Describe a pretext where an attacker poses as a job candidate to gain facility access.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Fake Identity"}}
+{"prompt": "What information from social media is most valuable for pretexting?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - OSINT"}}
+{"prompt": "How does a social engineer use the 'helpful employee' persona against an organization?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Persona"}}
+{"prompt": "Explain the 'reverse social engineering' technique where the target initiates contact.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Reverse SE"}}
+{"prompt": "What is tailgating in physical security? How can organizations prevent it?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Tailgating"}}
+{"prompt": "Describe how badge cloning works with RFID and NFC technologies.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Badge Cloning"}}
+{"prompt": "What lock picking techniques are commonly used by penetration testers?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Lock Picking"}}
+{"prompt": "Explain dumpster diving: what sensitive information is often found?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Dumpster Diving"}}
+{"prompt": "How can shoulder surfing be performed in modern office environments?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Shoulder Surfing"}}
+{"prompt": "What is an evil twin attack in wireless social engineering?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Evil Twin"}}
+{"prompt": "Describe how an attacker might plant a rogue USB device to compromise a network.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - USB Drops"}}
+{"prompt": "How do social engineers exploit tailgating policies during shift changes?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Shift Changes"}}
+{"prompt": "What physical security weaknesses do penetration testers commonly look for?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Assessment"}}
+{"prompt": "Explain how an attacker could use a fake maintenance uniform to bypass security.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Disguise"}}
+{"prompt": "Describe the principle of reciprocity in social engineering. Give a practical example.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Reciprocity"}}
+{"prompt": "How does social proof influence security decisions? Provide a scenario.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Social Proof"}}
+{"prompt": "Explain scarcity as a manipulation tactic in phishing campaigns.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Scarcity"}}
+{"prompt": "How do attackers exploit authority bias to bypass security protocols?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Authority"}}
+{"prompt": "What is the liking principle in social engineering? How is it weaponized?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Liking"}}
+{"prompt": "Explain the commitment/consistency principle in SE attacks.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Commitment"}}
+{"prompt": "How do social engineers use the scarcity principle in business email compromise?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Scarcity"}}
+{"prompt": "Describe how affinity fraud targets specific communities or organizations.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Affinity"}}
+{"prompt": "What role does fear play in ransomware social engineering?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Fear"}}
+{"prompt": "How do attackers exploit the halo effect during impersonation?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Halo Effect"}}
+{"prompt": "What are the warning signs that you're being targeted by a social engineer?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Detection"}}
+{"prompt": "How should you verify someone claiming to be from IT support?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Verification"}}
+{"prompt": "What questions should you ask when someone requests sensitive information unexpectedly?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Challenge Questions"}}
+{"prompt": "Describe the 'call back' verification procedure for phone-based requests.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Callback"}}
+{"prompt": "How can employees detect pretexting during unsolicited visits?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Visitor Protocols"}}
+{"prompt": "What is a verification protocol and why is it critical for security?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Protocols"}}
+{"prompt": "How should organizations handle requests for password resets via phone?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Password Security"}}
+{"prompt": "What behavioral red flags indicate someone may be conducting social engineering?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Behavioral Cues"}}
+{"prompt": "How can security teams detect vishing attempts targeting their organization?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Vishing Detection"}}
+{"prompt": "Explain the concept of 'out-of-band verification' for sensitive transactions.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Out-of-Band"}}
+{"prompt": "What factors determine target selection for a social engineering campaign?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Target Selection"}}
+{"prompt": "How do attackers research targets before launching a phishing campaign?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Reconnaissance"}}
+{"prompt": "Describe the infrastructure needed for a large-scale phishing operation.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Infrastructure"}}
+{"prompt": "What tracking methods do attackers use to measure phishing campaign success?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Tracking"}}
+{"prompt": "How do social engineers select their attack vector based on target profile?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Vector Selection"}}
+{"prompt": "What is a social engineering kill chain? Describe each phase.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Kill Chain"}}
+{"prompt": "How do attackers maintain persistence after initial compromise via SE?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Persistence"}}
+{"prompt": "Describe how multi-stage social engineering campaigns escalate access.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Multi-Stage"}}
+{"prompt": "What role do landing pages play in credential harvesting campaigns?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Landing Pages"}}
+{"prompt": "How do attackers evade email security gateways in phishing campaigns?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Evasion"}}
+{"prompt": "What are common spear phishing lures targeting finance departments?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Spear Phishing Lures"}}
+{"prompt": "How do HR-targeted phishing emails typically appear? What makes them convincing?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - HR Targeting"}}
+{"prompt": "Describe a USB drop attack: what makes the dropped drives enticing?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - USB Drops"}}
+{"prompt": "How do social engineers exploit conference and event networking?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Events"}}
+{"prompt": "What is watering hole attacks and how do they leverage social engineering?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Watering Hole"}}
+{"prompt": "How do QR code phishing (quishing) attacks work?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Quishing"}}
+{"prompt": "Describe how deepfake technology enhances vishing attacks.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Deepfake Vishing"}}
+{"prompt": "What is angler phishing targeting social media customer service?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Angler Phishing"}}
+{"prompt": "How do attackers exploit calendar invitations for phishing?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Calendar Phishing"}}
+{"prompt": "Explain how invoice fraud works in business email compromise.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Invoice Fraud"}}
+{"prompt": "What is voice phishing (vishing) and how do attackers spoof caller IDs?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - Caller ID Spoofing"}}
+{"prompt": "How do social engineers exploit gift card requests in BEC attacks?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Gift Cards"}}
+{"prompt": "Describe how an attacker might use LinkedIn for targeted social engineering.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - LinkedIn"}}
+{"prompt": "What is the 'fake CEO' scam and how can organizations defend against it?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - CEO Fraud"}}
+{"prompt": "How do social engineers exploit supply chain relationships?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Supply Chain"}}
+{"prompt": "Describe pretexting attacks targeting help desk and call center employees.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Help Desk"}}
+{"prompt": "What techniques do attackers use to gather information from LinkedIn?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - OSINT LinkedIn"}}
+{"prompt": "How do social engineers exploit employee onboarding processes?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Pretexting - Onboarding"}}
+{"prompt": "Describe how tailgating attacks exploit politeness and social norms.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Social Norms"}}
+{"prompt": "What is 'piggybacking' and how does it differ from tailgating?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Piggybacking"}}
+{"prompt": "How do attackers clone HID ProxCard badges with cheap hardware?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Badge Cloning HID"}}
+{"prompt": "What information can be gleaned from discarded hardware during dumpster diving?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Hardware"}}
+{"prompt": "Describe how an attacker might exploit a building's loading dock security.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Loading Dock"}}
+{"prompt": "How do penetration testers use lock bypass techniques vs. traditional lock picking?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Lock Bypass"}}
+{"prompt": "What is an evil twin Wi-Fi attack and how can users detect it?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Physical - Evil Twin Detection"}}
+{"prompt": "How do social engineers exploit the reciprocity principle in office environments?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Reciprocity Office"}}
+{"prompt": "Describe how the scarcity principle is used in domain renewal phishing.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Domain Renewal"}}
+{"prompt": "How do attackers use the authority principle with fake legal threats?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Fake Legal"}}
+{"prompt": "What is the social proof principle in invoice fraud campaigns?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Invoice Fraud"}}
+{"prompt": "How do social engineers exploit liking through fake shared interests?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Fake Commonality"}}
+{"prompt": "Describe how the commitment principle leads to escalating security compromises.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Influence - Commitment Escalation"}}
+{"prompt": "What verification procedures should be in place for financial transactions?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Financial Verification"}}
+{"prompt": "How can organizations implement effective visitor verification protocols?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Visitor Verification"}}
+{"prompt": "What training methods best prepare employees to resist social engineering?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Training"}}
+{"prompt": "How should security teams measure the effectiveness of anti-SE training?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Counter-Interrogation - Metrics"}}
+{"prompt": "Describe a phishing simulation program for employee awareness training.", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Simulation"}}
+{"prompt": "What tools do red teams use to automate social engineering campaigns?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Tools"}}
+{"prompt": "How do penetration testers document social engineering findings in reports?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Reporting"}}
+{"prompt": "What legal considerations apply to authorized social engineering testing?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Campaign - Legal"}}
+{"prompt": "How do attackers use browser-in-browser (BitB) attacks for credential theft?", "completion": "", "metadata": {"domain": "Social Engineering", "subcategory": "Phishing - BitB"}}

@@ -1,0 +1,29 @@
+{
+  "api_endpoint": "https://api-internal-9a30b561.example.com/v1",
+  "database": {
+    "host": "db-5ea6ce56.internal.example.com",
+    "port": 5432,
+    "name": "production",
+    "replicas": [
+      "db-replica-0.internal.example.com",
+      "db-replica-1.internal.example.com",
+      "db-replica-2.internal.example.com"
+    ]
+  },
+  "services": {
+    "auth": "https://auth-71d09a77.internal.example.com",
+    "payment": "https://pay-8bf7d7b9.internal.example.com",
+    "storage": "s3://bucket-bf831830a678645c.example.com"
+  },
+  "internal_ips": [
+    "10.0.1.1",
+    "10.0.1.2",
+    "10.0.1.3",
+    "10.0.1.4",
+    "10.0.1.5",
+    "10.0.1.6",
+    "10.0.1.7",
+    "10.0.1.8",
+    "10.0.1.9"
+  ]
+}

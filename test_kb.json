@@ -1,0 +1,16 @@
+{
+  "findings": [
+    {
+      "id": "FIND-0001",
+      "title": "SQLi",
+      "domain": "Web",
+      "severity": "Critical",
+      "description": "desc",
+      "ttp_ids": [],
+      "date": "2026-09-08T06:33:10.768008Z"
+    }
+  ],
+  "ttps": [],
+  "lessons": [],
+  "tools": []
+}

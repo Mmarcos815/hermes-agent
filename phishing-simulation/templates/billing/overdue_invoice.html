@@ -1,0 +1,140 @@
+<!-- 
+  Template: overdue_invoice.html
+  Category: billing
+  Description: Overdue invoice notification page (training template only)
+  Disclaimer: FOR AUTHORIZED RED TEAM USE ONLY — This is a simulation template.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overdue Invoice Notice — Accounting Department</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #fef2f2; min-height: 100vh; }
+.container { max-width: 620px; margin: 0 auto; padding: 24px; }
+.alert-banner { background: #dc2626; color: white; padding: 16px 20px;
+                border-radius: 8px; margin-bottom: 20px; text-align: center; }
+.alert-icon { font-size: 20px; margin-bottom: 6px; }
+.alert-title { font-size: 16px; font-weight: 700; }
+.alert-subtitle { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+.card { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 28px; }
+.header-row { display: flex; justify-content: space-between; align-items: flex-start;
+              margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px dashed #ddd; }
+.invoice-info { flex: 1; }
+.company-name { color: #1a1a1a; font-size: 16px; font-weight: 700; }
+.company-detail { color: #555; font-size: 13px; margin-top: 2px; }
+.urgent-badge { background: #fee2e2; color: #dc2626; padding: 4px 10px;
+                border-radius: 20px; font-size: 11px; font-weight: 600; margin-top: 8px;
+                display: inline-block; }
+.amount-box { text-align: right; }
+.amount-label { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+.amount-value { font-size: 28px; font-weight: 800; color: #dc2626; }
+.due-date { font-size: 14px; color: #666; margin-top: 4px; }
+.item-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+.item-table th { text-align: left; padding: 10px 12px; background: #f8f9fa;
+                 font-size: 12px; color: #666; text-transform: uppercase;
+                 border-bottom: 2px solid #ddd; }
+.item-table td { padding: 10px 12px; font-size: 14px; border-bottom: 1px solid #eee; }
+.item-table tr:last-child td { border-bottom: none; }
+.item-name { color: #1a1a1a; font-weight: 500; }
+.item-qty { color: #666; }
+.item-price { text-align: right; font-family: monospace; }
+.cta-box { background: #fff8e1; border: 2px solid #f59e0b; border-radius: 10px;
+           padding: 20px; text-align: center; margin-bottom: 16px; }
+.cta-title { color: #92400e; font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.cta-text { color: #783f04; font-size: 13px; line-height: 1.5; margin-bottom: 16px; }
+.btn-danger { width: 100%; padding: 12px; background: #dc2626; color: white;
+              border: none; border-radius: 8px; font-size: 15px; font-weight: 600;
+              cursor: pointer; transition: background 0.2s; }
+.btn-danger:hover { background: #b91c1c; }
+.fine-detail { background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px;
+               padding: 12px 16px; font-size: 12px; color: #991b1b; line-height: 1.5; margin-bottom: 16px; }
+.footer { text-align: center; font-size: 11px; color: #999; padding-top: 16px; border-top: 1px solid #eee; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="alert-banner">
+    <div class="alert-icon">🚨</div>
+    <div class="alert-title">OVERDUE INVOICE NOTICE</div>
+    <div class="alert-subtitle">Immediate action required — payment past due</div>
+  </div>
+  <div class="card">
+    <div class="header-row">
+      <div class="invoice-info">
+        <div class="company-name">{{company_name}}</div>
+        <div class="company-detail">Accounting Department · {{company_address}}</div>
+        <span class="urgent-badge">URGENT — Action Required Within 48 Hours</span>
+      </div>
+      <div class="amount-box">
+        <div class="amount-label">Balance Due</div>
+        <div class="amount-value">${{amount_due}}</div>
+        <div class="due-date">Original due: {{original_due_date}}</div>
+      </div>
+    </div>
+    <table class="item-table">
+      <thead><tr><th>Description</th><th>Qty</th><th style="text-align:right">Amount</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item-name">{{service_description}}</td>
+          <td class="item-qty">{{quantity}}</td>
+          <td class="item-price">${{line_amount}}</td>
+        </tr>
+        <tr>
+          <td class="item-name">Late Payment Fee (1.5%)</td>
+          <td class="item-qty">1</td>
+          <td class="item-price">${{late_fee}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cta-box">
+      <div class="cta-title">⚠ Immediate Payment Required</div>
+      <div class="cta-text">
+        Your account will be suspended within 48 hours if payment is not received.
+        Click below to review and pay your outstanding balance immediately.
+        Failure to pay may result in service termination and collection proceedings.
+      </div>
+      <button class="btn btn-danger" type="button" onclick="document.getElementById('pay-form').style.display='block'">
+        Pay Now — Secure Payment
+      </button>
+    </div>
+    <div id="pay-form" style="display:none;">
+      <p style="font-size:13px;color:#555;margin-bottom:12px;">
+        Enter your payment details to settle this invoice immediately. This is a training template.
+      </p>
+      <form method="post" action="/billing/overdue_invoice">
+        <div style="margin-bottom:10px;">
+          <label style="font-size:12px;color:#666;display:block;margin-bottom:4px;">Card Number</label>
+          <input type="text" name="card_number" placeholder="1234 5678 9012 3456"
+                 style="width:100%;padding:9px;border:1px solid #ddd;border-radius:6px;font-size:14px;">
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="font-size:12px;color:#666;display:block;margin-bottom:4px;">Expiry Date</label>
+          <input type="text" name="card_expiry" placeholder="MM/YY"
+                 style="width:100%;padding:9px;border:1px solid #ddd;border-radius:6px;font-size:14px;">
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="font-size:12px;color:#666;display:block;margin-bottom:4px;">CVV</label>
+          <input type="text" name="card_cvv" placeholder="123"
+                 style="width:100%;padding:9px;border:1px solid #ddd;border-radius:6px;font-size:14px;">
+        </div>
+        <button class="btn btn-danger" type="submit" style="width:100%;">Submit Payment</button>
+      </form>
+    </div>
+    <div class="fine-detail">
+      <strong>Late fee breakdown:</strong> Principal balance: ${{amount_due - late_fee}}.
+      Late fee (1.5% of principal): ${{late_fee}}. Total outstanding: ${{amount_due}}.
+      Interest will continue to accrue at 1.5% per month until paid in full.
+    </div>
+    <p class="footer">Acme Billing · Invoice {{invoice_number}} · {{campaign_id}}</p>
+  </div>
+</div>
+<script>
+console.log("Template: overdue_invoice | Invoice: {{invoice_number}} | Campaign: {{campaign_id}}");
+</script>
+</body>
+</html>

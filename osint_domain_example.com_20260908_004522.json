@@ -1,0 +1,28 @@
+{
+  "target": "example.com",
+  "timestamp": "2026-09-08T00:45:20.608134Z",
+  "whois": {
+    "ip": "104.20.23.154",
+    "note": "whois CLI not available, used socket lookup",
+    "source": "socket"
+  },
+  "dns": {
+    "A": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nName:    example.com\nAddresses:  104.20.23.154\n\t  172.66.147.243",
+    "AAAA": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nName:    example.com\nAddresses:  2606:4700:10::6814:179a\n\t  2606:4700:10::ac42:93f3",
+    "MX": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nexample.com\tMX preference = 0, mail exchanger = (root)",
+    "NS": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nexample.com\tnameserver = elliott.ns.cloudflare.com\nexample.com\tnameserver = hera.ns.cloudflare.com\n\nelliott.ns.cloudflare.com\tinternet address = 172.64.35.228\nelliott.ns.cloudflare.com\tinternet address = 162.159.44.228\nelliott.ns.cloudflare.com\tinternet address = 108.162.195.228\nhera.ns.cloudflare.com\tinternet address = 172.64.32.162\nhera.ns.cloudflare.com\tinternet address = 108.162.192.162\nhera.ns.cloudflare.com\tinternet address = 173.245.58.162",
+    "TXT": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nexample.com\ttext =\n\n\t\"v=spf1 -all\"\nexample.com\ttext =\n\n\t\"_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9\"",
+    "CNAME": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nexample.com\n\tprimary name server = elliott.ns.cloudflare.com\n\tresponsible mail addr = dns.cloudflare.com\n\tserial  = 2413856909\n\trefresh = 10000 (2 hours 46 mins 40 secs)\n\tretry   = 2400 (40 mins)\n\texpire  = 604800 (7 days)\n\tdefault TTL = 1800 (30 mins)",
+    "SOA": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nexample.com\n\tprimary name server = elliott.ns.cloudflare.com\n\tresponsible mail addr = dns.cloudflare.com\n\tserial  = 2413856909\n\trefresh = 10000 (2 hours 46 mins 40 secs)\n\tretry   = 2400 (40 mins)\n\texpire  = 604800 (7 days)\n\tdefault TTL = 1800 (30 mins)",
+    "SRV": "Server:  G3100.myfiosgateway.com\nAddress:  192.168.1.1\n\nexample.com\n\tprimary name server = elliott.ns.cloudflare.com\n\tresponsible mail addr = dns.cloudflare.com\n\tserial  = 2413856909\n\trefresh = 10000 (2 hours 46 mins 40 secs)\n\tretry   = 2400 (40 mins)\n\texpire  = 604800 (7 days)\n\tdefault TTL = 1800 (30 mins)"
+  },
+  "subdomains": [
+    {
+      "subdomain": "www.example.com",
+      "ip": "104.20.23.154"
+    }
+  ],
+  "ssl_cert": {
+    "error": "module 'socket' has no attribute 'server'"
+  }
+}

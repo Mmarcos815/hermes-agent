@@ -1,0 +1,31 @@
+{
+  "query": "example.com",
+  "timestamp": "2026-09-07T20:48:17.890533Z",
+  "paste_sites": {
+    "pastebin": {
+      "url": "https://pastebin.com/search?q=example.com",
+      "status": 403,
+      "note": "HTTP 403"
+    },
+    "ghostbin": {
+      "url": "https://ghostbin.com/search?q=example.com",
+      "status": 403,
+      "note": "HTTP 403"
+    },
+    "throwbin": {
+      "url": "https://throwbin.io/search?q=example.com",
+      "status": 0,
+      "note": "HTTP 0"
+    },
+    "controlc": {
+      "url": "https://controlc.com/search?q=example.com",
+      "status": 404,
+      "note": "HTTP 404"
+    }
+  },
+  "ddark_web_forums": {
+    "query": "example.com",
+    "sources": []
+  },
+  "pastebin_matches": []
+}

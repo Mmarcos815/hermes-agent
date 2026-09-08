@@ -1,0 +1,84 @@
+{
+  "version": "8.0.0",
+  "objects": [
+    {
+      "id": "attack-logs-dashboard",
+      "type": "dashboard",
+      "attributes": {
+        "title": "Bionic Vuln Lab - Attack Analysis",
+        "description": "SIEM dashboard for attack log visualization",
+        "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15},\"version\":\"8.0.0\",\"type\":\"visualization\",\"id\":\"attacks-by-type\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15},\"version\":\"8.0.0\",\"type\":\"visualization\",\"id\":\"severity-over-time\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":15,\"w\":16,\"h\":15},\"version\":\"8.0.0\",\"type\":\"visualization\",\"id\":\"top-source-ips\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":16,\"y\":15,\"w\":16,\"h\":15},\"version\":\"8.0.0\",\"type\":\"visualization\",\"id\":\"top-targets\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":0,\"y\":30,\"w\":48,\"h\":20},\"version\":\"8.0.0\",\"type\":\"visualization\",\"id\":\"attack-world-map\"}]",
+        "optionsJSON": "{\"useMargins\":true,\"syncColors\":false}",
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "attacks-by-type",
+      "type": "visualization",
+      "attributes": {
+        "title": "Attacks by Type",
+        "visState": "{\"title\":\"Attacks by Type\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"attack_type\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "Distribution of attacks by type",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"attack-logs-*\"}"
+        }
+      }
+    },
+    {
+      "id": "severity-over-time",
+      "type": "visualization",
+      "attributes": {
+        "title": "Severity Over Time",
+        "visState": "{\"title\":\"Severity Over Time\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"title\":{},\"labels\":{\"show\":true,\"truncate\":100}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"title\":{\"text\":\"Count\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"severity\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "Attack severity trends over time",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"attack-logs-*\"}"
+        }
+      }
+    },
+    {
+      "id": "top-source-ips",
+      "type": "visualization",
+      "attributes": {
+        "title": "Top Source IPs",
+        "visState": "{\"title\":\"Top Source IPs\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"horizontal_bar\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"title\":{},\"labels\":{\"show\":true,\"truncate\":100}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"title\":{\"text\":\"Count\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":1,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source_ip\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "Top attacking source IP addresses",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"attack-logs-*\"}"
+        }
+      }
+    },
+    {
+      "id": "top-targets",
+      "type": "visualization",
+      "attributes": {
+        "title": "Top Targets",
+        "visState": "{\"title\":\"Top Targets\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"horizontal_bar\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"title\":{},\"labels\":{\"show\":true,\"truncate\":100}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"title\":{\"text\":\"Count\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"target\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "Most targeted hosts/services",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"attack-logs-*\"}"
+        }
+      }
+    },
+    {
+      "id": "attack-world-map",
+      "type": "visualization",
+      "attributes": {
+        "title": "Attack World Map",
+        "visState": "{\"title\":\"Attack World Map\",\"type\":\"tile_map\",\"params\":{\"colorSchema\":\"Yellow to Red\",\"mapType\":\"Scaled Circle Markers\",\"isDesaturated\":true,\"addTooltip\":true,\"heatClusterSize\":1.5,\"legendPosition\":\"bottomright\",\"mapZoom\":2,\"mapCenter\":[20,0],\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"geo_location\",\"precision\":3,\"size\":10000}}]}",
+        "uiStateJSON": "{}",
+        "description": "Geographic distribution of attacks",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"attack-logs-*\"}"
+        }
+      }
+    }
+  ]
+}

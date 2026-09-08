@@ -1,0 +1,45 @@
+title: File Upload Bypass Detection
+id: e5f6a7b8-c9d0-1234-efab-345678901234
+status: experimental
+description: >
+  Detects file upload bypass attempts including double extensions (e.g.,
+  .php.jpg), MIME type mismatches, and null byte injection. Attackers use
+  these techniques to upload executable content disguised as benign files.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
+  - https://portswigger.net/web-security/file-upload
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_double_ext:
+    - '\.php\d?\.(jpg|png|gif|txt)$'
+    - '\.jsp[x]?\.(jpg|png|gif|txt)$'
+    - '\.asp[x]?\.(jpg|png|gif|txt)$'
+    - '\.exe\.(jpg|png|gif|txt)$'
+    - '\.sh\.(jpg|png|gif|txt)$'
+  selection_mime_mismatch:
+    - 'Content-Type:\s*image/jpeg.*\.php'
+    - 'Content-Type:\s*image/png.*\.jsp'
+    - 'Content-Type:\s*application/pdf.*\.exe'
+  selection_null_byte:
+    - '%00'
+    - '\x00'
+  selection_request:
+    cs-uri-query|re: selection_double_ext
+    cs-body|re: selection_double_ext
+    cs-body|contains: selection_mime_mismatch
+    cs-uri-query|contains: selection_null_byte
+    cs-body|contains: selection_null_byte
+  condition: selection_request
+falsepositives:
+  - Legitimate files with dots in the filename
+  - Content management systems handling diverse file types
+  - Archive uploads containing multiple file types
+level: high
+tags:
+  - attack.persistence
+  - attack.t1505
+  - vulnerability.upload_bypass

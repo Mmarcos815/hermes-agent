@@ -1,0 +1,45 @@
+title: WebSocket Message Injection Detection
+id: b8c9d0e1-f2a3-4567-bcde-678901234567
+status: experimental
+description: >
+  Detects injection attempts via WebSocket messages including XSS payloads,
+  command injection, SQL injection, and protocol-level attacks. Monitors
+  WebSocket frames for malicious content that could compromise the server
+  or other connected clients.
+author: Bionic Vuln Lab
+date: 2026-09-05
+references:
+  - https://owasp.org/www-community/vulnerabilities/Web_Socket_Vulnerabilities
+  - https://portswigger.net/web-security/websockets
+logsource:
+  category: webserver
+  product: nginx
+detection:
+  selection_xss:
+    - '<script'
+    - 'javascript:'
+    - 'onerror='
+    - 'onload='
+    - 'eval\s*\('
+  selection_cmd_injection:
+    - ';\s*\w+'
+    - '\|\s*\w+'
+    - '`\s*\w+'
+    - '\$\(.*\)'
+  selection_protocol:
+    - '\x00\x00\x00'
+    - 'Sec-WebSocket-Key.*\r\n\r\n'
+  selection_request:
+    cs-body|contains: selection_xss
+    cs-body|contains: selection_cmd_injection
+    cs-body|contains: selection_protocol
+  condition: selection_request
+falsepositives:
+  - Legitimate chat messages containing code snippets
+  - Collaborative editing tools sharing code
+  - WebSocket-based development tools
+level: high
+tags:
+  - attack.initial_access
+  - attack.t1059
+  - vulnerability.websocket_injection

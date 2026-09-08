@@ -1,0 +1,49 @@
+name: package_delivery
+description: Package delivery notification requiring confirmation
+category: logistics
+urgency: medium
+target_role: any
+subject: "Package Delivery \u2014 Action Required to Confirm Receipt"
+body_html: "<p>Hi <strong>{{target_name}}</strong>,</p>\n<p>Your package is out for\
+  \ delivery today. To ensure successful delivery,\nplease confirm your delivery details\
+  \ below.</p>\n<p><a href=\"{{phishing_url}}\" style=\"display:inline-block;padding:12px\
+  \ 24px;\nbackground:#3b82f6;color:white;text-decoration:none;border-radius:6px;\"\
+  >\nConfirm Delivery Details \u2192</a></p>\n<table style=\"width:100%;border-collapse:collapse;margin:20px\
+  \ 0;\">\n  <tr><td style=\"padding:8px 12px;border:1px solid #eee;font-weight:bold;width:120px;\"\
+  >Tracking</td>\n      <td style=\"padding:8px 12px;border:1px solid #eee;\">{{tracking_number}}</td></tr>\n\
+  \  <tr><td style=\"padding:8px 12px;border:1px solid #eee;font-weight:bold;\">Expected</td>\n\
+  \      <td style=\"padding:8px 12px;border:1px solid #eee;\">{{delivery_date}}</td></tr>\n\
+  \  <tr><td style=\"padding:8px 12px;border:1px solid #eee;font-weight:bold;\">Carrier</td>\n\
+  \      <td style=\"padding:8px 12px;border:1px solid #eee;\">{{carrier_name}}</td></tr>\n\
+  \  <tr><td style=\"padding:8px 12px;border:1px solid #eee;font-weight:bold;\">Weight</td>\n\
+  \      <td style=\"padding:8px 12px;border:1px solid #eee;\">{{package_weight}}\
+  \ lbs</td></tr>\n</table>\n<p style=\"font-size:12px;color:#999;\">\n{{carrier_name}}\
+  \ Tracking: {{tracking_number}} | Reference: DEL-{{delivery_ref}}</p>"
+body_text: 'Hi {{target_name}},
+
+
+  Your package is out for delivery today. Please confirm your delivery details.
+
+
+  Tracking: {{tracking_number}}
+
+  Expected: {{delivery_date}}
+
+  Carrier: {{carrier_name}}
+
+  Weight: {{package_weight}} lbs
+
+
+  Confirm details: {{phishing_url}}
+
+
+  {{carrier_name}} Tracking: {{tracking_number}} | Ref: DEL-{{delivery_ref}}'
+required_vars:
+- target_name
+- tracking_number
+- delivery_date
+- carrier_name
+optional_vars:
+- package_weight
+- phishing_url
+- delivery_ref

@@ -1,0 +1,83 @@
+<!-- 
+  Template: america_first_credit_union_login.html
+  Category: banking
+  Description: America First Credit Union online banking/login (training/red team simulation only)
+  Disclaimer: FOR AUTHORIZED RED TEAM USE ONLY — This is a simulation template.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign In — America First Credit Union</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+       background: #003b71; min-height: 100vh; display: flex;
+       align-items: center; justify-content: center; }
+.container { background: white; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            padding: 32px; width: 100%; max-width: 400px; }
+.header { text-align: center; margin-bottom: 20px; }
+.afcu-logo { font-size: 22px; font-weight: 800; color: #003b71; letter-spacing: 0.5px;
+              margin-bottom: 2px; }
+.afcu-tag { font-size: 11px; color: #555; letter-spacing: 1px; text-transform: uppercase; }
+.notice { background: #eaf2f8; border: 1px solid #b8d4e8; border-radius: 4px;
+          padding: 10px 14px; font-size: 12px; color: #2471a3; margin-bottom: 18px;
+          line-height: 1.5; }
+.form-group { margin-bottom: 14px; }
+.label { display: block; font-size: 11px; color: #555; margin-bottom: 5px;
+         text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+.input { width: 100%; padding: 10px 12px; border: 1.5px solid #ddd; border-radius: 4px;
+         font-size: 14px; transition: border-color 0.2s; outline: none; background: #fafafa; }
+.input:focus { border-color: #003b71; background: white; }
+.forgot-row { text-align: center; margin-bottom: 16px; font-size: 12px; color: #555; }
+.forgot-link { color: #003b71; text-decoration: none; }
+.btn { width: 100%; padding: 11px; background: #003b71; color: white; border: none;
+       border-radius: 4px; font-size: 14px; font-weight: 700; cursor: pointer;
+       transition: background 0.2s; }
+.btn:hover { background: #002d5a; }
+.footer { margin-top: 14px; font-size: 10px; color: #999; text-align: center;
+          padding-top: 12px; border-top: 1px solid #f0f0f0; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="afcu-logo">America First Credit Union</div>
+    <div class="afcu-tag">Online Banking</div>
+  </div>
+  <div class="notice">
+    <strong>🔐 Security:</strong> AFCU will never ask for your password, PIN, or
+    security token via email or phone. Always access your account directly through
+    afcu.com or the AFCU mobile app.
+    Reference: AFCU-SIM-{{campaign_id}}
+  </div>
+  <form method="post" action="/banking/afcu_login">
+    <div class="form-group">
+      <label class="label" for="username">User ID</label>
+      <input class="input" type="text" id="username" name="username"
+             placeholder="Enter your User ID" required
+             value="{{username}}" autocomplete="username">
+    </div>
+    <div class="form-group">
+      <label class="label" for="password">Password</label>
+      <input class="input" type="password" id="password" name="password"
+             placeholder="Enter your password" required
+             value="{{password}}" autocomplete="current-password">
+    </div>
+    <div class="forgot-row">
+      <a href="/forgot-userid" class="forgot-link">Forgot User ID or password?</a>
+    </div>
+    <button class="btn" type="submit">Sign In</button>
+  </form>
+  <p class="footer">
+    © {{year}} America First Credit Union. All rights reserved.<br>
+    Training simulation template — not affiliated with AFCU.<br>
+    Reference: AFCU-SIM-{{campaign_id}} | {{tracking_code}}
+  </p>
+</div>
+<script>
+console.log("Template: afcu_login | Campaign: {{campaign_id}} | Tracking: {{tracking_code}}");
+</script>
+</body>
+</html>

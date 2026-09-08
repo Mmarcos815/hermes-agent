@@ -1,0 +1,55 @@
+# Training configuration for VS Code + Colab
+# Optimized for free T4 GPU (16GB VRAM)
+
+model:
+  base: "Qwen/Qwen3-4B-Thinking-2507"
+  max_seq_length: 2048
+  load_in_4bit: true
+  dtype: "bfloat16"
+
+lora:
+  r: 64
+  alpha: 128
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  dropout: 0.05
+  use_gradient_checkpointing: true
+
+training:
+  max_steps: 400
+  batch_size: 2
+  gradient_accumulation: 4
+  learning_rate: 1.0e-5
+  warmup_ratio: 0.03
+  lr_scheduler: "cosine"
+  temperature: 0.9
+  top_p: 0.95
+  top_k: 50
+  group_size: 6
+  beta_kl: 0.01
+  max_prompt_length: 1024
+  max_completion_length: 1024
+  save_steps: 50
+  save_total_limit: 3
+  logging_steps: 10
+
+rewards:
+  weights:
+    format: 1.0
+    accuracy: 2.0
+    reasoning_depth: 1.5
+    creativity: 1.5
+    attack_chain: 1.5
+    bypass_creativity: 1.0
+    tool_use_quality: 1.0
+    self_correction: 1.5
+
+data:
+  train_path: "grpo_train_final.jsonl"
+  num_examples: 4750

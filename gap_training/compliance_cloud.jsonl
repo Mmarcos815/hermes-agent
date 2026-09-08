@@ -1,0 +1,100 @@
+{"prompt": "PCI DSS violation: storing CVV in cleartext logs", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 failure: missing audit trail for privileged user actions", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "ISO 27001 nonconformity: no encryption at rest for PII database", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "ISO 27001"}}
+{"prompt": "PCI DSS bypass: tokenization keys stored alongside card data", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 Type II gap: change management without approval records", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "GDPR violation: customer data retained past deletion deadline", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GDPR"}}
+{"prompt": "HIPAA breach: unencrypted PHI transmitted over public WiFi", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "HIPAA"}}
+{"prompt": "PCI DSS req 8 failure: shared credentials across POS terminals", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 CC6.1 violation: excessive admin privileges without review", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "ISO 27001 A.12.4 missing: no logging of security events", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "ISO 27001"}}
+{"prompt": "PCI DSS cardholder data in test environment without masking", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 monitoring failure: alerts disabled during deployment", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "GDPR Art 17 failure: deletion not propagated to backups", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GDPR"}}
+{"prompt": "HIPAA gap: no automatic logoff on workstations", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "HIPAA"}}
+{"prompt": "PCI DSS segmentation failure: CDE accessible from guest VLAN", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 availability: no DR test conducted in 12 months", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "ISO 27001 A.18.1 violation: missing regulatory inventory", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "ISO 27001"}}
+{"prompt": "PCI DSS req 11 failure: quarterly scans not completed", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 CC7.1 gap: malware protection outdated on production", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "GDPR Art 32 failure: no pseudonymization of analytics DB", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GDPR"}}
+{"prompt": "HIPAA risk analysis outdated: last assessment 3 years ago", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "HIPAA"}}
+{"prompt": "PCI DSS encryption weakness: TLS 1.0 on payment pages", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 confidentiality gap: data classification labels missing", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "ISO 27001 A.9.2: privileged access not revalidated quarterly", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "ISO 27001"}}
+{"prompt": "PCI DSS key management failure: same HSM key for 3+ years", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 CC8.1: no post-incident review conducted", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "GDPR Art 33 breach: 72-hour notification window exceeded", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GDPR"}}
+{"prompt": "HIPAA BA agreement missing: vendor without signed contract", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "HIPAA"}}
+{"prompt": "PCI DSS PAN exposure: full card numbers in support tickets", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 change control: emergency deploy without approval", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "ISO 27001 A.14: secure development training not mandated", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "ISO 27001"}}
+{"prompt": "PCI DSS req 12: security policy not to contractors", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 CC5.2: user access reviews not performed", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "GDPR Art 35 DPIA: no impact assessment for high-risk", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GDPR"}}
+{"prompt": "HIPAA transmission security: ePHI over email unencrypted", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "HIPAA"}}
+{"prompt": "PCI DSS firewall misconfig: inbound rules allow CDE scan", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 CC9.1: vendor risk assessments not conducted yearly", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "ISO 27001 A.13.2: no cross-border data transfer agreements", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "ISO 27001"}}
+{"prompt": "PCI DSS PAN storage: expired cards retained in DB", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 CC2.2: control descriptions don't match procedures", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "GDPR Art 6: lawful basis for processing undocumented", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GDPR"}}
+{"prompt": "HIPAA physical: server room door propped open unattended", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "HIPAA"}}
+{"prompt": "PCI DSS ASV: external scan findings unaddressed 90+ days", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 monitoring: SIEM rule tuning suppressed critical alerts", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "ISO 27001 A.11: visitor log not maintained in facility", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "ISO 27001"}}
+{"prompt": "PCI DSS req 7: terminated badges active in payment zone", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "SOC2 CC3.4: management review of controls skipped", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "SOC2"}}
+{"prompt": "GDPR Art 25: data protection by design not implemented", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GDPR"}}
+{"prompt": "HIPAA unique user ID: generic nurse account shared", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "HIPAA"}}
+{"prompt": "PCI DSS anti-malware: signature updates disabled on POS", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "PCI DSS"}}
+{"prompt": "AWS S3 bucket exposed: public read on customer data", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure blob storage: anonymous access on backup containers", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP Cloud Storage: IAM allUsers binding on sensitive bucket", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS IAM privilege escalation: PassRole + EC2 launch", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS IAM"}}
+{"prompt": "Azure RBAC abuse: Contributor assigns Owner to self", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure IAM"}}
+{"prompt": "GCP service account key: long-lived credential in repo", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP IAM"}}
+{"prompt": "AWS Lambda: hardcoded secrets in environment variables", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure Function: managed identity with excessive graph perms", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure IAM"}}
+{"prompt": "GCP Cloud Function: default service account with Editor role", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP IAM"}}
+{"prompt": "AWS CloudFormation: stack policy bypass for SG change", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure ARM: deployment script from untrusted URL", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP Deployment Manager: resource creator on org", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP IAM"}}
+{"prompt": "AWS RDS: database publicly accessible with default port", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure SQL: firewall rule allows entire internet", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP Cloud SQL: public IP enabled no SSL", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS EC2: security group allows SSH from anywhere", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure NSG: RDP port 3389 open to internet", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP firewall: tag-based rule allows SSH from 0.0.0.0/0", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS IAM: wildcard policy grants *:* on all resources", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS IAM"}}
+{"prompt": "Azure AD app: client secret expired but still accepted", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure IAM"}}
+{"prompt": "GCP workload identity federation: permissive AWS trust", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP IAM"}}
+{"prompt": "AWS KMS: key policy allows external account access", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure Key Vault: secrets manage to all users", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP Cloud KMS: allAuthenticatedUsers can decrypt", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS IAM: access key not rotated in 365 days", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS IAM"}}
+{"prompt": "Azure: app service identity scoped to subscription", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure IAM"}}
+{"prompt": "GCP IAM: time-based condition missing on sensitive role", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP IAM"}}
+{"prompt": "AWS S3: bucket ACL grants AllUsers full control", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure AD: App Admin creates app with API permissions", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure IAM"}}
+{"prompt": "GCP: org policy constraints disabled at folder level", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS: cross-account role missing external ID condition", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS IAM"}}
+{"prompt": "Azure: PIM role activation without approval for GA", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure IAM"}}
+{"prompt": "GCP: service account impersonation to data exfil", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP IAM"}}
+{"prompt": "AWS ECR: image from public registry without verification", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure ACR: admin credentials instead of AAD auth", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP GCR: legacy storage API exposing image layers", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS: secrets in CloudFormation outputs visible", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure: ARM template exports storage keys to outputs", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP: instance metadata exposed without secret header", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS: GuardDuty findings auto-dismissed by Lambda", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure: Sentinel analytics rules disabled during maint", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP: SCC notifications muted for critical findings", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS: VPC flow logs disabled to hide lateral movement", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure: NSG flow logs retention set to 1 day", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP: VPC flow logs sampling at 1% misses attack traffic", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS: CloudTrail multi-region trail disabled on prod", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS Attack"}}
+{"prompt": "Azure: diagnostic settings removed from production", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure Attack"}}
+{"prompt": "GCP: audit logging excluded for data access", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "GCP Attack"}}
+{"prompt": "AWS: assume role from compromised CI/CD to production", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "AWS IAM"}}
+{"prompt": "Azure: managed identity on web app accesses Key Vault", "completion": "", "metadata": {"domain": "Compliance Cloud", "subcategory": "Azure IAM"}}
