@@ -8,87 +8,53 @@ class ThreatReportWriter:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
     
-    def generate_report(self, title, iocs, ttps, targets, severity="medium"):
-        """Generate a threat intelligence report."""
-        report = {
-            "title": title,
-            "date": datetime.utcnow().strftime("%Y-%m-%d"),
-            "severity": severity,
-            "iocs": iocs,
-            "ttps": ttps,
-            "targets": targets,
-            "summary": f"Threat intelligence report: {title}",
-        }
-        
-        # Generate Markdown
-        md = f"""# {title}
+    def threat_report_template(self, title, iocs, ttps, targets, severity="medium"):
+        """Generate a threat report template."""
+        report = f"""# {title}
 
-**Date:** {report['date']}  
-**Severity:** {severity.upper()}
+**Severity:** {severity}
+**Date:** {datetime.now().strftime('%Y-%m-%d')}
 
 ## Executive Summary
-{threat_report_template(title, iocs, ttps, targets)}
+
+Threat report for {title}.
 
 ## Indicators of Compromise (IOCs)
 """
         for ioc in iocs:
-            md += f"- **{ioc['type']}**: {ioc['value']} ({ioc.get('source', 'unknown')})
-"
+            report += f"- **{ioc['type']}**: {ioc['value']} ({ioc.get('source', 'unknown')})\n"
         
-        md += "
-## TTPs (Tactics, Techniques, Procedures)
-"
+        report += "\n## TTPs (Tactics, Techniques, Procedures)\n"
         for ttp in ttps:
-            md += f"- **{ttp['id']}**: {ttp['name']} ({ttp['tactic']})
-"
+            report += f"- **{ttp['id']}**: {ttp['name']} ({ttp['tactic']})\n"
         
-        md += "
-## Targeted Sectors
-"
+        report += "\n## Targeted Sectors\n"
         for target in targets:
-            md += f"- {target}
-"
+            report += f"- {target}\n"
         
-        md += "
+        report += """
 ## Recommendations
-"
-        md += "1. Monitor for listed IOCs
-"
-        md += "2. Implement detection rules for TTPs
-"
-        md += "3. Review affected systems
-"
-        
-        # Save
+1. Monitor for listed IOCs
+2. Implement detection rules for TTPs
+3. Review affected systems
+"""
+        return report
+    
+    def generate_report(self, title, iocs, ttps, targets, severity="medium"):
+        """Generate threat report and save to file."""
+        report = self.threat_report_template(title, iocs, ttps, targets, severity)
         output_file = self.output_dir / f"{title.lower().replace(' ', '_')}.md"
-        output_file.write_text(md)
+        output_file.write_text(report)
         return {"report": report, "file": str(output_file)}
     
     def generate_html(self, title, iocs, ttps, targets, severity="medium"):
         """Generate HTML threat report."""
-        md = self.generate_report(title, iocs, ttps, targets, severity)
+        report = self.generate_report(title, iocs, ttps, targets, severity)
         html = f"""<!DOCTYPE html>
-<html><head><title>{title}</title></head><body>
-<h1>{title}</h1>
-<p>Date: {datetime.utcnow().strftime('%Y-%m-%d')}</p>
-<p>Severity: {severity.upper()}</p>
-</body></html>"""
-        output_file = self.output_dir / f"{title.lower().replace(' ', '_')}.html"
-        output_file.write_text(html)
-        return {"file": str(output_file)}
-
-def threat_report_template(title, iocs, ttps, targets):
-    return f"Analysis of {title} affecting {len(targets)} sectors with {len(iocs)} IOCs and {len(ttps)} TTPs."
-
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("title")
-    parser.add_argument("--iocs", type=json.loads, default="[]")
-    parser.add_argument("--ttps", type=json.loads, default="[]")
-    parser.add_argument("--targets", nargs="+", default=[])
-    parser.add_argument("--severity", default="medium")
-    args = parser.parse_args()
-    writer = ThreatReportWriter()
-    result = writer.generate_report(args.title, args.iocs, args.ttps, args.targets, args.severity)
-    print(json.dumps(result, indent=2))
+<html>
+<head><title>{title}</title></head>
+<body>
+<pre>{report['report']}</pre>
+</body>
+</html>"""
+        return html

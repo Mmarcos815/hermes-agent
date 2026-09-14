@@ -332,8 +332,19 @@ public class MainActivity extends Activity {
     def _compile_apk(self, app_dir: Path, package_name: str) -> Path:
         """
         Compile the generated app into an APK.
-        In a real environment, this would use aapt/d8/dx to produce a valid APK.
-        Here we generate the source structure and documentation.
+
+        NOTE: This method generates the source structure and documentation.
+        It does NOT produce a valid APK because building APKs requires:
+        - Android SDK (aapt, d8/dx, zipalign, apksigner)
+        - JDK 17+
+        - A debug keystore
+
+        To actually build an APK from the generated source:
+        1. Install Android Studio and SDK Build-Tools
+        2. Run the commands in BUILD.md (generated alongside the source)
+        3. Or use: ./gradlew assembleDebug in a proper Android project structure
+
+        Returns the path to the output directory with source files and BUILD.md.
         """
         # Copy to output
         dest = self.output_dir / package_name
@@ -344,9 +355,20 @@ public class MainActivity extends Activity {
         # Create build instructions
         build_instructions = f"""# Build Instructions for {package_name}
 
-## Compile Commands:
-# 1. Generate R.java (if needed)
-#    aapt package -f -m -J src/ -M AndroidManifest.xml -S res/ -I $ANDROID_HOME/platforms/android-34/android.jar
+## Full Build Pipeline
+
+To compile this into a valid, signable APK, you need the Android SDK.
+
+### Prerequisites
+- JDK 17+
+- Android SDK Build-Tools (aapt2, d8, zipalign, apksigner)
+- Set ANDROID_HOME to your SDK path
+
+### Compile Commands:
+# 1. Generate R.java (if resources exist)
+#    aapt2 compile --dir res/ -o compiled_res/
+#    aapt2 link -o {package_name}.unaligned.apk -I $ANDROID_HOME/platforms/android-34/android.jar \\
+#      --manifest AndroidManifest.xml -R compiled_res/*.flat
 
 # 2. Compile Java sources
 #    javac -bootclasspath $ANDROID_HOME/platforms/android-34/android.jar \\
@@ -356,17 +378,23 @@ public class MainActivity extends Activity {
 #    d8 --min-api 21 --output . classes/*.class
 
 # 4. Package APK
-#    aapt package -f -M AndroidManifest.xml -S res/ -I $ANDROID_HOME/platforms/android-34/android.jar \\
-#              -F {package_name}.unaligned.apk
+#    zip {package_name}.unaligned.apk classes.dex
 
-# 5. Add DEX to APK
-#    zip -j {package_name}.unaligned.apk classes.dex
-
-# 6. Align APK
+# 5. Align APK
 #    zipalign -f 4 {package_name}.unaligned.apk {package_name}.apk
 
-# 7. Sign APK
+# 6. Sign APK
 #    apksigner sign --ks lab.keystore {package_name}.apk
+
+### Alternative: Use Android Studio
+1. Create a new Android project
+2. Copy the generated src/ and AndroidManifest.xml into the project
+3. Build > Build APK
+
+### Why source-only?
+Generating valid APKs requires a full Android toolchain (1+ GB).
+This generator focuses on producing the vulnerability patterns in source form,
+which is the educational goal of this lab.
 """
         (dest / "BUILD.md").write_text(build_instructions)
         return dest

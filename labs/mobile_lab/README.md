@@ -99,16 +99,49 @@ bash android_setup.sh --check
 
 ---
 
+### External Dependencies Required
+
+| Tool | Purpose | Required By | Install |
+|------|---------|-------------|---------|
+| **APKTool** | APK decompilation to smali/resources | `analysis_workflow.py` | [ibotpeaches.github.io/Apktool](https://ibotpeaches.github.io/Apktool/) |
+| **JADX** | APK decompilation to Java source | `analysis_workflow.py` | [github.com/skylot/jadx](https://github.com/skylot/jadx) |
+| **Frida** | Dynamic instrumentation (runtime hooking) | `frida_scripts.py`, `analysis_workflow.py --frida` | `pip install frida-tools` |
+| **Android SDK** | Build tools (aapt2, d8, zipalign, apksigner) | Building APKs from generated source | [developer.android.com/studio](https://developer.android.com/studio) |
+| **JDK 17+** | Java compilation | Android SDK tools | [adoptium.net](https://adoptium.net/) |
+| **Android Emulator or Device** | Running/analyzing APKs | Dynamic analysis | Android Studio AVD or physical device |
+
+**All analysis scripts are designed to degrade gracefully** — if a tool is missing, they print a warning and continue with available functionality. For example, `analysis_workflow.py` will run static analysis on decompiled sources if APKTool/JADX are available, and will skip Frida dynamic analysis if Frida is not installed.
+
+---
+
 ### Lab Structure
 
 ```
 mobile_lab/
 ├── README.md                  # This file
 ├── android_setup.sh           # Emulator setup & validation
-├── test_app_generator.py      # Vulnerable app generation
+├── test_app_generator.py      # Vulnerable app generation (source output, no APK compile)
 ├── frida_scripts.py           # Frida hooking library
 └── analysis_workflow.py       # Automated analysis pipeline
 ```
+
+---
+
+### test_app_generator.py — Source Only (No APK Build)
+
+The `test_app_generator.py` script intentionally produces **source code** rather than compiled APKs. Building APKs requires a full Android SDK (1+ GB), which is too large to include in this educational lab.
+
+**Output structure:**
+```
+test_apps/
+└── com.lab.hardcoded/
+    ├── AndroidManifest.xml
+    └── src/com/lab/hardcoded/
+        └── MainActivity.java
+    └── BUILD.md              # Instructions for compiling to APK
+```
+
+The generated BUILD.md documents the complete APK build pipeline using standard Android tools. To produce a working APK, install Android Studio and follow the instructions.
 
 ---
 

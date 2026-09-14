@@ -1,0 +1,5 @@
+name: hermes-achievements
+version: 0.4.0
+description: "Steam-style achievements for vibe coding and agentic Hermes workflows. Scans local session history and unlocks tiered badges (Copper through Olympian). Dashboard-only plugin — registered via dashboard/manifest.json, not the general plugin loader."
+author: PCinkusz / NousResearch
+kind: standalone

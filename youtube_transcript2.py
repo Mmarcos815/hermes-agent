@@ -8,7 +8,7 @@ with sync_playwright() as p:
     time.sleep(3)
     
     # Click on the three dots menu and select "Open transcript"
-    page.evaluate("() => { const btn = document.querySelector('button[aria-label="More actions"]') || document.querySelector('.ytp-overflow-button'); if (btn) btn.click(); }")
+    page.evaluate('''() => { const btn = document.querySelector('button[aria-label="More actions"]') || document.querySelector('.ytp-overflow-button'); if (btn) btn.click(); }''')
     time.sleep(1)
     
     # Try to find "Open transcript" option

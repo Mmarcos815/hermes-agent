@@ -10,7 +10,7 @@
 
 import os
 import base64
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 from playwright.sync_api import sync_playwright
 
 app = FastMCP("daughter_browser")

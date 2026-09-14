@@ -2,12 +2,21 @@
 
 The idea: query a target model many times with carefully chosen inputs, collect
 its outputs, and train a small surrogate model that mimics its behavior.
+
+Requires Ollama running locally with a model pulled (e.g., `ollama pull llama3`).
+If Ollama is not available, runs in OFFLINE DEMO mode with canned responses.
 """
 
 import json
 import random
-import requests
+import sys
 from collections import Counter
+
+try:
+    import requests
+    HAS_REQUESTS = True
+except ImportError:
+    HAS_REQUESTS = False
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "llama3"
@@ -26,9 +35,26 @@ PROBES = [
     "Is the following movie review positive or negative? 'Would not recommend.'",
 ]
 
+# Offline demo responses (used when Ollama is not available)
+OFFLINE_DEMO_RESPONSES = {
+    "Is the following movie review positive or negative? 'Great film.'": "positive",
+    "Is the following movie review positive or negative? 'Terrible acting.'": "negative",
+    "Is the following movie review positive or negative? 'It was okay.'": "neutral",
+    "Is the following movie review positive or negative? 'Waste of time.'": "negative",
+    "Is the following movie review positive or negative? 'A masterpiece.'": "positive",
+    "Is the following movie review positive or negative? 'Meh.'": "neutral",
+    "Is the following movie review positive or negative? 'Loved every minute.'": "positive",
+    "Is the following movie review positive or negative? 'Boring and dull.'": "negative",
+    "Is the following movie review positive or negative? 'Not bad.'": "positive",
+    "Is the following movie review positive or negative? 'Would not recommend.'": "negative",
+}
+
 
 def query(prompt: str) -> str:
-    """Query the target model."""
+    """Query the target model. Falls back to offline demo if Ollama is unavailable."""
+    if not HAS_REQUESTS:
+        return OFFLINE_DEMO_RESPONSES.get(prompt, "[OFFLINE DEMO — requests not installed]")
+    
     try:
         r = requests.post(
             OLLAMA_URL,
@@ -37,8 +63,9 @@ def query(prompt: str) -> str:
         )
         r.raise_for_status()
         return r.json()["response"].strip().lower()
-    except requests.RequestException as e:
-        return f"[OFFLINE — {type(e).__name__}]"
+    except requests.RequestException:
+        # Ollama not running — use offline demo response
+        return OFFLINE_DEMO_RESPONSES.get(prompt, "[OFFLINE DEMO — Ollama not available]")
 
 
 def classify(response: str) -> str:

@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.error
 import ssl
 import re
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 app = FastMCP("daughter_youtube")
 

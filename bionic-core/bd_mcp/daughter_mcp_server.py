@@ -37,7 +37,7 @@ import sqlite3
 import subprocess
 import logging
 from pathlib import Path
-from mcp.server import FastMCP
+from fastmcp import FastMCP
 
 # ============================================================================
 # SETUP

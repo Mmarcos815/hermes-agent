@@ -26,11 +26,12 @@ import hashlib
 import hmac
 import json
 import os
+import re
 import sys
 import time
 from collections import defaultdict
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 from mcp.server.fastmcp import FastMCP
 

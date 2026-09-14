@@ -1,0 +1,60 @@
+=== Epsilon = 0.01 (FGSM) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — FGSM
+=======================================================
+  Epsilon (ε):        0.01
+  Original class:     0 (conf=0.490)
+  Adversarial class:  0 (conf=0.485)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    20.27
+  Attack success:     NO ✗
+=======================================================
+
+
+=== Epsilon = 0.03 (FGSM) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — FGSM
+=======================================================
+  Epsilon (ε):        0.03
+  Original class:     1 (conf=0.537)
+  Adversarial class:  1 (conf=0.532)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    20.30
+  Attack success:     NO ✗
+=======================================================
+
+
+=== Epsilon = 0.1 (FGSM) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — FGSM
+=======================================================
+  Epsilon (ε):        0.1
+  Original class:     0 (conf=0.471)
+  Adversarial class:  0 (conf=0.466)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    19.75
+  Attack success:     NO ✗
+=======================================================
+
+
+=== Epsilon = 0.3 (FGSM) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — FGSM
+=======================================================
+  Epsilon (ε):        0.3
+  Original class:     0 (conf=0.495)
+  Adversarial class:  0 (conf=0.490)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    19.52
+  Attack success:     NO ✗
+=======================================================
+
+

@@ -1,0 +1,13 @@
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — PGD
+=======================================================
+  Epsilon (ε):        0.05
+  Original class:     1 (conf=0.504)
+  Adversarial class:  0 (conf=0.499)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    19.97
+  Attack success:     YES ✓
+=======================================================
+

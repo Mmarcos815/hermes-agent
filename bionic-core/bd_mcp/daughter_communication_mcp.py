@@ -12,7 +12,7 @@ import json
 import urllib.request
 import urllib.parse
 import ssl
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 app = FastMCP("daughter_communication")
 

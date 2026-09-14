@@ -1,0 +1,18 @@
+
+=======================================================
+  Model Extraction Report
+=======================================================
+  API endpoint:        http://localhost:8080/predict
+  Query budget:        5000
+  Queries used:        5000
+  Strategy:            decision_boundary
+  Surrogate accuracy:  0.715
+  Victim agreement:    0.936
+  Weight correlation:  0.975
+  Extraction success:  HIGH ✓
+=======================================================
+    Phase 1: Generated 5000 queries (decision_boundary)
+    Phase 2: Collected 5000 victim predictions
+    Phase 3: Trained surrogate model
+    Phase 4: Agreement=0.936, TrainAcc=0.715
+

@@ -91,8 +91,7 @@ class ContinuousTrainingPipeline:
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w") as f:
             for rec in unique:
-                f.write(json.dumps(rec, ensure_ascii=False) + "
-")
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         return len(unique)
     
     def trigger_training(self, data_path, output_dir="training/output"):

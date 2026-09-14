@@ -1,0 +1,5 @@
+name: context_engine
+version: 1.0.0
+description: "Context engine plugin category. Engines ship in subdirectories (plugins/context_engine/<name>/) and are discovered by plugins/context_engine/__init__.py. Only one engine is active at a time (configured via context.engine in config.yaml). The built-in default compressor lives in agent/context_engine.py — this directory is currently empty of engine implementations."
+author: NousResearch
+kind: standalone

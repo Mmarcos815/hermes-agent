@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Team Report — 127.0.0.1</title>
+<style>
+:root {
+  --bg: #0d1117; --surface: #161b22; --border: #30363d;
+  --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+  --critical: #ff0040; --high: #ff6600; --medium: #ffcc00;
+  --low: #00cc66; --info: #58a6ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg);
+  color: var(--text); line-height:1.6; padding:2rem; }
+.container { max-width:1200px; margin:0 auto; }
+h1 { color: var(--accent); font-size:2rem; margin-bottom:0.5rem; }
+h2 { color: var(--text); border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin:2rem 0 1rem; }
+h3 { color: var(--text-muted); margin:1rem 0 0.5rem; }
+.meta { color: var(--text-muted); margin-bottom:2rem; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin:2rem 0; }
+.stat-card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:1.2rem; text-align:center; }
+.stat-card .value { font-size:2rem; font-weight:bold; color:var(--accent); }
+.stat-card .label { color:var(--text-muted); font-size:0.85rem; margin-top:0.3rem; }
+.severity-bar { display:flex; gap:0.5rem; margin:1rem 0; }
+.sev-item { flex:1; text-align:center; padding:0.5rem; border-radius:4px; background:var(--surface); }
+.sev-item .count { font-size:1.5rem; font-weight:bold; }
+.sev-critical .count { color:var(--critical); }
+.sev-high .count { color:var(--high); }
+.sev-medium .count { color:var(--medium); }
+.sev-low .count { color:var(--low); }
+.sev-info .count { color:var(--info); }
+table { width:100%; border-collapse:collapse; margin:1rem 0; }
+th, td { padding:0.6rem 0.8rem; text-align:left; border-bottom:1px solid var(--border); }
+th { background:var(--surface); color:var(--text-muted); font-weight:600; }
+tr:hover { background:var(--surface); }
+.badge { display:inline-block; padding:0.15rem 0.5rem; border-radius:4px; font-size:0.75rem; font-weight:bold; }
+.badge-critical { background:rgba(255,0,64,0.2); color:var(--critical); }
+.badge-high { background:rgba(255,102,0,0.2); color:var(--high); }
+.badge-medium { background:rgba(255,204,0,0.2); color:var(--medium); }
+.badge-low { background:rgba(0,204,102,0.2); color:var(--low); }
+.badge-info { background:rgba(88,166,255,0.2); color:var(--info); }
+.chain { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:1rem; margin:1rem 0; }
+.chain-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; }
+.chain-host { font-weight:bold; color:var(--accent); }
+.risk-score { color:var(--text-muted); }
+.step { padding:0.4rem 0; border-bottom:1px solid var(--border); }
+.step:last-child { border-bottom:none; }
+.evidence-list { list-style:none; }
+.evidence-list li { padding:0.3rem 0; color:var(--text-muted); }
+.footer { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border);
+  color:var(--text-muted); font-size:0.8rem; text-align:center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Red Team Assessment Report</h1>
+<div class="meta">
+  <strong>Target:</strong> 127.0.0.1 &nbsp;|&nbsp;
+  <strong>Date:</strong> 2026-09-13 20:38:36 &nbsp;|&nbsp;
+  <strong>Pipeline:</strong> Automated Red Team Pipeline v1.0
+</div>
+
+<h2>Executive Summary</h2>
+<div class="stats">
+  <div class="stat-card"><div class="value">0</div><div class="label">Open Ports</div></div>
+  <div class="stat-card"><div class="value">0</div><div class="label">Subdomains</div></div>
+  <div class="stat-card"><div class="value">0</div><div class="label">Live Hosts</div></div>
+  <div class="stat-card"><div class="value">0</div><div class="label">Vulnerabilities</div></div>
+  <div class="stat-card"><div class="value">0</div><div class="label">Exploit Chains</div></div>
+</div>
+
+<h2>Severity Breakdown</h2>
+<div class="severity-bar">
+  <div class="sev-item sev-critical"><div class="count">0</div>Critical</div>
+  <div class="sev-item sev-high"><div class="count">0</div>High</div>
+  <div class="sev-item sev-medium"><div class="count">0</div>Medium</div>
+  <div class="sev-item sev-low"><div class="count">0</div>Low</div>
+  <div class="sev-item sev-info"><div class="count">0</div>Info</div>
+</div>
+
+<h2>Open Ports</h2>
+<table>
+<tr><th>Port</th><th>Protocol</th><th>State</th><th>Service</th></tr>
+</table>
+
+<h2>Discovered Subdomains</h2>
+<table>
+<tr><th>#</th><th>Subdomain</th></tr>
+</table>
+
+<h2>Live Web Hosts</h2>
+<table>
+<tr><th>#</th><th>URL</th></tr>
+</table>
+
+<h2>Exploit Chains</h2>
+
+<h2>Nuclei Findings</h2>
+<table>
+<tr><th>Severity</th><th>Name</th><th>Host</th><th>CVE</th></tr>
+</table>
+
+<h2>Evidence Collected</h2>
+<ul class="evidence-list">
+<li>✓ C:\Users\mobil\orca\projects\my 1st\redteam_127_0_0_1_20260913_203836\recon_data.json</li>
+<li>✓ C:\Users\mobil\orca\projects\my 1st\redteam_127_0_0_1_20260913_203836\exploit_chains.json</li>
+<li>✗ C:\Users\mobil\orca\projects\my 1st\redteam_127_0_0_1_20260913_203836\nmap_output.txt</li>
+<li>✗ C:\Users\mobil\orca\projects\my 1st\redteam_127_0_0_1_20260913_203836\subfinder_output.txt</li>
+<li>✗ C:\Users\mobil\orca\projects\my 1st\redteam_127_0_0_1_20260913_203836\httpx_output.txt</li>
+<li>✗ C:\Users\mobil\orca\projects\my 1st\redteam_127_0_0_1_20260913_203836\nuclei_output.json</li>
+</ul>
+
+<div class="footer">
+  <p>This report was generated by the Automated Red Team Pipeline.</p>
+  <p>FOR AUTHORIZED TESTING ONLY. Unauthorized access to computer systems is illegal.</p>
+  <p>Report generated: 2026-09-13 20:38:36</p>
+</div>
+
+</div>
+</body>
+</html>

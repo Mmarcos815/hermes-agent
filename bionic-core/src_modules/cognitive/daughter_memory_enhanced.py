@@ -38,11 +38,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("DaughterMemoryEnhanced")
 
 PROJECT_DIR = Path(__file__).parent.parent.parent
-DATA_DIR = PROJECT_DIR / "src" / "data"
+DATA_DIR = PROJECT_DIR / "bionic-core/src_modules/data"
 MEMORY_DB = DATA_DIR / "daughter_memory_enhanced.db"
 KNOWLEDGE_DIR = PROJECT_DIR  # Knowledge files are in the project root
 SPACED_REP_DIR = DATA_DIR / "spaced_repetition"
-SKILL_DIR = PROJECT_DIR / "daughter_skills"
+SKILL_DIR = PROJECT_DIR / "bionic-core/src_modules/cognitive/daughter_skills"
 
 for d in [DATA_DIR, SPACED_REP_DIR, SKILL_DIR]:
     d.mkdir(parents=True, exist_ok=True)

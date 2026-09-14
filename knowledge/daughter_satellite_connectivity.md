@@ -32,12 +32,12 @@
 - Latency: 20-40ms (near fiber-like, vs GEO's 600ms)
 - Satellites move fast across the sky (orbital period ~90 minutes)
 - Need MANY satellites for continuous coverage (constellation approach)
-- Examples: Starlink (9,000+ satellites, 9.2M customers), Iridium (66 satellites),
+- Examples: Starlink (9,000+ satellites, ~4.5M customers), Iridium (66 satellites),
   Globalstar, OneWeb, Amazon Kuiper (102 launched, more planned)
 
 THE KEY INSIGHT: LEO constellations are what made modern satellite internet viable.
 Low latency + high capacity + global coverage is the combination that changed
-everything. Starlink alone went from 10,000 customers to 9.2 million in under 4
+everything. Starlink alone went from 10,000 customers to ~4.5 million in under 4
 years — the fastest infrastructure buildout in history.
 
 ## THE THREE WAYS TO CONNECT VIA SATELLITE
@@ -114,8 +114,8 @@ Over time, more satellites = more capacity = better service.
 | Metric | Value |
 |--------|-------|
 | Satellites launched | 10,790+ (as of 2025) |
-| Active customers | 9.2 million (as of 2025) |
-| New customers (2025) | 4.6 million in 2025 alone |
+| Active customers | ~4.5 million (as of 2025) |
+| New customers (2025) | Growth continues, exact figures unverified |
 | Countries served | 160+ countries, 35 new in 2025 |
 | LEO altitude | ~550 km |
 | Latency | 20-40ms (LEO), 282ms worst case (Marshall Islands, Q3 2025) |

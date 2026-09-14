@@ -1,38 +1,10 @@
 {
-  "total_packages_scanned": 197,
-  "advisories_checked": 3,
-  "vulnerabilities_detected": 3,
-  "findings": [
-    {
-      "cve_id": "CVE-2024-21503",
-      "package": "pyjwt",
-      "installed_version": "2.13.0",
-      "fixed_in": "2.9.0",
-      "severity": "HIGH",
-      "cvss": 7.5,
-      "description": "JWT Algorithm Confusion vulnerability when public keys are mishandled.",
-      "remediation": "Upgrade pyjwt >= 2.9.0 and enforce explicit algorithm parameter allowlists."
-    },
-    {
-      "cve_id": "CVE-2023-45803",
-      "package": "urllib3",
-      "installed_version": "2.7.0",
-      "fixed_in": "2.0.7",
-      "severity": "MEDIUM",
-      "cvss": 5.3,
-      "description": "Request body not stripped on HTTP 303 redirect across origins.",
-      "remediation": "Upgrade urllib3 >= 2.0.7."
-    },
-    {
-      "cve_id": "GHSA-72p3-x477-8q96",
-      "package": "fastapi",
-      "installed_version": "0.133.1",
-      "fixed_in": "0.100.0",
-      "severity": "LOW",
-      "cvss": 3.7,
-      "description": "Swagger UI OAuth redirect URL parameter reflection.",
-      "remediation": "Upgrade fastapi >= 0.100.0."
-    }
+  "report_type": "CVE Security Audit — Knowledge File Reference",
+  "note": "This report lists real CVE IDs referenced in the knowledge base. No automated scan was performed — these are documented references only.",
+  "cve_ids_referenced": [
+    "CVE-2024-21503",
+    "CVE-2023-45803",
+    "GHSA-72p3-x477-8q96"
   ],
-  "system_health": "ACTION_REQUIRED"
+  "source": "Documented in knowledge files — not from live vulnerability scan"
 }

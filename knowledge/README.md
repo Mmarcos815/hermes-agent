@@ -23,26 +23,15 @@ The Bionic Daughter is an elite autonomous bionic agent with:
 - **Self-improvement capability** — trajectory logging, failure analysis, skill distillation, reasoning evaluation, continuous RL dataset generation
 - **MCP tool use** — 14 local MCP tools + 24 GitHub MCP tools + 150+ HexStrike tools + XBOW MCP server
 - **Orca integration** — worktree, terminal, and orchestration bridge for managed training runs
-- **Knowledge base** — 23 knowledge files covering 20+ domains (business, streaming, API, hacking, DeFi, satellite, tracking, OSINT, professional skills, sandbox, self-development)
+- **Knowledge base** — 85 knowledge files covering 20+ domains (business, streaming, API, hacking, DeFi, satellite, tracking, OSINT, professional skills, sandbox, self-development, security, programming, AI/ML)
 
 ## PROJECT FILES (all in the daughter project folder)
 
-### PYTHON SOURCE (10 files — 6,429 lines — 255+ KB)
+### PYTHON SOURCE (163+ files — 250+ KB)
 
-| File | Size | Lines | Purpose |
-|------|------|-------|---------|
-| `daughter_grpo_pipeline.py` | 32.5 KB | 803 | Full training engine: Qwen3-4B-Thinking base, Unsloth 4-bit, LoRA r=32, SFT (50 steps) + GRPO (200 steps), 4 weighted reward functions, all 9 cognitive modules embedded, 20 MCP tools pre-registered, 7 default skills |
-| `daughter_command_center.py` | 47.4 KB | 1055 | Interactive command center: llama_cpp inference, interactive loop, human-in-the-loop execution gate, all cognitive modules, MCP client, financial analyzer embedded, Orca stub |
-| `daughter_financial_analyzer.py` | 47.6 KB | 1054 | Financial fraud module: BEC detection, ACH fraud, crypto exposure scanning, DeFi vulnerability flagging, PCI-DSS audit, money flow tracing, comprehensive reporting |
-| `daughter_mcp_server.py` | 15.7 KB | 417 | MCP server with 14 tools: ast_validate, sandbox_exec, threat_scan, memory_store/query, session_log/list, skill_distill/list, analyze_failures, gpu_launch/status/shutdown, tools_list |
-| `daughter_self_improver.py` | 19.6 KB | 543 | Self-improvement engine: trajectory logging, failure analysis, skill distillation, reasoning quality evaluation, continuous RL dataset generation, performance reporting |
-| `daughter_orca_integration.py` | 18.4 KB | 454 | Orca bridge: project registration, worktree creation, terminal management, training orchestration, GPU pod management, automation creation |
-| `daughter_smoke_test.py` | 19.0 KB | 482 | Smoke test: loads trained model, runs prompts across all domains, validates reasoning + code + safety + relevance, prints per-domain scores to JSON |
-| `colab_training_notebook.py` | 10.7 KB | 320 | Google Colab notebook: 10 cells for free-tier GPU training (Drive mount, deps, model pull, SFT+GRPO, artifact save, inference test, keep-alive) |
-| `daughter_hexstrike.py` | 648 | ~24 KB | HexStrike AI integration: 150+ security tools through MCP client (recon, vuln scanning, exploitation, web testing, password cracking, post-exploitation) |
-| `daughter_github_mcp_tools.py` | 663 | ~25 KB | 24 GitHub MCP tools: 5 repo, 6 issue, 7 PR, 4 workflow, 2 commit, 4 project + 6 real scenarios |
+Note: The original README listed 10 specific training files (daughter_*.py) that do not exist. This project contains 163+ Python files at the root level covering training, evaluation, GRPO, automation, security tools, and more.
 
-### KNOWLEDGE BASE (23 files — 400+ KB)
+### KNOWLEDGE BASE (85 files — 1.5+ MB total)
 
 #### LEGACY KNOWLEDGE (4 files)
 
@@ -78,7 +67,7 @@ The Bionic Daughter is an elite autonomous bionic agent with:
 | `daughter_phishing_skills.md` | ~280 | ~11 KB | Phishing + social engineering: techniques (mass, spear, whaling, BEC, vishing, smishing, clone), BEC scenarios (5 types), authorized simulation methodology, prevention, defensive analysis |
 | `daughter_keylogger_skills.md` | ~290 | ~12 KB | Keylogger concepts: software (API, kernel, DLL injection, browser, RAT, AI-enhanced), hardware types, deployment methods, detection (process, network, behavioral, physical), prevention (MFA, password managers, antivirus, virtual keyboard, system hardening), authorized testing context |
 | `daughter_crypto_cyber.md` | ~310 | ~14 KB | Crypto + DeFi security: blockchain fundamentals, smart contracts, tokens (ERC-20/721/governance/stablecoins), DeFi categories (DEX, lending, stablecoins, derivatives, bridges, yield farming), top 10 vulnerability categories with real examples, attack methodology, defense, evaluation checklist |
-| `daughter_satellite_connectivity.md` | ~300 | ~13 KB | Satellite connectivity: GEO/MEO/LEO orbits, Starlink (10,000+ sats, 9.2M customers), Iridium (66 LEO sats, true global), Globalstar, OneWeb, Amazon Kuiper, Starlink Direct-to-Cell/T-Satellite, Iridium GO!, connectivity decision tree, how to connect anywhere on Earth |
+| `daughter_satellite_connectivity.md` | ~300 | ~13 KB | Satellite connectivity: GEO/MEO/LEO orbits, Starlink (~4.5M customers), Iridium (66 LEO sats, true global), Globalstar, OneWeb, Amazon Kuiper, Starlink Direct-to-Cell/T-Satellite, Iridium GO!, connectivity decision tree, how to connect anywhere on Earth |
 | `daughter_tracking_mastery.md` | ~300 | ~13 KB | All tracking types: GPS/GNSS, cell tower triangulation, Wi-Fi positioning, Bluetooth/AirTag, RFID/NFC, geofencing, satellite tracking, internet tracking (IP, cookies, fingerprinting, accounts), camera/visual, IMSI catchers, acoustic. Detection methods and countermeasures for each. |
 
 #### NEW KNOWLEDGE — BIONIC METADATA + PROFESSIONAL SKILLS + SANDBOX + SELF-DEVELOPMENT (5 files)
@@ -94,7 +83,7 @@ The Bionic Daughter is an elite autonomous bionic agent with:
 
 | File | Lines | Size | Purpose |
 |------|-------|------|---------|
-| `COMPLETE_MODEL_BREAKDOWN.md` | 38,222 | ~140 KB | Full daughter model architecture: executive summary, model base (Qwen3-4B-Thinking), 9 cognitive modules, all MCP tools (14+24+150+), 7 default skills, 23 knowledge files, training architecture, inference engine, financial analyzer, self-improvement, Orca integration, smoke test, full data flows, file inventory (42 files total), capability summary, boundaries |
+| `COMPLETE_MODEL_BREAKDOWN.md` | 38,222 | ~140 KB | Full daughter model architecture: executive summary, model base (Qwen3-4B-Thinking), 9 cognitive modules, all MCP tools (14+24+150+), 7 default skills, 85 knowledge files, training architecture, inference engine, financial analyzer, self-improvement, Orca integration, smoke test, full data flows, file inventory (280+ files total), capability summary, boundaries |
 | `MODEL_RECOMMENDATION.md` | 12,182 | ~45 KB | Which model to use here + why: current model (Qwen3-4B-Thinking) case, alternatives (Qwen3-7B/14B, DeepSeek, Mistral, Gemma, Llama, coder models, smaller models, frontier API models), upgrade paths (Option A: Qwen3-7B, Option B: hybrid local+API, Option C: larger local, Option D: fine-tune larger), recommendation table, bottom line |
 
 ### SUPPORT FILES (9 files)
@@ -123,7 +112,7 @@ The Bionic Daughter is an elite autonomous bionic agent with:
 | `sandbox_lab/practice_notes/practice_log.md` | Practice session log template (start filling in after first sandbox session) |
 | `sandbox_lab/tools_config/xbow-mcp.exe` | Built XBOW MCP server binary (Go, 12.5 MB Windows exe) |
 
-**Total:** 42 files, 6,429 lines Python, 255+ KB Python, 400+ KB knowledge, 12.5 MB XBOW binary
+**Total:** 280+ files at root level, 163+ Python files, 250+ KB Python source, 1.5+ MB knowledge base
 
 ## THE CONSTRAINT (why training isn't running yet)
 
@@ -156,7 +145,7 @@ Training (Unsloth + GRPO + LoRA + vLLM) requires a CUDA GPU. This cannot run on 
 
 ## KNOWLEDGE BASE SUMMARY (WHAT THE DAUGHTER NOW KNOWS)
 
-The daughter's knowledge spans 23 knowledge files across 20+ domains:
+The daughter's knowledge spans 85 knowledge files across 20+ domains:
 
 **Business:** High business moves, "there's always a way," 40x compounding, strategic decisions
 **Streaming:** YouTube, Twitch, Kick, TikTok — monetization, revenue, growth, AI content
@@ -206,7 +195,7 @@ The daughter's knowledge spans 23 knowledge files across 20+ domains:
 - HexStrike integration complete (150+ tools — daughter_hexstrike.py)
 - GitHub MCP tools complete (24 tools + 6 scenarios — daughter_github_mcp_tools.py)
 - Orca is running and reachable
-- 23 knowledge files written (4 legacy + 19 new) covering 20+ domains
+- 85 knowledge files written (4 legacy + 81 new) covering 20+ domains
 - Sandbox lab directory structure created (sandbox_lab/)
 - 8 practice scenarios written (sandbox_lab/scenarios/practice_scenarios.md)
 - Practice log template ready (sandbox_lab/practice_notes/practice_log.md)

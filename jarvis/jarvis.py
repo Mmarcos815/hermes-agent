@@ -255,42 +255,42 @@ class JARVISStatus:
     def get_module_status(self):
         """Check health of all daughter modules."""
         modules = {
-            "inference.daughter_command_center": "Core inference engine (Llama.cpp)",
-            "integration.daughter_orca_integration": "Orca worktree integration",
-            "modules.coding_practice_data_structures": "Coding practice module",
-            "modules.cognitive.daughter_memory_enhanced": "Memory palace (23 rooms)",
-            "modules.cognitive.daughter_self_development": "Self-development orchestrator",
-            "modules.cognitive.daughter_self_improver": "Self-improvement engine",
-            "modules.security.pos_security_agent": "POS security monitoring agent",
-            "modules.financial.daughter_financial_analyzer": "Financial fraud analyzer",
-            "modules.daughter_engineering_practice": "Engineering practice module",
-            "modules.training.daughter_gpu_autonomy": "GPU autonomy module",
-            "modules.training.daughter_runpod_wrapper": "RunPod cloud GPU wrapper",
-            "modules.training.nvidia_model_prompts": "NVIDIA model prompt library",
-            "pipeline.colab_training_notebook": "Training pipeline notebook",
-            "tools.api_exploit_go.jwt_exploit": "JWT algorithm confusion exploit (Go)",
-            "tools.api_exploit_go.ssrf_exploit": "SSRF exploitation tool (Go)",
-            "tools.api_exploit_go.bola_enum": "BOLA enumeration scanner (Go)",
-            "tools.api_exploit_go.mass_assign_exploit": "Mass assignment exploit (Go)",
-            "tools.api_exploit_go.concurrent_scanner": "Concurrent API scanner (Go)",
-            "tools.api_exploit_go.token_bruteforce": "JWT secret brute-forcer (Go)",
+            "inference.daughter_command_center": ("Core inference engine (Llama.cpp)", "bionic_command_center.py"),
+            "integration.daughter_orca_integration": ("Orca worktree integration", "orca_swarm_orchestrator.py"),
+            "modules.coding_practice_data_structures": ("Coding practice module", "modules/coding_practice_data_structures.py"),
+            "modules.cognitive.daughter_memory_enhanced": ("Memory palace (23 rooms)", "modules/cognitive/daughter_memory_enhanced.py"),
+            "modules.cognitive.daughter_self_development": ("Self-development orchestrator", "modules/cognitive/daughter_self_development.py"),
+            "modules.cognitive.daughter_self_improver": ("Self-improvement engine", "modules/cognitive/daughter_self_improver.py"),
+            "modules.security.pos_security_agent": ("POS security monitoring agent", "modules/security/pos_security_agent.py"),
+            "modules.financial.daughter_financial_analyzer": ("Financial fraud analyzer", "modules/financial/daughter_financial_analyzer.py"),
+            "modules.daughter_engineering_practice": ("Engineering practice module", "modules/daughter_engineering_practice.py"),
+            "modules.training.daughter_gpu_autonomy": ("GPU autonomy module", "modules/training/daughter_gpu_autonomy.py"),
+            "modules.training.daughter_runpod_wrapper": ("RunPod cloud GPU wrapper", "modules/training/daughter_runpod_wrapper.py"),
+            "modules.training.nvidia_model_prompts": ("NVIDIA model prompt library", "modules/training/nvidia_model_prompts.py"),
+            "pipeline.colab_training_notebook": ("Training pipeline notebook", "colab_launch/grpo_colab_vscode.ipynb"),
+            "tools.api_exploit_go.jwt_exploit": ("JWT algorithm confusion exploit (Go)", "tools/api_exploit_go/jwt_exploit.go"),
+            "tools.api_exploit_go.ssrf_exploit": ("SSRF exploitation tool (Go)", "tools/api_exploit_go/ssrf_exploit.go"),
+            "tools.api_exploit_go.bola_enum": ("BOLA enumeration scanner (Go)", "tools/api_exploit_go/bola_enum.go"),
+            "tools.api_exploit_go.mass_assign_exploit": ("Mass assignment exploit (Go)", "tools/api_exploit_go/mass_assign_exploit.go"),
+            "tools.api_exploit_go.concurrent_scanner": ("Concurrent API scanner (Go)", "tools/api_exploit_go/concurrent_scanner.go"),
+            "tools.api_exploit_go.token_bruteforce": ("JWT secret brute-forcer (Go)", "tools/api_exploit_go/token_bruteforce.go"),
         }
 
         status = {}
-        for mod_name, description in modules.items():
-            try:
-                mod_path = mod_name.replace(".", "/") + ".py"
-                full_path = PROJECT_DIR / mod_path
-                if full_path.exists():
-                    with open(full_path) as f:
-                        ast.parse(f.read())
-                    status[mod_name] = {"status": "OK", "description": description}
+        for mod_name, (description, rel_path) in modules.items():
+            full_path = PROJECT_DIR / rel_path
+            if full_path.exists():
+                if full_path.suffix == ".py":
+                    try:
+                        with open(full_path) as f:
+                            ast.parse(f.read())
+                        status[mod_name] = {"status": "OK", "description": description}
+                    except SyntaxError as e:
+                        status[mod_name] = {"status": f"SYNTAX ERROR: {e.msg}", "description": description}
                 else:
-                    status[mod_name] = {"status": "MISSING", "description": description}
-            except SyntaxError as e:
-                status[mod_name] = {"status": f"SYNTAX ERROR: {e.msg}", "description": description}
-            except Exception as e:
-                status[mod_name] = {"status": f"ERROR: {type(e).__name__}", "description": description}
+                    status[mod_name] = {"status": "OK", "description": description}
+            else:
+                status[mod_name] = {"status": "MISSING", "description": description}
 
         return status
 
@@ -1696,8 +1696,8 @@ class JARPISInteractive:
             self.self_dev = None
 
         try:
-            from modules.cognitive.daughter_self_improver import SelfImprovementEngine
-            self.self_improvement = SelfImprovementEngine()
+            from modules.cognitive.daughter_self_improver import SelfImprover
+            self.self_improvement = SelfImprover()
         except Exception as e:
             logger.warning(f"Self-improvement not available: {e}")
             self.self_improvement = None

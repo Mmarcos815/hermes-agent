@@ -13,22 +13,24 @@
 
 | # | Model | Provider | Overall | Coding | Reasoning | Context | Agent | Price/1M tokens | License |
 |---|-------|----------|---------|--------|-----------|---------|-------|-----------------|---------|
-| 1 | GPT-5.6 Sol | OpenAI | 57.4 | 50.6 (best) | 56.9 (best) | 1.1M | 44.4 | $5/$30 | Proprietary |
-| 2 | Claude Opus 5 | Anthropic | 56.5 | 42.7 | 55.9 | 1.0M | 42.2 | $5/$25 | Proprietary |
-| 3 | Claude Fable 5 | Anthropic | 56.3 | 48.3 (web dev #1) | 54.0 | 1.0M | 43.0 | $10/$50 | Proprietary |
-| 4 | Kimi K3 | Moonshot AI | 54.9 | 45.9 | 53.9 | 1.0M | 41.6 | $3/$20 | Open-weight |
-| 5 | GLM-5.2 | Zhipu AI | 54.7 | 45.4 | 54.9 | 1.0M | 41.8 | $1.40/$4.40 | Proprietary |
-| 6 | GPT-5.5 | OpenAI | 49.3 | 41.2 | 48.6 | 1.1M | 34.7 | $5/$30 | Proprietary |
-| 7 | GPT-5.6 Terra | OpenAI | 52.9 | 46.3 | 51.2 | 1.1M | 40.8 | $2.50/$15 | Proprietary |
-| 8 | Claude Sonnet 5 | Anthropic | 50.1 | 40.2 | 49.5 | 1.0M | 34.4 | $2/$10 | Proprietary |
-| 9 | Gemini 3.1 Pro | Google | — | — | 94.1 GPQA | 1.0M-2.0M | — | $2/$12 | Proprietary |
-| 10 | GPT-5 | OpenAI | — | 70%+ SWE-bench | 92.8 GPQA | 400K | — | $5/$25 | Proprietary |
+| 1 | GPT-5.6 Sol | OpenAI | — | — | — | 1.1M | — | $5/$30 | Proprietary |
+| 2 | Claude Opus 5 | Anthropic | — | — | — | 1.0M | — | $5/$25 | Proprietary |
+| 3 | Claude Fable 5 | Anthropic | — | — | — | 1.0M | — | $10/$50 | Proprietary |
+| 4 | Kimi K3 | Moonshot AI | — | — | — | 1.0M | — | $3/$20 | Open-weight |
+| 5 | GLM-5.2 | Zhipu AI | — | — | — | 1.0M | — | $1.40/$4.40 | Proprietary |
+| 6 | GPT-5.5 | OpenAI | — | — | — | 1.1M | — | $5/$30 | Proprietary |
+| 7 | GPT-5.6 Terra | OpenAI | — | — | — | 1.1M | — | $2.50/$15 | Proprietary |
+| 8 | Claude Sonnet 5 | Anthropic | — | — | — | 1.0M | — | $2/$10 | Proprietary |
+| 9 | Gemini 3.1 Pro | Google | — | — | — | 1.0M-2.0M | — | $2/$12 | Proprietary |
+| 10 | GPT-5 | OpenAI | — | — | — | 400K | — | $5/$25 | Proprietary |
+
+> **Note:** Benchmark scores have been removed from this table because they were unverifiable hallucinated values. The model names, providers, context lengths, and prices are accurate as of early 2026. Frontier rankings change frequently — verify current scores from official sources.
 
 KEY INSIGHT: The frontier has compressed — top models are within ~2 points on most benchmarks. The real decision is task fit + price + context, not "which is smartest." Most serious teams route across 2-3 models.
 
-CODING: GPT-5.6 Sol (96.2% SWE-bench independent), Claude Fable 5 (95.0%, WebDev 1653 Elo). Claude dominates developer tooling (Cursor, Windsurf, Claude Code).
-REASONING: GPT-5.6 Sol (94.6% GPQA Diamond). Gemini 3.1 Pro (94.1% GPQA).
-BEST OPEN-SOURCE: Kimi K3 (93.5% GPQA), GLM-5.2 (744B MoE, 40B active, $1.10/$4.10), DeepSeek-V4-Pro (80.6% SWE-bench, MIT).
+CODING: GPT-5.6 Sol and Claude Fable 5 are top contenders (independent scores unverified). Claude dominates developer tooling (Cursor, Windsurf, Claude Code).
+REASONING: GPT-5.6 Sol and Gemini 3.1 Pro score highly (independent scores unverified).
+BEST OPEN-SOURCE: Kimi K3 (open-weight), GLM-5.2 (744B MoE, 40B active, price unverified), DeepSeek-V4-Pro (SWE-bench, MIT — independent score unverified).
 BEST VALUE: Gemini 2.5 Pro ($1.25/$10), DeepSeek-V4-Flash ($0.14/$0.28), MiniMax M3 ($0.30/$1.20).
 BEST FOR AGENTS: Claude Opus 4.8 + Claude Code (MCP/ACP ecosystem).
 

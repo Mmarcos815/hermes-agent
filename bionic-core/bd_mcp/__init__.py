@@ -6,7 +6,7 @@
 # When src/ is on sys.path, Python finds our local mcp/ first.
 # The pip mcp package provides: mcp.server, mcp.types, etc.
 #
-# For MCP server files that import "from mcp.server.fastmcp import FastMCP",
+# For MCP server files that import "from fastmcp import FastMCP",
 # we need to ensure the pip mcp package is found for that submodule.
 #
 # FIX: We use a finder on sys.meta_path that intercepts "mcp.X" imports

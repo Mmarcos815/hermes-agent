@@ -1,0 +1,60 @@
+=== Epsilon = 0.01 (PGD, 50 iter) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — PGD
+=======================================================
+  Epsilon (ε):        0.01
+  Original class:     1 (conf=0.517)
+  Adversarial class:  1 (conf=0.512)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    20.00
+  Attack success:     NO ✗
+=======================================================
+
+
+=== Epsilon = 0.03 (PGD, 50 iter) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — PGD
+=======================================================
+  Epsilon (ε):        0.03
+  Original class:     0 (conf=0.475)
+  Adversarial class:  0 (conf=0.470)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    19.90
+  Attack success:     NO ✗
+=======================================================
+
+
+=== Epsilon = 0.1 (PGD, 50 iter) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — PGD
+=======================================================
+  Epsilon (ε):        0.1
+  Original class:     0 (conf=0.469)
+  Adversarial class:  0 (conf=0.465)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    19.70
+  Attack success:     NO ✗
+=======================================================
+
+
+=== Epsilon = 0.3 (PGD, 50 iter) ===
+[demo] Using random 28x28 image (no --image provided)
+
+=======================================================
+  Adversarial Attack Report — PGD
+=======================================================
+  Epsilon (ε):        0.3
+  Original class:     1 (conf=0.507)
+  Adversarial class:  1 (conf=0.503)
+  L∞ perturbation:    1.00
+  L₂ perturbation:    19.80
+  Attack success:     NO ✗
+=======================================================
+
+

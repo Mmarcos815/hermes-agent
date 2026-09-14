@@ -15,7 +15,8 @@
   "abuse_ch": {
     "enabled": true,
     "urlhaus_limit": 100,
-    "malwarebazaar_limit": 100
+    "malwarebazaar_limit": 100,
+    "malwarebazaar_api_key": ""
   },
   "infrastructure": {
     "domains": [],
