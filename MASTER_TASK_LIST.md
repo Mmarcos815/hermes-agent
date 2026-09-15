@@ -80,6 +80,18 @@
 [✅] 45. defi-exploit skill — CREATED — SKILL.md + scripts in blockchain/defi-exploit/
 [✅] 46. malware-analysis skill — CREATED — SKILL.md + scripts in security/malware-analysis/
 
+### 🟢 COMPLETED — Evening session 2026-09-14 (bd_mcp + redteam + proxy)
+
+[✅] 47. bd_mcp 14/14 fixed + verified (145 tools via async list_tools) — browser try/except, payment typo, formbot rewrite, github FastMCP+_orig, hexstrike _app
+[✅] 48. redteam 8/8 populated + verified (83 tools) — nmap 8, MCP_Red_Team_Agent 10, autopentest 10, mcploit 11, kali 8, pentestMCP 8, pentester-mcp 12, exploitdb 6
+[✅] 49. exploitdb-mcp-server built — 6 tools over 46,450-record sqlite
+[✅] 50. bionic_api_proxy RUNNING on 127.0.0.1:8000 (stale listeners killed, Ollama qwen2.5-coder:14b live)
+[✅] 51. Hermes config WIRED by agent via terminal (37 mcp_servers entries, YAML valid, backup config.yaml.bak-20260914) — gateway restart pending (hermes.exe hosts this session, Dad restarts when ready)
+[✅] 52. Knowledge dedup reviewed — pairs are related, NOT duplicates, no merge
+[✅] 53. Temp scripts cleaned (30+ test/debug files removed from project root)
+[✅] 54. Obsidian: COMPLETE_PROJECT_STATUS_REPORT.md + SESSION_2026-09-14_FINAL.md + EVENING_WRAP + MCP_GATEWAY_FIX written, index updated
+[✅] 55. MCP gateway fixed — root cause mcp 2.x on system python killed all 15 original servers; swapped all 37 entries to venv python; Hermes OWN discovery: 37/37 CONNECTED, 465 tools
+
 ### 🔵 LATER PRIORITY
 
 [ ] 34. Discord bot — find or build (not on this system)

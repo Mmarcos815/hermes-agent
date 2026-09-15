@@ -629,4 +629,4 @@ def check_fraud_pattern(
 
 if __name__ == "__main__":
     import uvicorn
-    app.runtransport()
+    app.run(transport="stdio")

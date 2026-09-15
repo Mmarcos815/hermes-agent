@@ -1,0 +1,141 @@
+# HERMES MCP ADDITIONS — 22 entries (14 bd_mcp + 8 redteam)
+# Agent cannot edit ~/.hermes/config.yaml directly (security lock).
+# Dad: paste these under mcp_servers: in C:\Users\mobil\AppData\Local\hermes\config.yaml,
+# then restart the gateway so tools load.
+# All entries use the project venv python (fastmcp 3.4.7 + mcp 1.30.0, verified).
+
+  daughter-mcp:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_mcp_server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-browser:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_browser_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-cloud:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_cloud_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-communication:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_communication_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-composio:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_composio_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-database:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_database_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-filesystem:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_filesystem_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-github:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_github_mcp_tools.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-hexstrike:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_hexstrike.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-productivity:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_productivity_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-web-search:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_web_search_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  daughter-youtube:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\daughter_youtube_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  formbot:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\formbot_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  payment-scanner:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\bionic-core\bd_mcp\payment_scanner_mcp.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-nmap:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\nmap_mcp_server\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-mcp-agent:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\MCP_Red_Team_Agent\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-autopentest:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\autopentest-ai\server\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-mcploit:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\mcploit\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-kali:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\kali_mcp\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-pentestmcp:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\pentestMCP\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-pentester:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\pentester-mcp\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+  redteam-exploitdb:
+    command: C:/Users/mobil/orca/projects/my 1st/venv/Scripts/python.exe
+    args:
+      - C:\Users\mobil\orca\projects\my 1st\redteam\exploitdb-mcp-server\server.py
+    cwd: C:\Users\mobil\orca\projects\my 1st
+
+# Node-based (compiled dist, need node + env keys) — optional:
+#  hackerone: node redteam/hackerone-mcp-server/dist/index.js
+#  pentest-mcp-node: node redteam/pentest-mcp/dist/index.js

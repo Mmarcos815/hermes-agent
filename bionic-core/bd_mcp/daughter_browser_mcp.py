@@ -11,7 +11,13 @@
 import os
 import base64
 from fastmcp import FastMCP
-from playwright.sync_api import sync_playwright
+try:
+    from playwright.sync_api import sync_playwright
+    HAS_PLAYWRIGHT = True
+except ImportError:
+    sync_playwright = None
+    HAS_PLAYWRIGHT = False
+    print("WARNING: playwright not installed — browser tools unavailable")
 
 app = FastMCP("daughter_browser")
 
@@ -33,6 +39,8 @@ SANDBOX_URLS = [
 # Initialize browser (called once per MCP session)
 def _init_browser():
     global _browser, _context, _page
+    if HAS_PLAYWRIGHT is False:
+        return None
     if _browser is None:
         _browser = sync_playwright().start().chromium.launch(
             headless=True,

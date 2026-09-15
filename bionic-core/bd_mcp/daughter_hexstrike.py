@@ -595,53 +595,116 @@ class HexstrikeIntegration:
 
         return report
 
+
+# MCP Server — exposes HexstrikeIntegration as MCP tools
 # ============================================================================
-# MAIN (for testing)
+from fastmcp import FastMCP
+
+_hex_instance = HexstrikeIntegration()
+_app = FastMCP("HexStrikeIntegration")
+
+@_app.tool()
+def hex_authorize_target(target, justification, scope=None, owner=None, expires=None):
+    """Authorize a target for security testing."""
+    return _hex_instance.authorize_target(target, justification, scope, owner, expires)
+
+
+@_app.tool()
+def hex_is_authorized(target):
+    """Check if a target is authorized for testing."""
+    return {"authorized": _hex_instance.is_authorized(target), "target": target}
+
+
+@_app.tool()
+def hex_run_recon(target, tool="nmap", options=None):
+    """Run reconnaissance on an authorized target."""
+    return _hex_instance.run_recon(target, tool, options)
+
+
+@_app.tool()
+def hex_run_vuln_scan(target, tool="nuclei", options=None):
+    """Run vulnerability scan on an authorized target."""
+    return _hex_instance.run_vuln_scan(target, tool, options)
+
+
+@_app.tool()
+def hex_run_sqlmap(url, options=None, risk=1, level=1):
+    """Run SQLMap on an authorized target."""
+    return _hex_instance.run_sqlmap(url, options, risk, level)
+
+
+@_app.tool()
+def hex_run_ctf_workflow(challenge_name, category="web", approach="automated"):
+    """Generate a CTF challenge solving workflow."""
+    return _hex_instance.run_ctf_workflow(challenge_name, category, approach)
+
+
+@_app.tool()
+def hex_run_bug_bounty_workflow(target, scope, program="hackerone"):
+    """Generate a bug bounty workflow for an authorized target."""
+    return _hex_instance.run_bug_bounty_workflow(target, scope, program)
+
+
+@_app.tool()
+def hex_generate_report(operations):
+    """Generate a summary report from multiple operations."""
+    return _hex_instance.generate_report(operations)
+
+
+# MCP server entry point
 # ============================================================================
 
 if __name__ == "__main__":
-    hex = HexstrikeIntegration()
+    import argparse
 
-    print("=== HexStrike Integration Status ===")
-    print(f"HexStrike package: {hex.hexstrike_available}")
-    print(f"HexStrike MCP server: {hex.mcp_server_available}")
-    print(f"Authorized targets: {len(hex.authorized_targets)}")
+    parser = argparse.ArgumentParser(description="HexStrike Integration — MCP server or demo mode")
+    parser.add_argument("--demo", action="store_true", help="Run demo instead of MCP server")
+    args = parser.parse_args()
 
-    # Test authorization flow
-    print("\n=== Authorization Test ===")
-    auth = hex.authorize_target(
-        "192.168.1.0/24",
-        "Owned home lab network for security training",
-        scope="192.168.1.0/24",
-        owner="self",
-    )
-    print(f"Authorized: {auth['target']} — {auth['justification']}")
+    if args.demo:
+        hex = HexstrikeIntegration()
 
-    print(f"\nIs 192.168.1.5 authorized? {hex.is_authorized('192.168.1.5')}")
-    print(f"Is 10.0.0.1 authorized? {hex.is_authorized('10.0.0.1')}")
+        print("=== HexStrike Integration Status ===")
+        print(f"HexStrike package: {hex.hexstrike_available}")
+        print(f"HexStrike MCP server: {hex.mcp_server_available}")
+        print(f"Authorized targets: {len(hex.authorized_targets)}")
 
-    # Test CTF workflow generation
-    print("\n=== CTF Workflow Test ===")
-    ctf = hex.run_ctf_workflow("EasyWebChallenge", category="web")
-    print(f"Challenge: {ctf['challenge']}")
-    print(f"Category: {ctf['category']}")
-    print(f"Tools: {', '.join(ctf['recommended_tools'])}")
-    print(f"Steps: {len(ctf['workflow_steps'])}")
+        # Test authorization flow
+        print("\n=== Authorization Test ===")
+        auth = hex.authorize_target(
+            "192.168.1.0/24",
+            "Owned home lab network for security training",
+            scope="192.168.1.0/24",
+            owner="self",
+        )
+        print(f"Authorized: {auth['target']} — {auth['justification']}")
 
-    for step in ctf["workflow_steps"]:
-        print(f"  Step {step['step']}: {step['action']} — {step['description']}")
-        print(f"    Tools: {', '.join(step['tools'])}")
+        print(f"\nIs 192.168.1.5 authorized? {hex.is_authorized('192.168.1.5')}")
+        print(f"Is 10.0.0.1 authorized? {hex.is_authorized('10.0.0.1')}")
 
-    # Test bug bounty workflow
-    print("\n=== Bug Bounty Workflow Test ===")
-    # First authorize the bug bounty target
-    hex.authorize_target(
-        "example.com",
-        "HackerOne bug bounty program — scope includes *.example.com",
-        scope="*.example.com",
-        program="hackerone",
-    )
-    bb = hex.run_bug_bounty_workflow("example.com", "*.example.com")
-    print(f"Target: {bb['target']}")
-    print(f"Program: {bb['program']}")
-    print(f"Steps: {len(bb['steps'])}")
+        # Test CTF workflow generation
+        print("\n=== CTF Workflow Test ===")
+        ctf = hex.run_ctf_workflow("EasyWebChallenge", category="web")
+        print(f"Challenge: {ctf['challenge']}")
+        print(f"Category: {ctf['category']}")
+        print(f"Tools: {', '.join(ctf['recommended_tools'])}")
+        print(f"Steps: {len(ctf['workflow_steps'])}")
+
+        for step in ctf["workflow_steps"]:
+            print(f"  Step {step['step']}: {step['action']} — {step['description']}")
+            print(f"    Tools: {', '.join(step['tools'])}")
+
+        # Test bug bounty workflow
+        print("\n=== Bug Bounty Workflow Test ===")
+        hex.authorize_target(
+            "example.com",
+            "HackerOne bug bounty program — scope includes *.example.com",
+            scope="*.example.com",
+            program="hackerone",
+        )
+        bb = hex.run_bug_bounty_workflow("example.com", "*.example.com")
+        print(f"Target: {bb['target']}")
+        print(f"Program: {bb['program']}")
+        print(f"Steps: {len(bb['steps'])}")
+    else:
+        _app.run(transport="stdio")

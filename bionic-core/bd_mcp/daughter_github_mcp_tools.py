@@ -627,36 +627,143 @@ def github_tools_list():
     """
     return {"tools": GITHUB_TOOLS, "count": len(GITHUB_TOOLS)}
 
-# ============================================================================
-# MAIN (for testing)
-# ============================================================================
 
+
+
+# MCP Server — exposes GitHub CLI tools via FastMCP
+# ============================================================================
+from fastmcp import FastMCP
+
+app = FastMCP("GitHubCLITools")
+
+# Save original function references before wrappers shadow them
+_orig_github_create_repo = github_create_repo
+_orig_github_get_repo = github_get_repo
+_orig_github_list_repos = github_list_repos
+_orig_github_delete_repo = github_delete_repo
+_orig_github_update_repo = github_update_repo
+_orig_github_create_issue = github_create_issue
+_orig_github_get_issue = github_get_issue
+_orig_github_list_issues = github_list_issues
+_orig_github_update_issue = github_update_issue
+_orig_github_close_issue = github_close_issue
+_orig_github_add_issue_comment = github_add_issue_comment
+_orig_github_create_pull_request = github_create_pull_request
+_orig_github_get_pull_request = github_get_pull_request
+_orig_github_list_pull_requests = github_list_pull_requests
+_orig_github_update_pull_request = github_update_pull_request
+_orig_github_merge_pull_request = github_merge_pull_request
+_orig_github_add_pr_comment = github_add_pr_comment
+_orig_github_review_pull_request = github_review_pull_request
+_orig_github_list_workflows = github_list_workflows
+_orig_github_trigger_workflow = github_trigger_workflow
+_orig_github_get_workflow = github_get_workflow
+_orig_github_list_workflow_runs = github_list_workflow_runs
+_orig_github_list_commits = github_list_commits
+_orig_github_get_commit = github_get_commit
+_orig_github_tools_list = github_tools_list
+
+@app.tool()
+def github_create_repo(name, description="", private=True, org=None):
+    return _orig_github_create_repo(name, description="", private=True, org=None)
+
+@app.tool()
+def github_get_repo(repo):
+    return _orig_github_get_repo(repo)
+
+@app.tool()
+def github_list_repos(org=None, visibility="all", limit=30):
+    return _orig_github_list_repos(org=None, visibility="all", limit=30)
+
+@app.tool()
+def github_delete_repo(repo):
+    return _orig_github_delete_repo(repo)
+
+@app.tool()
+def github_update_repo(repo, name=None, description=None, private=None, homepage=None):
+    return _orig_github_update_repo(repo, name=None, description=None, private=None, homepage=None)
+
+@app.tool()
+def github_create_issue(repo, title, body="", labels=None, assignees=None):
+    return _orig_github_create_issue(repo, title, body="", labels=None, assignees=None)
+
+@app.tool()
+def github_get_issue(repo, number):
+    return _orig_github_get_issue(repo, number)
+
+@app.tool()
+def github_list_issues(repo, state="open", labels=None, limit=30):
+    return _orig_github_list_issues(repo, state="open", labels=None, limit=30)
+
+@app.tool()
+def github_update_issue(repo, number, title=None, body=None, state=None, labels=None):
+    return _orig_github_update_issue(repo, number, title=None, body=None, state=None, labels=None)
+
+@app.tool()
+def github_close_issue(repo, number):
+    return _orig_github_close_issue(repo, number)
+
+@app.tool()
+def github_add_issue_comment(repo, number, body):
+    return _orig_github_add_issue_comment(repo, number, body)
+
+@app.tool()
+def github_create_pull_request(repo, title, body="", head="main", base="main", draft=False):
+    return _orig_github_create_pull_request(repo, title, body="", head="main", base="main", draft=False)
+
+@app.tool()
+def github_get_pull_request(repo, number):
+    return _orig_github_get_pull_request(repo, number)
+
+@app.tool()
+def github_list_pull_requests(repo, state="open", base="main", limit=30):
+    return _orig_github_list_pull_requests(repo, state="open", base="main", limit=30)
+
+@app.tool()
+def github_update_pull_request(repo, number, title=None, body=None):
+    return _orig_github_update_pull_request(repo, number, title=None, body=None)
+
+@app.tool()
+def github_merge_pull_request(repo, number, method="merge"):
+    return _orig_github_merge_pull_request(repo, number, method="merge")
+
+@app.tool()
+def github_add_pr_comment(repo, number, body):
+    return _orig_github_add_pr_comment(repo, number, body)
+
+@app.tool()
+def github_review_pull_request(repo, number, event="comment", body="", approval=False):
+    return _orig_github_review_pull_request(repo, number, event="comment", body="", approval=False)
+
+@app.tool()
+def github_list_workflows(repo):
+    return _orig_github_list_workflows(repo)
+
+@app.tool()
+def github_trigger_workflow(repo, workflow_id="ci.yml"):
+    return _orig_github_trigger_workflow(repo, workflow_id="ci.yml")
+
+@app.tool()
+def github_get_workflow(repo, workflow_id):
+    return _orig_github_get_workflow(repo, workflow_id)
+
+@app.tool()
+def github_list_workflow_runs(repo, workflow_id=None, status=None, limit=10):
+    return _orig_github_list_workflow_runs(repo, workflow_id=None, status=None, limit=10)
+
+@app.tool()
+def github_list_commits(repo, branch=None, author=None, path=None, since=None, until=None, limit=20):
+    return _orig_github_list_commits(repo, branch=None, author=None, path=None, since=None, until=None, limit=20)
+
+@app.tool()
+def github_get_commit(repo, commit_hash):
+    return _orig_github_get_commit(repo, commit_hash)
+
+@app.tool()
+def github_tools_list():
+    return _orig_github_tools_list()
+
+# MCP server entry point
+# ============================================================================
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Daughter GitHub MCP Tools — test mode")
-    parser.add_argument("--test", action="store_true", help="Run basic tests")
-    args = parser.parse_args()
-
-    if args.test:
-        print("=== GitHub CLI MCP Tools — Test ===")
-        print(f"gh CLI: {GH_CLI}")
-
-        # Test gh availability
-        result = subprocess.run([GH_CLI, "--version"], capture_output=True, text=True, timeout=10)
-        print(f"gh version: {result.stdout.strip()}")
-
-        # Test auth
-        auth_result = subprocess.run([GH_CLI, "auth", "status"], capture_output=True, text=True, timeout=10)
-        print(f"gh auth: {'authenticated' if auth_result.returncode == 0 else 'NOT authenticated'}")
-        if auth_result.returncode == 0:
-            print(auth_result.stdout.strip())
-
-        # List tools
-        tools = github_tools_list()
-        print(f"\nAvailable tools: {tools['count']}")
-        for t in tools["tools"]:
-            print(f"  - {t['name']}: {t['description']}")
-    else:
-        print("Run with --test to verify GitHub CLI access and tools.")
-        print(f"Usage: python {Path(__file__).name} --test")
+    app.run(transport="stdio")
