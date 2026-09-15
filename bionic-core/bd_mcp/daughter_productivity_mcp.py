@@ -11,7 +11,7 @@
 import os
 import sqlite3
 import datetime
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("daughter_productivity")
 

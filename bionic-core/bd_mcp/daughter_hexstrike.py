@@ -598,7 +598,7 @@ class HexstrikeIntegration:
 
 # MCP Server — exposes HexstrikeIntegration as MCP tools
 # ============================================================================
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 _hex_instance = HexstrikeIntegration()
 _app = FastMCP("HexStrikeIntegration")

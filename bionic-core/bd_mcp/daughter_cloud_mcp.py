@@ -11,7 +11,7 @@
 import os
 import subprocess
 import json
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("daughter_cloud")
 

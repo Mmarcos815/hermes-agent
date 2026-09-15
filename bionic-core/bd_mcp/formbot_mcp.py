@@ -16,9 +16,9 @@ import base64
 from pathlib import Path
 from typing import Optional, List, Dict
 
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
-app = FastMCP("formbot", version="1.0.0")
+app = FastMCP("formbot")
 
 
 @app.tool()

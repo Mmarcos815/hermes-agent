@@ -632,7 +632,7 @@ def github_tools_list():
 
 # MCP Server — exposes GitHub CLI tools via FastMCP
 # ============================================================================
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("GitHubCLITools")
 

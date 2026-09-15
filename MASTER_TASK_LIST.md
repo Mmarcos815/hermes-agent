@@ -243,3 +243,11 @@ security (offensive/defensive), red teaming, financial systems, business, self-d
 - ex3_multi_turn_custom.txt — Custom payload multi-turn
 - EXECUTION_SUMMARY.md — Comprehensive 320-line summary
 - Status: All exercises ran and documented. High-quality output.
+
+
+## 2026-09-15 MCP UNIFIED
+- venv mcp 2.2.0 -> 1.30.0, unified 23 files to mcp.server.fastmcp
+- fixed formbot/payment version kwarg, pentestMCP version, autopentest @tool()
+- harness 37/37 PASS 325 tools, gateway PID 4864 26 schemas
+- gaps verified closed: training 1501 filled, jarvis runs, cognitive full impl
+- pin: project venv mcp==1.30.0, do not sync with pyproject mcp==2.0.0

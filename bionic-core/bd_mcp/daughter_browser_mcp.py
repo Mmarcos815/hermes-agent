@@ -10,7 +10,7 @@
 
 import os
 import base64
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 try:
     from playwright.sync_api import sync_playwright
     HAS_PLAYWRIGHT = True

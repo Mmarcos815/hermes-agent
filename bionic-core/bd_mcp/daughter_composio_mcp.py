@@ -41,7 +41,7 @@
 
 import os
 import json
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("daughter_composio")
 

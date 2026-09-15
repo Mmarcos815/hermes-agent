@@ -39,7 +39,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
 import httpx
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel, Field, validator
 
 # ===========================================================================

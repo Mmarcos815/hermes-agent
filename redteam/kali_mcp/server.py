@@ -13,7 +13,7 @@ import subprocess
 from pathlib import Path
 from typing import Optional
 
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 # ---------------------------------------------------------------------------
 # Server instance

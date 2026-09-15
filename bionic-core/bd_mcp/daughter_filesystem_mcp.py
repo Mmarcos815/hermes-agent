@@ -9,7 +9,7 @@
 
 import os
 import pathlib
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("daughter_filesystem")
 

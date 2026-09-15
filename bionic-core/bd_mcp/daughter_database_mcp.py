@@ -9,7 +9,7 @@
 
 import sqlite3
 import os
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("daughter_database")
 

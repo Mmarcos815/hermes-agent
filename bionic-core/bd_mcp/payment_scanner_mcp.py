@@ -22,9 +22,9 @@ import re
 from datetime import datetime
 from typing import Optional, Dict, List
 
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
-app = FastMCP("payment_scanner", version="1.0.0")
+app = FastMCP("payment_scanner")
 
 
 # ============================================================

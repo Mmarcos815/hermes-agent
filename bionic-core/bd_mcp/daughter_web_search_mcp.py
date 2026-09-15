@@ -14,7 +14,7 @@ import urllib.request
 import urllib.parse
 import json
 import ssl
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("daughter_web_search")
 
