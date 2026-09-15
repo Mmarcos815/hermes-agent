@@ -71,8 +71,18 @@ def ast_validate(code_string: str) -> dict:
         tree = ast.parse(code_string)
         for node in ast.walk(tree):
             if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
-                if node.func.id in ("eval", "exec"):
+                if node.func.id in ("eval", "exec", "__import__", "compile", "open", "input"):
                     issues.append(f"Unsafe function call: {node.func.id}()")
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
+                if node.func.attr in ("system", "popen", "Popen", "run", "call", "check_output", "check_call", "loads", "load"):
+                    issues.append(f"Unsafe method call: {node.func.attr}()")
+            if isinstance(node, ast.Import) or isinstance(node, ast.ImportFrom):
+                mod = getattr(node, "module", "") or ""
+                names = [a.name.split(".")[0] for a in node.names]
+                for dangerous in ("os", "subprocess", "sys", "socket", "shutil", "pickle", "marshal", "ctypes", "pty", "requests"):
+                    if dangerous in names or mod.split(".")[0] == dangerous:
+                        issues.append(f"Risky import: {dangerous}")
+                        break
         if issues:
             return {"valid": False, "message": "Security issues found", "issues": issues}
         return {"valid": True, "message": "Code is valid and secure", "issues": []}
