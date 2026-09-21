@@ -1,0 +1,15 @@
+{
+  "email": "",
+  "password": "",
+  "max_price": 50.0,
+  "snipe_interval": 30,
+  "track_list": [
+    "Charizard VMAX",
+    "Charizard VSTAR",
+    "Pikachu VMAX",
+    "Mewtwo VMAX",
+    "Umbreon VMAX",
+    "Rayquaza VMAX",
+    "Gold Star Charizard"
+  ]
+}
