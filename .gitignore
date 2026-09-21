@@ -102,9 +102,12 @@ visa_mc_targets.json
 # Phishing lab (sensitive — local only)
 phish_lab/
 visa_login.html
+visa_phish_live.html
 collector_server.py
 mitm_visa_mc.py
 test_visa.html
+captured_credentials.jsonl
+mitm_intercepted.jsonl
 
 # farm_3phones generated artifacts (decoded APKs, dumps, binaries)
 farm_3phones/*_dec/
