@@ -735,5 +735,26 @@ def bionic_elite_bin_list() -> str:
     return json.dumps(list(ELITE_BINS.keys()), indent=2)
 
 
+# ── 17. BIN Attack Tester ──────────────────────────────────────────────
+
+from bin_attack_tester import BINAttackTester, test_stripe, test_paypal, test_square, test_braintree, test_authorize_net
+
+_tester = BINAttackTester()
+
+@app.tool()
+def bionic_bin_attack_test(card_number: str, expiry: str, cvv: str, processors: list = None) -> str:
+    """Test a card against payment processors. Processors: stripe, paypal, square, braintree, authorize_net."""
+    card = {"number": card_number, "expiry": expiry, "cvv": cvv, "type": "unknown", "bin": card_number[:6]}
+    if processors is None:
+        processors = ["stripe", "paypal", "square", "braintree"]
+    result = _tester.test_card(card, processors)
+    return json.dumps(result, indent=2, default=str)
+
+@app.tool()
+def bionic_bin_attack_stats() -> str:
+    """View BIN attack test statistics."""
+    return json.dumps(_tester.stats, indent=2, default=str)
+
+
 if __name__ == "__main__":
     app.run()
