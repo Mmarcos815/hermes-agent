@@ -36,17 +36,18 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  // VULN: Only checks extension — trivial to bypass
+  // VULN: Only checks if filename CONTAINS an image extension anywhere
+  // "shell.jpg.php" passes because .jpg is found in the name
   fileFilter: (req, file, cb) => {
     const allowed = ['.jpg', '.jpeg', '.png', '.gif'];
-    const ext = path.extname(file.originalname).toLowerCase();
+    const name = file.originalname.toLowerCase();
 
-    // VULN: Only checks LAST extension — "shell.jpg.php" passes
-    // VULN: Case sensitivity: ".PHP" might bypass depending on config
-    if (allowed.includes(ext)) {
+    // VULN: Trivial bypass — "shell.jpg.php" contains ".jpg"
+    // VULN: Case sensitivity: ".JPG" or ".Php" variants
+    const passes = allowed.some(ext => name.includes(ext));
+    if (passes) {
       return cb(null, true);
     }
-    // VULN: Attacker can still use .php5, .phtml, .phar, double extensions
     cb(new Error('Invalid file type'));
   }
 });

@@ -195,5 +195,236 @@ def bionic_vps_provision_instance(name: str = "bionic-agent-vps-01", vcpus: int 
     return json.dumps(res, indent=2)
 
 
+# ── 9. API Exploit Lab Tools ─────────────────────────────────────────────────
+
+from advanced_mcp_tools import (
+    apiexploit_list_vulns,
+    evilginx_generate_config,
+    c2_generate_artifacts,
+    phishing_generate_page,
+    evasion_encode_payload,
+    evasion_generate_ua,
+    evasion_domain_front,
+    evasion_simulate_injection,
+    kill_chain_run,
+    c2_server_start,
+    c2_server_stop,
+    c2_list_implants,
+    c2_dispatch_command,
+    c2_get_results,
+    fuzz_coverage_guided,
+    fuzz_web,
+    fuzz_api,
+    rfid_analyze_card,
+    rfid_em4100_pattern,
+    rfid_mifare_clone_script,
+    badusb_generate_payload,
+    wifi_deauth_detect,
+    ble_parse_advertisement,
+    ble_classify_device,
+    uart_jtag_reference,
+    se_generate_vishing_script,
+    se_generate_pretext,
+    se_osint_profile,
+    se_generate_phishing_email,
+    se_campaign_create,
+    se_campaign_record_event,
+    supplychain_dependency_confusion_scan,
+    supplychain_typosquat_detect,
+    supplychain_cicd_scan,
+    supplychain_container_scan,
+    supplychain_integrity_verify,
+    swarm_run_assessment,
+)
+
+@app.tool()
+def bionic_apiexploit_list_vulns() -> str:
+    """List all vulnerabilities in the API Exploit Lab server."""
+    return json.dumps(apiexploit_list_vulns(), indent=2)
+
+@app.tool()
+def bionic_evilginx_config(target_domain: str, phish_domain: str, redirect_url: str = "/", 
+                            cookies: list = None, proxy_hosts: list = None) -> str:
+    """Generate Evilginx3 phishlet YAML config (config file only, no runtime)."""
+    return json.dumps(evilginx_generate_config(target_domain, phish_domain, redirect_url, cookies, proxy_hosts), indent=2, default=str)
+
+@app.tool()
+def bionic_c2_deploy_artifacts(framework: str = "sliver", output_dir: str = "./c2_lab") -> str:
+    """Generate Docker Compose artifacts for Sliver or Mythic C2 lab."""
+    return json.dumps(c2_generate_artifacts(framework, output_dir), indent=2)
+
+@app.tool()
+def bionic_phishing_page(brand: str = "generic", include_server: bool = False, output_dir: str = "./phish_lab") -> str:
+    """Generate static HTML phishing page for security awareness training."""
+    return json.dumps(phishing_generate_page(brand, include_server, output_dir), indent=2)
+
+@app.tool()
+def bionic_evasion_encode(payload: str, method: str = "base64") -> str:
+    """Encode a payload using base64, hex, XOR, or AES-256-CBC."""
+    return json.dumps(evasion_encode_payload(payload, method), indent=2)
+
+@app.tool()
+def bionic_evasion_ua(browser: str = "chrome", strategy: str = "random") -> str:
+    """Generate a random or browser-specific User-Agent string."""
+    return json.dumps(evasion_generate_ua(browser, strategy), indent=2)
+
+@app.tool()
+def bionic_evasion_domain_front(front_domain: str, target_host: str, path: str = "/") -> str:
+    """Generate a domain-fronting request structure."""
+    return json.dumps(evasion_domain_front(front_domain, target_host, path), indent=2)
+
+@app.tool()
+def bionic_evasion_injection_demo(technique: str, target: str = "notepad.exe") -> str:
+    """Demonstrate process injection technique (simulation only)."""
+    return json.dumps(evasion_simulate_injection(technique, target), indent=2)
+
+@app.tool()
+def bionic_kill_chain(target: str = "https://api.example.com", objective: str = "full_compromise") -> str:
+    """Execute the 7-stage kill chain orchestrator (BOLA→JWT→MassAssign→SQLi→SSRF→Cloud→Persist)."""
+    return json.dumps(kill_chain_run(target, objective), indent=2)
+
+@app.tool()
+def bionic_c2_server_start(host: str = "0.0.0.0", port: int = 8080) -> str:
+    """Start the C2 server with dashboard and implant comms endpoint."""
+    return json.dumps(c2_server_start(host, port), indent=2)
+
+@app.tool()
+def bionic_c2_server_stop() -> str:
+    """Stop the running C2 server."""
+    return json.dumps(c2_server_stop(), indent=2)
+
+@app.tool()
+def bionic_c2_list_implants() -> str:
+    """List all registered implants on the C2 server."""
+    return json.dumps(c2_list_implants(), indent=2)
+
+@app.tool()
+def bionic_c2_dispatch(implant_id: str, plugin: str = "exec", params: dict = None) -> str:
+    """Dispatch a command to an implant via the C2 server."""
+    return json.dumps(c2_dispatch_command(implant_id, plugin, params), indent=2)
+
+@app.tool()
+def bionic_c2_results(implant_id: str, limit: int = 50) -> str:
+    """Get results from an implant."""
+    return json.dumps(c2_get_results(implant_id, limit), indent=2)
+
+@app.tool()
+def bionic_fuzz_web(url: str, params: dict = None, headers: dict = None, method: str = "GET") -> str:
+    """Fuzz web parameters and headers with known attack payloads."""
+    return json.dumps(fuzz_web(url, params, headers, method), indent=2)
+
+@app.tool()
+def bionic_fuzz_api(base_url: str, api_type: str = "rest", endpoints: list = None) -> str:
+    """Fuzz REST or GraphQL API endpoints."""
+    return json.dumps(fuzz_api(base_url, api_type, endpoints), indent=2)
+
+@app.tool()
+def bionic_fuzz_coverage(target_code: str = "lambda data: None", seeds: list = None, max_iter: int = 500) -> str:
+    """Run AFL-style coverage-guided fuzzing on a target function."""
+    return json.dumps(fuzz_coverage_guided(target_code, seeds, max_iter), indent=2)
+
+@app.tool()
+def bionic_rfid_analyze(atqa: str, sak: str, uid: str) -> str:
+    """Identify RFID card type from ATQA/SAK/UID."""
+    return json.dumps(rfid_analyze_card(atqa, sak, uid), indent=2)
+
+@app.tool()
+def bionic_rfid_em4100(uid: str) -> str:
+    """Generate EM4100 125kHz emulation pattern."""
+    return json.dumps(rfid_em4100_pattern(uid), indent=2)
+
+@app.tool()
+def bionic_rfid_mifare_clone(uid: str) -> str:
+    """Generate Proxmark3 MIFARE Classic clone script."""
+    return rfid_mifare_clone_script(uid)
+
+@app.tool()
+def bionic_badusb_payload(payload_type: str = "ducky_reverse_shell", lhost: str = "192.168.1.100", 
+                           lport: int = 4444) -> str:
+    """Generate DigiSpark or Rubber Ducky payload."""
+    return badusb_generate_payload(payload_type, lhost, lport)
+
+@app.tool()
+def bionic_wifi_deauth(frames: list = None) -> str:
+    """Detect WiFi deauthentication attacks from frame data."""
+    return json.dumps(wifi_deauth_detect(frames), indent=2)
+
+@app.tool()
+def bionic_ble_parse(hex_data: str) -> str:
+    """Parse BLE advertisement packet."""
+    return json.dumps(ble_parse_advertisement(hex_data), indent=2)
+
+@app.tool()
+def bionic_ble_classify(rssi: int, name: str = None) -> str:
+    """Classify BLE device and assess risk."""
+    return json.dumps(ble_classify_device(rssi, name), indent=2)
+
+@app.tool()
+def bionic_uart_jtag(ref_type: str = "pinouts", target: str = None) -> str:
+    """Get UART/JTAG pinout reference or OpenOCD config."""
+    return json.dumps(uart_jtag_reference(ref_type, target), indent=2)
+
+@app.tool()
+def bionic_se_vishing(template: str = "it_support", target_name: str = "John Smith") -> str:
+    """Generate a vishing call script from a template."""
+    return se_generate_vishing_script(template, target_name)
+
+@app.tool()
+def bionic_se_pretext(scenario: str = "auditor") -> str:
+    """Generate a pretexting scenario script."""
+    return se_generate_pretext(scenario)
+
+@app.tool()
+def bionic_se_osint(email: str) -> str:
+    """Generate an OSINT profile skeleton from an email address."""
+    return json.dumps(se_osint_profile(email), indent=2)
+
+@app.tool()
+def bionic_se_phishing(template: str = "password_reset", target_name: str = "John Smith",
+                        target_email: str = "john@example.com") -> str:
+    """Generate a phishing email from a template."""
+    return json.dumps(se_generate_phishing_email(template, target_name, target_email), indent=2)
+
+@app.tool()
+def bionic_se_campaign_create(name: str, total_targets: int = 100) -> str:
+    """Create a new SE campaign for tracking."""
+    return json.dumps(se_campaign_create(name, total_targets), indent=2)
+
+@app.tool()
+def bionic_se_campaign_event(campaign_id: str, event: str, count: int = 1) -> str:
+    """Record an event in an SE campaign."""
+    return json.dumps(se_campaign_record_event(campaign_id, event, count), indent=2)
+
+@app.tool()
+def bionic_supplychain_depconfusion(package_name: str, registry_url: str = "https://registry.npmjs.org") -> str:
+    """Scan for dependency confusion vulnerability."""
+    return json.dumps(supplychain_dependency_confusion_scan(package_name, registry_url), indent=2)
+
+@app.tool()
+def bionic_supplychain_typosquat(package_name: str, registry: str = "pypi") -> str:
+    """Detect typosquat candidates for a package name."""
+    return json.dumps(supplychain_typosquat_detect(package_name, registry), indent=2)
+
+@app.tool()
+def bionic_supplychain_cicd(manifest_path: str = ".github/workflows/ci.yml") -> str:
+    """Scan CI/CD pipeline manifest for attack patterns."""
+    return json.dumps(supplychain_cicd_scan(manifest_path), indent=2)
+
+@app.tool()
+def bionic_supplychain_container(image_ref: str = "alpine:latest") -> str:
+    """Scan container image reference for security issues."""
+    return json.dumps(supplychain_container_scan(image_ref), indent=2)
+
+@app.tool()
+def bionic_supplychain_integrity(package_name: str, version: str, local_path: str, expected_hash: str = None) -> str:
+    """Verify package integrity via SHA-256 hash."""
+    return json.dumps(supplychain_integrity_verify(package_name, version, local_path, expected_hash), indent=2)
+
+@app.tool()
+def bionic_swarm_assess(targets: list = None, allowed_ports: list = None) -> str:
+    """Run multi-agent security assessment swarm."""
+    return json.dumps(swarm_run_assessment(targets, allowed_ports), indent=2)
+
+
 if __name__ == "__main__":
     app.run()
