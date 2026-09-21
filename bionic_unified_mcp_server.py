@@ -677,19 +677,42 @@ def bionic_generate_frida_script(target_class: str, method: str = "onCreate") ->
     return json.dumps(generate_frida_script(target_class, method), indent=2)
 
 
-# ── 15. BIN Generator ─────────────────────────────────────────────────────
+# ── 15. BIN Generator Pro ─────────────────────────────────────────────────
 
-from bin_generator import generate_cards, generate_all_types
+from bin_generator import generate_cards, generate_all_types, generate_card, generate_bulk, generate_mixed, generate_by_bank, lookup_bank, validate_card, export_cards, BIN_DB
 
 @app.tool()
 def bionic_bin_generate(card_type: str = "Visa", count: int = 10) -> str:
-    """Generate valid BIN card numbers for testing. Types: Visa, Mastercard, Amex, Discover."""
+    """Generate valid BIN card numbers. Types: Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay."""
     return json.dumps(generate_cards(card_type, count), indent=2)
 
 @app.tool()
 def bionic_bin_generate_all(count_per_type: int = 5) -> str:
     """Generate valid BIN card numbers for all types."""
     return json.dumps(generate_all_types(count_per_type), indent=2)
+
+@app.tool()
+def bionic_bin_generate_bank(bank: str, count: int = 10) -> str:
+    """Generate cards for a specific bank (e.g., Chase, Bank of America, Amex)."""
+    return json.dumps(generate_by_bank(bank, count), indent=2)
+
+@app.tool()
+def bionic_bin_validate(number: str) -> str:
+    """Validate a card number using Luhn algorithm and look up bank info."""
+    return json.dumps(validate_card(number), indent=2)
+
+@app.tool()
+def bionic_bin_lookup(bin_number: str) -> str:
+    """Look up bank and card type from a BIN (first 6 digits)."""
+    return json.dumps(lookup_bank(bin_number), indent=2)
+
+@app.tool()
+def bionic_bin_list_banks() -> str:
+    """List all supported banks and card types."""
+    result = {}
+    for card_type, config in BIN_DB.items():
+        result[card_type] = list(config["bins"].keys())
+    return json.dumps(result, indent=2)
 
 
 if __name__ == "__main__":
