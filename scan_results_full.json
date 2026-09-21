@@ -1,0 +1,166 @@
+{
+  "total_findings": 20,
+  "queries_searched": 32,
+  "findings": [
+    {
+      "query": "visa_api_key",
+      "provider": "visa",
+      "repo": "?",
+      "path": "05-blueprints/shopping-concierge-agent/scripts/setup-web-ui-env.sh",
+      "match": "\n# Get Visa credentials from Secrets Manager\necho \"\ud83d\udcca Fetching Visa credentials from Secrets Manager...\"\nVISA_API_KEY=$(aws secretsmanager get-secret-value --secret-id \"visa/api-key\" --query SecretString --output text 2>/dev/null) || VISA_API_KEY=\"\"\n\n# Read Amplify outputs\nif [[ ! -f \"amplify_outputs",
+      "timestamp": "2026-09-21T05:34:12.771984"
+    },
+    {
+      "query": "visa_api_key",
+      "provider": "visa",
+      "repo": "?",
+      "path": ".env",
+      "match": "SDK_VERSION=\"v1\"\nSDK_TAG_VERSION=\"\"\nSENTRY_DSN=\"\"\nVISA_API_KEY_ID=\"\"\nVISA_API_CERTIFICATE_PEM=\"\"\nIS_PCI_COMPLIANT=\"\"\nPORT= 9050",
+      "timestamp": "2026-09-21T05:34:12.771984"
+    },
+    {
+      "query": "visa_api_key",
+      "provider": "visa",
+      "repo": "?",
+      "path": "webpack.common.js",
+      "match": "const envBackendUrl = getEnvVariable(\"ENV_BACKEND_URL\", \"\");\nconst isPciCompliant = getEnvVariable(\"IS_PCI_COMPLIANT\", \"true\") === \"true\";\nconst envLoggingUrl = getEnvVariable(\"ENV_LOGGING_URL\", \"\");\nconst visaAPIKeyId = getEnvVariable(\"VISA_API_KEY_ID\", \"\");\nconst visaAPICertificatePem = getEnvVari",
+      "timestamp": "2026-09-21T05:34:12.771984"
+    },
+    {
+      "query": "visa_api_key",
+      "provider": "visa",
+      "repo": "?",
+      "path": "updates/2026-03-16.md",
+      "match": "async function createAgentPayment(agent, purchase) {\n  const visa = new VisaTAP({\n    merchantId: process.env.VISA_MERCHANT_ID,\n    apiKey: process.env.VISA_API_KEY,\n    environment: 'production'\n  });\n",
+      "timestamp": "2026-09-21T05:34:12.771984"
+    },
+    {
+      "query": "visa_api_key",
+      "provider": "visa",
+      "repo": "?",
+      "path": "updates/2025-12-15.md",
+      "match": "// Verify agent authenticity using TAP\nasync function verifyAgentTransaction(request) {\n  const client = new visa.TAPClient({\n    apiKey: process.env.VISA_API_KEY,\n    merchantId: process.env.MERCHANT_ID\n  });\n",
+      "timestamp": "2026-09-21T05:34:12.771984"
+    },
+    {
+      "query": "visa_api_key",
+      "provider": "visa",
+      "repo": "?",
+      "path": "README.md",
+      "match": "1. Open your terminal.\n2. Add the environment variables to your shell configuration file (e.g., `~/.zshrc` or `~/.bash_profile`):\n   ```bash\n   export ALTA_VISA_API_KEY=\"your-alta-vista-api-key\"\n   export CLASSIC_SONG_API_KEY=\"your-classic-song-api-key\"\n   ```\n3. Save the file and reload your shell ",
+      "timestamp": "2026-09-21T05:34:12.771984"
+    },
+    {
+      "query": "visa_api_key",
+      "provider": "visa",
+      "repo": "?",
+      "path": "scripts/e2e.sh",
+      "match": "echo \"Running end-to-end tests...\"\n(\n  cd \"${ROOT}\"\n  GA4GH_VISA_API_KEY=dev-visa-api-key \\\n  GA4GH_ADS_API_KEY=dev-ads-api-key \\\n  GA4GH_ADMIN_UI_URL=http://localhost:8095 \\\n    cargo test -p ga4gh-e2e -- --ignored --test-threads=1",
+      "timestamp": "2026-09-21T05:34:12.771984"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "harness/smoke/mastercard_api_core.rb",
+      "match": "# Smoke test for mastercard_api_core\n# Exercises: SmartMap dotted-key traversal, RequestMap.setAll, Config class vars,\n#            Util URL/hash helpers + sha256 encoding, Environment constants.",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "harness/smoke/mastercard_api_core.rb",
+      "match": "\nrequire 'mastercard_api_core'\n",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "lib/mastercard_api.rb",
+      "match": "require_relative \"mastercard_api/version\"\r\n\r\n# require the common library\r\nrequire_relative \"mastercard_api/common/connector\"\r\nrequire_relative \"mastercard_api/common/environment\"\r\nrequire_relative \"mastercard_api/common/oauth_constants\"\r\nrequire_relative \"mastercard_api/common/oauth_parameters\"\r",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "mastercard_api.gemspec",
+      "match": "$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)\r\nrequire 'mastercard_api/version'\r\n\r",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "mastercard_api.gemspec",
+      "match": "Gem::Specification.new do |spec|\r\n  spec.name          = \"mastercard_api\"\r\n  spec.version       = MastercardApi::VERSION\r",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "mastercard_api_core.gemspec",
+      "match": "# SUCH DAMAGE.\n#\nGem::Specification.new do |gem|\n  gem.name          = \"mastercard_api_core\"\n  gem.authors       = [\"MasterCard Worldwide\"]\n  gem.email         = [\"APISupport@mastercard.com\"]\n  gem.summary       = %q{MasterCard core SDK}",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "nginx-plus/etc/nginx/api_conf.d/mastercard_api_simple.conf",
+      "match": "\n# Sandbox Environment\nlocation /openbanking/sandbox {\n    set $upstream mastercard_api;\n    rewrite ^ /_mastercard_api_sandbox last;\n}\n",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "tools/mcd-key-automation/providers/mastercard_api/__init__.py",
+      "match": "\"\"\"Mastercard Developers API client package (Option B \u2014 API-based provisioning).\"\"\"\nfrom providers.mastercard_api.client import (\n    DEFAULT_BASE_URL,",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "tools/mcd-key-automation/providers/mastercard_api/__init__.py",
+      "match": ")\nfrom providers.mastercard_api.provisioner import (\n    ADMIN_KEY_INSTRUCTIONS,",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "application/models/Fees_model.php",
+      "match": "  {\n     $query = $this->db->query(\"SELECT value FROM settings WHERE name='mastercard_api'\");\n     if($query->num_rows() == 1)",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "application/models/Fees_model.php",
+      "match": "  {\n     if($this->getMasterCardApiDetail() && $name == \"mastercard_api\")\n     {",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "tools/mcd-key-automation/providers/mastercard_api/client.py",
+      "match": "        # can pass \"config/keys/mcd-developers-api.p12\" like the rest of VIMA.\n        p = Path(self.signing_key_path)\n        if not p.is_absolute():\n            # client.py lives at tools/mcd-key-automation/providers/mastercard_api/;\n            # parents[4] is the VIMA repo root (config/keys/... ",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    },
+    {
+      "query": "mastercard_api",
+      "provider": "mastercard",
+      "repo": "?",
+      "path": "src/deployer/mastercard.sh",
+      "match": "    MASTERCARD_ENABLED=\"${MASTERCARD_ENABLED:-true}\"\n    MASTERCARD_CBS_HOME=\"${MASTERCARD_CBS_HOME:-~/ph-ee-connector-mccbs}\"\n    MASTERCARD_CBS_HOME=$(expand_tilde \"$MASTERCARD_CBS_HOME\")\n    MASTERCARD_API_URL=\"${MASTERCARD_API_URL:-https://sandbox.api.mastercard.com}\"\n    PAYMENTHUB_NAMESPACE=\"$",
+      "timestamp": "2026-09-21T05:34:14.551656"
+    }
+  ]
+}
