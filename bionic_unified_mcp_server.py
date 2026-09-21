@@ -629,5 +629,53 @@ def bionic_skimmer_defenses() -> str:
     return get_defense_recommendations()
 
 
+# ── 14. Farm 3 Phones Integration ─────────────────────────────────────────
+
+from farm_integration import (
+    adb_devices,
+    farm_phone_status,
+    price_manip_test,
+    hunt_endpoints,
+    analyze_apk,
+    generate_ssl_bypass,
+    generate_frida_script,
+)
+
+@app.tool()
+def bionic_farm_status() -> str:
+    """Get status of all phones in the farm."""
+    return json.dumps(farm_phone_status(), indent=2)
+
+@app.tool()
+def bionic_adb_devices() -> str:
+    """List connected Android devices."""
+    return json.dumps(adb_devices(), indent=2)
+
+@app.tool()
+def bionic_price_manip_test(url: str, params: dict, cookie: str = None) -> str:
+    """Test checkout for price manipulation flaws."""
+    return json.dumps(price_manip_test(url, params, cookie), indent=2)
+
+@app.tool()
+def bionic_hunt_endpoints(target: str, wordlist: list = None) -> str:
+    """Hunt for API endpoints on a target domain."""
+    return json.dumps(hunt_endpoints(target, wordlist), indent=2)
+
+@app.tool()
+def bionic_analyze_apk(apk_path: str) -> str:
+    """Analyze an APK for endpoints, permissions, and security issues."""
+    return json.dumps(analyze_apk(apk_path), indent=2)
+
+@app.tool()
+def bionic_generate_ssl_bypass(package: str) -> str:
+    """Generate SSL bypass configuration for a package."""
+    return json.dumps(generate_ssl_bypass(package), indent=2)
+
+@app.tool()
+def bionic_generate_frida_script(target_class: str, method: str = "onCreate") -> str:
+    """Generate a Frida hook for a target class/method."""
+    return json.dumps(generate_frida_script(target_class, method), indent=2)
+
+
 if __name__ == "__main__":
     app.run()
