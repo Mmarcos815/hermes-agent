@@ -1,0 +1,17 @@
+     ____
+    / _  |   Frida 17.18.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message: {'type': 'send', 'payload': '[rewards ready]'} data: None
+message: {'type': 'send', 'payload': '[rewards] hooked PresentClaimReward'} data: None
+message:[Remote::Gadget ]->  {'type': 'send', 'payload': '[rewards] hooked ClaimPack'} data: None
+message: {'type': 'send', 'payload': '[rewards armed]'} data: None

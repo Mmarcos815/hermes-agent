@@ -1,0 +1,84 @@
+     ____
+    / _  |   Frida 17.18.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message:[Remote::Gadget ]->  {'type': 'send', 'payload': '[intercept ready]'} data: None
+message: {'type': 'send', 'payload': '[okhttp] absent: Error: java.lang.ClassNotFoundException: Didn\'t find class "okhttp3.RealCall" on path: DexPathList[[zip file "/data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/base.apk", zip file "/data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/split_config.arm64_v8a.apk"],nativeLibraryDirectories=[/data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/lib/arm64, /data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/base.apk!/lib/arm64-v8a, /data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/split_config.arm64_v8a.apk!/lib/arm64-v8a, /system/lib64, /system_ext/lib64]]'} data: None
+message: {'type': 'send', 'payload': '[intercept armed]'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: cn.thinkingdata.android.config_2acafd677c5b46b8869d6ee2d519abbb'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.thinkingdata.analyse_2acafd677c5b46b8869d6ee2d519abbb'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.thinkingdata.analyse'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.thinkingdata.analyse'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: mp_udid_prefs'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: appsflyer-data'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: mp_udid_prefs'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.preferences.APP_SETTINGS'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.appEventPreferences'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.DataProcessingOptions'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.attributionTracking'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.appEventPreferences'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.garooms.tcgpackcash.gp_preferences'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.internal.FEATURE_MANAGER'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.DataProcessingOptions'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.appEventPreferences'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.appEventPreferences'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: mp_udid_prefs'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: zendesk.conversationkit'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: zendesk.conversationkit'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: zendesk.conversationkit'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: pageviews'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: mp_udid_prefs'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: mp_udid_prefs'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: zendesk.conversationkit'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: mp_udid_prefs'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[tls] input stream opened javax.net.ssl.SSLSocket'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: OneSignal'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: GTPlayerPurchases'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.appEventPreferences'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.appEventPreferences'} data: None
+message: {'type': 'send', 'payload': '[prefs] open: com.facebook.sdk.appEventPreferences'} data: None
+message: {'type': 'send', 'payload': '[intercept ready]'} data: None
+message: {'type': 'send', 'payload': '[okhttp] absent: Error: java.lang.ClassNotFoundException: Didn\'t find class "okhttp3.RealCall" on path: DexPathList[[zip file "/data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/base.apk", zip file "/data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/split_config.arm64_v8a.apk"],nativeLibraryDirectories=[/data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/lib/arm64, /data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/base.apk!/lib/arm64-v8a, /data/app/~~DDJPBOuVlgp1hCGzgyGcFw==/com.garooms.tcgpackcash.gp-tjXLi4HJ4aqvf3K4J4yJ3g==/split_config.arm64_v8a.apk!/lib/arm64-v8a, /system/lib64, /system_ext/lib64]]'} data: None
+message: {'type': 'send', 'payload': '[intercept armed]'} data: None
+message: {'type': 'send', 'payload': '[readhook armed]'} data: None

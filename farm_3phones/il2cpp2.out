@@ -1,0 +1,24 @@
+     ____
+    / _  |   Frida 17.18.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message: [Remote::Gadget ]-> {'type': 'send', 'payload': '[il2cpp ready]'} data: None
+message: {'type': 'send', 'payload': '[il2cpp] mod: [object Object]'} data: None
+message: {'type': 'send', 'payload': '[il2cpp] SendWebRequest hooked'} data: None
+message: {'type': 'send', 'payload': '[il2cpp] ReceiveData hooked'} data: None
+message: {'type': 'send', 'payload': '[il2cpp armed]'} data: None
+message: {'type': 'send', 'payload': '[url] https://api.mintpull.net/api/daily_sign_info/info'} data: None
+message: {'type': 'send', 'payload': '[url] https://api.mintpull.net/api/daily_sign_info/info'} data: None
+message: {'type': 'send', 'payload': '[url] https://api.mintpull.net/api/daily_sign_info/info'} data: None
+Connection terminated
+
+Thank you for using Frida!

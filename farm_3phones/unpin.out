@@ -1,0 +1,18 @@
+     ____
+    / _  |   Frida 17.18.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message: {'type': 'send', 'payload': '[unpin ready]'} data:[Remote::Gadget ]->  None
+message: {'type': 'send', 'payload': '[unpin] java hooked javax.net.ssl.X509TrustManager'} data: None
+message: {'type': 'send', 'payload': '[unpin] java hooked com.android.org.conscrypt.TrustManagerImpl'} data: None
+message: {'type': 'send', 'payload': '[unpin] no native symbols'} data: None
+message: {'type': 'send', 'payload': '[unpin armed]'} data: None
