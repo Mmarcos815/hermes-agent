@@ -118,7 +118,7 @@ GITHUB_QUERIES = [
 # ─── MCP Tools ──────────────────────────────────────────────────────────────
 
 @app.tool()
-def scan_github_for_payment_keys(max_results_per_query: int = 10, queries: list = None) -> str:
+def scan_github_for_payment_keys(max_results: int = 10, queries: list = None) -> str:
     """
     Scan GitHub for leaked payment API keys.
     Returns JSON with all findings.
@@ -133,7 +133,7 @@ def scan_github_for_payment_keys(max_results_per_query: int = 10, queries: list 
         
         try:
             proc = subprocess.run(
-                ["gh", "search", "code", query, "--limit", str(max_results_per_query),
+                ["gh", "search", "code", query, "--limit", str(max_results),
                  "--json", "repository,path,textMatches"],
                 capture_output=True, text=True, timeout=30
             )
@@ -187,23 +187,24 @@ def scan_repo_for_keys(repo: str) -> str:
     Returns all keys found in the repo.
     """
     findings = []
+    files_scanned = 0
     
     # Get all files in repo
     try:
         proc = subprocess.run(
-            ["gh", "api", f"repos/{repo}/git/trees/main?recursive=1", "--jq", ".[].path"],
+            ["gh", "api", f"repos/{repo}/git/trees/main?recursive=1"],
             capture_output=True, text=True, timeout=15
         )
         
         if proc.returncode != 0:
-            # Try master branch
             proc = subprocess.run(
-                ["gh", "api", f"repos/{repo}/git/trees/master?recursive=1", "--jq", ".[].path"],
+                ["gh", "api", f"repos/{repo}/git/trees/master?recursive=1"],
                 capture_output=True, text=True, timeout=15
             )
         
         if proc.returncode == 0:
-            paths = proc.stdout.strip().split("\n")
+            data = json.loads(proc.stdout)
+            paths = [item["path"] for item in data.get("tree", [])]
             
             # Filter for likely credential files
             interesting = [
@@ -212,6 +213,7 @@ def scan_repo_for_keys(repo: str) -> str:
                     "visa", "mastercard", "stripe", "paypal", "amex"
                 ])
             ]
+            files_scanned = len(interesting)
             
             for path in interesting[:50]:  # Limit to 50 files
                 try:
