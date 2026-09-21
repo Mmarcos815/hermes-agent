@@ -559,5 +559,53 @@ def bionic_stripe_balance(api_key: str) -> str:
     return stripe_check_balance(api_key)
 
 
+# ── 13. Skimmer & Keylogger Defense ───────────────────────────────────────
+
+from skimmer_detection_toolkit import (
+    scan_webpage_for_skimmers,
+    scan_apk_for_keylogger,
+    scan_windows_file_for_keylogger,
+    scan_windows_persistence,
+    audit_pos_terminal,
+    get_skimmer_signatures,
+    get_defense_recommendations,
+)
+
+@app.tool()
+def bionic_skimmer_scan_web(html: str, url: str = "unknown") -> str:
+    """Scan a webpage for JavaScript skimmer indicators."""
+    return scan_webpage_for_skimmers(html, url)
+
+@app.tool()
+def bionic_skimmer_scan_apk(manifest_path: str) -> str:
+    """Scan Android APK manifest for keylogger/skimmer indicators."""
+    return scan_apk_for_keylogger(manifest_path)
+
+@app.tool()
+def bionic_keylogger_scan_windows(file_path: str) -> str:
+    """Scan a Windows PE file for keylogger indicators."""
+    return scan_windows_file_for_keylogger(file_path)
+
+@app.tool()
+def bionic_keylogger_scan_persistence() -> str:
+    """Scan Windows registry for keylogger persistence mechanisms."""
+    return scan_windows_persistence()
+
+@app.tool()
+def bionic_pos_audit(config: dict) -> str:
+    """Audit POS terminal configuration for security issues."""
+    return audit_pos_terminal(config)
+
+@app.tool()
+def bionic_skimmer_signatures() -> str:
+    """Return known skimmer signatures and IOCs (Magecart, Android skimmers)."""
+    return get_skimmer_signatures()
+
+@app.tool()
+def bionic_skimmer_defenses() -> str:
+    """Return comprehensive defense recommendations for all platforms."""
+    return get_defense_recommendations()
+
+
 if __name__ == "__main__":
     app.run()
