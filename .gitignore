@@ -112,3 +112,8 @@ farm_3phones/global-metadata.dat
 farm_3phones/il2cppdumper/
 farm_3phones/il2cppdumper7/
 farm_3phones/*.idsig
+
+# System artifacts
+.bytecode-fingerprint
+META-INF/
+"Obsidian Vault/"
