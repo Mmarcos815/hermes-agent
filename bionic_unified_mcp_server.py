@@ -511,52 +511,74 @@ def bionic_payment_queries() -> str:
     return get_search_queries()
 
 
-# ── 12. Stripe API Toolkit ──────────────────────────────────────────────────
+# ── 12. Stripe Logic Flaw Testing ─────────────────────────────────────────
 
 from stripe_toolkit import (
-    stripe_api_surface,
-    stripe_known_flaws,
-    stripe_test_card_numbers,
-    stripe_test_endpoint,
-    stripe_find_0amount_products,
-    stripe_find_unlimited_coupons,
-    stripe_check_balance,
+    stripe_test_coupon,
+    stripe_test_amount,
+    stripe_test_currency,
+    stripe_test_webhook,
+    stripe_test_connect,
+    stripe_test_checkout,
+    stripe_test_idor,
+    payment_recon_paypal,
+    payment_recon_amex,
+    payment_recon_square,
+    payment_recon_braintree,
+    payment_recon_adyen,
+    payment_recon_all,
 )
 
 @app.tool()
-def bionic_stripe_surface() -> str:
-    """Return the complete Stripe API attack surface mapping."""
-    return stripe_api_surface()
+def bionic_stripe_coupon_test(api_key: str, coupon_id: str, iterations: int = 5) -> str:
+    """Test Stripe coupon for unlimited redemption."""
+    return stripe_test_coupon(api_key, coupon_id, iterations)
 
 @app.tool()
-def bionic_stripe_flaws() -> str:
-    """Return known historical Stripe logic flaws (patched, for reference)."""
-    return stripe_known_flaws()
+def bionic_stripe_amount_test(api_key: str, amount_cents: int = 100) -> str:
+    """Test Stripe for amount manipulation (0 or negative)."""
+    return stripe_test_amount(api_key, amount_cents)
 
 @app.tool()
-def bionic_stripe_cards() -> str:
-    """Return Stripe test card numbers for sandbox testing."""
-    return stripe_test_card_numbers()
+def bionic_stripe_currency_test(api_key: str) -> str:
+    """Test Stripe for currency manipulation."""
+    return stripe_test_currency(api_key)
 
 @app.tool()
-def bionic_stripe_test(endpoint: str, method: str = "GET", api_key: str = "", data: dict = None) -> str:
-    """Test a Stripe API endpoint in test mode."""
-    return stripe_test_endpoint(endpoint, method, api_key, data)
+def bionic_stripe_webhook_test(api_key: str, webhook_secret: str, payload: dict = None) -> str:
+    """Test Stripe webhook for signature bypass."""
+    return stripe_test_webhook(api_key, webhook_secret, payload)
 
 @app.tool()
-def bionic_stripe_0amount(api_key: str, limit: int = 10) -> str:
-    """Scan a Stripe account for $0 or very low-priced products."""
-    return stripe_find_0amount_products(api_key, limit)
+def bionic_stripe_connect_test(api_key: str, account_id: str) -> str:
+    """Test Stripe Connect for payout manipulation."""
+    return stripe_test_connect(api_key, account_id)
 
 @app.tool()
-def bionic_stripe_unlimited_coupons(api_key: str, limit: int = 10) -> str:
-    """Scan a Stripe account for coupons that can be redeemed unlimited times."""
-    return stripe_find_unlimited_coupons(api_key, limit)
+def bionic_stripe_checkout_test(api_key: str, price_id: str) -> str:
+    """Test Stripe Checkout for session manipulation."""
+    return stripe_test_checkout(api_key, price_id)
 
 @app.tool()
-def bionic_stripe_balance(api_key: str) -> str:
-    """Check the current balance of a Stripe account."""
-    return stripe_check_balance(api_key)
+def bionic_stripe_idor_test(api_key: str, object_id: str, object_type: str = "customers") -> str:
+    """Test Stripe for IDOR vulnerabilities."""
+    return stripe_test_idor(api_key, object_id, object_type)
+
+@app.tool()
+def bionic_payment_recon(provider: str = "all") -> str:
+    """Return payment API attack surface for a provider (paypal, amex, square, braintree, adyen, all)."""
+    if provider == "paypal":
+        return payment_recon_paypal()
+    elif provider == "amex":
+        return payment_recon_amex()
+    elif provider == "square":
+        return payment_recon_square()
+    elif provider == "braintree":
+        return payment_recon_braintree()
+    elif provider == "adyen":
+        return payment_recon_adyen()
+    else:
+        return payment_recon_all()
 
 
 # ── 13. Skimmer & Keylogger Defense ───────────────────────────────────────

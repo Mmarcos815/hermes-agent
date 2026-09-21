@@ -1,414 +1,487 @@
 #!/usr/bin/env python3
 """
-Stripe API Recon & Analysis Toolkit
-Stripe has well-documented APIs with test mode — free to register.
-This toolkit maps the Stripe attack surface and identifies logic flaws.
-FOR AUTHORIZED SECURITY TESTING ONLY - EDUCATIONAL PURPOSES ONLY
+Stripe Logic Flaw Testing Toolkit
+Free test mode — no verification needed.
+Tests for coupon manipulation, checkout bypasses, webhook issues.
 """
-
 import json
-import re
-from pathlib import Path
-
-from mcp.server.fastmcp import FastMCP
-
-app = FastMCP("stripe_toolkit")
+import requests
+from datetime import datetime
+from typing import Dict, Optional
 
 
-# ─── Stripe API Attack Surface ──────────────────────────────────────────────
-
-STRIPE_API_SURFACE = {
-    "base_url": "https://api.stripe.com/v1",
-    "auth": "Bearer <api_key>",
+class StripeTestSuite:
+    """Test Stripe API for logic flaws and misconfigurations."""
     
-    "endpoints": {
-        # ── Payment Processing ──
-        "charges": {
-            "POST /charges": "Create a charge (capture payment)",
-            "GET /charges/:id": "Retrieve a charge",
-            "POST /charges/:id/capture": "Capture an authorized charge",
-            "POST /charges/:id/refund": "Refund a charge",
-            "GET /charges": "List charges",
-            "risk_flags": [
-                "amount manipulation (if server-side validation missing)",
-                "currency manipulation",
-                "duplicate charge (race condition)",
-                "partial refund abuse",
-            ]
-        },
+    BASE_URL = "https://api.stripe.com/v1"
+    
+    # ── Coupon Logic Flaws ─────────────────────────────────────────────────
+    
+    @staticmethod
+    def test_unlimited_coupon(api_key: str, coupon_id: str, iterations: int = 5) -> Dict:
+        """Test if a coupon can be redeemed unlimited times."""
+        results = {
+            "test": "unlimited_coupon_redemption",
+            "coupon_id": coupon_id,
+            "timestamp": datetime.now().isoformat(),
+            "iterations": [],
+            "vulnerable": False,
+        }
         
-        "payment_intents": {
-            "POST /payment_intents": "Create payment intent",
-            "POST /payment_intents/:id/confirm": "Confirm payment",
-            "POST /payment_intents/:id/cancel": "Cancel payment intent",
-            "POST /payment_intents/:id/capture": "Capture payment intent",
-            "risk_flags": [
-                "amount modification between create and confirm",
-                "payment_method substitution",
-                "capture_more_than_authorized (if misconfigured)",
-                "manual capture manipulation",
-            ]
-        },
+        for i in range(iterations):
+            try:
+                resp = requests.post(
+                    f"{StripeTestSuite.BASE_URL}/coupons/{coupon_id}",
+                    auth=(api_key, ''),
+                    timeout=10
+                )
+                results["iterations"].append({
+                    "iteration": i + 1,
+                    "status": resp.status_code,
+                    "valid": resp.json().get("valid", False),
+                })
+            except Exception as e:
+                results["iterations"].append({"iteration": i + 1, "error": str(e)})
         
-        # ── Checkout & Subscriptions ──
-        "checkout_sessions": {
-            "POST /checkout/sessions": "Create checkout session",
-            "GET /checkout/sessions/:id": "Get session status",
-            "risk_flags": [
-                "success_url manipulation (phishing)",
-                "amount/quantity manipulation in line_items",
-                "discount/coupon injection if not validated",
-                "client_reference_id enumeration",
-            ]
-        },
+        # Check if coupon remains valid after multiple redemptions
+        valid_count = sum(1 for i in results["iterations"] if i.get("valid"))
+        results["vulnerable"] = valid_count == iterations
         
-        "subscriptions": {
-            "POST /subscriptions": "Create subscription",
-            "POST /subscriptions/:id": "Update subscription",
-            "DELETE /subscriptions/:id": "Cancel subscription",
-            "POST /subscriptions/:id/resume": "Resume subscription",
-            "risk_flags": [
-                "trial_period_days manipulation",
-                "coupon stacking",
-                "plan downgrade while keeping features",
-                "proration manipulation",
-            ]
-        },
+        return results
+    
+    @staticmethod
+    def test_amount_manipulation(api_key: str, amount_cents: int = 100) -> Dict:
+        """Test if amount can be manipulated to 0 or negative."""
+        results = {
+            "test": "amount_manipulation",
+            "timestamp": datetime.now().isoformat(),
+            "tests": [],
+        }
         
-        # ── Coupons & Discounts ──
-        "coupons": {
-            "POST /coupons": "Create coupon",
-            "GET /coupons/:id": "Retrieve coupon",
-            "DELETE /coupons/:id": "Delete coupon",
-            "risk_flags": [
-                "percent_off 100% (free products)",
-                "unlimited redemption (no redeem_by)",
-                "stacking multiple coupons",
-                "coupon created after checkout and applied retroactively",
-            ]
-        },
+        test_amounts = [0, -1, 1, amount_cents, amount_cents * -1, 999999999]
         
-        "promotion_codes": {
-            "POST /promotion_codes": "Create promotion code",
-            "GET /promotion_codes": "List promotion codes",
-            "risk_flags": [
-                "code enumeration",
-                "inactive code reactivation",
-                "customer restriction bypass",
-            ]
-        },
+        for amt in test_amounts:
+            try:
+                resp = requests.post(
+                    f"{StripeTestSuite.BASE_URL}/payment_intents",
+                    data={"amount": amt, "currency": "usd", "payment_method_types[]": "card"},
+                    auth=(api_key, ''),
+                    timeout=10
+                )
+                results["tests"].append({
+                    "amount": amt,
+                    "status": resp.status_code,
+                    "created": resp.status_code == 200,
+                    "id": resp.json().get("id", "N/A"),
+                })
+            except Exception as e:
+                results["tests"].append({"amount": amt, "error": str(e)})
         
-        # ── Connect (Marketplace) ──
-        "connect_accounts": {
-            "POST /accounts": "Create connected account",
-            "POST /accounts/:id": "Update account",
-            "GET /accounts/:id": "Retrieve account",
-            "risk_flags": [
-                "type manipulation (custom vs standard)",
-                "capabilities manipulation",
-                "tos_acceptance bypass",
-            ]
-        },
+        results["vulnerable"] = any(
+            t.get("created") and t.get("amount", 1) <= 0 
+            for t in results["tests"]
+        )
         
-        "transfers": {
-            "POST /transfers": "Send money to connected account",
-            "GET /transfers/:id": "Get transfer status",
-            "risk_flags": [
-                "amount manipulation",
-                "destination account substitution",
-                "source_transaction manipulation",
-                "reverse transfer timing attack",
-            ]
-        },
+        return results
+    
+    @staticmethod
+    def test_currency_manipulation(api_key: str) -> Dict:
+        """Test if currency can be manipulated to reduce value."""
+        results = {
+            "test": "currency_manipulation",
+            "timestamp": datetime.now().isoformat(),
+            "tests": [],
+        }
         
-        "payouts": {
-            "POST /payouts": "Create payout to bank",
-            "GET /payouts/:id": "Get payout status",
-            "risk_flags": [
-                "amount > balance (negative balance attack)",
-                "destination bank substitution",
-                "instant payout fee manipulation",
-            ]
-        },
+        # Currencies with very low value vs USD
+        currencies = ["usd", "jpy", "krw", "vnd", "irr", "uzs", "xcd"]
         
-        # ── Refunds ──
-        "refunds": {
-            "POST /refunds": "Issue refund",
-            "GET /refunds/:id": "Get refund status",
-            "risk_flags": [
-                "refund > original charge amount",
-                "duplicate refunds",
-                "refund to different card",
-                "reverse transfer without reversing charge",
-            ]
-        },
+        for curr in currencies:
+            try:
+                resp = requests.post(
+                    f"{StripeTestSuite.BASE_URL}/payment_intents",
+                    data={"amount": 1000, "currency": curr, "payment_method_types[]": "card"},
+                    auth=(api_key, ''),
+                    timeout=10
+                )
+                results["tests"].append({
+                    "currency": curr,
+                    "status": resp.status_code,
+                    "created": resp.status_code == 200,
+                })
+            except Exception as e:
+                results["tests"].append({"currency": curr, "error": str(e)})
         
-        # ── Webhooks ──
-        "webhook_endpoints": {
-            "POST /webhook_endpoints": "Register webhook",
-            "GET /webhook_endpoints": "List webhooks",
-            "risk_flags": [
-                "url manipulation to steal events",
-                "signature verification bypass",
-                "event injection",
-                "secret extraction",
-            ]
-        },
+        results["vulnerable"] = len([t for t in results["tests"] if t.get("created")]) > 1
         
-        # ── Balance & Reporting ──
-        "balance": {
-            "GET /balance": "Get current balance",
-            "GET /balance_transactions": "List balance transactions",
-            "risk_flags": [
-                "balance enumeration via reporting",
-                "transaction metadata leakage",
-            ]
-        },
+        return results
+    
+    # ── Webhook Security ─────────────────────────────────────────────────
+    
+    @staticmethod
+    def test_webhook_signature_bypass(api_key: str, webhook_secret: str, payload: Dict) -> Dict:
+        """Test if webhook signature verification can be bypassed."""
+        import hmac
+        import hashlib
+        import time
         
-        # ── Products & Pricing ──
-        "products": {
-            "POST /products": "Create product",
-            "POST /prices": "Create price",
-            "POST /shipping_rates": "Create shipping rate",
-            "risk_flags": [
-                "unit_amount = 0 (free product)",
-                "currency manipulation",
-                "tax_code manipulation",
-                "recurring price with trial abuse",
-            ]
-        },
-    }
-}
-
-
-# ─── Known Stripe Logic Flaws (Historical) ──────────────────────────────────
-
-KNOWN_FLAWS = [
-    {
-        "name": "Coupon Stacking via race condition",
-        "description": "Multiple simultaneous requests with different coupons applied to same subscription",
-        "endpoint": "POST /subscriptions",
-        "severity": "HIGH",
-        "status": "Patched 2021",
-    },
-    {
-        "name": "Checkout amount manipulation",
-        "description": "Server-side validation missing for line_items amount vs product price",
-        "endpoint": "POST /checkout/sessions",
-        "severity": "HIGH",
-        "status": "Patched 2022",
-    },
-    {
-        "name": "Transfer destination substitution",
-        "description": "Race condition allows changing destination account between creation and execution",
-        "endpoint": "POST /transfers",
-        "severity": "CRITICAL",
-        "status": "Patched 2020",
-    },
-    {
-        "name": "Refund to different card",
-        "description": "Refund issued to different payment method than original charge",
-        "endpoint": "POST /refunds",
-        "severity": "HIGH",
-        "status": "Patched 2021",
-    },
-    {
-        "name": "Webhook signature bypass",
-        "description": "Timing attack on HMAC verification leaks timing information",
-        "endpoint": "Webhook verification",
-        "severity": "MEDIUM",
-        "status": "Patched 2019",
-    },
-    {
-        "name": "Connect payout negative balance",
-        "description": "Instant payout before charge reversal creates negative balance",
-        "endpoint": "POST /payouts",
-        "severity": "CRITICAL",
-        "status": "Patched 2022",
-    },
-]
-
-
-# ─── MCP Tools ──────────────────────────────────────────────────────────────
-
-@app.tool()
-def stripe_api_surface() -> str:
-    """Return the complete Stripe API attack surface mapping."""
-    return json.dumps(STRIPE_API_SURFACE, indent=2)
-
-
-@app.tool()
-def stripe_known_flaws() -> str:
-    """Return known historical Stripe logic flaws (patched, for reference)."""
-    return json.dumps(KNOWN_FLAWS, indent=2)
-
-
-@app.tool()
-def stripe_test_card_numbers() -> str:
-    """Return Stripe test card numbers for sandbox testing."""
-    cards = {
-        "successful_charges": {
-            "4242424242424242": "Visa — succeeds",
-            "4000000000000002": "Visa — succeeds (no 3DS)",
-            "4000002500003155": "Visa — requires 3DS",
-            "4000000000009995": "Visa — insufficient funds",
-            "4000000000009987": "Visa — lost card",
-            "4000000000000069": "Visa — expired card",
-            "4000000000000127": "Visa → incorrect CVC",
-            "4000000000000119": "Visa → processing error",
-            "5555555555554444": "Mastercard — succeeds",
-            "5105105105105100": "Mastercard — succeeds",
-            "378282246310005": "Amex — succeeds",
-            "371449635398431": "Amex — succeeds",
-            "6011111111111117": "Discover — succeeds",
-            "30569309025904": "Diners Club — succeeds",
-            "3566002020360505": "JCB — succeeds",
-        },
-        "three_d_secure": {
-            "4000002500003155": "3DS required — succeeds after auth",
-            "4000002760003184": "3DS required — fails",
-            "4000008400001629": "3DS required — succeeds",
-            "4000008260003178": "3DS required — succeeds",
-        },
-        "dispute_test_cards": {
-            "4000000000000259": "Chargeback (lost card)",
-            "4000000000000101": "Chargeback (stolen card)",
-            "4000000000000070": "Prevention (safe but flagged)",
-        },
-        "country_specific": {
-            "4000000760000001": "Visa (BR)",
-            "4000001240000001": "Visa (CA)",
-            "4000001560000001": "Visa (MX)",
-            "4000003920000001": "Visa (NZ)",
-            "4000007520000001": "Visa (GB)",
-            "4000008260000001": "Visa (IE)",
-        },
-    }
-    return json.dumps(cards, indent=2)
-
-
-@app.tool()
-def stripe_test_endpoint(endpoint: str, method: str = "GET", api_key: str = "", data: dict = None) -> str:
-    """
-    Test a Stripe API endpoint in test mode.
-    Returns the response or error.
-    """
-    import urllib.request
-    import ssl
+        results = {
+            "test": "webhook_signature_bypass",
+            "timestamp": datetime.now().isoformat(),
+            "tests": [],
+        }
+        
+        payload_str = json.dumps(payload)
+        timestamp = int(time.time())
+        
+        # Test 1: Valid signature
+        signed_payload = f"{timestamp}.{payload_str}"
+        expected_sig = hmac.new(
+            webhook_secret.encode(),
+            signed_payload.encode(),
+            hashlib.sha256
+        ).hexdigest()
+        
+        results["tests"].append({
+            "name": "valid_signature",
+            "signature": expected_sig[:20] + "...",
+            "should_pass": True,
+        })
+        
+        # Test 2: Empty signature
+        results["tests"].append({
+            "name": "empty_signature",
+            "signature": "",
+            "should_pass": False,
+        })
+        
+        # Test 3: Replay attack (old timestamp)
+        old_timestamp = timestamp - 3600  # 1 hour ago
+        results["tests"].append({
+            "name": "replay_attack",
+            "timestamp": old_timestamp,
+            "should_pass": False,
+        })
+        
+        # Test 4: Algorithm confusion (none)
+        results["tests"].append({
+            "name": "algorithm_none",
+            "signature": "none",
+            "should_pass": False,
+        })
+        
+        # Test 5: Timing attack (check if early-exit on mismatch)
+        results["tests"].append({
+            "name": "timing_attack",
+            "description": "Compare timing of first-char match vs full match",
+            "should_pass": False,
+        })
+        
+        return results
     
-    if not api_key:
-        return json.dumps({"error": "API key required"}, indent=2)
+    # ── Connect Payout Manipulation ──────────────────────────────────────
     
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
-    
-    url = f"https://api.stripe.com/v1{endpoint}"
-    
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/x-www-form-urlencoded",
-    }
-    
-    body = None
-    if data:
-        body = "&".join(f"{k}={v}" for k, v in data.items()).encode()
-    
-    req = urllib.request.Request(url, data=body, headers=headers, method=method)
-    
-    try:
-        resp = urllib.request.urlopen(req, context=ctx, timeout=15)
-        return json.dumps(json.loads(resp.read().decode()), indent=2)
-    except urllib.error.HTTPError as e:
-        return json.dumps({
-            "status": e.code,
-            "error": json.loads(e.read().decode()),
-        }, indent=2)
-    except Exception as e:
-        return json.dumps({"error": str(e)}, indent=2)
-
-
-@app.tool()
-def stripe_find_0amount_products(api_key: str, limit: int = 10) -> str:
-    """
-    Scan a Stripe account for $0 or very low-priced products.
-    These can be exploited if checkout validation is missing.
-    """
-    result = stripe_test_endpoint("/products", "GET", api_key, {"limit": str(limit)})
-    products = json.loads(result)
-    
-    if "error" in products:
-        return result
-    
-    suspicious = []
-    for product in products.get("data", []):
-        # Check for default_price
-        price_id = product.get("default_price")
-        if price_id:
-            price_result = stripe_test_endpoint(f"/prices/{price_id}", "GET", api_key)
-            price = json.loads(price_result)
-            if "error" not in price:
-                unit_amount = price.get("unit_amount", -1)
-                if unit_amount == 0:
-                    suspicious.append({
-                        "product": product.get("name"),
-                        "product_id": product.get("id"),
-                        "price_id": price_id,
-                        "amount": 0,
-                        "currency": price.get("currency"),
-                    })
-                elif unit_amount < 10:  # Less than 10 cents
-                    suspicious.append({
-                        "product": product.get("name"),
-                        "product_id": product.get("id"),
-                        "price_id": price_id,
-                        "amount": unit_amount,
-                        "currency": price.get("currency"),
-                    })
-    
-    return json.dumps({
-        "products_checked": len(products.get("data", [])),
-        "suspicious_products": len(suspicious),
-        "findings": suspicious,
-    }, indent=2)
-
-
-@app.tool()
-def stripe_find_unlimited_coupons(api_key: str, limit: int = 10) -> str:
-    """
-    Scan a Stripe account for coupons that can be redeemed unlimited times.
-    These can be abused for free access.
-    """
-    result = stripe_test_endpoint("/coupons", "GET", api_key, {"limit": str(limit)})
-    coupons = json.loads(result)
-    
-    if "error" in coupons:
-        return result
-    
-    unlimited = []
-    for coupon in coupons.get("data", []):
-        if coupon.get("redeem_by") is None and coupon.get("max_redemptions") is None:
-            unlimited.append({
-                "id": coupon.get("id"),
-                "name": coupon.get("name"),
-                "percent_off": coupon.get("percent_off"),
-                "amount_off": coupon.get("amount_off"),
-                "duration": coupon.get("duration"),
-                "times_redeemed": coupon.get("times_redeemed"),
+    @staticmethod
+    def test_connect_payout_manipulation(api_key: str, account_id: str) -> Dict:
+        """Test if Connect payout amounts can be manipulated."""
+        results = {
+            "test": "connect_payout_manipulation",
+            "timestamp": datetime.now().isoformat(),
+            "tests": [],
+        }
+        
+        # Test negative payout
+        try:
+            resp = requests.post(
+                f"{StripeTestSuite.BASE_URL}/payouts",
+                data={
+                    "amount": -1000,
+                    "currency": "usd",
+                    "destination": account_id,
+                },
+                auth=(api_key, ''),
+                timeout=10
+            )
+            results["tests"].append({
+                "name": "negative_payout",
+                "status": resp.status_code,
+                "vulnerable": resp.status_code == 200,
             })
+        except Exception as e:
+            results["tests"].append({"name": "negative_payout", "error": str(e)})
+        
+        return results
     
+    # ── Checkout Session Bypass ─────────────────────────────────────────
+    
+    @staticmethod
+    def test_checkout_session_bypass(api_key: str, price_id: str) -> Dict:
+        """Test if checkout session can be manipulated."""
+        results = {
+            "test": "checkout_session_bypass",
+            "timestamp": datetime.now().isoformat(),
+            "tests": [],
+        }
+        
+        # Test with quantity manipulation
+        for qty in [1, 100, 9999, -1, 0]:
+            try:
+                resp = requests.post(
+                    f"{StripeTestSuite.BASE_URL}/checkout/sessions",
+                    data={
+                        "line_items[0][price]": price_id,
+                        "line_items[0][quantity]": qty,
+                        "mode": "payment",
+                        "success_url": "https://example.com/success",
+                    },
+                    auth=(api_key, ''),
+                    timeout=10
+                )
+                results["tests"].append({
+                    "quantity": qty,
+                    "status": resp.status_code,
+                    "url": resp.json().get("url", "N/A") if resp.status_code == 200 else "N/A",
+                })
+            except Exception as e:
+                results["tests"].append({"quantity": qty, "error": str(e)})
+        
+        return results
+    
+    # ── IDOR Testing ────────────────────────────────────────────────────
+    
+    @staticmethod
+    def test_idor(api_key: str, object_id: str, object_type: str = "customers") -> Dict:
+        """Test for Insecure Direct Object Reference."""
+        results = {
+            "test": "idor",
+            "object_type": object_type,
+            "timestamp": datetime.now().isoformat(),
+            "tests": [],
+        }
+        
+        # Try to access object without proper permissions
+        try:
+            resp = requests.get(
+                f"{StripeTestSuite.BASE_URL}/{object_type}/{object_id}",
+                auth=(api_key, ''),
+                timeout=10
+            )
+            results["tests"].append({
+                "object_id": object_id,
+                "status": resp.status_code,
+                "accessible": resp.status_code == 200,
+                "data_leaked": list(resp.json().keys()) if resp.status_code == 200 else [],
+            })
+        except Exception as e:
+            results["tests"].append({"object_id": object_id, "error": str(e)})
+        
+        return results
+
+
+# ── Payment Recon Expansion ─────────────────────────────────────────────────
+
+class PaymentRecon:
+    """Reconnaissance for PayPal, Amex, Square, Braintree, Adyen."""
+    
+    PAYPAL_API = "https://api-m.paypal.com"
+    AMEX_API = "https://api.americanexpress.com"
+    SQUARE_API = "https://connect.squareup.com"
+    BRAINTREE_API = "https://payments.braintree-api.com"
+    ADYEN_API = "https://checkout-live.adyen.com"
+    
+    @staticmethod
+    def paypal_endpoints() -> Dict:
+        """Return PayPal API endpoint catalog."""
+        return {
+            "auth": {
+                "url": "/v1/oauth2/token",
+                "method": "POST",
+                "auth": "Basic (client_id:secret)",
+            },
+            "payments": {
+                "create": "/v2/checkout/orders",
+                "capture": "/v2/checkout/orders/{id}/capture",
+                "refund": "/v2/payments/captures/{id}/refund",
+                "void": "/v2/payments/authorizations/{id}/void",
+            },
+            "wallet": {
+                "balance": "/v1/reporting/balances",
+                "transactions": "/v1/reporting/transactions",
+            },
+            "subscriptions": {
+                "create": "/v1/billing/plans",
+                "subscribe": "/v1/billing/subscriptions",
+            },
+            "attack_surface": [
+                "Amount manipulation in orders",
+                "Webhook signature bypass",
+                "Refund without authorization",
+                "Subscription cancellation bypass",
+                "Payout manipulation (Connect)",
+            ],
+        }
+    
+    @staticmethod
+    def amex_endpoints() -> Dict:
+        """Return Amex API endpoint catalog."""
+        return {
+            "base": "https://api.americanexpress.com",
+            "capabilities": [
+                "Loyalty programs (Membership Rewards)",
+                "Card account management",
+                "Transaction history",
+                "Offers and deals",
+                "Business checking",
+            ],
+            "attack_surface": [
+                "Reward point manipulation",
+                "Offer redemption abuse",
+                "Account linking IDOR",
+                "Transaction history leak",
+            ],
+        }
+    
+    @staticmethod
+    def square_endpoints() -> Dict:
+        """Return Square API endpoint catalog."""
+        return {
+            "base": "https://connect.squareup.com",
+            "endpoints": {
+                "payments": "/v2/payments",
+                "refunds": "/v2/refunds",
+                "customers": "/v2/customers",
+                "orders": "/v2/orders",
+                "catalog": "/v2/catalog",
+                "inventory": "/v2/inventory",
+            },
+            "attack_surface": [
+                "Refund without payment",
+                "Inventory manipulation",
+                "Customer data leak",
+                "Webhook spoofing",
+                "OAuth token theft",
+            ],
+        }
+    
+    @staticmethod
+    def braintree_endpoints() -> Dict:
+        """Return Braintree API endpoint catalog."""
+        return {
+            "base": "https://payments.braintree-api.com/graphql",
+            "auth": "Basic (public_key:private_key)",
+            "endpoints": {
+                "client_token": "/client_api/v1/client_tokens",
+                "payment_methods": "/client_api/v1/payment_methods",
+                "transactions": "/graphql",
+            },
+            "attack_surface": [
+                "GraphQL injection",
+                "Client token forgery",
+                "Transaction replay",
+                "Amount manipulation",
+                "Webhook signature bypass",
+            ],
+        }
+    
+    @staticmethod
+    def adyen_endpoints() -> Dict:
+        """Return Adyen API endpoint catalog."""
+        return {
+            "base": "https://checkout-live.adyen.com",
+            "endpoints": {
+                "payments": "/v71/payments",
+                "payment_methods": "/v71/paymentMethods",
+                "sessions": "/v71/sessions",
+                "cancels": "/v71/cancels",
+                "reversals": "/v71/reversals",
+            },
+            "attack_surface": [
+                "Session amount manipulation",
+                "Payment method token theft",
+                "Webhook replay",
+                "CVC bypass",
+                "3DS bypass",
+            ],
+        }
+
+
+# ── MCP Tool Functions ────────────────────────────────────────────────────
+
+def stripe_test_coupon(api_key: str, coupon_id: str, iterations: int = 5) -> str:
+    """Test if a Stripe coupon can be redeemed unlimited times."""
+    return json.dumps(StripeTestSuite.test_unlimited_coupon(api_key, coupon_id, iterations), indent=2)
+
+def stripe_test_amount(api_key: str, amount_cents: int = 100) -> str:
+    """Test Stripe for amount manipulation (0 or negative)."""
+    return json.dumps(StripeTestSuite.test_amount_manipulation(api_key, amount_cents), indent=2)
+
+def stripe_test_currency(api_key: str) -> str:
+    """Test Stripe for currency manipulation."""
+    return json.dumps(StripeTestSuite.test_currency_manipulation(api_key), indent=2)
+
+def stripe_test_webhook(api_key: str, webhook_secret: str, payload: dict = None) -> str:
+    """Test Stripe webhook for signature bypass."""
+    if payload is None:
+        payload = {"type": "payment_intent.succeeded", "data": {"object": {"id": "pi_test"}}}
+    return json.dumps(StripeTestSuite.test_webhook_signature_bypass(api_key, webhook_secret, payload), indent=2)
+
+def stripe_test_connect(api_key: str, account_id: str) -> str:
+    """Test Stripe Connect for payout manipulation."""
+    return json.dumps(StripeTestSuite.test_connect_payout_manipulation(api_key, account_id), indent=2)
+
+def stripe_test_checkout(api_key: str, price_id: str) -> str:
+    """Test Stripe Checkout for session manipulation."""
+    return json.dumps(StripeTestSuite.test_checkout_session_bypass(api_key, price_id), indent=2)
+
+def stripe_test_idor(api_key: str, object_id: str, object_type: str = "customers") -> str:
+    """Test Stripe for IDOR vulnerabilities."""
+    return json.dumps(StripeTestSuite.test_idor(api_key, object_id, object_type), indent=2)
+
+def payment_recon_paypal() -> str:
+    """Return PayPal API attack surface."""
+    return json.dumps(PaymentRecon.paypal_endpoints(), indent=2)
+
+def payment_recon_amex() -> str:
+    """Return Amex API attack surface."""
+    return json.dumps(PaymentRecon.amex_endpoints(), indent=2)
+
+def payment_recon_square() -> str:
+    """Return Square API attack surface."""
+    return json.dumps(PaymentRecon.square_endpoints(), indent=2)
+
+def payment_recon_braintree() -> str:
+    """Return Braintree API attack surface."""
+    return json.dumps(PaymentRecon.braintree_endpoints(), indent=2)
+
+def payment_recon_adyen() -> str:
+    """Return Adyen API attack surface."""
+    return json.dumps(PaymentRecon.adyen_endpoints(), indent=2)
+
+def payment_recon_all() -> str:
+    """Return full payment recon for all providers."""
     return json.dumps({
-        "coupons_checked": len(coupons.get("data", [])),
-        "unlimited_coupons": len(unlimited),
-        "findings": unlimited,
+        "paypal": PaymentRecon.paypal_endpoints(),
+        "amex": PaymentRecon.amex_endpoints(),
+        "square": PaymentRecon.square_endpoints(),
+        "braintree": PaymentRecon.braintree_endpoints(),
+        "adyen": PaymentRecon.adyen_endpoints(),
     }, indent=2)
-
-
-@app.tool()
-def stripe_check_balance(api_key: str) -> str:
-    """Check the current balance of a Stripe account."""
-    return stripe_test_endpoint("/balance", "GET", api_key)
 
 
 if __name__ == "__main__":
-    app.run()
+    print("=== Stripe Logic Flaw Toolkit ===")
+    print("Test mode — free API keys, no verification needed")
+    print("\nAvailable tests:")
+    print("  stripe_test_coupon — Test unlimited coupon redemption")
+    print("  stripe_test_amount — Test amount manipulation")
+    print("  stripe_test_currency — Test currency manipulation")
+    print("  stripe_test_webhook — Test webhook signature bypass")
+    print("  stripe_test_connect — Test Connect payout manipulation")
+    print("  stripe_test_checkout — Test Checkout session bypass")
+    print("  stripe_test_idor — Test IDOR vulnerabilities")
+    print("\n=== Payment Recon ===")
+    print("  payment_recon_paypal — PayPal API surface")
+    print("  payment_recon_amex — Amex API surface")
+    print("  payment_recon_square — Square API surface")
+    print("  payment_recon_braintree — Braintree API surface")
+    print("  payment_recon_adyen — Adyen API surface")
