@@ -105,3 +105,10 @@ rip_repack/*_dec/
 rip_repack/*_inject/
 rip_repack/*_signed/
 rip_repack/*_split_dec/
+farm_3phones/dump_out/
+farm_3phones/frida-server
+farm_3phones/frida-server.xz
+farm_3phones/global-metadata.dat
+farm_3phones/il2cppdumper/
+farm_3phones/il2cppdumper7/
+farm_3phones/*.idsig
