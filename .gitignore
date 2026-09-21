@@ -92,6 +92,20 @@ modules/
 skills/
 self_improve/data/
 
+# Scan results (contain sensitive keys — local only)
+payment_key_scan_results.json
+extracted_keys.json
+key_test_results.json
+SCAN_REPORT.txt
+visa_mc_targets.json
+
+# Phishing lab (sensitive — local only)
+phish_lab/
+visa_login.html
+collector_server.py
+mitm_visa_mc.py
+test_visa.html
+
 # farm_3phones generated artifacts (decoded APKs, dumps, binaries)
 farm_3phones/*_dec/
 farm_3phones/*_dumper*/
