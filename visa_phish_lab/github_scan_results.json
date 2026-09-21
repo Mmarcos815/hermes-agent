@@ -1,0 +1,23 @@
+{
+  "credentials": [
+    {
+      "pattern": "sandbox.api.visa.com",
+      "repo": "unknown",
+      "path": "matrix/client/lib/visa_pay.js",
+      "match": "        var payStatus = false;\n        //request options\n        var payment_request_options = {\n            uri: 'https://sandbox.api.visa.com/cybersource/payments/v1/sales?apikey=' + config.apiKey,\n"
+    },
+    {
+      "pattern": "visa_api_key",
+      "repo": "unknown",
+      "path": "create_visamob.sh",
+      "match": "      headers: {\n        'Authorization': \\`Bearer \\${process.env.VISA_API_KEY}\\`,\n        'Content-Type': 'application/json'"
+    },
+    {
+      "pattern": "visa_api_key",
+      "repo": "unknown",
+      "path": "create_visamob.sh",
+      "match": "      headers: {\n        'Authorization': \\`Bearer \\${process.env.VISA_API_KEY}\\`,\n        'Content-Type': 'application/json'"
+    }
+  ],
+  "certificates": []
+}
