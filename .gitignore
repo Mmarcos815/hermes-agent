@@ -134,3 +134,6 @@ farm_3phones/*.idsig
 .bytecode-fingerprint
 META-INF/
 Obsidian Vault/
+live_key_scan_results.json
+live_key_tests.json
+live_key_scanner.py
