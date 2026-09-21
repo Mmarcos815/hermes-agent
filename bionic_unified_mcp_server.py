@@ -756,5 +756,17 @@ def bionic_bin_attack_stats() -> str:
     return json.dumps(_tester.stats, indent=2, default=str)
 
 
+# ── 18. Courtyard IDOR Tester ────────────────────────────────────────────
+
+from courtyard_idor_tester import CourtyardIDOR
+
+@app.tool()
+def bionic_courtyard_idor() -> str:
+    """Run IDOR scan on Courtyard.io swap endpoints."""
+    scanner = CourtyardIDOR()
+    findings = scanner.run_all()
+    return json.dumps(findings, indent=2, default=str)
+
+
 if __name__ == "__main__":
     app.run()
