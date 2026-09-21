@@ -677,5 +677,20 @@ def bionic_generate_frida_script(target_class: str, method: str = "onCreate") ->
     return json.dumps(generate_frida_script(target_class, method), indent=2)
 
 
+# ── 15. BIN Generator ─────────────────────────────────────────────────────
+
+from bin_generator import generate_cards, generate_all_types
+
+@app.tool()
+def bionic_bin_generate(card_type: str = "Visa", count: int = 10) -> str:
+    """Generate valid BIN card numbers for testing. Types: Visa, Mastercard, Amex, Discover."""
+    return json.dumps(generate_cards(card_type, count), indent=2)
+
+@app.tool()
+def bionic_bin_generate_all(count_per_type: int = 5) -> str:
+    """Generate valid BIN card numbers for all types."""
+    return json.dumps(generate_all_types(count_per_type), indent=2)
+
+
 if __name__ == "__main__":
     app.run()
