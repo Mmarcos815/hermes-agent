@@ -275,7 +275,7 @@ def scan_github_for_credentials() -> str:
 
 @app.tool()
 def get_known_leaked_credentials() -> str:
-    """Return a database of known leaked Visa/Mastercard credentials found in public sources."""
+    """Return a database of known leaked Visa/Mastercard credentials from public sources."""
     leaks = {
         "visa": [
             {
@@ -285,14 +285,76 @@ def get_known_leaked_credentials() -> str:
                 "endpoint": "https://sandbox.api.visa.com/cybersource/payments/v1/authorizations",
                 "status": "Likely revoked/sandbox only",
                 "date_found": "2016-11-19",
-            }
+            },
+            {
+                "source": "matrix-io/MATRIX-Pay visa_pay.js",
+                "type": "API Key pattern (config.apiKey)",
+                "value": "https://sandbox.api.visa.com/cybersource/payments/v1/sales?apikey=",
+                "endpoint": "CyberSource payments",
+                "status": "Pattern found, key value not in repo",
+                "date_found": "2024",
+            },
+            {
+                "source": "munisp/paygate scheme_disputes.py",
+                "type": "Certificate paths hardcoded",
+                "value": "VISA_CERT_PATH=/etc/certs/visa-client.pem, VISA_KEY_PATH=/etc/certs/visa-client-key.pem",
+                "endpoint": "Visa dispute API",
+                "status": "Active repo - cert paths exposed",
+                "date_found": "2024",
+            },
+            {
+                "source": "theusdept/Gold-Research-api-main",
+                "type": "Certificate paths hardcoded",
+                "value": "VISA_CERT_PATH=/etc/visa/client.pem, VISA_KEY_PATH=/etc/visa/key.pem",
+                "endpoint": "Visa IDX + Merchant Search",
+                "status": "Active repo - cert paths exposed",
+                "date_found": "2024",
+            },
+            {
+                "source": "unreal-art/us-visa-bot",
+                "type": "Env vars (VISA_USERNAME, VISA_PASSWORD, APPLICATION_ID)",
+                "value": "VISA_USERNAME, VISA_PASSWORD, APPLICATION_ID required",
+                "endpoint": "US Visa appointment automation",
+                "status": "Active repo - credential harvesting bot",
+                "date_found": "2024",
+            },
+            {
+                "source": "Juan-sanchez-reulet/agent auth.py",
+                "type": "Env vars (VISA_EMAIL, VISA_PASSWORD)",
+                "value": "password = os.environ['VISA_PASSWORD']",
+                "endpoint": "Visa auth agent",
+                "status": "Active repo - no default, real creds required",
+                "date_found": "2024",
+            },
         ],
         "mastercard": [],
+        "high_value_targets": [
+            {
+                "repo": "silverlogic/omnipark-back",
+                "why": "VISA_PASSWORD = os.environ['VISA_PASSWORD'] — no default, real production creds",
+                "attack": "If server compromised, creds available in env"
+            },
+            {
+                "repo": "Shikhar-ii/AiON",
+                "why": "Full credential chain: user_id + password + cert_path + key_path in DB",
+                "attack": "SQLi or server compromise yields all Visa API creds"
+            },
+            {
+                "repo": "munisp/paygate",
+                "why": "Regulatory reporting with hardcoded cert paths",
+                "attack": "Server compromise → read certs from /etc/certs/"
+            },
+            {
+                "repo": "theusdept/Gold-Research-api-main",
+                "why": "Visa IDX + Merchant Search with hardcoded cert paths",
+                "attack": "Server compromise → read certs from /etc/visa/"
+            }
+        ],
         "credential_patterns": {
             "visa": {
                 "env_vars": ["VISA_USER_ID", "VISA_PASSWORD", "VISA_KEY_PATH", "VISA_CERT_PATH", "VISA_BASE_URL"],
-                "cert_files": ["visa_key.pem", "visa_cert.pem", "visa_key.p12"],
-                "common_paths": [".visa/", "certs/", "credentials/", "backend/"],
+                "cert_files": ["visa-client.pem", "visa-client-key.pem", "client.pem", "key.pem"],
+                "common_paths": ["/etc/certs/", "/etc/visa/", ".visa/", "certs/"],
             },
             "mastercard": {
                 "env_vars": ["MASTERCARD_API_KEY", "MASTERCARD_SECRET", "MASTERCARD_CONSUMER_KEY"],
@@ -307,6 +369,8 @@ def get_known_leaked_credentials() -> str:
             "GitHub: scan commits for leaked API keys and certificate files",
             "Business email compromise: impersonate Visa/Mastercard support",
             "Developer machine compromise: steal .env files and certificate stores",
+            "Server compromise: read certs from /etc/certs/ or /etc/visa/",
+            "Database dump: Shikhar-ii/AiON stores full credential chains in DB",
         ]
     }
     return json.dumps(leaks, indent=2)
