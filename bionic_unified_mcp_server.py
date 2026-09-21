@@ -715,5 +715,25 @@ def bionic_bin_list_banks() -> str:
     return json.dumps(result, indent=2)
 
 
+# ── 16. Elite BIN Generator ──────────────────────────────────────────────
+
+from elite_bin_generator import generate_elite_card, generate_elite_bulk, generate_mixed_elite, ELITE_BINS
+
+@app.tool()
+def bionic_elite_bin_generate(tier: str = "Visa_Signature", bank: str = None, count: int = 10) -> str:
+    """Generate elite high-tier BIN cards. Tiers: Visa_Signature, Mastercard_World, Amex_Premium, Corporate, Discover_Premium, Private_Label."""
+    return json.dumps(generate_elite_bulk(tier, bank, count), indent=2)
+
+@app.tool()
+def bionic_elite_bin_mixed(count_per_tier: int = 5) -> str:
+    """Generate elite cards across all tiers."""
+    return json.dumps(generate_mixed_elite(count_per_tier), indent=2)
+
+@app.tool()
+def bionic_elite_bin_list() -> str:
+    """List all elite tiers and banks."""
+    return json.dumps(list(ELITE_BINS.keys()), indent=2)
+
+
 if __name__ == "__main__":
     app.run()
