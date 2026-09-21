@@ -91,3 +91,17 @@ models/
 modules/
 skills/
 self_improve/data/
+
+# farm_3phones generated artifacts (decoded APKs, dumps, binaries)
+farm_3phones/*_dec/
+farm_3phones/*_dumper/
+farm_3phones/*_dumper*/
+farm_3phones/splits/
+farm_3phones/split_*/
+farm_3phones/*_out/
+farm_3phones/*_intercept*/
+farm_3phones/dump_out/
+farm_3phones/global-metadata.dat
+farm_3phones/*.idsig
+farm_3phones/frida-server
+farm_3phones/frida-server.xz
