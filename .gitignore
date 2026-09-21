@@ -1,3 +1,9 @@
+# Node
+node_modules/
+bower_components/
+.pnp
+.pnp.js
+
 # Binaries
 *.apk
 *.so
@@ -20,6 +26,11 @@
 *.gif
 *.ico
 *.icns
+*.webp
+*.ttf
+*.woff
+*.woff2
+*.eot
 
 # Python
 __pycache__/
@@ -28,6 +39,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+venv312/
 *.egg
 
 # IDE
@@ -45,6 +57,7 @@ desktop.ini
 # Hermes
 .hermes/
 .hermes-runtime/
+.hermes-tmp.*
 .env
 *.log
 
@@ -52,3 +65,29 @@ desktop.ini
 build/
 dist/
 *.whl
+
+# Temporary
+*.tmp
+*.temp
+nul
+.pnp
+.pnp.js
+
+# Directories to ignore
+node_modules/
+bower_components/
+.orca-preparing/
+.hermes-tmp.*
+
+# Data folders
+bionic-core/
+bionic-vuln-lab/node_modules/
+hermes-agent-offsec/
+redteam/
+src/
+tests-js/node_modules/
+web/node_modules/
+models/
+modules/
+skills/
+self_improve/data/
