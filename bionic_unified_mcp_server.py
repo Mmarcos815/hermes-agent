@@ -768,5 +768,38 @@ def bionic_courtyard_idor() -> str:
     return json.dumps(findings, indent=2, default=str)
 
 
+# ── 19. Bionic Bin Generator Pro ─────────────────────────────────────────
+
+from bionic_bin_generator import BionicBinPro, BIN_DB
+
+_gen = BionicBinPro()
+
+@app.tool()
+def bionic_bin_generate_pro(card_type: str = None, bank: str = None, count: int = 10, profile: str = "high_net_worth") -> str:
+    """Generate BIN cards with full identity profiles. Types: Visa, Mastercard, Amex, Discover."""
+    cards = _gen.generate_batch(count, card_type, bank, profile)
+    return json.dumps(cards, indent=2)
+
+@app.tool()
+def bionic_bin_validate(card_number: str, exp_month: str, exp_year: str, cvv: str) -> str:
+    """Validate a card using Luhn algorithm."""
+    card = {"number": card_number, "exp_month": exp_month, "exp_year": exp_year, "cvv": cvv, "type": "unknown", "bin": card_number[:6]}
+    result = _gen.validate_card(card)
+    return json.dumps(result, indent=2)
+
+@app.tool()
+def bionic_bin_list_banks() -> str:
+    """List all supported banks and card types."""
+    banks = {}
+    for card_type, config in BIN_DB.items():
+        banks[card_type] = list(config["banks"].keys())
+    return json.dumps(banks, indent=2)
+
+@app.tool()
+def bionic_bin_stats() -> str:
+    """View BIN generation statistics."""
+    return json.dumps(_gen.get_stats(), indent=2)
+
+
 if __name__ == "__main__":
     app.run()
